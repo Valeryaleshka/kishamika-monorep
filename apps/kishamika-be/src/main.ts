@@ -56,18 +56,6 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
 
-    app.use(
-      '/',
-      (req, res, next) => {
-        if (req.url.startsWith('/api')) {
-          return next(); // let Nest handle /api/*
-        }
-        express.static(
-            join(__dirname, '..', '..', '..', 'apps', 'kishamika-fe', 'dist', 'kika-project'),
-        )(req, res, next);
-      },
-  );
-
   await app.listen(port);
 
   console.log(`Server running in ${nodeEnv} mode on port ${port}`);
