@@ -18,7 +18,6 @@
     "build:fe:prod": "yarn workspace kishamika-fe build --configuration production",
     "start": "yarn start:prod",
     "start:prod": "yarn workspace kishamika-be start:prod",
-    "start:fe:prod": "npx serve apps/kishamika-fe/dist/kishamika-fe -p 4200",
     "start:be:prod": "yarn workspace kishamika-be start:prod",
     "lint": "yarn workspaces foreach run lint"
   },
