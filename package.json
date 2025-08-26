@@ -7,6 +7,7 @@
     "packages/*"
   ],
   "scripts": {
+
     "dev": "yarn run dev:be & yarn run dev:fe",
     "dev:fe": "yarn workspace kishamika-fe start",
     "dev:be": "yarn workspace kishamika-be start",
@@ -14,13 +15,15 @@
     "build:fe": "yarn workspace kishamika-fe build",
     "build:be": "yarn workspace kishamika-be build",
     "build:prod": "yarn build:be:prod && yarn build:fe:prod",
-    "build:be:prod": "yarn workspace kishamika-be build:prod",
-    "render-build": "yarn install && yarn prisma:generate && yarn prisma:migrate && yarn build:prod",
     "build:fe:prod": "yarn workspace kishamika-fe build --configuration production",
     "start": "yarn start:prod",
     "start:prod": "yarn workspace kishamika-be start:prod",
     "start:be:prod": "yarn workspace kishamika-be start:prod",
-    "lint": "yarn workspaces foreach run lint"
+    "lint": "yarn workspaces foreach run lint",
+    "render-build": "yarn install && yarn prisma:generate && yarn prisma:migrate && yarn build:prod",
+    "prisma:generate": "yarn workspace kishamika-be prisma:generate",
+    "prisma:migrate": "yarn workspace kishamika-be prisma:migrate",
+    "build:be:prod": "yarn workspace kishamika-be build:prod"
   },
   "devDependencies": {
     "concurrently": "^8.2.0",
