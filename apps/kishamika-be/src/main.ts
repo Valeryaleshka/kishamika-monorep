@@ -6,6 +6,7 @@ import { ValidationPipe } from '@nestjs/common';
 import helmet from 'helmet';
 import { join } from 'node:path';
 import { NestExpressApplication } from '@nestjs/platform-express';
+import express from "express";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -54,6 +55,18 @@ async function bootstrap() {
   });
 
   app.setGlobalPrefix('api');
+
+    app.use(
+      '/',
+      (req, res, next) => {
+        if (req.url.startsWith('/api')) {
+          return next(); // let Nest handle /api/*
+        }
+        express.static(
+            join(__dirname, '..', '..', '..', 'apps', 'kishamika-fe', 'dist', 'kika-project'),
+        )(req, res, next);
+      },
+  );
 
   await app.listen(port);
 
