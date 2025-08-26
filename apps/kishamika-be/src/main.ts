@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
 import helmet from 'helmet';
+import { join } from 'node:path';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
@@ -46,6 +47,11 @@ async function bootstrap() {
       transform: true,
     }),
   );
+
+  app.useStaticAssets(join(__dirname, '..', 'public'), {
+    index: false, // Don't serve index.html automatically
+    prefix: '/', // Serve files from root path
+  });
 
   app.setGlobalPrefix('api');
 
