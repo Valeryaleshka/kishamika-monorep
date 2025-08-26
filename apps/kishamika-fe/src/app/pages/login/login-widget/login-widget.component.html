@@ -1,0 +1,6 @@
+@if (currentUser()) {
+  <button nz-button nzGhost (click)="logout()">Logout</button>
+
+} @else {
+  <app-header-menu [menu]="menuItems"></app-header-menu>
+}

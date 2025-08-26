@@ -1,0 +1,29 @@
+{
+  "name": "my-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn run dev:be & yarn run dev:fe",
+    "dev:fe": "yarn workspace kishamika-fe start",
+    "dev:be": "yarn workspace kishamika-be start",
+    "build": "yarn build:fe && yarn build:be",
+    "build:fe": "yarn workspace kishamika-fe build",
+    "build:be": "yarn workspace kishamika-be build",
+    "build:prod": "yarn build:be:prod && yarn build:fe:prod",
+    "build:be:prod": "yarn workspace kishamika-be build",
+    "build:fe:prod": "yarn workspace kishamika-fe build --configuration production",
+    "start": "yarn start:prod",
+    "start:prod": "yarn workspace kishamika-be start:prod",
+    "start:fe:prod": "npx serve apps/kishamika-fe/dist/kishamika-fe -p 4200",
+    "lint": "yarn workspaces foreach run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "typescript": "~5.8.3"
+  },
+  "packageManager": "yarn@1.22.22"
+}

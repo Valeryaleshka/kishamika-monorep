@@ -1,0 +1,56 @@
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import cookieParser from 'cookie-parser';
+import { ConfigService } from '@nestjs/config';
+import { ValidationPipe } from '@nestjs/common';
+import helmet from 'helmet';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  const configService = app.get(ConfigService);
+
+  // Use environment variables
+  const port = configService.get<number>('PORT') || 3000;
+  const frontendUrl = 'http://localhost:4200';
+  // configService.get<string>('FRONTEND_URL') ||
+  // 'https://kiskamika.onrender.com';
+  const nodeEnv = configService.get<string>('NODE_ENV') || 'production';
+
+  // Security middleware for production
+  if (nodeEnv === 'production') {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    app.use(helmet());
+  }
+
+  // Cookie parser with secret for production
+  app.use(cookieParser());
+
+  // CORS configuration for production
+  app.enableCors({
+    origin: 'http://localhost:4200',
+    // nodeEnv === 'production'
+    //   ? ['https://kiskamika.onrender.com']
+    //   : ['http://localhost:4200', 'http://localhost:3000'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  });
+
+  // Global validation pipe
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
+    }),
+  );
+
+  app.setGlobalPrefix('api');
+
+  await app.listen(port);
+
+  console.log(`Server running in ${nodeEnv} mode on port ${port}`);
+  console.log(`Frontend URL: ${frontendUrl}`);
+}
+
+bootstrap().catch(console.error);
