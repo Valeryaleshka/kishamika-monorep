@@ -16,11 +16,11 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "postinstall": "prisma generate",
     "build": "nest build",
-    "build:prod": "prisma generate && nest build",
     "start": "nest start --watch",
-    "start:prod": "node dist/main",
     "prisma:generate": "dotenv -e ../../.env -- prisma generate",
     "prisma:migrate": "dotenv -e ../../.env -- prisma migrate deploy",
+    "build:prod": "dotenv -e ../../.env -- prisma generate && nest build",
+    "start:prod": "dotenv -e ../../.env -- node dist/main",
     "prisma:studio": "dotenv -e ../../.env -- prisma studio",
     "prisma:reset": "dotenv -e ../../.env -- prisma migrate reset",
     "clean": "rm -rf dist node_modules/.prisma node_modules/@prisma"
