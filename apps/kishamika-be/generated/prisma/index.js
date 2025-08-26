@@ -146,7 +146,6 @@ const config = {
       },
       {
         "fromEnvVar": null,
-        "native": false,
         "value": "debian-openssl-3.0.x"
       }
     ],
@@ -187,7 +186,7 @@ if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
     "generated/prisma",
     "prisma",
   ]
-
+  
   const alternativePath = alternativePaths.find((altPath) => {
     return fs.existsSync(path.join(process.cwd(), altPath, 'schema.prisma'))
   }) ?? alternativePaths[0]

@@ -53,10 +53,6 @@ async function bootstrap() {
     prefix: '/', // Serve files from root path
   });
 
-  app.get('*', (req, res) => {
-    res.sendFile(join(__dirname, '..', 'public', 'index.html'));
-  });
-
   app.setGlobalPrefix('api');
 
   await app.listen(port);
