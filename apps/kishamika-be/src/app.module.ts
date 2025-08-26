@@ -16,7 +16,8 @@ import { join } from 'path';
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', '..', '..', 'apps', 'kishamika-fe', 'dist', 'kika-project'),
-      exclude: ['/api*'],}),
+      exclude: [/^\/api/] as unknown as string[],
+    }),
     UsersModule,
     DatabaseModule,
     AuthModule,
