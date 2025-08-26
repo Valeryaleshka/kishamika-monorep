@@ -8,8 +8,10 @@
     "build": "ng build",
     "watch": "ng build --watch",
     "test": "ng test",
-    "lint": "eslint src/ ",
-    "lint:fix": "eslint src/ --fix"
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "build:prod": "ng build --configuration production",
+    "clean": "rm -rf dist"
   },
   "private": true,
   "dependencies": {
