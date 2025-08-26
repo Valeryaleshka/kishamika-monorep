@@ -11,7 +11,7 @@ async function bootstrap() {
 
   // Use environment variables
   const port = configService.get<number>('PORT') || 3000;
-  const frontendUrl = 'http://localhost:4200';
+  const frontendUrl = 'https://kiskamika.onrender.com';
   // configService.get<string>('FRONTEND_URL') ||
   // 'https://kiskamika.onrender.com';
   const nodeEnv = configService.get<string>('NODE_ENV') || 'production';
@@ -27,7 +27,7 @@ async function bootstrap() {
 
   // CORS configuration for production
   app.enableCors({
-    origin: 'http://localhost:4200',
+    origin: 'https://kiskamika.onrender.com',
     // nodeEnv === 'production'
     //   ? ['https://kiskamika.onrender.com']
     //   : ['http://localhost:4200', 'http://localhost:3000'],
