@@ -4,9 +4,11 @@ import cookieParser from 'cookie-parser';
 import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
 import helmet from 'helmet';
+import { join } from 'node:path';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const configService = app.get(ConfigService);
 
   // Use environment variables
@@ -15,6 +17,7 @@ async function bootstrap() {
   // configService.get<string>('FRONTEND_URL') ||
   // 'https://kiskamika.onrender.com';
   const nodeEnv = configService.get<string>('NODE_ENV') || 'production';
+
 
   // Security middleware for production
   if (nodeEnv === 'production') {
@@ -44,6 +47,15 @@ async function bootstrap() {
       transform: true,
     }),
   );
+
+  app.useStaticAssets(join(__dirname, '..', 'public'), {
+    index: false, // Don't serve index.html automatically
+    prefix: '/', // Serve files from root path
+  });
+
+  app.get('*', (req, res) => {
+    res.sendFile(join(__dirname, '..', 'public', 'index.html'));
+  });
 
   app.setGlobalPrefix('api');
 
