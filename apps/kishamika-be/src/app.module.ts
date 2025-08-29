@@ -14,10 +14,6 @@ import { join } from 'path';
       isGlobal: true,
       envFilePath: '.env',
     }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..', '..', 'apps', 'kishamika-fe', 'dist', 'kika-project'),
-      serveRoot: '/',
-    }),
     UsersModule,
     DatabaseModule,
     AuthModule,
