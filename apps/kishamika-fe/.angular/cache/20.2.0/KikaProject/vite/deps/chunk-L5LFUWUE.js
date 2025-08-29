@@ -2,7 +2,7 @@ import {
   NzConfigService,
   NzStringTemplateOutletDirective,
   WithConfig
-} from "./chunk-W2Y6ESBF.js";
+} from "./chunk-4QW2GNW5.js";
 import {
   Directionality
 } from "./chunk-U7XIMOED.js";
@@ -528,4 +528,4 @@ export {
   NZ_SPACE_COMPACT_ITEM_TYPE,
   NzSpaceCompactItemDirective
 };
-//# sourceMappingURL=chunk-DFGTISYQ.js.map
+//# sourceMappingURL=chunk-L5LFUWUE.js.map

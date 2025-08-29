@@ -6,6 +6,9 @@ import {
   wrapIntoObservable
 } from "./chunk-U7XIMOED.js";
 import {
+  Platform
+} from "./chunk-GHVILJXS.js";
+import {
   BarsOutline,
   CalendarOutline,
   CaretDownFill,
@@ -55,9 +58,6 @@ import {
   IconDirective,
   IconService
 } from "./chunk-NHMQZRFA.js";
-import {
-  Platform
-} from "./chunk-GHVILJXS.js";
 import {
   takeUntilDestroyed
 } from "./chunk-FBBY4FQW.js";
@@ -1785,4 +1785,4 @@ export {
   NzStringTemplateOutletDirective,
   NzOutletModule
 };
-//# sourceMappingURL=chunk-W2Y6ESBF.js.map
+//# sourceMappingURL=chunk-4QW2GNW5.js.map

@@ -9,12 +9,14 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import express from "express";
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+    logger: ['log', 'debug', 'error', 'warn'],
+  });
   const configService = app.get(ConfigService);
 
   // Use environment variables
   const port = configService.get<number>('PORT') || 3000;
-  const frontendUrl = 'https://kiskamika.onrender.com';
+  const frontendUrl = 'http://localhost:4200';
   // configService.get<string>('FRONTEND_URL') ||
   // 'https://kiskamika.onrender.com';
   const nodeEnv = configService.get<string>('NODE_ENV') || 'production';
@@ -31,7 +33,7 @@ async function bootstrap() {
 
   // CORS configuration for production
   app.enableCors({
-    origin: 'https://kiskamika.onrender.com',
+    origin: 'http://localhost:4200',
     // nodeEnv === 'production'
     //   ? ['https://kiskamika.onrender.com']
     //   : ['http://localhost:4200', 'http://localhost:3000'],

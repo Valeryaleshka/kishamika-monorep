@@ -1,8 +1,13 @@
 import {
+  NZ_SPACE_COMPACT_ITEM_TYPE,
+  NZ_SPACE_COMPACT_SIZE,
+  NzSpaceCompactItemDirective
+} from "./chunk-L5LFUWUE.js";
+import {
   NzFormItemFeedbackIconComponent,
   NzFormNoStatusService,
   NzFormStatusService
-} from "./chunk-OYNOX7CN.js";
+} from "./chunk-7WTALAGH.js";
 import {
   A,
   ALT,
@@ -23,16 +28,11 @@ import {
   NzResizeService
 } from "./chunk-JQFDHKHC.js";
 import {
-  NZ_SPACE_COMPACT_ITEM_TYPE,
-  NZ_SPACE_COMPACT_SIZE,
-  NzSpaceCompactItemDirective
-} from "./chunk-DFGTISYQ.js";
-import {
   NzIconDirective,
   NzIconModule,
   NzOutletModule,
   NzStringTemplateOutletDirective
-} from "./chunk-W2Y6ESBF.js";
+} from "./chunk-4QW2GNW5.js";
 import {
   Directionality,
   coerceElement,
@@ -40,8 +40,6 @@ import {
   getStatusClassNames,
   isNotNil
 } from "./chunk-U7XIMOED.js";
-import "./chunk-D3I5WW37.js";
-import "./chunk-NHMQZRFA.js";
 import {
   Platform,
   _getEventTarget,
@@ -49,6 +47,8 @@ import {
   _getShadowRoot,
   normalizePassiveListenerOptions
 } from "./chunk-GHVILJXS.js";
+import "./chunk-D3I5WW37.js";
+import "./chunk-NHMQZRFA.js";
 import {
   takeUntilDestroyed
 } from "./chunk-FBBY4FQW.js";

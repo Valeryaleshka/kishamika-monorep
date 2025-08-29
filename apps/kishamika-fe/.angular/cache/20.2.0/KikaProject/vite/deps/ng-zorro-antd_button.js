@@ -1,27 +1,27 @@
 import {
+  NzWaveModule
+} from "./chunk-6MHS5CVY.js";
+import {
   NZ_SPACE_COMPACT_ITEM_TYPE,
   NZ_SPACE_COMPACT_SIZE,
   NzSpaceCompactItemDirective
-} from "./chunk-DFGTISYQ.js";
+} from "./chunk-L5LFUWUE.js";
+import {
+  NzTransitionPatchModule
+} from "./chunk-QRR2VSXT.js";
 import {
   NzIconDirective,
   NzIconModule,
   WithConfig,
   onConfigChangeEventForComponent
-} from "./chunk-W2Y6ESBF.js";
+} from "./chunk-4QW2GNW5.js";
 import {
   Directionality,
   fromEventOutsideAngular
 } from "./chunk-U7XIMOED.js";
+import "./chunk-GHVILJXS.js";
 import "./chunk-D3I5WW37.js";
 import "./chunk-NHMQZRFA.js";
-import {
-  NzTransitionPatchModule
-} from "./chunk-QRR2VSXT.js";
-import {
-  NzWaveModule
-} from "./chunk-6MHS5CVY.js";
-import "./chunk-GHVILJXS.js";
 import {
   takeUntilDestroyed
 } from "./chunk-FBBY4FQW.js";
