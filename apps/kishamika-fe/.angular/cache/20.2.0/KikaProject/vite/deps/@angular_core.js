@@ -419,8 +419,8 @@ import {
   ɵɵtwoWayProperty,
   ɵɵvalidateIframeAttribute,
   ɵɵviewQuery,
-  ɵɵviewQuerySignal
-} from "./chunk-NDW6FAMK.js";
+  ɵɵviewQuerySignal,
+} from './chunk-NDW6FAMK.js';
 import {
   CONTAINER_HEADER_OFFSET,
   ChangeDetectionScheduler,
@@ -498,12 +498,12 @@ import {
   ɵɵnamespaceMathML,
   ɵɵnamespaceSVG,
   ɵɵresetView,
-  ɵɵrestoreView
-} from "./chunk-USC2B2WM.js";
-import "./chunk-HUZPAJME.js";
-import "./chunk-NFRTRQTS.js";
-import "./chunk-PVVX4OOT.js";
-import "./chunk-VC57AUI7.js";
+  ɵɵrestoreView,
+} from './chunk-USC2B2WM.js';
+import './chunk-NFRTRQTS.js';
+import './chunk-HUZPAJME.js';
+import './chunk-PVVX4OOT.js';
+import './chunk-VC57AUI7.js';
 export {
   ANIMATION_MODULE_TYPE,
   APP_BOOTSTRAP_LISTENER,
@@ -1004,5 +1004,5 @@ export {
   ɵɵtwoWayProperty,
   ɵɵvalidateIframeAttribute,
   ɵɵviewQuery,
-  ɵɵviewQuerySignal
+  ɵɵviewQuerySignal,
 };

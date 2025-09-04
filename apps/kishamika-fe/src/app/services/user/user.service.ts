@@ -1,8 +1,16 @@
-import { computed, DestroyRef, inject, Injectable, signal, WritableSignal } from '@angular/core';
-import { take } from 'rxjs';
+import {
+  computed,
+  DestroyRef,
+  inject,
+  Injectable,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { take } from 'rxjs';
+
+import { User } from '../../../../../kishamika-be/src/auth/services/users.service';
 import { ApiService } from '../api/api.service';
-import { User } from '../../pages/users/users.types';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +30,7 @@ export class UserService {
       .post('auth/logout', {})
       .pipe(take(1))
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(_ => {
+      .subscribe((_) => {
         this.currentUser.set(null);
       });
   }

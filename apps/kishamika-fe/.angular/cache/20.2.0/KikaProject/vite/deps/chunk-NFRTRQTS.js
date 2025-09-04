@@ -1,15 +1,8 @@
-import {
-  __read,
-  __spreadArray,
-  argsOrArgArray,
-  filter,
-  not,
-  raceWith
-} from "./chunk-PVVX4OOT.js";
+import { __read, __spreadArray, argsOrArgArray, filter, not, raceWith } from './chunk-PVVX4OOT.js';
 
 // ../../node_modules/rxjs/dist/esm5/internal/operators/partition.js
 function partition(predicate, thisArg) {
-  return function(source) {
+  return function (source) {
     return [filter(predicate, thisArg)(source), filter(not(predicate, thisArg))(source)];
   };
 }
@@ -23,8 +16,5 @@ function race() {
   return raceWith.apply(void 0, __spreadArray([], __read(argsOrArgArray(args))));
 }
 
-export {
-  partition,
-  race
-};
+export { partition, race };
 //# sourceMappingURL=chunk-NFRTRQTS.js.map

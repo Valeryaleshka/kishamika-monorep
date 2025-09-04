@@ -1,13 +1,8 @@
 import {
-  NZ_SPACE_COMPACT_ITEM_TYPE,
-  NZ_SPACE_COMPACT_SIZE,
-  NzSpaceCompactItemDirective
-} from "./chunk-L5LFUWUE.js";
-import {
   NzFormItemFeedbackIconComponent,
   NzFormNoStatusService,
-  NzFormStatusService
-} from "./chunk-7WTALAGH.js";
+  NzFormStatusService,
+} from './chunk-OYNOX7CN.js';
 import {
   A,
   ALT,
@@ -21,40 +16,36 @@ import {
   SHIFT,
   Z,
   ZERO,
-  _CdkPrivateStyleLoader
-} from "./chunk-MWSVZF2D.js";
+  _CdkPrivateStyleLoader,
+} from './chunk-MWSVZF2D.js';
+import { BreakpointObserver, NzResizeService } from './chunk-JQFDHKHC.js';
 import {
-  BreakpointObserver,
-  NzResizeService
-} from "./chunk-JQFDHKHC.js";
+  NZ_SPACE_COMPACT_ITEM_TYPE,
+  NZ_SPACE_COMPACT_SIZE,
+  NzSpaceCompactItemDirective,
+} from './chunk-DFGTISYQ.js';
 import {
   NzIconDirective,
   NzIconModule,
   NzOutletModule,
-  NzStringTemplateOutletDirective
-} from "./chunk-4QW2GNW5.js";
+  NzStringTemplateOutletDirective,
+} from './chunk-W2Y6ESBF.js';
 import {
   Directionality,
   coerceElement,
   coerceNumberProperty,
   getStatusClassNames,
-  isNotNil
-} from "./chunk-U7XIMOED.js";
+  isNotNil,
+} from './chunk-U7XIMOED.js';
+import './chunk-D3I5WW37.js';
+import './chunk-NHMQZRFA.js';
 import {
   Platform,
   _getEventTarget,
   _getFocusedElementPierceShadowDom,
   _getShadowRoot,
-  normalizePassiveListenerOptions
-} from "./chunk-GHVILJXS.js";
-import "./chunk-D3I5WW37.js";
-import "./chunk-NHMQZRFA.js";
-import {
-  takeUntilDestroyed
-} from "./chunk-FBBY4FQW.js";
-import "./chunk-C2FPMNIE.js";
-import "./chunk-U6SD5W2O.js";
-import "./chunk-WDFH655Z.js";
+  normalizePassiveListenerOptions,
+} from './chunk-GHVILJXS.js';
 import {
   DefaultValueAccessor,
   FormBuilder,
@@ -64,12 +55,14 @@ import {
   NgControl,
   NgControlStatus,
   ReactiveFormsModule,
-  Validators
-} from "./chunk-6AH5GLRL.js";
-import {
-  NgTemplateOutlet
-} from "./chunk-P7TSWPBR.js";
-import "./chunk-OROLZX2Q.js";
+  Validators,
+} from './chunk-6AH5GLRL.js';
+import { takeUntilDestroyed } from './chunk-FBBY4FQW.js';
+import './chunk-C2FPMNIE.js';
+import './chunk-U6SD5W2O.js';
+import './chunk-WDFH655Z.js';
+import { NgTemplateOutlet } from './chunk-P7TSWPBR.js';
+import './chunk-OROLZX2Q.js';
 import {
   APP_ID,
   ChangeDetectionStrategy,
@@ -130,8 +123,8 @@ import {
   ɵɵtemplateRefExtractor,
   ɵɵtext,
   ɵɵtextInterpolate,
-  ɵɵviewQuery
-} from "./chunk-NDW6FAMK.js";
+  ɵɵviewQuery,
+} from './chunk-NDW6FAMK.js';
 import {
   DOCUMENT,
   DestroyRef,
@@ -144,13 +137,10 @@ import {
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵresetView,
-  ɵɵrestoreView
-} from "./chunk-USC2B2WM.js";
-import {
-  isObservable,
-  merge
-} from "./chunk-HUZPAJME.js";
-import "./chunk-NFRTRQTS.js";
+  ɵɵrestoreView,
+} from './chunk-USC2B2WM.js';
+import './chunk-NFRTRQTS.js';
+import { isObservable, merge } from './chunk-HUZPAJME.js';
 import {
   BehaviorSubject,
   EMPTY,
@@ -168,30 +158,34 @@ import {
   switchMap,
   take,
   takeUntil,
-  tap
-} from "./chunk-PVVX4OOT.js";
-import {
-  __spreadValues
-} from "./chunk-VC57AUI7.js";
+  tap,
+} from './chunk-PVVX4OOT.js';
+import { __spreadValues } from './chunk-VC57AUI7.js';
 
 // ../../node_modules/@angular/cdk/fesm2022/fake-event-detection.mjs
 function isFakeMousedownFromScreenReader(event) {
   return event.buttons === 0 || event.detail === 0;
 }
 function isFakeTouchstartFromScreenReader(event) {
-  const touch = event.touches && event.touches[0] || event.changedTouches && event.changedTouches[0];
-  return !!touch && touch.identifier === -1 && (touch.radiusX == null || touch.radiusX === 1) && (touch.radiusY == null || touch.radiusY === 1);
+  const touch =
+    (event.touches && event.touches[0]) || (event.changedTouches && event.changedTouches[0]);
+  return (
+    !!touch &&
+    touch.identifier === -1 &&
+    (touch.radiusX == null || touch.radiusX === 1) &&
+    (touch.radiusY == null || touch.radiusY === 1)
+  );
 }
 
 // ../../node_modules/@angular/cdk/fesm2022/focus-monitor.mjs
-var INPUT_MODALITY_DETECTOR_OPTIONS = new InjectionToken("cdk-input-modality-detector-options");
+var INPUT_MODALITY_DETECTOR_OPTIONS = new InjectionToken('cdk-input-modality-detector-options');
 var INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS = {
-  ignoreKeys: [ALT, CONTROL, MAC_META, META, SHIFT]
+  ignoreKeys: [ALT, CONTROL, MAC_META, META, SHIFT],
 };
 var TOUCH_BUFFER_MS = 650;
 var modalityEventListenerOptions = {
   passive: true,
-  capture: true
+  capture: true,
 };
 var InputModalityDetector = class _InputModalityDetector {
   _platform = inject(Platform);
@@ -226,7 +220,7 @@ var InputModalityDetector = class _InputModalityDetector {
     if (this._options?.ignoreKeys?.some((keyCode) => keyCode === event.keyCode)) {
       return;
     }
-    this._modality.next("keyboard");
+    this._modality.next('keyboard');
     this._mostRecentTarget = _getEventTarget(event);
   };
   /**
@@ -237,7 +231,7 @@ var InputModalityDetector = class _InputModalityDetector {
     if (Date.now() - this._lastTouchMs < TOUCH_BUFFER_MS) {
       return;
     }
-    this._modality.next(isFakeMousedownFromScreenReader(event) ? "keyboard" : "mouse");
+    this._modality.next(isFakeMousedownFromScreenReader(event) ? 'keyboard' : 'mouse');
     this._mostRecentTarget = _getEventTarget(event);
   };
   /**
@@ -246,26 +240,38 @@ var InputModalityDetector = class _InputModalityDetector {
    */
   _onTouchstart = (event) => {
     if (isFakeTouchstartFromScreenReader(event)) {
-      this._modality.next("keyboard");
+      this._modality.next('keyboard');
       return;
     }
     this._lastTouchMs = Date.now();
-    this._modality.next("touch");
+    this._modality.next('touch');
     this._mostRecentTarget = _getEventTarget(event);
   };
   constructor() {
     const ngZone = inject(NgZone);
     const document2 = inject(DOCUMENT);
     const options = inject(INPUT_MODALITY_DETECTOR_OPTIONS, {
-      optional: true
+      optional: true,
     });
-    this._options = __spreadValues(__spreadValues({}, INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS), options);
+    this._options = __spreadValues(
+      __spreadValues({}, INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS),
+      options,
+    );
     this.modalityDetected = this._modality.pipe(skip(1));
     this.modalityChanged = this.modalityDetected.pipe(distinctUntilChanged());
     if (this._platform.isBrowser) {
       const renderer = inject(RendererFactory2).createRenderer(null, null);
       this._listenerCleanups = ngZone.runOutsideAngular(() => {
-        return [renderer.listen(document2, "keydown", this._onKeydown, modalityEventListenerOptions), renderer.listen(document2, "mousedown", this._onMousedown, modalityEventListenerOptions), renderer.listen(document2, "touchstart", this._onTouchstart, modalityEventListenerOptions)];
+        return [
+          renderer.listen(document2, 'keydown', this._onKeydown, modalityEventListenerOptions),
+          renderer.listen(document2, 'mousedown', this._onMousedown, modalityEventListenerOptions),
+          renderer.listen(
+            document2,
+            'touchstart',
+            this._onTouchstart,
+            modalityEventListenerOptions,
+          ),
+        ];
       });
     }
   }
@@ -279,26 +285,36 @@ var InputModalityDetector = class _InputModalityDetector {
   static ɵprov = ɵɵdefineInjectable({
     token: _InputModalityDetector,
     factory: _InputModalityDetector.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InputModalityDetector, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      InputModalityDetector,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 var FocusMonitorDetectionMode;
-(function(FocusMonitorDetectionMode2) {
-  FocusMonitorDetectionMode2[FocusMonitorDetectionMode2["IMMEDIATE"] = 0] = "IMMEDIATE";
-  FocusMonitorDetectionMode2[FocusMonitorDetectionMode2["EVENTUAL"] = 1] = "EVENTUAL";
+(function (FocusMonitorDetectionMode2) {
+  FocusMonitorDetectionMode2[(FocusMonitorDetectionMode2['IMMEDIATE'] = 0)] = 'IMMEDIATE';
+  FocusMonitorDetectionMode2[(FocusMonitorDetectionMode2['EVENTUAL'] = 1)] = 'EVENTUAL';
 })(FocusMonitorDetectionMode || (FocusMonitorDetectionMode = {}));
-var FOCUS_MONITOR_DEFAULT_OPTIONS = new InjectionToken("cdk-focus-monitor-default-options");
+var FOCUS_MONITOR_DEFAULT_OPTIONS = new InjectionToken('cdk-focus-monitor-default-options');
 var captureEventListenerOptions = normalizePassiveListenerOptions({
   passive: true,
-  capture: true
+  capture: true,
 });
 var FocusMonitor = class _FocusMonitor {
   _ngZone = inject(NgZone);
@@ -341,7 +357,7 @@ var FocusMonitor = class _FocusMonitor {
    */
   _windowFocusListener = () => {
     this._windowFocused = true;
-    this._windowFocusTimeoutId = setTimeout(() => this._windowFocused = false);
+    this._windowFocusTimeoutId = setTimeout(() => (this._windowFocused = false));
   };
   /** Used to reference correct document/window */
   _document = inject(DOCUMENT);
@@ -349,7 +365,7 @@ var FocusMonitor = class _FocusMonitor {
   _stopInputModalityDetector = new Subject();
   constructor() {
     const options = inject(FOCUS_MONITOR_DEFAULT_OPTIONS, {
-      optional: true
+      optional: true,
     });
     this._detectionMode = options?.detectionMode || FocusMonitorDetectionMode.IMMEDIATE;
   }
@@ -360,7 +376,7 @@ var FocusMonitor = class _FocusMonitor {
   _rootNodeFocusAndBlurListener = (event) => {
     const target = _getEventTarget(event);
     for (let element = target; element; element = element.parentElement) {
-      if (event.type === "focus") {
+      if (event.type === 'focus') {
         this._onFocus(event, element);
       } else {
         this._onBlur(event, element);
@@ -383,7 +399,7 @@ var FocusMonitor = class _FocusMonitor {
     const info = {
       checkChildren,
       subject: new Subject(),
-      rootNode
+      rootNode,
     };
     this._elementInfo.set(nativeElement, info);
     this._registerGlobalListeners(info);
@@ -403,10 +419,12 @@ var FocusMonitor = class _FocusMonitor {
     const nativeElement = coerceElement(element);
     const focusedElement = this._document.activeElement;
     if (nativeElement === focusedElement) {
-      this._getClosestElementsInfo(nativeElement).forEach(([currentElement, info]) => this._originChanged(currentElement, origin, info));
+      this._getClosestElementsInfo(nativeElement).forEach(([currentElement, info]) =>
+        this._originChanged(currentElement, origin, info),
+      );
     } else {
       this._setOrigin(origin);
-      if (typeof nativeElement.focus === "function") {
+      if (typeof nativeElement.focus === 'function') {
         nativeElement.focus(options);
       }
     }
@@ -421,7 +439,7 @@ var FocusMonitor = class _FocusMonitor {
   _getFocusOrigin(focusEventTarget) {
     if (this._origin) {
       if (this._originFromTouchInteraction) {
-        return this._shouldBeAttributedToTouch(focusEventTarget) ? "touch" : "program";
+        return this._shouldBeAttributedToTouch(focusEventTarget) ? 'touch' : 'program';
       } else {
         return this._origin;
       }
@@ -430,9 +448,9 @@ var FocusMonitor = class _FocusMonitor {
       return this._lastFocusOrigin;
     }
     if (focusEventTarget && this._isLastInteractionFromInputLabel(focusEventTarget)) {
-      return "mouse";
+      return 'mouse';
     }
-    return "program";
+    return 'program';
   }
   /**
    * Returns whether the focus event should be attributed to touch. Recall that in IMMEDIATE mode, a
@@ -443,7 +461,10 @@ var FocusMonitor = class _FocusMonitor {
    * @param focusEventTarget The target of the focus event under examination.
    */
   _shouldBeAttributedToTouch(focusEventTarget) {
-    return this._detectionMode === FocusMonitorDetectionMode.EVENTUAL || !!focusEventTarget?.contains(this._inputModalityDetector._mostRecentTarget);
+    return (
+      this._detectionMode === FocusMonitorDetectionMode.EVENTUAL ||
+      !!focusEventTarget?.contains(this._inputModalityDetector._mostRecentTarget)
+    );
   }
   /**
    * Sets the focus classes on the element based on the given focus origin.
@@ -451,11 +472,11 @@ var FocusMonitor = class _FocusMonitor {
    * @param origin The focus origin.
    */
   _setClasses(element, origin) {
-    element.classList.toggle("cdk-focused", !!origin);
-    element.classList.toggle("cdk-touch-focused", origin === "touch");
-    element.classList.toggle("cdk-keyboard-focused", origin === "keyboard");
-    element.classList.toggle("cdk-mouse-focused", origin === "mouse");
-    element.classList.toggle("cdk-program-focused", origin === "program");
+    element.classList.toggle('cdk-focused', !!origin);
+    element.classList.toggle('cdk-touch-focused', origin === 'touch');
+    element.classList.toggle('cdk-keyboard-focused', origin === 'keyboard');
+    element.classList.toggle('cdk-mouse-focused', origin === 'mouse');
+    element.classList.toggle('cdk-program-focused', origin === 'program');
   }
   /**
    * Updates the focus origin. If we're using immediate detection mode, we schedule an async
@@ -467,11 +488,11 @@ var FocusMonitor = class _FocusMonitor {
   _setOrigin(origin, isFromInteraction = false) {
     this._ngZone.runOutsideAngular(() => {
       this._origin = origin;
-      this._originFromTouchInteraction = origin === "touch" && isFromInteraction;
+      this._originFromTouchInteraction = origin === 'touch' && isFromInteraction;
       if (this._detectionMode === FocusMonitorDetectionMode.IMMEDIATE) {
         clearTimeout(this._originTimeoutId);
         const ms = this._originFromTouchInteraction ? TOUCH_BUFFER_MS : 1;
-        this._originTimeoutId = setTimeout(() => this._origin = null, ms);
+        this._originTimeoutId = setTimeout(() => (this._origin = null), ms);
       }
     });
   }
@@ -483,7 +504,7 @@ var FocusMonitor = class _FocusMonitor {
   _onFocus(event, element) {
     const elementInfo = this._elementInfo.get(element);
     const focusEventTarget = _getEventTarget(event);
-    if (!elementInfo || !elementInfo.checkChildren && element !== focusEventTarget) {
+    if (!elementInfo || (!elementInfo.checkChildren && element !== focusEventTarget)) {
       return;
     }
     this._originChanged(element, this._getFocusOrigin(focusEventTarget), elementInfo);
@@ -495,7 +516,12 @@ var FocusMonitor = class _FocusMonitor {
    */
   _onBlur(event, element) {
     const elementInfo = this._elementInfo.get(element);
-    if (!elementInfo || elementInfo.checkChildren && event.relatedTarget instanceof Node && element.contains(event.relatedTarget)) {
+    if (
+      !elementInfo ||
+      (elementInfo.checkChildren &&
+        event.relatedTarget instanceof Node &&
+        element.contains(event.relatedTarget))
+    ) {
       return;
     }
     this._setClasses(element);
@@ -514,23 +540,33 @@ var FocusMonitor = class _FocusMonitor {
     const rootNodeFocusListeners = this._rootNodeFocusListenerCount.get(rootNode) || 0;
     if (!rootNodeFocusListeners) {
       this._ngZone.runOutsideAngular(() => {
-        rootNode.addEventListener("focus", this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
-        rootNode.addEventListener("blur", this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
+        rootNode.addEventListener(
+          'focus',
+          this._rootNodeFocusAndBlurListener,
+          captureEventListenerOptions,
+        );
+        rootNode.addEventListener(
+          'blur',
+          this._rootNodeFocusAndBlurListener,
+          captureEventListenerOptions,
+        );
       });
     }
     this._rootNodeFocusListenerCount.set(rootNode, rootNodeFocusListeners + 1);
     if (++this._monitoredElementCount === 1) {
       this._ngZone.runOutsideAngular(() => {
         const window2 = this._getWindow();
-        window2.addEventListener("focus", this._windowFocusListener);
+        window2.addEventListener('focus', this._windowFocusListener);
       });
-      this._inputModalityDetector.modalityDetected.pipe(takeUntil(this._stopInputModalityDetector)).subscribe((modality) => {
-        this._setOrigin(
-          modality,
-          true
-          /* isFromInteraction */
-        );
-      });
+      this._inputModalityDetector.modalityDetected
+        .pipe(takeUntil(this._stopInputModalityDetector))
+        .subscribe((modality) => {
+          this._setOrigin(
+            modality,
+            true,
+            /* isFromInteraction */
+          );
+        });
     }
   }
   _removeGlobalListeners(elementInfo) {
@@ -540,14 +576,22 @@ var FocusMonitor = class _FocusMonitor {
       if (rootNodeFocusListeners > 1) {
         this._rootNodeFocusListenerCount.set(rootNode, rootNodeFocusListeners - 1);
       } else {
-        rootNode.removeEventListener("focus", this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
-        rootNode.removeEventListener("blur", this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
+        rootNode.removeEventListener(
+          'focus',
+          this._rootNodeFocusAndBlurListener,
+          captureEventListenerOptions,
+        );
+        rootNode.removeEventListener(
+          'blur',
+          this._rootNodeFocusAndBlurListener,
+          captureEventListenerOptions,
+        );
         this._rootNodeFocusListenerCount.delete(rootNode);
       }
     }
     if (!--this._monitoredElementCount) {
       const window2 = this._getWindow();
-      window2.removeEventListener("focus", this._windowFocusListener);
+      window2.removeEventListener('focus', this._windowFocusListener);
       this._stopInputModalityDetector.next();
       clearTimeout(this._windowFocusTimeoutId);
       clearTimeout(this._originTimeoutId);
@@ -567,7 +611,7 @@ var FocusMonitor = class _FocusMonitor {
   _getClosestElementsInfo(element) {
     const results = [];
     this._elementInfo.forEach((info, currentElement) => {
-      if (currentElement === element || info.checkChildren && currentElement.contains(element)) {
+      if (currentElement === element || (info.checkChildren && currentElement.contains(element))) {
         results.push([currentElement, info]);
       }
     });
@@ -579,11 +623,14 @@ var FocusMonitor = class _FocusMonitor {
    * @param focusEventTarget Target currently receiving focus.
    */
   _isLastInteractionFromInputLabel(focusEventTarget) {
-    const {
-      _mostRecentTarget: mostRecentTarget,
-      mostRecentModality
-    } = this._inputModalityDetector;
-    if (mostRecentModality !== "mouse" || !mostRecentTarget || mostRecentTarget === focusEventTarget || focusEventTarget.nodeName !== "INPUT" && focusEventTarget.nodeName !== "TEXTAREA" || focusEventTarget.disabled) {
+    const { _mostRecentTarget: mostRecentTarget, mostRecentModality } = this._inputModalityDetector;
+    if (
+      mostRecentModality !== 'mouse' ||
+      !mostRecentTarget ||
+      mostRecentTarget === focusEventTarget ||
+      (focusEventTarget.nodeName !== 'INPUT' && focusEventTarget.nodeName !== 'TEXTAREA') ||
+      focusEventTarget.disabled
+    ) {
       return false;
     }
     const labels = focusEventTarget.labels;
@@ -602,16 +649,26 @@ var FocusMonitor = class _FocusMonitor {
   static ɵprov = ɵɵdefineInjectable({
     token: _FocusMonitor,
     factory: _FocusMonitor.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FocusMonitor, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      FocusMonitor,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 var CdkMonitorFocus = class _CdkMonitorFocus {
   _elementRef = inject(ElementRef);
@@ -619,17 +676,18 @@ var CdkMonitorFocus = class _CdkMonitorFocus {
   _monitorSubscription;
   _focusOrigin = null;
   cdkFocusChange = new EventEmitter();
-  constructor() {
-  }
+  constructor() {}
   get focusOrigin() {
     return this._focusOrigin;
   }
   ngAfterViewInit() {
     const element = this._elementRef.nativeElement;
-    this._monitorSubscription = this._focusMonitor.monitor(element, element.nodeType === 1 && element.hasAttribute("cdkMonitorSubtreeFocus")).subscribe((origin) => {
-      this._focusOrigin = origin;
-      this.cdkFocusChange.emit(origin);
-    });
+    this._monitorSubscription = this._focusMonitor
+      .monitor(element, element.nodeType === 1 && element.hasAttribute('cdkMonitorSubtreeFocus'))
+      .subscribe((origin) => {
+        this._focusOrigin = origin;
+        this.cdkFocusChange.emit(origin);
+      });
   }
   ngOnDestroy() {
     this._focusMonitor.stopMonitoring(this._elementRef);
@@ -642,25 +700,40 @@ var CdkMonitorFocus = class _CdkMonitorFocus {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _CdkMonitorFocus,
-    selectors: [["", "cdkMonitorElementFocus", ""], ["", "cdkMonitorSubtreeFocus", ""]],
+    selectors: [
+      ['', 'cdkMonitorElementFocus', ''],
+      ['', 'cdkMonitorSubtreeFocus', ''],
+    ],
     outputs: {
-      cdkFocusChange: "cdkFocusChange"
+      cdkFocusChange: 'cdkFocusChange',
     },
-    exportAs: ["cdkMonitorFocus"]
+    exportAs: ['cdkMonitorFocus'],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkMonitorFocus, [{
-    type: Directive,
-    args: [{
-      selector: "[cdkMonitorElementFocus], [cdkMonitorSubtreeFocus]",
-      exportAs: "cdkMonitorFocus"
-    }]
-  }], () => [], {
-    cdkFocusChange: [{
-      type: Output
-    }]
-  });
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      CdkMonitorFocus,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[cdkMonitorElementFocus], [cdkMonitorSubtreeFocus]',
+              exportAs: 'cdkMonitorFocus',
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        cdkFocusChange: [
+          {
+            type: Output,
+          },
+        ],
+      },
+    );
 })();
 
 // ../../node_modules/@angular/cdk/fesm2022/private.mjs
@@ -670,36 +743,49 @@ var _VisuallyHiddenLoader = class __VisuallyHiddenLoader {
   };
   static ɵcmp = ɵɵdefineComponent({
     type: __VisuallyHiddenLoader,
-    selectors: [["ng-component"]],
-    exportAs: ["cdkVisuallyHidden"],
+    selectors: [['ng-component']],
+    exportAs: ['cdkVisuallyHidden'],
     decls: 0,
     vars: 0,
-    template: function _VisuallyHiddenLoader_Template(rf, ctx) {
-    },
-    styles: [".cdk-visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap;outline:0;-webkit-appearance:none;-moz-appearance:none;left:0}[dir=rtl] .cdk-visually-hidden{left:auto;right:0}\n"],
+    template: function _VisuallyHiddenLoader_Template(rf, ctx) {},
+    styles: [
+      '.cdk-visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap;outline:0;-webkit-appearance:none;-moz-appearance:none;left:0}[dir=rtl] .cdk-visually-hidden{left:auto;right:0}\n',
+    ],
     encapsulation: 2,
-    changeDetection: 0
+    changeDetection: 0,
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_VisuallyHiddenLoader, [{
-    type: Component,
-    args: [{
-      exportAs: "cdkVisuallyHidden",
-      encapsulation: ViewEncapsulation.None,
-      template: "",
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      styles: [".cdk-visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap;outline:0;-webkit-appearance:none;-moz-appearance:none;left:0}[dir=rtl] .cdk-visually-hidden{left:auto;right:0}\n"]
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      _VisuallyHiddenLoader,
+      [
+        {
+          type: Component,
+          args: [
+            {
+              exportAs: 'cdkVisuallyHidden',
+              encapsulation: ViewEncapsulation.None,
+              template: '',
+              changeDetection: ChangeDetectionStrategy.OnPush,
+              styles: [
+                '.cdk-visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap;outline:0;-webkit-appearance:none;-moz-appearance:none;left:0}[dir=rtl] .cdk-visually-hidden{left:auto;right:0}\n',
+              ],
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
 // ../../node_modules/@angular/cdk/fesm2022/observers.mjs
 function shouldIgnoreRecord(record) {
-  if (record.type === "characterData" && record.target instanceof Comment) {
+  if (record.type === 'characterData' && record.target instanceof Comment) {
     return true;
   }
-  if (record.type === "childList") {
+  if (record.type === 'childList') {
     for (let i = 0; i < record.addedNodes.length; i++) {
       if (!(record.addedNodes[i] instanceof Comment)) {
         return false;
@@ -716,7 +802,7 @@ function shouldIgnoreRecord(record) {
 }
 var MutationObserverFactory = class _MutationObserverFactory {
   create(callback) {
-    return typeof MutationObserver === "undefined" ? null : new MutationObserver(callback);
+    return typeof MutationObserver === 'undefined' ? null : new MutationObserver(callback);
   }
   static ɵfac = function MutationObserverFactory_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _MutationObserverFactory)();
@@ -724,24 +810,33 @@ var MutationObserverFactory = class _MutationObserverFactory {
   static ɵprov = ɵɵdefineInjectable({
     token: _MutationObserverFactory,
     factory: _MutationObserverFactory.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MutationObserverFactory, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      MutationObserverFactory,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var ContentObserver = class _ContentObserver {
   _mutationObserverFactory = inject(MutationObserverFactory);
   /** Keeps track of the existing MutationObservers so they can be reused. */
   _observedElements = /* @__PURE__ */ new Map();
   _ngZone = inject(NgZone);
-  constructor() {
-  }
+  constructor() {}
   ngOnDestroy() {
     this._observedElements.forEach((_, element) => this._cleanupObserver(element));
   }
@@ -749,11 +844,16 @@ var ContentObserver = class _ContentObserver {
     const element = coerceElement(elementOrRef);
     return new Observable((observer) => {
       const stream = this._observeElement(element);
-      const subscription = stream.pipe(map((records) => records.filter((record) => !shouldIgnoreRecord(record))), filter((records) => !!records.length)).subscribe((records) => {
-        this._ngZone.run(() => {
-          observer.next(records);
+      const subscription = stream
+        .pipe(
+          map((records) => records.filter((record) => !shouldIgnoreRecord(record))),
+          filter((records) => !!records.length),
+        )
+        .subscribe((records) => {
+          this._ngZone.run(() => {
+            observer.next(records);
+          });
         });
-      });
       return () => {
         subscription.unsubscribe();
         this._unobserveElement(element);
@@ -768,18 +868,20 @@ var ContentObserver = class _ContentObserver {
     return this._ngZone.runOutsideAngular(() => {
       if (!this._observedElements.has(element)) {
         const stream = new Subject();
-        const observer = this._mutationObserverFactory.create((mutations) => stream.next(mutations));
+        const observer = this._mutationObserverFactory.create((mutations) =>
+          stream.next(mutations),
+        );
         if (observer) {
           observer.observe(element, {
             characterData: true,
             childList: true,
-            subtree: true
+            subtree: true,
           });
         }
         this._observedElements.set(element, {
           observer,
           stream,
-          count: 1
+          count: 1,
         });
       } else {
         this._observedElements.get(element).count++;
@@ -802,10 +904,7 @@ var ContentObserver = class _ContentObserver {
   /** Clean up the underlying MutationObserver for the specified element. */
   _cleanupObserver(element) {
     if (this._observedElements.has(element)) {
-      const {
-        observer,
-        stream
-      } = this._observedElements.get(element);
+      const { observer, stream } = this._observedElements.get(element);
       if (observer) {
         observer.disconnect();
       }
@@ -819,16 +918,26 @@ var ContentObserver = class _ContentObserver {
   static ɵprov = ɵɵdefineInjectable({
     token: _ContentObserver,
     factory: _ContentObserver.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ContentObserver, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      ContentObserver,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 var CdkObserveContent = class _CdkObserveContent {
   _contentObserver = inject(ContentObserver);
@@ -857,8 +966,7 @@ var CdkObserveContent = class _CdkObserveContent {
   }
   _debounce;
   _currentSubscription = null;
-  constructor() {
-  }
+  constructor() {}
   ngAfterContentInit() {
     if (!this._currentSubscription && !this.disabled) {
       this._subscribe();
@@ -870,7 +978,9 @@ var CdkObserveContent = class _CdkObserveContent {
   _subscribe() {
     this._unsubscribe();
     const stream = this._contentObserver.observe(this._elementRef);
-    this._currentSubscription = (this.debounce ? stream.pipe(debounceTime(this.debounce)) : stream).subscribe(this.event);
+    this._currentSubscription = (
+      this.debounce ? stream.pipe(debounceTime(this.debounce)) : stream
+    ).subscribe(this.event);
   }
   _unsubscribe() {
     this._currentSubscription?.unsubscribe();
@@ -880,40 +990,58 @@ var CdkObserveContent = class _CdkObserveContent {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _CdkObserveContent,
-    selectors: [["", "cdkObserveContent", ""]],
+    selectors: [['', 'cdkObserveContent', '']],
     inputs: {
-      disabled: [2, "cdkObserveContentDisabled", "disabled", booleanAttribute],
-      debounce: "debounce"
+      disabled: [2, 'cdkObserveContentDisabled', 'disabled', booleanAttribute],
+      debounce: 'debounce',
     },
     outputs: {
-      event: "cdkObserveContent"
+      event: 'cdkObserveContent',
     },
-    exportAs: ["cdkObserveContent"]
+    exportAs: ['cdkObserveContent'],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkObserveContent, [{
-    type: Directive,
-    args: [{
-      selector: "[cdkObserveContent]",
-      exportAs: "cdkObserveContent"
-    }]
-  }], () => [], {
-    event: [{
-      type: Output,
-      args: ["cdkObserveContent"]
-    }],
-    disabled: [{
-      type: Input,
-      args: [{
-        alias: "cdkObserveContentDisabled",
-        transform: booleanAttribute
-      }]
-    }],
-    debounce: [{
-      type: Input
-    }]
-  });
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      CdkObserveContent,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[cdkObserveContent]',
+              exportAs: 'cdkObserveContent',
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        event: [
+          {
+            type: Output,
+            args: ['cdkObserveContent'],
+          },
+        ],
+        disabled: [
+          {
+            type: Input,
+            args: [
+              {
+                alias: 'cdkObserveContentDisabled',
+                transform: booleanAttribute,
+              },
+            ],
+          },
+        ],
+        debounce: [
+          {
+            type: Input,
+          },
+        ],
+      },
+    );
 })();
 var ObserversModule = class _ObserversModule {
   static ɵfac = function ObserversModule_Factory(__ngFactoryType__) {
@@ -922,28 +1050,37 @@ var ObserversModule = class _ObserversModule {
   static ɵmod = ɵɵdefineNgModule({
     type: _ObserversModule,
     imports: [CdkObserveContent],
-    exports: [CdkObserveContent]
+    exports: [CdkObserveContent],
   });
   static ɵinj = ɵɵdefineInjector({
-    providers: [MutationObserverFactory]
+    providers: [MutationObserverFactory],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ObserversModule, [{
-    type: NgModule,
-    args: [{
-      imports: [CdkObserveContent],
-      exports: [CdkObserveContent],
-      providers: [MutationObserverFactory]
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      ObserversModule,
+      [
+        {
+          type: NgModule,
+          args: [
+            {
+              imports: [CdkObserveContent],
+              exports: [CdkObserveContent],
+              providers: [MutationObserverFactory],
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
 // ../../node_modules/@angular/cdk/fesm2022/a11y-module.mjs
 var InteractivityChecker = class _InteractivityChecker {
   _platform = inject(Platform);
-  constructor() {
-  }
+  constructor() {}
   /**
    * Gets whether an element is disabled.
    *
@@ -951,7 +1088,7 @@ var InteractivityChecker = class _InteractivityChecker {
    * @returns Whether the element is disabled.
    */
   isDisabled(element) {
-    return element.hasAttribute("disabled");
+    return element.hasAttribute('disabled');
   }
   /**
    * Gets whether an element is visible for the purposes of interactivity.
@@ -962,7 +1099,7 @@ var InteractivityChecker = class _InteractivityChecker {
    * @returns Whether the element is visible.
    */
   isVisible(element) {
-    return hasGeometry(element) && getComputedStyle(element).visibility === "visible";
+    return hasGeometry(element) && getComputedStyle(element).visibility === 'visible';
   }
   /**
    * Gets whether an element can be reached via Tab key.
@@ -986,29 +1123,29 @@ var InteractivityChecker = class _InteractivityChecker {
     }
     let nodeName = element.nodeName.toLowerCase();
     let tabIndexValue = getTabIndexValue(element);
-    if (element.hasAttribute("contenteditable")) {
+    if (element.hasAttribute('contenteditable')) {
       return tabIndexValue !== -1;
     }
-    if (nodeName === "iframe" || nodeName === "object") {
+    if (nodeName === 'iframe' || nodeName === 'object') {
       return false;
     }
     if (this._platform.WEBKIT && this._platform.IOS && !isPotentiallyTabbableIOS(element)) {
       return false;
     }
-    if (nodeName === "audio") {
-      if (!element.hasAttribute("controls")) {
+    if (nodeName === 'audio') {
+      if (!element.hasAttribute('controls')) {
         return false;
       }
       return tabIndexValue !== -1;
     }
-    if (nodeName === "video") {
+    if (nodeName === 'video') {
       if (tabIndexValue === -1) {
         return false;
       }
       if (tabIndexValue !== null) {
         return true;
       }
-      return this._platform.FIREFOX || element.hasAttribute("controls");
+      return this._platform.FIREFOX || element.hasAttribute('controls');
     }
     return element.tabIndex >= 0;
   }
@@ -1020,7 +1157,11 @@ var InteractivityChecker = class _InteractivityChecker {
    * @returns Whether the element is focusable.
    */
   isFocusable(element, config) {
-    return isPotentiallyFocusable(element) && !this.isDisabled(element) && (config?.ignoreVisibility || this.isVisible(element));
+    return (
+      isPotentiallyFocusable(element) &&
+      !this.isDisabled(element) &&
+      (config?.ignoreVisibility || this.isVisible(element))
+    );
   }
   static ɵfac = function InteractivityChecker_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _InteractivityChecker)();
@@ -1028,16 +1169,26 @@ var InteractivityChecker = class _InteractivityChecker {
   static ɵprov = ɵɵdefineInjectable({
     token: _InteractivityChecker,
     factory: _InteractivityChecker.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InteractivityChecker, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      InteractivityChecker,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 function getFrameElement(window2) {
   try {
@@ -1047,51 +1198,70 @@ function getFrameElement(window2) {
   }
 }
 function hasGeometry(element) {
-  return !!(element.offsetWidth || element.offsetHeight || typeof element.getClientRects === "function" && element.getClientRects().length);
+  return !!(
+    element.offsetWidth ||
+    element.offsetHeight ||
+    (typeof element.getClientRects === 'function' && element.getClientRects().length)
+  );
 }
 function isNativeFormElement(element) {
   let nodeName = element.nodeName.toLowerCase();
-  return nodeName === "input" || nodeName === "select" || nodeName === "button" || nodeName === "textarea";
+  return (
+    nodeName === 'input' ||
+    nodeName === 'select' ||
+    nodeName === 'button' ||
+    nodeName === 'textarea'
+  );
 }
 function isHiddenInput(element) {
-  return isInputElement(element) && element.type == "hidden";
+  return isInputElement(element) && element.type == 'hidden';
 }
 function isAnchorWithHref(element) {
-  return isAnchorElement(element) && element.hasAttribute("href");
+  return isAnchorElement(element) && element.hasAttribute('href');
 }
 function isInputElement(element) {
-  return element.nodeName.toLowerCase() == "input";
+  return element.nodeName.toLowerCase() == 'input';
 }
 function isAnchorElement(element) {
-  return element.nodeName.toLowerCase() == "a";
+  return element.nodeName.toLowerCase() == 'a';
 }
 function hasValidTabIndex(element) {
-  if (!element.hasAttribute("tabindex") || element.tabIndex === void 0) {
+  if (!element.hasAttribute('tabindex') || element.tabIndex === void 0) {
     return false;
   }
-  let tabIndex = element.getAttribute("tabindex");
+  let tabIndex = element.getAttribute('tabindex');
   return !!(tabIndex && !isNaN(parseInt(tabIndex, 10)));
 }
 function getTabIndexValue(element) {
   if (!hasValidTabIndex(element)) {
     return null;
   }
-  const tabIndex = parseInt(element.getAttribute("tabindex") || "", 10);
+  const tabIndex = parseInt(element.getAttribute('tabindex') || '', 10);
   return isNaN(tabIndex) ? -1 : tabIndex;
 }
 function isPotentiallyTabbableIOS(element) {
   let nodeName = element.nodeName.toLowerCase();
-  let inputType = nodeName === "input" && element.type;
-  return inputType === "text" || inputType === "password" || nodeName === "select" || nodeName === "textarea";
+  let inputType = nodeName === 'input' && element.type;
+  return (
+    inputType === 'text' ||
+    inputType === 'password' ||
+    nodeName === 'select' ||
+    nodeName === 'textarea'
+  );
 }
 function isPotentiallyFocusable(element) {
   if (isHiddenInput(element)) {
     return false;
   }
-  return isNativeFormElement(element) || isAnchorWithHref(element) || element.hasAttribute("contenteditable") || hasValidTabIndex(element);
+  return (
+    isNativeFormElement(element) ||
+    isAnchorWithHref(element) ||
+    element.hasAttribute('contenteditable') ||
+    hasValidTabIndex(element)
+  );
 }
 function getWindow(node) {
-  return node.ownerDocument && node.ownerDocument.defaultView || window;
+  return (node.ownerDocument && node.ownerDocument.defaultView) || window;
 }
 var FocusTrap = class {
   _element;
@@ -1132,11 +1302,11 @@ var FocusTrap = class {
     const startAnchor = this._startAnchor;
     const endAnchor = this._endAnchor;
     if (startAnchor) {
-      startAnchor.removeEventListener("focus", this.startAnchorListener);
+      startAnchor.removeEventListener('focus', this.startAnchorListener);
       startAnchor.remove();
     }
     if (endAnchor) {
-      endAnchor.removeEventListener("focus", this.endAnchorListener);
+      endAnchor.removeEventListener('focus', this.endAnchorListener);
       endAnchor.remove();
     }
     this._startAnchor = this._endAnchor = null;
@@ -1155,11 +1325,11 @@ var FocusTrap = class {
     this._ngZone.runOutsideAngular(() => {
       if (!this._startAnchor) {
         this._startAnchor = this._createAnchor();
-        this._startAnchor.addEventListener("focus", this.startAnchorListener);
+        this._startAnchor.addEventListener('focus', this.startAnchorListener);
       }
       if (!this._endAnchor) {
         this._endAnchor = this._createAnchor();
-        this._endAnchor.addEventListener("focus", this.endAnchorListener);
+        this._endAnchor.addEventListener('focus', this.endAnchorListener);
       }
     });
     if (this._element.parentNode) {
@@ -1207,20 +1377,30 @@ var FocusTrap = class {
    * @returns The boundary element.
    */
   _getRegionBoundary(bound) {
-    const markers = this._element.querySelectorAll(`[cdk-focus-region-${bound}], [cdkFocusRegion${bound}], [cdk-focus-${bound}]`);
-    if (typeof ngDevMode === "undefined" || ngDevMode) {
+    const markers = this._element.querySelectorAll(
+      `[cdk-focus-region-${bound}], [cdkFocusRegion${bound}], [cdk-focus-${bound}]`,
+    );
+    if (typeof ngDevMode === 'undefined' || ngDevMode) {
       for (let i = 0; i < markers.length; i++) {
         if (markers[i].hasAttribute(`cdk-focus-${bound}`)) {
-          console.warn(`Found use of deprecated attribute 'cdk-focus-${bound}', use 'cdkFocusRegion${bound}' instead. The deprecated attribute will be removed in 8.0.0.`, markers[i]);
+          console.warn(
+            `Found use of deprecated attribute 'cdk-focus-${bound}', use 'cdkFocusRegion${bound}' instead. The deprecated attribute will be removed in 8.0.0.`,
+            markers[i],
+          );
         } else if (markers[i].hasAttribute(`cdk-focus-region-${bound}`)) {
-          console.warn(`Found use of deprecated attribute 'cdk-focus-region-${bound}', use 'cdkFocusRegion${bound}' instead. The deprecated attribute will be removed in 8.0.0.`, markers[i]);
+          console.warn(
+            `Found use of deprecated attribute 'cdk-focus-region-${bound}', use 'cdkFocusRegion${bound}' instead. The deprecated attribute will be removed in 8.0.0.`,
+            markers[i],
+          );
         }
       }
     }
-    if (bound == "start") {
+    if (bound == 'start') {
       return markers.length ? markers[0] : this._getFirstTabbableElement(this._element);
     }
-    return markers.length ? markers[markers.length - 1] : this._getLastTabbableElement(this._element);
+    return markers.length
+      ? markers[markers.length - 1]
+      : this._getLastTabbableElement(this._element);
   }
   /**
    * Focuses the element that should be focused when the focus trap is initialized.
@@ -1229,10 +1409,19 @@ var FocusTrap = class {
   focusInitialElement(options) {
     const redirectToElement = this._element.querySelector(`[cdk-focus-initial], [cdkFocusInitial]`);
     if (redirectToElement) {
-      if ((typeof ngDevMode === "undefined" || ngDevMode) && redirectToElement.hasAttribute(`cdk-focus-initial`)) {
-        console.warn(`Found use of deprecated attribute 'cdk-focus-initial', use 'cdkFocusInitial' instead. The deprecated attribute will be removed in 8.0.0`, redirectToElement);
+      if (
+        (typeof ngDevMode === 'undefined' || ngDevMode) &&
+        redirectToElement.hasAttribute(`cdk-focus-initial`)
+      ) {
+        console.warn(
+          `Found use of deprecated attribute 'cdk-focus-initial', use 'cdkFocusInitial' instead. The deprecated attribute will be removed in 8.0.0`,
+          redirectToElement,
+        );
       }
-      if ((typeof ngDevMode === "undefined" || ngDevMode) && !this._checker.isFocusable(redirectToElement)) {
+      if (
+        (typeof ngDevMode === 'undefined' || ngDevMode) &&
+        !this._checker.isFocusable(redirectToElement)
+      ) {
         console.warn(`Element matching '[cdkFocusInitial]' is not focusable.`, redirectToElement);
       }
       if (!this._checker.isFocusable(redirectToElement)) {
@@ -1250,7 +1439,7 @@ var FocusTrap = class {
    * @returns Whether focus was moved successfully.
    */
   focusFirstTabbableElement(options) {
-    const redirectToElement = this._getRegionBoundary("start");
+    const redirectToElement = this._getRegionBoundary('start');
     if (redirectToElement) {
       redirectToElement.focus(options);
     }
@@ -1261,7 +1450,7 @@ var FocusTrap = class {
    * @returns Whether focus was moved successfully.
    */
   focusLastTabbableElement(options) {
-    const redirectToElement = this._getRegionBoundary("end");
+    const redirectToElement = this._getRegionBoundary('end');
     if (redirectToElement) {
       redirectToElement.focus(options);
     }
@@ -1280,7 +1469,10 @@ var FocusTrap = class {
     }
     const children = root.children;
     for (let i = 0; i < children.length; i++) {
-      const tabbableChild = children[i].nodeType === this._document.ELEMENT_NODE ? this._getFirstTabbableElement(children[i]) : null;
+      const tabbableChild =
+        children[i].nodeType === this._document.ELEMENT_NODE
+          ? this._getFirstTabbableElement(children[i])
+          : null;
       if (tabbableChild) {
         return tabbableChild;
       }
@@ -1294,7 +1486,10 @@ var FocusTrap = class {
     }
     const children = root.children;
     for (let i = children.length - 1; i >= 0; i--) {
-      const tabbableChild = children[i].nodeType === this._document.ELEMENT_NODE ? this._getLastTabbableElement(children[i]) : null;
+      const tabbableChild =
+        children[i].nodeType === this._document.ELEMENT_NODE
+          ? this._getLastTabbableElement(children[i])
+          : null;
       if (tabbableChild) {
         return tabbableChild;
       }
@@ -1303,11 +1498,11 @@ var FocusTrap = class {
   }
   /** Creates an anchor element. */
   _createAnchor() {
-    const anchor = this._document.createElement("div");
+    const anchor = this._document.createElement('div');
     this._toggleAnchorTabIndex(this._enabled, anchor);
-    anchor.classList.add("cdk-visually-hidden");
-    anchor.classList.add("cdk-focus-trap-anchor");
-    anchor.setAttribute("aria-hidden", "true");
+    anchor.classList.add('cdk-visually-hidden');
+    anchor.classList.add('cdk-focus-trap-anchor');
+    anchor.setAttribute('aria-hidden', 'true');
     return anchor;
   }
   /**
@@ -1316,7 +1511,7 @@ var FocusTrap = class {
    * @param anchor Anchor on which to toggle the tabindex.
    */
   _toggleAnchorTabIndex(isEnabled, anchor) {
-    isEnabled ? anchor.setAttribute("tabindex", "0") : anchor.removeAttribute("tabindex");
+    isEnabled ? anchor.setAttribute('tabindex', '0') : anchor.removeAttribute('tabindex');
   }
   /**
    * Toggles the`tabindex` of both anchors to either trap Tab focus or allow it to escape.
@@ -1332,7 +1527,7 @@ var FocusTrap = class {
   _executeOnStable(fn) {
     if (this._injector) {
       afterNextRender(fn, {
-        injector: this._injector
+        injector: this._injector,
       });
     } else {
       setTimeout(fn);
@@ -1355,7 +1550,14 @@ var FocusTrapFactory = class _FocusTrapFactory {
    * @returns The created focus trap instance.
    */
   create(element, deferCaptureElements = false) {
-    return new FocusTrap(element, this._checker, this._ngZone, this._document, deferCaptureElements, this._injector);
+    return new FocusTrap(
+      element,
+      this._checker,
+      this._ngZone,
+      this._document,
+      deferCaptureElements,
+      this._injector,
+    );
   }
   static ɵfac = function FocusTrapFactory_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FocusTrapFactory)();
@@ -1363,16 +1565,26 @@ var FocusTrapFactory = class _FocusTrapFactory {
   static ɵprov = ɵɵdefineInjectable({
     token: _FocusTrapFactory,
     factory: _FocusTrapFactory.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FocusTrapFactory, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      FocusTrapFactory,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 var CdkTrapFocus = class _CdkTrapFocus {
   _elementRef = inject(ElementRef);
@@ -1420,8 +1632,13 @@ var CdkTrapFocus = class _CdkTrapFocus {
     }
   }
   ngOnChanges(changes) {
-    const autoCaptureChange = changes["autoCapture"];
-    if (autoCaptureChange && !autoCaptureChange.firstChange && this.autoCapture && this.focusTrap?.hasAttached()) {
+    const autoCaptureChange = changes['autoCapture'];
+    if (
+      autoCaptureChange &&
+      !autoCaptureChange.firstChange &&
+      this.autoCapture &&
+      this.focusTrap?.hasAttached()
+    ) {
       this._captureFocus();
     }
   }
@@ -1434,52 +1651,70 @@ var CdkTrapFocus = class _CdkTrapFocus {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _CdkTrapFocus,
-    selectors: [["", "cdkTrapFocus", ""]],
+    selectors: [['', 'cdkTrapFocus', '']],
     inputs: {
-      enabled: [2, "cdkTrapFocus", "enabled", booleanAttribute],
-      autoCapture: [2, "cdkTrapFocusAutoCapture", "autoCapture", booleanAttribute]
+      enabled: [2, 'cdkTrapFocus', 'enabled', booleanAttribute],
+      autoCapture: [2, 'cdkTrapFocusAutoCapture', 'autoCapture', booleanAttribute],
     },
-    exportAs: ["cdkTrapFocus"],
-    features: [ɵɵNgOnChangesFeature]
+    exportAs: ['cdkTrapFocus'],
+    features: [ɵɵNgOnChangesFeature],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkTrapFocus, [{
-    type: Directive,
-    args: [{
-      selector: "[cdkTrapFocus]",
-      exportAs: "cdkTrapFocus"
-    }]
-  }], () => [], {
-    enabled: [{
-      type: Input,
-      args: [{
-        alias: "cdkTrapFocus",
-        transform: booleanAttribute
-      }]
-    }],
-    autoCapture: [{
-      type: Input,
-      args: [{
-        alias: "cdkTrapFocusAutoCapture",
-        transform: booleanAttribute
-      }]
-    }]
-  });
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      CdkTrapFocus,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[cdkTrapFocus]',
+              exportAs: 'cdkTrapFocus',
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        enabled: [
+          {
+            type: Input,
+            args: [
+              {
+                alias: 'cdkTrapFocus',
+                transform: booleanAttribute,
+              },
+            ],
+          },
+        ],
+        autoCapture: [
+          {
+            type: Input,
+            args: [
+              {
+                alias: 'cdkTrapFocusAutoCapture',
+                transform: booleanAttribute,
+              },
+            ],
+          },
+        ],
+      },
+    );
 })();
-var LIVE_ANNOUNCER_ELEMENT_TOKEN = new InjectionToken("liveAnnouncerElement", {
-  providedIn: "root",
-  factory: LIVE_ANNOUNCER_ELEMENT_TOKEN_FACTORY
+var LIVE_ANNOUNCER_ELEMENT_TOKEN = new InjectionToken('liveAnnouncerElement', {
+  providedIn: 'root',
+  factory: LIVE_ANNOUNCER_ELEMENT_TOKEN_FACTORY,
 });
 function LIVE_ANNOUNCER_ELEMENT_TOKEN_FACTORY() {
   return null;
 }
-var LIVE_ANNOUNCER_DEFAULT_OPTIONS = new InjectionToken("LIVE_ANNOUNCER_DEFAULT_OPTIONS");
+var LIVE_ANNOUNCER_DEFAULT_OPTIONS = new InjectionToken('LIVE_ANNOUNCER_DEFAULT_OPTIONS');
 var uniqueIds = 0;
 var LiveAnnouncer = class _LiveAnnouncer {
   _ngZone = inject(NgZone);
   _defaultOptions = inject(LIVE_ANNOUNCER_DEFAULT_OPTIONS, {
-    optional: true
+    optional: true,
   });
   _liveElement;
   _document = inject(DOCUMENT);
@@ -1488,7 +1723,7 @@ var LiveAnnouncer = class _LiveAnnouncer {
   _currentResolve;
   constructor() {
     const elementToken = inject(LIVE_ANNOUNCER_ELEMENT_TOKEN, {
-      optional: true
+      optional: true,
     });
     this._liveElement = elementToken || this._createLiveElement();
   }
@@ -1496,7 +1731,7 @@ var LiveAnnouncer = class _LiveAnnouncer {
     const defaultOptions = this._defaultOptions;
     let politeness;
     let duration;
-    if (args.length === 1 && typeof args[0] === "number") {
+    if (args.length === 1 && typeof args[0] === 'number') {
       duration = args[0];
     } else {
       [politeness, duration] = args;
@@ -1504,23 +1739,24 @@ var LiveAnnouncer = class _LiveAnnouncer {
     this.clear();
     clearTimeout(this._previousTimeout);
     if (!politeness) {
-      politeness = defaultOptions && defaultOptions.politeness ? defaultOptions.politeness : "polite";
+      politeness =
+        defaultOptions && defaultOptions.politeness ? defaultOptions.politeness : 'polite';
     }
     if (duration == null && defaultOptions) {
       duration = defaultOptions.duration;
     }
-    this._liveElement.setAttribute("aria-live", politeness);
+    this._liveElement.setAttribute('aria-live', politeness);
     if (this._liveElement.id) {
       this._exposeAnnouncerToModals(this._liveElement.id);
     }
     return this._ngZone.runOutsideAngular(() => {
       if (!this._currentPromise) {
-        this._currentPromise = new Promise((resolve) => this._currentResolve = resolve);
+        this._currentPromise = new Promise((resolve) => (this._currentResolve = resolve));
       }
       clearTimeout(this._previousTimeout);
       this._previousTimeout = setTimeout(() => {
         this._liveElement.textContent = message;
-        if (typeof duration === "number") {
+        if (typeof duration === 'number') {
           this._previousTimeout = setTimeout(() => this.clear(), duration);
         }
         this._currentResolve?.();
@@ -1536,7 +1772,7 @@ var LiveAnnouncer = class _LiveAnnouncer {
    */
   clear() {
     if (this._liveElement) {
-      this._liveElement.textContent = "";
+      this._liveElement.textContent = '';
     }
   }
   ngOnDestroy() {
@@ -1547,16 +1783,16 @@ var LiveAnnouncer = class _LiveAnnouncer {
     this._currentPromise = this._currentResolve = void 0;
   }
   _createLiveElement() {
-    const elementClass = "cdk-live-announcer-element";
+    const elementClass = 'cdk-live-announcer-element';
     const previousElements = this._document.getElementsByClassName(elementClass);
-    const liveEl = this._document.createElement("div");
+    const liveEl = this._document.createElement('div');
     for (let i = 0; i < previousElements.length; i++) {
       previousElements[i].remove();
     }
     liveEl.classList.add(elementClass);
-    liveEl.classList.add("cdk-visually-hidden");
-    liveEl.setAttribute("aria-atomic", "true");
-    liveEl.setAttribute("aria-live", "polite");
+    liveEl.classList.add('cdk-visually-hidden');
+    liveEl.setAttribute('aria-atomic', 'true');
+    liveEl.setAttribute('aria-live', 'polite');
     liveEl.id = `cdk-live-announcer-${uniqueIds++}`;
     this._document.body.appendChild(liveEl);
     return liveEl;
@@ -1567,14 +1803,16 @@ var LiveAnnouncer = class _LiveAnnouncer {
    * pointing the `aria-owns` of all modals to the live announcer element.
    */
   _exposeAnnouncerToModals(id) {
-    const modals = this._document.querySelectorAll('body > .cdk-overlay-container [aria-modal="true"]');
+    const modals = this._document.querySelectorAll(
+      'body > .cdk-overlay-container [aria-modal="true"]',
+    );
     for (let i = 0; i < modals.length; i++) {
       const modal = modals[i];
-      const ariaOwns = modal.getAttribute("aria-owns");
+      const ariaOwns = modal.getAttribute('aria-owns');
       if (!ariaOwns) {
-        modal.setAttribute("aria-owns", id);
+        modal.setAttribute('aria-owns', id);
       } else if (ariaOwns.indexOf(id) === -1) {
-        modal.setAttribute("aria-owns", ariaOwns + " " + id);
+        modal.setAttribute('aria-owns', ariaOwns + ' ' + id);
       }
     }
   }
@@ -1584,16 +1822,26 @@ var LiveAnnouncer = class _LiveAnnouncer {
   static ɵprov = ɵɵdefineInjectable({
     token: _LiveAnnouncer,
     factory: _LiveAnnouncer.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LiveAnnouncer, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      LiveAnnouncer,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 var CdkAriaLive = class _CdkAriaLive {
   _elementRef = inject(ElementRef);
@@ -1605,8 +1853,8 @@ var CdkAriaLive = class _CdkAriaLive {
     return this._politeness;
   }
   set politeness(value) {
-    this._politeness = value === "off" || value === "assertive" ? value : "polite";
-    if (this._politeness === "off") {
+    this._politeness = value === 'off' || value === 'assertive' ? value : 'polite';
+    if (this._politeness === 'off') {
       if (this._subscription) {
         this._subscription.unsubscribe();
         this._subscription = null;
@@ -1623,7 +1871,7 @@ var CdkAriaLive = class _CdkAriaLive {
       });
     }
   }
-  _politeness = "polite";
+  _politeness = 'polite';
   /** Time in milliseconds after which to clear out the announcer element. */
   duration;
   _previousAnnouncedText;
@@ -1641,41 +1889,55 @@ var CdkAriaLive = class _CdkAriaLive {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _CdkAriaLive,
-    selectors: [["", "cdkAriaLive", ""]],
+    selectors: [['', 'cdkAriaLive', '']],
     inputs: {
-      politeness: [0, "cdkAriaLive", "politeness"],
-      duration: [0, "cdkAriaLiveDuration", "duration"]
+      politeness: [0, 'cdkAriaLive', 'politeness'],
+      duration: [0, 'cdkAriaLiveDuration', 'duration'],
     },
-    exportAs: ["cdkAriaLive"]
+    exportAs: ['cdkAriaLive'],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkAriaLive, [{
-    type: Directive,
-    args: [{
-      selector: "[cdkAriaLive]",
-      exportAs: "cdkAriaLive"
-    }]
-  }], () => [], {
-    politeness: [{
-      type: Input,
-      args: ["cdkAriaLive"]
-    }],
-    duration: [{
-      type: Input,
-      args: ["cdkAriaLiveDuration"]
-    }]
-  });
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      CdkAriaLive,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[cdkAriaLive]',
+              exportAs: 'cdkAriaLive',
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        politeness: [
+          {
+            type: Input,
+            args: ['cdkAriaLive'],
+          },
+        ],
+        duration: [
+          {
+            type: Input,
+            args: ['cdkAriaLiveDuration'],
+          },
+        ],
+      },
+    );
 })();
 var HighContrastMode;
-(function(HighContrastMode2) {
-  HighContrastMode2[HighContrastMode2["NONE"] = 0] = "NONE";
-  HighContrastMode2[HighContrastMode2["BLACK_ON_WHITE"] = 1] = "BLACK_ON_WHITE";
-  HighContrastMode2[HighContrastMode2["WHITE_ON_BLACK"] = 2] = "WHITE_ON_BLACK";
+(function (HighContrastMode2) {
+  HighContrastMode2[(HighContrastMode2['NONE'] = 0)] = 'NONE';
+  HighContrastMode2[(HighContrastMode2['BLACK_ON_WHITE'] = 1)] = 'BLACK_ON_WHITE';
+  HighContrastMode2[(HighContrastMode2['WHITE_ON_BLACK'] = 2)] = 'WHITE_ON_BLACK';
 })(HighContrastMode || (HighContrastMode = {}));
-var BLACK_ON_WHITE_CSS_CLASS = "cdk-high-contrast-black-on-white";
-var WHITE_ON_BLACK_CSS_CLASS = "cdk-high-contrast-white-on-black";
-var HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS = "cdk-high-contrast-active";
+var BLACK_ON_WHITE_CSS_CLASS = 'cdk-high-contrast-black-on-white';
+var WHITE_ON_BLACK_CSS_CLASS = 'cdk-high-contrast-white-on-black';
+var HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS = 'cdk-high-contrast-active';
 var HighContrastModeDetector = class _HighContrastModeDetector {
   _platform = inject(Platform);
   /**
@@ -1686,37 +1948,45 @@ var HighContrastModeDetector = class _HighContrastModeDetector {
   _document = inject(DOCUMENT);
   _breakpointSubscription;
   constructor() {
-    this._breakpointSubscription = inject(BreakpointObserver).observe("(forced-colors: active)").subscribe(() => {
-      if (this._hasCheckedHighContrastMode) {
-        this._hasCheckedHighContrastMode = false;
-        this._applyBodyHighContrastModeCssClasses();
-      }
-    });
+    this._breakpointSubscription = inject(BreakpointObserver)
+      .observe('(forced-colors: active)')
+      .subscribe(() => {
+        if (this._hasCheckedHighContrastMode) {
+          this._hasCheckedHighContrastMode = false;
+          this._applyBodyHighContrastModeCssClasses();
+        }
+      });
   }
   /** Gets the current high-contrast-mode for the page. */
   getHighContrastMode() {
     if (!this._platform.isBrowser) {
       return HighContrastMode.NONE;
     }
-    const testElement = this._document.createElement("div");
-    testElement.style.backgroundColor = "rgb(1,2,3)";
-    testElement.style.position = "absolute";
+    const testElement = this._document.createElement('div');
+    testElement.style.backgroundColor = 'rgb(1,2,3)';
+    testElement.style.position = 'absolute';
     this._document.body.appendChild(testElement);
     const documentWindow = this._document.defaultView || window;
-    const computedStyle = documentWindow && documentWindow.getComputedStyle ? documentWindow.getComputedStyle(testElement) : null;
-    const computedColor = (computedStyle && computedStyle.backgroundColor || "").replace(/ /g, "");
+    const computedStyle =
+      documentWindow && documentWindow.getComputedStyle
+        ? documentWindow.getComputedStyle(testElement)
+        : null;
+    const computedColor = ((computedStyle && computedStyle.backgroundColor) || '').replace(
+      / /g,
+      '',
+    );
     testElement.remove();
     switch (computedColor) {
       // Pre Windows 11 dark theme.
-      case "rgb(0,0,0)":
+      case 'rgb(0,0,0)':
       // Windows 11 dark themes.
-      case "rgb(45,50,54)":
-      case "rgb(32,32,32)":
+      case 'rgb(45,50,54)':
+      case 'rgb(32,32,32)':
         return HighContrastMode.WHITE_ON_BLACK;
       // Pre Windows 11 light theme.
-      case "rgb(255,255,255)":
+      case 'rgb(255,255,255)':
       // Windows 11 light theme.
-      case "rgb(255,250,239)":
+      case 'rgb(255,250,239)':
         return HighContrastMode.BLACK_ON_WHITE;
     }
     return HighContrastMode.NONE;
@@ -1728,7 +1998,11 @@ var HighContrastModeDetector = class _HighContrastModeDetector {
   _applyBodyHighContrastModeCssClasses() {
     if (!this._hasCheckedHighContrastMode && this._platform.isBrowser && this._document.body) {
       const bodyClasses = this._document.body.classList;
-      bodyClasses.remove(HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS, BLACK_ON_WHITE_CSS_CLASS, WHITE_ON_BLACK_CSS_CLASS);
+      bodyClasses.remove(
+        HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS,
+        BLACK_ON_WHITE_CSS_CLASS,
+        WHITE_ON_BLACK_CSS_CLASS,
+      );
       this._hasCheckedHighContrastMode = true;
       const mode = this.getHighContrastMode();
       if (mode === HighContrastMode.BLACK_ON_WHITE) {
@@ -1744,16 +2018,26 @@ var HighContrastModeDetector = class _HighContrastModeDetector {
   static ɵprov = ɵɵdefineInjectable({
     token: _HighContrastModeDetector,
     factory: _HighContrastModeDetector.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HighContrastModeDetector, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      HighContrastModeDetector,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 var A11yModule = class _A11yModule {
   constructor() {
@@ -1765,20 +2049,30 @@ var A11yModule = class _A11yModule {
   static ɵmod = ɵɵdefineNgModule({
     type: _A11yModule,
     imports: [ObserversModule, CdkAriaLive, CdkTrapFocus, CdkMonitorFocus],
-    exports: [CdkAriaLive, CdkTrapFocus, CdkMonitorFocus]
+    exports: [CdkAriaLive, CdkTrapFocus, CdkMonitorFocus],
   });
   static ɵinj = ɵɵdefineInjector({
-    imports: [ObserversModule]
+    imports: [ObserversModule],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(A11yModule, [{
-    type: NgModule,
-    args: [{
-      imports: [ObserversModule, CdkAriaLive, CdkTrapFocus, CdkMonitorFocus],
-      exports: [CdkAriaLive, CdkTrapFocus, CdkMonitorFocus]
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      A11yModule,
+      [
+        {
+          type: NgModule,
+          args: [
+            {
+              imports: [ObserversModule, CdkAriaLive, CdkTrapFocus, CdkMonitorFocus],
+              exports: [CdkAriaLive, CdkTrapFocus, CdkMonitorFocus],
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 
 // ../../node_modules/@angular/cdk/fesm2022/typeahead.mjs
@@ -1793,12 +2087,19 @@ var Typeahead = class {
   _selectedItem = new Subject();
   selectedItem = this._selectedItem;
   constructor(initialItems, config) {
-    const typeAheadInterval = typeof config?.debounceInterval === "number" ? config.debounceInterval : DEFAULT_TYPEAHEAD_DEBOUNCE_INTERVAL_MS;
+    const typeAheadInterval =
+      typeof config?.debounceInterval === 'number'
+        ? config.debounceInterval
+        : DEFAULT_TYPEAHEAD_DEBOUNCE_INTERVAL_MS;
     if (config?.skipPredicate) {
       this._skipPredicateFn = config.skipPredicate;
     }
-    if ((typeof ngDevMode === "undefined" || ngDevMode) && initialItems.length && initialItems.some((item) => typeof item.getLabel !== "function")) {
-      throw new Error("KeyManager items in typeahead mode must implement the `getLabel` method.");
+    if (
+      (typeof ngDevMode === 'undefined' || ngDevMode) &&
+      initialItems.length &&
+      initialItems.some((item) => typeof item.getLabel !== 'function')
+    ) {
+      throw new Error('KeyManager items in typeahead mode must implement the `getLabel` method.');
     }
     this.setItems(initialItems);
     this._setupKeyHandler(typeAheadInterval);
@@ -1818,7 +2119,7 @@ var Typeahead = class {
     const keyCode = event.keyCode;
     if (event.key && event.key.length === 1) {
       this._letterKeyStream.next(event.key.toLocaleUpperCase());
-    } else if (keyCode >= A && keyCode <= Z || keyCode >= ZERO && keyCode <= NINE) {
+    } else if ((keyCode >= A && keyCode <= Z) || (keyCode >= ZERO && keyCode <= NINE)) {
       this._letterKeyStream.next(String.fromCharCode(keyCode));
     }
   }
@@ -1831,17 +2132,27 @@ var Typeahead = class {
     this._pressedLetters = [];
   }
   _setupKeyHandler(typeAheadInterval) {
-    this._letterKeyStream.pipe(tap((letter) => this._pressedLetters.push(letter)), debounceTime(typeAheadInterval), filter(() => this._pressedLetters.length > 0), map(() => this._pressedLetters.join("").toLocaleUpperCase())).subscribe((inputString) => {
-      for (let i = 1; i < this._items.length + 1; i++) {
-        const index = (this._selectedItemIndex + i) % this._items.length;
-        const item = this._items[index];
-        if (!this._skipPredicateFn?.(item) && item.getLabel?.().toLocaleUpperCase().trim().indexOf(inputString) === 0) {
-          this._selectedItem.next(item);
-          break;
+    this._letterKeyStream
+      .pipe(
+        tap((letter) => this._pressedLetters.push(letter)),
+        debounceTime(typeAheadInterval),
+        filter(() => this._pressedLetters.length > 0),
+        map(() => this._pressedLetters.join('').toLocaleUpperCase()),
+      )
+      .subscribe((inputString) => {
+        for (let i = 1; i < this._items.length + 1; i++) {
+          const index = (this._selectedItemIndex + i) % this._items.length;
+          const item = this._items[index];
+          if (
+            !this._skipPredicateFn?.(item) &&
+            item.getLabel?.().toLocaleUpperCase().trim().indexOf(inputString) === 0
+          ) {
+            this._selectedItem.next(item);
+            break;
+          }
         }
-      }
-      this._pressedLetters = [];
-    });
+        this._pressedLetters = [];
+      });
   }
 };
 
@@ -1865,7 +2176,7 @@ var TreeKeyManager = class {
    * The orientation that the tree is laid out in. In `rtl` mode, the behavior of Left and
    * Right arrow are switched.
    */
-  _horizontalOrientation = "ltr";
+  _horizontalOrientation = 'ltr';
   /**
    * Predicate function that can be used to check whether an item should be skipped
    * by the key manager.
@@ -1933,7 +2244,7 @@ var TreeKeyManager = class {
       this._items = items;
       this._initializeFocus();
     }
-    if (typeof config.shouldActivationFollowFocus === "boolean") {
+    if (typeof config.shouldActivationFollowFocus === 'boolean') {
       this._shouldActivationFollowFocus = config.shouldActivationFollowFocus;
     }
     if (config.horizontalOrientation) {
@@ -1945,7 +2256,7 @@ var TreeKeyManager = class {
     if (config.trackBy) {
       this._trackByFn = config.trackBy;
     }
-    if (typeof config.typeAheadDebounceInterval !== "undefined") {
+    if (typeof config.typeAheadDebounceInterval !== 'undefined') {
       this._setTypeAhead(config.typeAheadDebounceInterval);
     }
   }
@@ -1964,32 +2275,36 @@ var TreeKeyManager = class {
   onKeydown(event) {
     const key = event.key;
     switch (key) {
-      case "Tab":
+      case 'Tab':
         return;
-      case "ArrowDown":
+      case 'ArrowDown':
         this._focusNextItem();
         break;
-      case "ArrowUp":
+      case 'ArrowUp':
         this._focusPreviousItem();
         break;
-      case "ArrowRight":
-        this._horizontalOrientation === "rtl" ? this._collapseCurrentItem() : this._expandCurrentItem();
+      case 'ArrowRight':
+        this._horizontalOrientation === 'rtl'
+          ? this._collapseCurrentItem()
+          : this._expandCurrentItem();
         break;
-      case "ArrowLeft":
-        this._horizontalOrientation === "rtl" ? this._expandCurrentItem() : this._collapseCurrentItem();
+      case 'ArrowLeft':
+        this._horizontalOrientation === 'rtl'
+          ? this._expandCurrentItem()
+          : this._collapseCurrentItem();
         break;
-      case "Home":
+      case 'Home':
         this._focusFirstItem();
         break;
-      case "End":
+      case 'End':
         this._focusLastItem();
         break;
-      case "Enter":
-      case " ":
+      case 'Enter':
+      case ' ':
         this._activateCurrentItem();
         break;
       default:
-        if (event.key === "*") {
+        if (event.key === '*') {
           this._expandAllItemsAtCurrentItemLevel();
           break;
         }
@@ -2025,12 +2340,18 @@ var TreeKeyManager = class {
   }
   focusItem(itemOrIndex, options = {}) {
     options.emitChangeEvent ??= true;
-    let index = typeof itemOrIndex === "number" ? itemOrIndex : this._items.findIndex((item) => this._trackByFn(item) === this._trackByFn(itemOrIndex));
+    let index =
+      typeof itemOrIndex === 'number'
+        ? itemOrIndex
+        : this._items.findIndex((item) => this._trackByFn(item) === this._trackByFn(itemOrIndex));
     if (index < 0 || index >= this._items.length) {
       return;
     }
     const activeItem = this._items[index];
-    if (this._activeItem !== null && this._trackByFn(activeItem) === this._trackByFn(this._activeItem)) {
+    if (
+      this._activeItem !== null &&
+      this._trackByFn(activeItem) === this._trackByFn(this._activeItem)
+    ) {
       return;
     }
     const previousActiveItem = this._activeItem;
@@ -2051,7 +2372,9 @@ var TreeKeyManager = class {
     if (!activeItem) {
       return;
     }
-    const newIndex = newItems.findIndex((item) => this._trackByFn(item) === this._trackByFn(activeItem));
+    const newIndex = newItems.findIndex(
+      (item) => this._trackByFn(item) === this._trackByFn(activeItem),
+    );
     if (newIndex > -1 && newIndex !== this._activeItemIndex) {
       this._activeItemIndex = newIndex;
       this._typeahead?.setCurrentSelectedItemIndex(newIndex);
@@ -2059,8 +2382,8 @@ var TreeKeyManager = class {
   }
   _setTypeAhead(debounceInterval) {
     this._typeahead = new Typeahead(this._items, {
-      debounceInterval: typeof debounceInterval === "number" ? debounceInterval : void 0,
-      skipPredicate: (item) => this._skipPredicateFn(item)
+      debounceInterval: typeof debounceInterval === 'number' ? debounceInterval : void 0,
+      skipPredicate: (item) => this._skipPredicateFn(item),
     });
     this._typeaheadSubscription = this._typeahead.selectedItem.subscribe((item) => {
       this.focusItem(item);
@@ -2109,23 +2432,27 @@ var TreeKeyManager = class {
     if (!this._isCurrentItemExpanded()) {
       this._activeItem.expand();
     } else {
-      coerceObservable(this._activeItem.getChildren()).pipe(take(1)).subscribe((children) => {
-        const firstChild = children.find((child) => !this._skipPredicateFn(child));
-        if (!firstChild) {
-          return;
-        }
-        this.focusItem(firstChild);
-      });
+      coerceObservable(this._activeItem.getChildren())
+        .pipe(take(1))
+        .subscribe((children) => {
+          const firstChild = children.find((child) => !this._skipPredicateFn(child));
+          if (!firstChild) {
+            return;
+          }
+          this.focusItem(firstChild);
+        });
     }
   }
   _isCurrentItemExpanded() {
     if (!this._activeItem) {
       return false;
     }
-    return typeof this._activeItem.isExpanded === "boolean" ? this._activeItem.isExpanded : this._activeItem.isExpanded();
+    return typeof this._activeItem.isExpanded === 'boolean'
+      ? this._activeItem.isExpanded
+      : this._activeItem.isExpanded();
   }
   _isItemDisabled(item) {
-    return typeof item.isDisabled === "boolean" ? item.isDisabled : item.isDisabled?.();
+    return typeof item.isDisabled === 'boolean' ? item.isDisabled : item.isDisabled?.();
   }
   /** For all items that are the same level as the current item, we expand those items. */
   _expandAllItemsAtCurrentItemLevel() {
@@ -2152,13 +2479,13 @@ var TreeKeyManager = class {
 function TREE_KEY_MANAGER_FACTORY() {
   return (items, options) => new TreeKeyManager(items, options);
 }
-var TREE_KEY_MANAGER = new InjectionToken("tree-key-manager", {
-  providedIn: "root",
-  factory: TREE_KEY_MANAGER_FACTORY
+var TREE_KEY_MANAGER = new InjectionToken('tree-key-manager', {
+  providedIn: 'root',
+  factory: TREE_KEY_MANAGER_FACTORY,
 });
 
 // ../../node_modules/@angular/cdk/fesm2022/a11y.mjs
-var ID_DELIMITER = " ";
+var ID_DELIMITER = ' ';
 function addAriaReferencedId(el, attr, id) {
   const ids = getAriaReferenceIds(el, attr);
   id = id.trim();
@@ -2182,8 +2509,8 @@ function getAriaReferenceIds(el, attr) {
   const attrValue = el.getAttribute(attr);
   return attrValue?.match(/\S+/g) ?? [];
 }
-var CDK_DESCRIBEDBY_ID_PREFIX = "cdk-describedby-message";
-var CDK_DESCRIBEDBY_HOST_ATTRIBUTE = "cdk-describedby-host";
+var CDK_DESCRIBEDBY_ID_PREFIX = 'cdk-describedby-message';
+var CDK_DESCRIBEDBY_HOST_ATTRIBUTE = 'cdk-describedby-host';
 var nextId = 0;
 var AriaDescriber = class _AriaDescriber {
   _platform = inject(Platform);
@@ -2196,18 +2523,18 @@ var AriaDescriber = class _AriaDescriber {
   _id = `${nextId++}`;
   constructor() {
     inject(_CdkPrivateStyleLoader).load(_VisuallyHiddenLoader);
-    this._id = inject(APP_ID) + "-" + nextId++;
+    this._id = inject(APP_ID) + '-' + nextId++;
   }
   describe(hostElement, message, role) {
     if (!this._canBeDescribed(hostElement, message)) {
       return;
     }
     const key = getKey(message, role);
-    if (typeof message !== "string") {
+    if (typeof message !== 'string') {
       setMessageId(message, this._id);
       this._messageRegistry.set(key, {
         messageElement: message,
-        referenceCount: 0
+        referenceCount: 0,
       });
     } else if (!this._messageRegistry.has(key)) {
       this._createMessageElement(message, role);
@@ -2224,7 +2551,7 @@ var AriaDescriber = class _AriaDescriber {
     if (this._isElementDescribedByMessage(hostElement, key)) {
       this._removeMessageReference(hostElement, key);
     }
-    if (typeof message === "string") {
+    if (typeof message === 'string') {
       const registeredMessage = this._messageRegistry.get(key);
       if (registeredMessage && registeredMessage.referenceCount === 0) {
         this._deleteMessageElement(key);
@@ -2237,7 +2564,9 @@ var AriaDescriber = class _AriaDescriber {
   }
   /** Unregisters all created message elements and removes the message container. */
   ngOnDestroy() {
-    const describedElements = this._document.querySelectorAll(`[${CDK_DESCRIBEDBY_HOST_ATTRIBUTE}="${this._id}"]`);
+    const describedElements = this._document.querySelectorAll(
+      `[${CDK_DESCRIBEDBY_HOST_ATTRIBUTE}="${this._id}"]`,
+    );
     for (let i = 0; i < describedElements.length; i++) {
       this._removeCdkDescribedByReferenceIds(describedElements[i]);
       describedElements[i].removeAttribute(CDK_DESCRIBEDBY_HOST_ATTRIBUTE);
@@ -2251,17 +2580,17 @@ var AriaDescriber = class _AriaDescriber {
    * as its content and adds it to the message registry.
    */
   _createMessageElement(message, role) {
-    const messageElement = this._document.createElement("div");
+    const messageElement = this._document.createElement('div');
     setMessageId(messageElement, this._id);
     messageElement.textContent = message;
     if (role) {
-      messageElement.setAttribute("role", role);
+      messageElement.setAttribute('role', role);
     }
     this._createMessagesContainer();
     this._messagesContainer.appendChild(messageElement);
     this._messageRegistry.set(getKey(message, role), {
       messageElement,
-      referenceCount: 0
+      referenceCount: 0,
     });
   }
   /** Deletes the message element from the global messages container. */
@@ -2274,25 +2603,29 @@ var AriaDescriber = class _AriaDescriber {
     if (this._messagesContainer) {
       return;
     }
-    const containerClassName = "cdk-describedby-message-container";
-    const serverContainers = this._document.querySelectorAll(`.${containerClassName}[platform="server"]`);
+    const containerClassName = 'cdk-describedby-message-container';
+    const serverContainers = this._document.querySelectorAll(
+      `.${containerClassName}[platform="server"]`,
+    );
     for (let i = 0; i < serverContainers.length; i++) {
       serverContainers[i].remove();
     }
-    const messagesContainer = this._document.createElement("div");
-    messagesContainer.style.visibility = "hidden";
+    const messagesContainer = this._document.createElement('div');
+    messagesContainer.style.visibility = 'hidden';
     messagesContainer.classList.add(containerClassName);
-    messagesContainer.classList.add("cdk-visually-hidden");
+    messagesContainer.classList.add('cdk-visually-hidden');
     if (!this._platform.isBrowser) {
-      messagesContainer.setAttribute("platform", "server");
+      messagesContainer.setAttribute('platform', 'server');
     }
     this._document.body.appendChild(messagesContainer);
     this._messagesContainer = messagesContainer;
   }
   /** Removes all cdk-describedby messages that are hosted through the element. */
   _removeCdkDescribedByReferenceIds(element) {
-    const originalReferenceIds = getAriaReferenceIds(element, "aria-describedby").filter((id) => id.indexOf(CDK_DESCRIBEDBY_ID_PREFIX) != 0);
-    element.setAttribute("aria-describedby", originalReferenceIds.join(" "));
+    const originalReferenceIds = getAriaReferenceIds(element, 'aria-describedby').filter(
+      (id) => id.indexOf(CDK_DESCRIBEDBY_ID_PREFIX) != 0,
+    );
+    element.setAttribute('aria-describedby', originalReferenceIds.join(' '));
   }
   /**
    * Adds a message reference to the element using aria-describedby and increments the registered
@@ -2300,7 +2633,7 @@ var AriaDescriber = class _AriaDescriber {
    */
   _addMessageReference(element, key) {
     const registeredMessage = this._messageRegistry.get(key);
-    addAriaReferencedId(element, "aria-describedby", registeredMessage.messageElement.id);
+    addAriaReferencedId(element, 'aria-describedby', registeredMessage.messageElement.id);
     element.setAttribute(CDK_DESCRIBEDBY_HOST_ATTRIBUTE, this._id);
     registeredMessage.referenceCount++;
   }
@@ -2311,12 +2644,12 @@ var AriaDescriber = class _AriaDescriber {
   _removeMessageReference(element, key) {
     const registeredMessage = this._messageRegistry.get(key);
     registeredMessage.referenceCount--;
-    removeAriaReferencedId(element, "aria-describedby", registeredMessage.messageElement.id);
+    removeAriaReferencedId(element, 'aria-describedby', registeredMessage.messageElement.id);
     element.removeAttribute(CDK_DESCRIBEDBY_HOST_ATTRIBUTE);
   }
   /** Returns true if the element has been described by the provided message ID. */
   _isElementDescribedByMessage(element, key) {
-    const referenceIds = getAriaReferenceIds(element, "aria-describedby");
+    const referenceIds = getAriaReferenceIds(element, 'aria-describedby');
     const registeredMessage = this._messageRegistry.get(key);
     const messageId = registeredMessage && registeredMessage.messageElement.id;
     return !!messageId && referenceIds.indexOf(messageId) != -1;
@@ -2326,11 +2659,11 @@ var AriaDescriber = class _AriaDescriber {
     if (!this._isElementNode(element)) {
       return false;
     }
-    if (message && typeof message === "object") {
+    if (message && typeof message === 'object') {
       return true;
     }
-    const trimmedMessage = message == null ? "" : `${message}`.trim();
-    const ariaLabel = element.getAttribute("aria-label");
+    const trimmedMessage = message == null ? '' : `${message}`.trim();
+    const ariaLabel = element.getAttribute('aria-label');
     return trimmedMessage ? !ariaLabel || ariaLabel.trim() !== trimmedMessage : false;
   }
   /** Checks whether a node is an Element node. */
@@ -2343,19 +2676,29 @@ var AriaDescriber = class _AriaDescriber {
   static ɵprov = ɵɵdefineInjectable({
     token: _AriaDescriber,
     factory: _AriaDescriber.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AriaDescriber, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      AriaDescriber,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 function getKey(message, role) {
-  return typeof message === "string" ? `${role || ""}/${message}` : message;
+  return typeof message === 'string' ? `${role || ''}/${message}` : message;
 }
 function setMessageId(element, serviceId) {
   if (!element.id) {
@@ -2377,7 +2720,16 @@ var ConfigurableFocusTrap = class extends FocusTrap {
       this._focusTrapManager.deregister(this);
     }
   }
-  constructor(_element, _checker, _ngZone, _document, _focusTrapManager, _inertStrategy, config, injector) {
+  constructor(
+    _element,
+    _checker,
+    _ngZone,
+    _document,
+    _focusTrapManager,
+    _inertStrategy,
+    config,
+    injector,
+  ) {
     super(_element, _checker, _ngZone, _document, config.defer, injector);
     this._focusTrapManager = _focusTrapManager;
     this._inertStrategy = _inertStrategy;
@@ -2405,11 +2757,11 @@ var EventListenerFocusTrapInertStrategy = class {
   /** Adds a document event listener that keeps focus inside the FocusTrap. */
   preventFocus(focusTrap) {
     if (this._listener) {
-      focusTrap._document.removeEventListener("focus", this._listener, true);
+      focusTrap._document.removeEventListener('focus', this._listener, true);
     }
     this._listener = (e) => this._trapFocus(focusTrap, e);
     focusTrap._ngZone.runOutsideAngular(() => {
-      focusTrap._document.addEventListener("focus", this._listener, true);
+      focusTrap._document.addEventListener('focus', this._listener, true);
     });
   }
   /** Removes the event listener added in preventFocus. */
@@ -2417,7 +2769,7 @@ var EventListenerFocusTrapInertStrategy = class {
     if (!this._listener) {
       return;
     }
-    focusTrap._document.removeEventListener("focus", this._listener, true);
+    focusTrap._document.removeEventListener('focus', this._listener, true);
     this._listener = null;
   }
   /**
@@ -2430,7 +2782,7 @@ var EventListenerFocusTrapInertStrategy = class {
   _trapFocus(focusTrap, event) {
     const target = event.target;
     const focusTrapRoot = focusTrap._element;
-    if (target && !focusTrapRoot.contains(target) && !target.closest?.("div.cdk-overlay-pane")) {
+    if (target && !focusTrapRoot.contains(target) && !target.closest?.('div.cdk-overlay-pane')) {
       setTimeout(() => {
         if (focusTrap.enabled && !focusTrapRoot.contains(focusTrap._document.activeElement)) {
           focusTrap.focusFirstTabbableElement();
@@ -2439,7 +2791,7 @@ var EventListenerFocusTrapInertStrategy = class {
     }
   }
 };
-var FOCUS_TRAP_INERT_STRATEGY = new InjectionToken("FOCUS_TRAP_INERT_STRATEGY");
+var FOCUS_TRAP_INERT_STRATEGY = new InjectionToken('FOCUS_TRAP_INERT_STRATEGY');
 var FocusTrapManager = class _FocusTrapManager {
   // A stack of the FocusTraps on the page. Only the FocusTrap at the
   // top of the stack is active.
@@ -2478,16 +2830,26 @@ var FocusTrapManager = class _FocusTrapManager {
   static ɵprov = ɵɵdefineInjectable({
     token: _FocusTrapManager,
     factory: _FocusTrapManager.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FocusTrapManager, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      FocusTrapManager,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var ConfigurableFocusTrapFactory = class _ConfigurableFocusTrapFactory {
   _checker = inject(InteractivityChecker);
@@ -2498,22 +2860,34 @@ var ConfigurableFocusTrapFactory = class _ConfigurableFocusTrapFactory {
   _injector = inject(Injector);
   constructor() {
     const inertStrategy = inject(FOCUS_TRAP_INERT_STRATEGY, {
-      optional: true
+      optional: true,
     });
     this._inertStrategy = inertStrategy || new EventListenerFocusTrapInertStrategy();
   }
-  create(element, config = {
-    defer: false
-  }) {
+  create(
+    element,
+    config = {
+      defer: false,
+    },
+  ) {
     let configObject;
-    if (typeof config === "boolean") {
+    if (typeof config === 'boolean') {
       configObject = {
-        defer: config
+        defer: config,
       };
     } else {
       configObject = config;
     }
-    return new ConfigurableFocusTrap(element, this._checker, this._ngZone, this._document, this._focusTrapManager, this._inertStrategy, configObject, this._injector);
+    return new ConfigurableFocusTrap(
+      element,
+      this._checker,
+      this._ngZone,
+      this._document,
+      this._focusTrapManager,
+      this._inertStrategy,
+      configObject,
+      this._injector,
+    );
   }
   static ɵfac = function ConfigurableFocusTrapFactory_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ConfigurableFocusTrapFactory)();
@@ -2521,28 +2895,38 @@ var ConfigurableFocusTrapFactory = class _ConfigurableFocusTrapFactory {
   static ɵprov = ɵɵdefineInjectable({
     token: _ConfigurableFocusTrapFactory,
     factory: _ConfigurableFocusTrapFactory.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ConfigurableFocusTrapFactory, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      ConfigurableFocusTrapFactory,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 
 // ../../node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-input.mjs
-var _c0 = ["nz-input-group-slot", ""];
-var _c1 = ["*"];
+var _c0 = ['nz-input-group-slot', ''];
+var _c1 = ['*'];
 function NzInputGroupSlotComponent_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "nz-icon", 0);
+    ɵɵelement(0, 'nz-icon', 0);
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
-    ɵɵproperty("nzType", ctx_r0.icon);
+    ɵɵproperty('nzType', ctx_r0.icon);
   }
 }
 function NzInputGroupSlotComponent_ng_container_1_Template(rf, ctx) {
@@ -2559,57 +2943,96 @@ function NzInputGroupSlotComponent_ng_container_1_Template(rf, ctx) {
 }
 function NzInputGroupComponent_Conditional_0_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "span", 3);
+    ɵɵelement(0, 'span', 3);
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext(2);
-    ɵɵproperty("icon", ctx_r0.nzAddOnBeforeIcon)("template", ctx_r0.nzAddOnBefore);
+    ɵɵproperty('icon', ctx_r0.nzAddOnBeforeIcon)('template', ctx_r0.nzAddOnBefore);
   }
 }
-function NzInputGroupComponent_Conditional_0_Conditional_2_ng_template_1_Template(rf, ctx) {
-}
+function NzInputGroupComponent_Conditional_0_Conditional_2_ng_template_1_Template(rf, ctx) {}
 function NzInputGroupComponent_Conditional_0_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "span", 6);
-    ɵɵtemplate(1, NzInputGroupComponent_Conditional_0_Conditional_2_ng_template_1_Template, 0, 0, "ng-template", 5);
+    ɵɵelementStart(0, 'span', 6);
+    ɵɵtemplate(
+      1,
+      NzInputGroupComponent_Conditional_0_Conditional_2_ng_template_1_Template,
+      0,
+      0,
+      'ng-template',
+      5,
+    );
     ɵɵelementEnd();
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext(2);
     const affixTemplate_r2 = ɵɵreference(3);
     ɵɵclassMap(ctx_r0.affixInGroupStatusCls);
-    ɵɵclassProp("ant-input-affix-wrapper-disabled", ctx_r0.disabled)("ant-input-affix-wrapper-sm", ctx_r0.isSmall)("ant-input-affix-wrapper-lg", ctx_r0.isLarge)("ant-input-affix-wrapper-focused", ctx_r0.focused);
+    ɵɵclassProp('ant-input-affix-wrapper-disabled', ctx_r0.disabled)(
+      'ant-input-affix-wrapper-sm',
+      ctx_r0.isSmall,
+    )('ant-input-affix-wrapper-lg', ctx_r0.isLarge)(
+      'ant-input-affix-wrapper-focused',
+      ctx_r0.focused,
+    );
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", affixTemplate_r2);
+    ɵɵproperty('ngTemplateOutlet', affixTemplate_r2);
   }
 }
-function NzInputGroupComponent_Conditional_0_Conditional_3_ng_template_0_Template(rf, ctx) {
-}
+function NzInputGroupComponent_Conditional_0_Conditional_3_ng_template_0_Template(rf, ctx) {}
 function NzInputGroupComponent_Conditional_0_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NzInputGroupComponent_Conditional_0_Conditional_3_ng_template_0_Template, 0, 0, "ng-template", 5);
+    ɵɵtemplate(
+      0,
+      NzInputGroupComponent_Conditional_0_Conditional_3_ng_template_0_Template,
+      0,
+      0,
+      'ng-template',
+      5,
+    );
   }
   if (rf & 2) {
     ɵɵnextContext(2);
     const contentTemplate_r3 = ɵɵreference(5);
-    ɵɵproperty("ngTemplateOutlet", contentTemplate_r3);
+    ɵɵproperty('ngTemplateOutlet', contentTemplate_r3);
   }
 }
 function NzInputGroupComponent_Conditional_0_Conditional_4_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "span", 3);
+    ɵɵelement(0, 'span', 3);
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext(2);
-    ɵɵproperty("icon", ctx_r0.nzAddOnAfterIcon)("template", ctx_r0.nzAddOnAfter);
+    ɵɵproperty('icon', ctx_r0.nzAddOnAfterIcon)('template', ctx_r0.nzAddOnAfter);
   }
 }
 function NzInputGroupComponent_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "span", 2);
-    ɵɵconditionalCreate(1, NzInputGroupComponent_Conditional_0_Conditional_1_Template, 1, 2, "span", 3);
-    ɵɵconditionalCreate(2, NzInputGroupComponent_Conditional_0_Conditional_2_Template, 2, 11, "span", 4)(3, NzInputGroupComponent_Conditional_0_Conditional_3_Template, 1, 1, null, 5);
-    ɵɵconditionalCreate(4, NzInputGroupComponent_Conditional_0_Conditional_4_Template, 1, 2, "span", 3);
+    ɵɵelementStart(0, 'span', 2);
+    ɵɵconditionalCreate(
+      1,
+      NzInputGroupComponent_Conditional_0_Conditional_1_Template,
+      1,
+      2,
+      'span',
+      3,
+    );
+    ɵɵconditionalCreate(
+      2,
+      NzInputGroupComponent_Conditional_0_Conditional_2_Template,
+      2,
+      11,
+      'span',
+      4,
+    )(3, NzInputGroupComponent_Conditional_0_Conditional_3_Template, 1, 1, null, 5);
+    ɵɵconditionalCreate(
+      4,
+      NzInputGroupComponent_Conditional_0_Conditional_4_Template,
+      1,
+      2,
+      'span',
+      3,
+    );
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -2622,33 +3045,52 @@ function NzInputGroupComponent_Conditional_0_Template(rf, ctx) {
     ɵɵconditional(ctx_r0.nzAddOnAfter || ctx_r0.nzAddOnAfterIcon ? 4 : -1);
   }
 }
-function NzInputGroupComponent_Conditional_1_Conditional_0_ng_template_0_Template(rf, ctx) {
-}
+function NzInputGroupComponent_Conditional_1_Conditional_0_ng_template_0_Template(rf, ctx) {}
 function NzInputGroupComponent_Conditional_1_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NzInputGroupComponent_Conditional_1_Conditional_0_ng_template_0_Template, 0, 0, "ng-template", 5);
+    ɵɵtemplate(
+      0,
+      NzInputGroupComponent_Conditional_1_Conditional_0_ng_template_0_Template,
+      0,
+      0,
+      'ng-template',
+      5,
+    );
   }
   if (rf & 2) {
     ɵɵnextContext(2);
     const affixTemplate_r2 = ɵɵreference(3);
-    ɵɵproperty("ngTemplateOutlet", affixTemplate_r2);
+    ɵɵproperty('ngTemplateOutlet', affixTemplate_r2);
   }
 }
-function NzInputGroupComponent_Conditional_1_Conditional_1_ng_template_0_Template(rf, ctx) {
-}
+function NzInputGroupComponent_Conditional_1_Conditional_1_ng_template_0_Template(rf, ctx) {}
 function NzInputGroupComponent_Conditional_1_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NzInputGroupComponent_Conditional_1_Conditional_1_ng_template_0_Template, 0, 0, "ng-template", 5);
+    ɵɵtemplate(
+      0,
+      NzInputGroupComponent_Conditional_1_Conditional_1_ng_template_0_Template,
+      0,
+      0,
+      'ng-template',
+      5,
+    );
   }
   if (rf & 2) {
     ɵɵnextContext(2);
     const contentTemplate_r3 = ɵɵreference(5);
-    ɵɵproperty("ngTemplateOutlet", contentTemplate_r3);
+    ɵɵproperty('ngTemplateOutlet', contentTemplate_r3);
   }
 }
 function NzInputGroupComponent_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵconditionalCreate(0, NzInputGroupComponent_Conditional_1_Conditional_0_Template, 1, 1, null, 5)(1, NzInputGroupComponent_Conditional_1_Conditional_1_Template, 1, 1, null, 5);
+    ɵɵconditionalCreate(
+      0,
+      NzInputGroupComponent_Conditional_1_Conditional_0_Template,
+      1,
+      1,
+      null,
+      5,
+    )(1, NzInputGroupComponent_Conditional_1_Conditional_1_Template, 1, 1, null, 5);
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
@@ -2657,69 +3099,103 @@ function NzInputGroupComponent_Conditional_1_Template(rf, ctx) {
 }
 function NzInputGroupComponent_ng_template_2_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "span", 7);
+    ɵɵelement(0, 'span', 7);
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext(2);
-    ɵɵproperty("icon", ctx_r0.nzPrefixIcon)("template", ctx_r0.nzPrefix);
+    ɵɵproperty('icon', ctx_r0.nzPrefixIcon)('template', ctx_r0.nzPrefix);
   }
 }
-function NzInputGroupComponent_ng_template_2_ng_template_1_Template(rf, ctx) {
-}
+function NzInputGroupComponent_ng_template_2_ng_template_1_Template(rf, ctx) {}
 function NzInputGroupComponent_ng_template_2_Conditional_2_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "nz-form-item-feedback-icon", 9);
+    ɵɵelement(0, 'nz-form-item-feedback-icon', 9);
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext(3);
-    ɵɵproperty("status", ctx_r0.status);
+    ɵɵproperty('status', ctx_r0.status);
   }
 }
 function NzInputGroupComponent_ng_template_2_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "span", 8);
-    ɵɵconditionalCreate(1, NzInputGroupComponent_ng_template_2_Conditional_2_Conditional_1_Template, 1, 1, "nz-form-item-feedback-icon", 9);
+    ɵɵelementStart(0, 'span', 8);
+    ɵɵconditionalCreate(
+      1,
+      NzInputGroupComponent_ng_template_2_Conditional_2_Conditional_1_Template,
+      1,
+      1,
+      'nz-form-item-feedback-icon',
+      9,
+    );
     ɵɵelementEnd();
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext(2);
-    ɵɵproperty("icon", ctx_r0.nzSuffixIcon)("template", ctx_r0.nzSuffix);
+    ɵɵproperty('icon', ctx_r0.nzSuffixIcon)('template', ctx_r0.nzSuffix);
     ɵɵadvance();
     ɵɵconditional(ctx_r0.isFeedback ? 1 : -1);
   }
 }
 function NzInputGroupComponent_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵconditionalCreate(0, NzInputGroupComponent_ng_template_2_Conditional_0_Template, 1, 2, "span", 7);
-    ɵɵtemplate(1, NzInputGroupComponent_ng_template_2_ng_template_1_Template, 0, 0, "ng-template", 5);
-    ɵɵconditionalCreate(2, NzInputGroupComponent_ng_template_2_Conditional_2_Template, 2, 3, "span", 8);
+    ɵɵconditionalCreate(
+      0,
+      NzInputGroupComponent_ng_template_2_Conditional_0_Template,
+      1,
+      2,
+      'span',
+      7,
+    );
+    ɵɵtemplate(
+      1,
+      NzInputGroupComponent_ng_template_2_ng_template_1_Template,
+      0,
+      0,
+      'ng-template',
+      5,
+    );
+    ɵɵconditionalCreate(
+      2,
+      NzInputGroupComponent_ng_template_2_Conditional_2_Template,
+      2,
+      3,
+      'span',
+      8,
+    );
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
     const contentTemplate_r3 = ɵɵreference(5);
     ɵɵconditional(ctx_r0.nzPrefix || ctx_r0.nzPrefixIcon ? 0 : -1);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", contentTemplate_r3);
+    ɵɵproperty('ngTemplateOutlet', contentTemplate_r3);
     ɵɵadvance();
     ɵɵconditional(ctx_r0.nzSuffix || ctx_r0.nzSuffixIcon || ctx_r0.isFeedback ? 2 : -1);
   }
 }
 function NzInputGroupComponent_ng_template_4_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "span", 10);
-    ɵɵelement(1, "nz-form-item-feedback-icon", 9);
+    ɵɵelementStart(0, 'span', 10);
+    ɵɵelement(1, 'nz-form-item-feedback-icon', 9);
     ɵɵelementEnd();
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext(2);
     ɵɵadvance();
-    ɵɵproperty("status", ctx_r0.status);
+    ɵɵproperty('status', ctx_r0.status);
   }
 }
 function NzInputGroupComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵprojection(0);
-    ɵɵconditionalCreate(1, NzInputGroupComponent_ng_template_4_Conditional_1_Template, 2, 1, "span", 10);
+    ɵɵconditionalCreate(
+      1,
+      NzInputGroupComponent_ng_template_4_Conditional_1_Template,
+      2,
+      1,
+      'span',
+      10,
+    );
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
@@ -2727,24 +3203,24 @@ function NzInputGroupComponent_ng_template_4_Template(rf, ctx) {
     ɵɵconditional(!ctx_r0.isAddOn && !ctx_r0.isAffix && ctx_r0.isFeedback ? 1 : -1);
   }
 }
-var _c2 = ["otpInput"];
+var _c2 = ['otpInput'];
 function NzInputOtpComponent_For_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "input", 2, 0);
-    ɵɵlistener("input", function NzInputOtpComponent_For_1_Template_input_input_0_listener($event) {
+    ɵɵelementStart(0, 'input', 2, 0);
+    ɵɵlistener('input', function NzInputOtpComponent_For_1_Template_input_input_0_listener($event) {
       const $index_r2 = ɵɵrestoreView(_r1).$index;
       const ctx_r2 = ɵɵnextContext();
       return ɵɵresetView(ctx_r2.onInput($index_r2, $event));
-    })("focus", function NzInputOtpComponent_For_1_Template_input_focus_0_listener($event) {
+    })('focus', function NzInputOtpComponent_For_1_Template_input_focus_0_listener($event) {
       ɵɵrestoreView(_r1);
       const ctx_r2 = ɵɵnextContext();
       return ɵɵresetView(ctx_r2.onFocus($event));
-    })("keydown", function NzInputOtpComponent_For_1_Template_input_keydown_0_listener($event) {
+    })('keydown', function NzInputOtpComponent_For_1_Template_input_keydown_0_listener($event) {
       const $index_r2 = ɵɵrestoreView(_r1).$index;
       const ctx_r2 = ɵɵnextContext();
       return ɵɵresetView(ctx_r2.onKeyDown($index_r2, $event));
-    })("paste", function NzInputOtpComponent_For_1_Template_input_paste_0_listener($event) {
+    })('paste', function NzInputOtpComponent_For_1_Template_input_paste_0_listener($event) {
       const $index_r2 = ɵɵrestoreView(_r1).$index;
       const ctx_r2 = ɵɵnextContext();
       return ɵɵresetView(ctx_r2.onPaste($index_r2, $event));
@@ -2754,11 +3230,11 @@ function NzInputOtpComponent_For_1_Template(rf, ctx) {
   if (rf & 2) {
     const item_r4 = ctx.$implicit;
     const ctx_r2 = ɵɵnextContext();
-    ɵɵproperty("nzSize", ctx_r2.nzSize)("formControl", item_r4)("nzStatus", ctx_r2.nzStatus);
+    ɵɵproperty('nzSize', ctx_r2.nzSize)('formControl', item_r4)('nzStatus', ctx_r2.nzStatus);
   }
 }
-var _c3 = [[["textarea", "nz-input", ""]]];
-var _c4 = ["textarea[nz-input]"];
+var _c3 = [[['textarea', 'nz-input', '']]];
+var _c4 = ['textarea[nz-input]'];
 var NzAutosizeDirective = class _NzAutosizeDirective {
   ngZone = inject(NgZone);
   platform = inject(Platform);
@@ -2781,8 +3257,9 @@ var NzAutosizeDirective = class _NzAutosizeDirective {
     });
   }
   set nzAutosize(value) {
-    const isAutoSizeType = (data) => typeof data !== "string" && typeof data !== "boolean" && (!!data.maxRows || !!data.minRows);
-    if (typeof value === "string" || value === true) {
+    const isAutoSizeType = (data) =>
+      typeof data !== 'string' && typeof data !== 'boolean' && (!!data.maxRows || !!data.minRows);
+    if (typeof value === 'string' || value === true) {
       this.autosize = true;
     } else if (isAutoSizeType(value)) {
       this.autosize = true;
@@ -2803,9 +3280,12 @@ var NzAutosizeDirective = class _NzAutosizeDirective {
       return;
     }
     const placeholderText = textarea.placeholder;
-    textarea.classList.add("nz-textarea-autosize-measuring");
-    textarea.placeholder = "";
-    let height = Math.round((textarea.scrollHeight - this.inputGap) / this.cachedLineHeight) * this.cachedLineHeight + this.inputGap;
+    textarea.classList.add('nz-textarea-autosize-measuring');
+    textarea.placeholder = '';
+    let height =
+      Math.round((textarea.scrollHeight - this.inputGap) / this.cachedLineHeight) *
+        this.cachedLineHeight +
+      this.inputGap;
     if (this.maxHeight !== null && height > this.maxHeight) {
       height = this.maxHeight;
     }
@@ -2813,18 +3293,17 @@ var NzAutosizeDirective = class _NzAutosizeDirective {
       height = this.minHeight;
     }
     textarea.style.height = `${height}px`;
-    textarea.classList.remove("nz-textarea-autosize-measuring");
+    textarea.classList.remove('nz-textarea-autosize-measuring');
     textarea.placeholder = placeholderText;
-    if (typeof requestAnimationFrame !== "undefined") {
-      this.ngZone.runOutsideAngular(() => requestAnimationFrame(() => {
-        const {
-          selectionStart,
-          selectionEnd
-        } = textarea;
-        if (!this.destroyed && document.activeElement === textarea) {
-          textarea.setSelectionRange(selectionStart, selectionEnd);
-        }
-      }));
+    if (typeof requestAnimationFrame !== 'undefined') {
+      this.ngZone.runOutsideAngular(() =>
+        requestAnimationFrame(() => {
+          const { selectionStart, selectionEnd } = textarea;
+          if (!this.destroyed && document.activeElement === textarea) {
+            textarea.setSelectionRange(selectionStart, selectionEnd);
+          }
+        }),
+      );
     }
     this.previousValue = value;
     this.previousMinRows = this.minRows;
@@ -2835,14 +3314,14 @@ var NzAutosizeDirective = class _NzAutosizeDirective {
     }
     const textareaClone = this.el.cloneNode(false);
     textareaClone.rows = 1;
-    textareaClone.style.position = "absolute";
-    textareaClone.style.visibility = "hidden";
-    textareaClone.style.border = "none";
-    textareaClone.style.padding = "0";
-    textareaClone.style.height = "";
-    textareaClone.style.minHeight = "";
-    textareaClone.style.maxHeight = "";
-    textareaClone.style.overflow = "hidden";
+    textareaClone.style.position = 'absolute';
+    textareaClone.style.visibility = 'hidden';
+    textareaClone.style.border = 'none';
+    textareaClone.style.padding = '0';
+    textareaClone.style.height = '';
+    textareaClone.style.minHeight = '';
+    textareaClone.style.maxHeight = '';
+    textareaClone.style.overflow = 'hidden';
     this.el.parentNode.appendChild(textareaClone);
     this.cachedLineHeight = textareaClone.clientHeight - this.inputGap;
     this.el.parentNode.removeChild(textareaClone);
@@ -2850,25 +3329,33 @@ var NzAutosizeDirective = class _NzAutosizeDirective {
     this.minHeight = this.setMinHeight();
   }
   setMinHeight() {
-    const minHeight = this.minRows && this.cachedLineHeight ? this.minRows * this.cachedLineHeight + this.inputGap : null;
+    const minHeight =
+      this.minRows && this.cachedLineHeight
+        ? this.minRows * this.cachedLineHeight + this.inputGap
+        : null;
     if (minHeight !== null) {
       this.el.style.minHeight = `${minHeight}px`;
     }
     return minHeight;
   }
   setMaxHeight() {
-    const maxHeight = this.maxRows && this.cachedLineHeight ? this.maxRows * this.cachedLineHeight + this.inputGap : null;
+    const maxHeight =
+      this.maxRows && this.cachedLineHeight
+        ? this.maxRows * this.cachedLineHeight + this.inputGap
+        : null;
     if (maxHeight !== null) {
       this.el.style.maxHeight = `${maxHeight}px`;
     }
     return maxHeight;
   }
-  noopInputHandler() {
-  }
+  noopInputHandler() {}
   ngAfterViewInit() {
     if (this.autosize && this.platform.isBrowser) {
       this.resizeToFitContent();
-      this.resizeService.connect().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => this.resizeToFitContent(true));
+      this.resizeService
+        .connect()
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe(() => this.resizeToFitContent(true));
     }
   }
   ngDoCheck() {
@@ -2881,39 +3368,51 @@ var NzAutosizeDirective = class _NzAutosizeDirective {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _NzAutosizeDirective,
-    selectors: [["textarea", "nzAutosize", ""]],
-    hostAttrs: ["rows", "1"],
+    selectors: [['textarea', 'nzAutosize', '']],
+    hostAttrs: ['rows', '1'],
     hostBindings: function NzAutosizeDirective_HostBindings(rf, ctx) {
       if (rf & 1) {
-        ɵɵlistener("input", function NzAutosizeDirective_input_HostBindingHandler() {
+        ɵɵlistener('input', function NzAutosizeDirective_input_HostBindingHandler() {
           return ctx.noopInputHandler();
         });
       }
     },
     inputs: {
-      nzAutosize: "nzAutosize"
+      nzAutosize: 'nzAutosize',
     },
-    exportAs: ["nzAutosize"]
+    exportAs: ['nzAutosize'],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzAutosizeDirective, [{
-    type: Directive,
-    args: [{
-      selector: "textarea[nzAutosize]",
-      exportAs: "nzAutosize",
-      host: {
-        // Textarea elements that have the directive applied should have a single row by default.
-        // Browsers normally show two rows by default and therefore this limits the minRows binding.
-        rows: "1",
-        "(input)": "noopInputHandler()"
-      }
-    }]
-  }], () => [], {
-    nzAutosize: [{
-      type: Input
-    }]
-  });
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzAutosizeDirective,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: 'textarea[nzAutosize]',
+              exportAs: 'nzAutosize',
+              host: {
+                // Textarea elements that have the directive applied should have a single row by default.
+                // Browsers normally show two rows by default and therefore this limits the minRows binding.
+                rows: '1',
+                '(input)': 'noopInputHandler()',
+              },
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        nzAutosize: [
+          {
+            type: Input,
+          },
+        ],
+      },
+    );
 })();
 var NzInputAddonBeforeDirective = class _NzInputAddonBeforeDirective {
   static ɵfac = function NzInputAddonBeforeDirective_Factory(__ngFactoryType__) {
@@ -2921,16 +3420,26 @@ var NzInputAddonBeforeDirective = class _NzInputAddonBeforeDirective {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _NzInputAddonBeforeDirective,
-    selectors: [["", "nzInputAddonBefore", ""]]
+    selectors: [['', 'nzInputAddonBefore', '']],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputAddonBeforeDirective, [{
-    type: Directive,
-    args: [{
-      selector: "[nzInputAddonBefore]"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputAddonBeforeDirective,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[nzInputAddonBefore]',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var NzInputAddonAfterDirective = class _NzInputAddonAfterDirective {
   static ɵfac = function NzInputAddonAfterDirective_Factory(__ngFactoryType__) {
@@ -2938,16 +3447,26 @@ var NzInputAddonAfterDirective = class _NzInputAddonAfterDirective {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _NzInputAddonAfterDirective,
-    selectors: [["", "nzInputAddonAfter", ""]]
+    selectors: [['', 'nzInputAddonAfter', '']],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputAddonAfterDirective, [{
-    type: Directive,
-    args: [{
-      selector: "[nzInputAddonAfter]"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputAddonAfterDirective,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[nzInputAddonAfter]',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var NzInputPrefixDirective = class _NzInputPrefixDirective {
   static ɵfac = function NzInputPrefixDirective_Factory(__ngFactoryType__) {
@@ -2955,16 +3474,26 @@ var NzInputPrefixDirective = class _NzInputPrefixDirective {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _NzInputPrefixDirective,
-    selectors: [["", "nzInputPrefix", ""]]
+    selectors: [['', 'nzInputPrefix', '']],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputPrefixDirective, [{
-    type: Directive,
-    args: [{
-      selector: "[nzInputPrefix]"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputPrefixDirective,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[nzInputPrefix]',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var NzInputSuffixDirective = class _NzInputSuffixDirective {
   static ɵfac = function NzInputSuffixDirective_Factory(__ngFactoryType__) {
@@ -2972,16 +3501,26 @@ var NzInputSuffixDirective = class _NzInputSuffixDirective {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _NzInputSuffixDirective,
-    selectors: [["", "nzInputSuffix", ""]]
+    selectors: [['', 'nzInputSuffix', '']],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputSuffixDirective, [{
-    type: Directive,
-    args: [{
-      selector: "[nzInputSuffix]"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputSuffixDirective,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[nzInputSuffix]',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var NzInputGroupSlotComponent = class _NzInputGroupSlotComponent {
   icon = null;
@@ -2992,73 +3531,102 @@ var NzInputGroupSlotComponent = class _NzInputGroupSlotComponent {
   };
   static ɵcmp = ɵɵdefineComponent({
     type: _NzInputGroupSlotComponent,
-    selectors: [["", "nz-input-group-slot", ""]],
+    selectors: [['', 'nz-input-group-slot', '']],
     hostVars: 6,
     hostBindings: function NzInputGroupSlotComponent_HostBindings(rf, ctx) {
       if (rf & 2) {
-        ɵɵclassProp("ant-input-group-addon", ctx.type === "addon")("ant-input-prefix", ctx.type === "prefix")("ant-input-suffix", ctx.type === "suffix");
+        ɵɵclassProp('ant-input-group-addon', ctx.type === 'addon')(
+          'ant-input-prefix',
+          ctx.type === 'prefix',
+        )('ant-input-suffix', ctx.type === 'suffix');
       }
     },
     inputs: {
-      icon: "icon",
-      type: "type",
-      template: "template"
+      icon: 'icon',
+      type: 'type',
+      template: 'template',
     },
     attrs: _c0,
     ngContentSelectors: _c1,
     decls: 3,
     vars: 2,
-    consts: [[3, "nzType"], [4, "nzStringTemplateOutlet"]],
+    consts: [
+      [3, 'nzType'],
+      [4, 'nzStringTemplateOutlet'],
+    ],
     template: function NzInputGroupSlotComponent_Template(rf, ctx) {
       if (rf & 1) {
         ɵɵprojectionDef();
-        ɵɵconditionalCreate(0, NzInputGroupSlotComponent_Conditional_0_Template, 1, 1, "nz-icon", 0);
-        ɵɵtemplate(1, NzInputGroupSlotComponent_ng_container_1_Template, 2, 1, "ng-container", 1);
+        ɵɵconditionalCreate(
+          0,
+          NzInputGroupSlotComponent_Conditional_0_Template,
+          1,
+          1,
+          'nz-icon',
+          0,
+        );
+        ɵɵtemplate(1, NzInputGroupSlotComponent_ng_container_1_Template, 2, 1, 'ng-container', 1);
         ɵɵprojection(2);
       }
       if (rf & 2) {
         ɵɵconditional(ctx.icon ? 0 : -1);
         ɵɵadvance();
-        ɵɵproperty("nzStringTemplateOutlet", ctx.template);
+        ɵɵproperty('nzStringTemplateOutlet', ctx.template);
       }
     },
     dependencies: [NzIconModule, NzIconDirective, NzOutletModule, NzStringTemplateOutletDirective],
     encapsulation: 2,
-    changeDetection: 0
+    changeDetection: 0,
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputGroupSlotComponent, [{
-    type: Component,
-    args: [{
-      selector: "[nz-input-group-slot]",
-      encapsulation: ViewEncapsulation.None,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      template: `
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputGroupSlotComponent,
+      [
+        {
+          type: Component,
+          args: [
+            {
+              selector: '[nz-input-group-slot]',
+              encapsulation: ViewEncapsulation.None,
+              changeDetection: ChangeDetectionStrategy.OnPush,
+              template: `
     @if (icon) {
       <nz-icon [nzType]="icon" />
     }
     <ng-container *nzStringTemplateOutlet="template">{{ template }}</ng-container>
     <ng-content></ng-content>
   `,
-      host: {
-        "[class.ant-input-group-addon]": `type === 'addon'`,
-        "[class.ant-input-prefix]": `type === 'prefix'`,
-        "[class.ant-input-suffix]": `type === 'suffix'`
+              host: {
+                '[class.ant-input-group-addon]': `type === 'addon'`,
+                '[class.ant-input-prefix]': `type === 'prefix'`,
+                '[class.ant-input-suffix]': `type === 'suffix'`,
+              },
+              imports: [NzIconModule, NzOutletModule],
+            },
+          ],
+        },
+      ],
+      null,
+      {
+        icon: [
+          {
+            type: Input,
+          },
+        ],
+        type: [
+          {
+            type: Input,
+          },
+        ],
+        template: [
+          {
+            type: Input,
+          },
+        ],
       },
-      imports: [NzIconModule, NzOutletModule]
-    }]
-  }], null, {
-    icon: [{
-      type: Input
-    }],
-    type: [{
-      type: Input
-    }],
-    template: [{
-      type: Input
-    }]
-  });
+    );
 })();
 var NzInputDirective = class _NzInputDirective {
   renderer = inject(Renderer2);
@@ -3066,24 +3634,24 @@ var NzInputDirective = class _NzInputDirective {
   hostView = inject(ViewContainerRef);
   directionality = inject(Directionality);
   compactSize = inject(NZ_SPACE_COMPACT_SIZE, {
-    optional: true
+    optional: true,
   });
   destroyRef = inject(DestroyRef);
   nzFormStatusService = inject(NzFormStatusService, {
-    optional: true
+    optional: true,
   });
   nzFormNoStatusService = inject(NzFormNoStatusService, {
-    optional: true
+    optional: true,
   });
   focusMonitor = inject(FocusMonitor);
   /**
    * @deprecated Will be removed in v21. It is recommended to use `nzVariant` instead.
    */
   nzBorderless = false;
-  nzVariant = "outlined";
-  nzSize = "default";
+  nzVariant = 'outlined';
+  nzSize = 'default';
   nzStepperless = true;
-  nzStatus = "";
+  nzStatus = '';
   get disabled() {
     if (this.ngControl && this.ngControl.disabled !== null) {
       return this.ngControl.disabled;
@@ -3095,62 +3663,89 @@ var NzInputDirective = class _NzInputDirective {
   }
   _disabled = false;
   disabled$ = new Subject();
-  dir = "ltr";
+  dir = 'ltr';
   // status
-  prefixCls = "ant-input";
-  status = "";
+  prefixCls = 'ant-input';
+  status = '';
   statusCls = {};
   hasFeedback = false;
   feedbackRef = null;
   components = [];
   ngControl = inject(NgControl, {
     self: true,
-    optional: true
+    optional: true,
   });
-  focused = signal(false, ...ngDevMode ? [{
-    debugName: "focused"
-  }] : []);
-  finalSize = computed(() => {
-    if (this.compactSize) {
-      return this.compactSize();
-    }
-    return this.size();
-  }, ...ngDevMode ? [{
-    debugName: "finalSize"
-  }] : []);
-  size = signal(this.nzSize, ...ngDevMode ? [{
-    debugName: "size"
-  }] : []);
+  focused = signal(
+    false,
+    ...(ngDevMode
+      ? [
+          {
+            debugName: 'focused',
+          },
+        ]
+      : []),
+  );
+  finalSize = computed(
+    () => {
+      if (this.compactSize) {
+        return this.compactSize();
+      }
+      return this.size();
+    },
+    ...(ngDevMode
+      ? [
+          {
+            debugName: 'finalSize',
+          },
+        ]
+      : []),
+  );
+  size = signal(
+    this.nzSize,
+    ...(ngDevMode
+      ? [
+          {
+            debugName: 'size',
+          },
+        ]
+      : []),
+  );
   constructor() {
     this.destroyRef.onDestroy(() => {
       this.focusMonitor.stopMonitoring(this.elementRef);
     });
   }
   ngOnInit() {
-    this.nzFormStatusService?.formStatusChanges.pipe(distinctUntilChanged((pre, cur) => {
-      return pre.status === cur.status && pre.hasFeedback === cur.hasFeedback;
-    }), takeUntilDestroyed(this.destroyRef)).subscribe(({
-      status,
-      hasFeedback
-    }) => {
-      this.setStatusStyles(status, hasFeedback);
-    });
-    if (this.ngControl) {
-      this.ngControl.statusChanges?.pipe(filter(() => this.ngControl.disabled !== null), takeUntilDestroyed(this.destroyRef)).subscribe(() => {
-        this.disabled$.next(this.ngControl.disabled);
+    this.nzFormStatusService?.formStatusChanges
+      .pipe(
+        distinctUntilChanged((pre, cur) => {
+          return pre.status === cur.status && pre.hasFeedback === cur.hasFeedback;
+        }),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe(({ status, hasFeedback }) => {
+        this.setStatusStyles(status, hasFeedback);
       });
+    if (this.ngControl) {
+      this.ngControl.statusChanges
+        ?.pipe(
+          filter(() => this.ngControl.disabled !== null),
+          takeUntilDestroyed(this.destroyRef),
+        )
+        .subscribe(() => {
+          this.disabled$.next(this.ngControl.disabled);
+        });
     }
     this.dir = this.directionality.value;
     this.directionality.change?.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((direction) => {
       this.dir = direction;
     });
-    this.focusMonitor.monitor(this.elementRef, false).pipe(takeUntilDestroyed(this.destroyRef)).subscribe((origin) => this.focused.set(!!origin));
+    this.focusMonitor
+      .monitor(this.elementRef, false)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((origin) => this.focused.set(!!origin));
   }
-  ngOnChanges({
-    disabled,
-    nzStatus,
-    nzSize
-  }) {
+  ngOnChanges({ disabled, nzStatus, nzSize }) {
     if (disabled) {
       this.disabled$.next(this.disabled);
     }
@@ -3180,8 +3775,9 @@ var NzInputDirective = class _NzInputDirective {
       this.feedbackRef = null;
       return;
     }
-    this.feedbackRef = this.feedbackRef || this.hostView.createComponent(NzFormItemFeedbackIconComponent);
-    this.feedbackRef.location.nativeElement.classList.add("ant-input-suffix");
+    this.feedbackRef =
+      this.feedbackRef || this.hostView.createComponent(NzFormItemFeedbackIconComponent);
+    this.feedbackRef.location.nativeElement.classList.add('ant-input-suffix');
     this.feedbackRef.instance.status = this.status;
     this.feedbackRef.instance.updateIcon();
   }
@@ -3190,84 +3786,132 @@ var NzInputDirective = class _NzInputDirective {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _NzInputDirective,
-    selectors: [["input", "nz-input", ""], ["textarea", "nz-input", ""]],
-    hostAttrs: [1, "ant-input"],
+    selectors: [
+      ['input', 'nz-input', ''],
+      ['textarea', 'nz-input', ''],
+    ],
+    hostAttrs: [1, 'ant-input'],
     hostVars: 19,
     hostBindings: function NzInputDirective_HostBindings(rf, ctx) {
       if (rf & 2) {
-        ɵɵattribute("disabled", ctx.disabled || null);
-        ɵɵclassProp("ant-input-disabled", ctx.disabled)("ant-input-borderless", ctx.nzVariant === "borderless" || ctx.nzVariant === "outlined" && ctx.nzBorderless)("ant-input-filled", ctx.nzVariant === "filled")("ant-input-underlined", ctx.nzVariant === "underlined")("ant-input-lg", ctx.finalSize() === "large")("ant-input-sm", ctx.finalSize() === "small")("ant-input-rtl", ctx.dir === "rtl")("ant-input-stepperless", ctx.nzStepperless)("ant-input-focused", ctx.focused());
+        ɵɵattribute('disabled', ctx.disabled || null);
+        ɵɵclassProp('ant-input-disabled', ctx.disabled)(
+          'ant-input-borderless',
+          ctx.nzVariant === 'borderless' || (ctx.nzVariant === 'outlined' && ctx.nzBorderless),
+        )('ant-input-filled', ctx.nzVariant === 'filled')(
+          'ant-input-underlined',
+          ctx.nzVariant === 'underlined',
+        )('ant-input-lg', ctx.finalSize() === 'large')('ant-input-sm', ctx.finalSize() === 'small')(
+          'ant-input-rtl',
+          ctx.dir === 'rtl',
+        )('ant-input-stepperless', ctx.nzStepperless)('ant-input-focused', ctx.focused());
       }
     },
     inputs: {
-      nzBorderless: [2, "nzBorderless", "nzBorderless", booleanAttribute],
-      nzVariant: "nzVariant",
-      nzSize: "nzSize",
-      nzStepperless: [2, "nzStepperless", "nzStepperless", booleanAttribute],
-      nzStatus: "nzStatus",
-      disabled: [2, "disabled", "disabled", booleanAttribute]
+      nzBorderless: [2, 'nzBorderless', 'nzBorderless', booleanAttribute],
+      nzVariant: 'nzVariant',
+      nzSize: 'nzSize',
+      nzStepperless: [2, 'nzStepperless', 'nzStepperless', booleanAttribute],
+      nzStatus: 'nzStatus',
+      disabled: [2, 'disabled', 'disabled', booleanAttribute],
     },
-    exportAs: ["nzInput"],
-    features: [ɵɵProvidersFeature([{
-      provide: NZ_SPACE_COMPACT_ITEM_TYPE,
-      useValue: "input"
-    }]), ɵɵHostDirectivesFeature([NzSpaceCompactItemDirective]), ɵɵNgOnChangesFeature]
+    exportAs: ['nzInput'],
+    features: [
+      ɵɵProvidersFeature([
+        {
+          provide: NZ_SPACE_COMPACT_ITEM_TYPE,
+          useValue: 'input',
+        },
+      ]),
+      ɵɵHostDirectivesFeature([NzSpaceCompactItemDirective]),
+      ɵɵNgOnChangesFeature,
+    ],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputDirective, [{
-    type: Directive,
-    args: [{
-      selector: "input[nz-input],textarea[nz-input]",
-      exportAs: "nzInput",
-      host: {
-        class: "ant-input",
-        "[class.ant-input-disabled]": "disabled",
-        "[class.ant-input-borderless]": `nzVariant === 'borderless' || (nzVariant === 'outlined' && nzBorderless)`,
-        "[class.ant-input-filled]": `nzVariant === 'filled'`,
-        "[class.ant-input-underlined]": `nzVariant === 'underlined'`,
-        "[class.ant-input-lg]": `finalSize() === 'large'`,
-        "[class.ant-input-sm]": `finalSize() === 'small'`,
-        "[attr.disabled]": "disabled || null",
-        "[class.ant-input-rtl]": `dir=== 'rtl'`,
-        "[class.ant-input-stepperless]": `nzStepperless`,
-        "[class.ant-input-focused]": "focused()"
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputDirective,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: 'input[nz-input],textarea[nz-input]',
+              exportAs: 'nzInput',
+              host: {
+                class: 'ant-input',
+                '[class.ant-input-disabled]': 'disabled',
+                '[class.ant-input-borderless]': `nzVariant === 'borderless' || (nzVariant === 'outlined' && nzBorderless)`,
+                '[class.ant-input-filled]': `nzVariant === 'filled'`,
+                '[class.ant-input-underlined]': `nzVariant === 'underlined'`,
+                '[class.ant-input-lg]': `finalSize() === 'large'`,
+                '[class.ant-input-sm]': `finalSize() === 'small'`,
+                '[attr.disabled]': 'disabled || null',
+                '[class.ant-input-rtl]': `dir=== 'rtl'`,
+                '[class.ant-input-stepperless]': `nzStepperless`,
+                '[class.ant-input-focused]': 'focused()',
+              },
+              hostDirectives: [NzSpaceCompactItemDirective],
+              providers: [
+                {
+                  provide: NZ_SPACE_COMPACT_ITEM_TYPE,
+                  useValue: 'input',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        nzBorderless: [
+          {
+            type: Input,
+            args: [
+              {
+                transform: booleanAttribute,
+              },
+            ],
+          },
+        ],
+        nzVariant: [
+          {
+            type: Input,
+          },
+        ],
+        nzSize: [
+          {
+            type: Input,
+          },
+        ],
+        nzStepperless: [
+          {
+            type: Input,
+            args: [
+              {
+                transform: booleanAttribute,
+              },
+            ],
+          },
+        ],
+        nzStatus: [
+          {
+            type: Input,
+          },
+        ],
+        disabled: [
+          {
+            type: Input,
+            args: [
+              {
+                transform: booleanAttribute,
+              },
+            ],
+          },
+        ],
       },
-      hostDirectives: [NzSpaceCompactItemDirective],
-      providers: [{
-        provide: NZ_SPACE_COMPACT_ITEM_TYPE,
-        useValue: "input"
-      }]
-    }]
-  }], () => [], {
-    nzBorderless: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    nzVariant: [{
-      type: Input
-    }],
-    nzSize: [{
-      type: Input
-    }],
-    nzStepperless: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    nzStatus: [{
-      type: Input
-    }],
-    disabled: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }]
-  });
+    );
 })();
 var NzInputGroupWhitSuffixOrPrefixDirective = class _NzInputGroupWhitSuffixOrPrefixDirective {
   elementRef = inject(ElementRef);
@@ -3276,16 +3920,29 @@ var NzInputGroupWhitSuffixOrPrefixDirective = class _NzInputGroupWhitSuffixOrPre
   };
   static ɵdir = ɵɵdefineDirective({
     type: _NzInputGroupWhitSuffixOrPrefixDirective,
-    selectors: [["nz-input-group", "nzSuffix", ""], ["nz-input-group", "nzPrefix", ""]]
+    selectors: [
+      ['nz-input-group', 'nzSuffix', ''],
+      ['nz-input-group', 'nzPrefix', ''],
+    ],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputGroupWhitSuffixOrPrefixDirective, [{
-    type: Directive,
-    args: [{
-      selector: `nz-input-group[nzSuffix], nz-input-group[nzPrefix]`
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputGroupWhitSuffixOrPrefixDirective,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: `nz-input-group[nzSuffix], nz-input-group[nzPrefix]`,
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var NzInputGroupComponent = class _NzInputGroupComponent {
   focusMonitor = inject(FocusMonitor);
@@ -3295,10 +3952,10 @@ var NzInputGroupComponent = class _NzInputGroupComponent {
   directionality = inject(Directionality);
   destroyRef = inject(DestroyRef);
   nzFormStatusService = inject(NzFormStatusService, {
-    optional: true
+    optional: true,
   });
   nzFormNoStatusService = inject(NzFormNoStatusService, {
-    optional: true
+    optional: true,
   });
   listOfNzInputDirective;
   nzAddOnBeforeIcon = null;
@@ -3308,9 +3965,9 @@ var NzInputGroupComponent = class _NzInputGroupComponent {
   nzAddOnBefore;
   nzAddOnAfter;
   nzPrefix;
-  nzStatus = "";
+  nzStatus = '';
   nzSuffix;
-  nzSize = "default";
+  nzSize = 'default';
   nzSearch = false;
   isLarge = false;
   isSmall = false;
@@ -3319,33 +3976,40 @@ var NzInputGroupComponent = class _NzInputGroupComponent {
   isFeedback = false;
   focused = false;
   disabled = false;
-  dir = "ltr";
+  dir = 'ltr';
   // status
-  prefixCls = "ant-input";
+  prefixCls = 'ant-input';
   affixStatusCls = {};
   groupStatusCls = {};
   affixInGroupStatusCls = {};
-  status = "";
+  status = '';
   hasFeedback = false;
   constructor() {
     this.destroyRef.onDestroy(() => this.focusMonitor.stopMonitoring(this.elementRef));
   }
   updateChildrenInputSize() {
     if (this.listOfNzInputDirective) {
-      this.listOfNzInputDirective.forEach((item) => item["size"].set(this.nzSize));
+      this.listOfNzInputDirective.forEach((item) => item['size'].set(this.nzSize));
     }
   }
   ngOnInit() {
-    this.nzFormStatusService?.formStatusChanges.pipe(distinctUntilChanged((pre, cur) => pre.status === cur.status && pre.hasFeedback === cur.hasFeedback), takeUntilDestroyed(this.destroyRef)).subscribe(({
-      status,
-      hasFeedback
-    }) => {
-      this.setStatusStyles(status, hasFeedback);
-    });
-    this.focusMonitor.monitor(this.elementRef, true).pipe(takeUntilDestroyed(this.destroyRef)).subscribe((focusOrigin) => {
-      this.focused = !!focusOrigin;
-      this.cdr.markForCheck();
-    });
+    this.nzFormStatusService?.formStatusChanges
+      .pipe(
+        distinctUntilChanged(
+          (pre, cur) => pre.status === cur.status && pre.hasFeedback === cur.hasFeedback,
+        ),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe(({ status, hasFeedback }) => {
+        this.setStatusStyles(status, hasFeedback);
+      });
+    this.focusMonitor
+      .monitor(this.elementRef, true)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((focusOrigin) => {
+        this.focused = !!focusOrigin;
+        this.cdr.markForCheck();
+      });
     this.dir = this.directionality.value;
     this.directionality.change?.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((direction) => {
       this.dir = direction;
@@ -3353,11 +4017,22 @@ var NzInputGroupComponent = class _NzInputGroupComponent {
   }
   ngAfterContentInit() {
     this.updateChildrenInputSize();
-    const listOfInputChange$ = this.listOfNzInputDirective.changes.pipe(startWith(this.listOfNzInputDirective));
-    listOfInputChange$.pipe(switchMap((list) => merge(...[listOfInputChange$, ...list.map((input) => input.disabled$)])), mergeMap(() => listOfInputChange$), map((list) => list.some((input) => input.disabled)), takeUntilDestroyed(this.destroyRef)).subscribe((disabled) => {
-      this.disabled = disabled;
-      this.cdr.markForCheck();
-    });
+    const listOfInputChange$ = this.listOfNzInputDirective.changes.pipe(
+      startWith(this.listOfNzInputDirective),
+    );
+    listOfInputChange$
+      .pipe(
+        switchMap((list) =>
+          merge(...[listOfInputChange$, ...list.map((input) => input.disabled$)]),
+        ),
+        mergeMap(() => listOfInputChange$),
+        map((list) => list.some((input) => input.disabled)),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe((disabled) => {
+        this.disabled = disabled;
+        this.cdr.markForCheck();
+      });
   }
   ngOnChanges(changes) {
     const {
@@ -3370,18 +4045,23 @@ var NzInputGroupComponent = class _NzInputGroupComponent {
       nzAddOnBefore,
       nzAddOnAfterIcon,
       nzAddOnBeforeIcon,
-      nzStatus
+      nzStatus,
     } = changes;
     if (nzSize) {
       this.updateChildrenInputSize();
-      this.isLarge = this.nzSize === "large";
-      this.isSmall = this.nzSize === "small";
+      this.isLarge = this.nzSize === 'large';
+      this.isSmall = this.nzSize === 'small';
     }
     if (nzSuffix || nzPrefix || nzPrefixIcon || nzSuffixIcon) {
       this.isAffix = !!(this.nzSuffix || this.nzPrefix || this.nzPrefixIcon || this.nzSuffixIcon);
     }
     if (nzAddOnAfter || nzAddOnBefore || nzAddOnAfterIcon || nzAddOnBeforeIcon) {
-      this.isAddOn = !!(this.nzAddOnAfter || this.nzAddOnBefore || this.nzAddOnAfterIcon || this.nzAddOnBeforeIcon);
+      this.isAddOn = !!(
+        this.nzAddOnAfter ||
+        this.nzAddOnBefore ||
+        this.nzAddOnAfterIcon ||
+        this.nzAddOnBeforeIcon
+      );
       this.nzFormNoStatusService?.noFormStatus?.next(this.isAddOn);
     }
     if (nzStatus) {
@@ -3393,11 +4073,26 @@ var NzInputGroupComponent = class _NzInputGroupComponent {
     this.hasFeedback = hasFeedback;
     this.isFeedback = !!status && hasFeedback;
     const baseAffix = !!(this.nzSuffix || this.nzPrefix || this.nzPrefixIcon || this.nzSuffixIcon);
-    this.isAffix = baseAffix || !this.isAddOn && hasFeedback;
-    this.affixInGroupStatusCls = this.isAffix || this.isFeedback ? this.affixStatusCls = getStatusClassNames(`${this.prefixCls}-affix-wrapper`, status, hasFeedback) : {};
+    this.isAffix = baseAffix || (!this.isAddOn && hasFeedback);
+    this.affixInGroupStatusCls =
+      this.isAffix || this.isFeedback
+        ? (this.affixStatusCls = getStatusClassNames(
+            `${this.prefixCls}-affix-wrapper`,
+            status,
+            hasFeedback,
+          ))
+        : {};
     this.cdr.markForCheck();
-    this.affixStatusCls = getStatusClassNames(`${this.prefixCls}-affix-wrapper`, this.isAddOn ? "" : status, this.isAddOn ? false : hasFeedback);
-    this.groupStatusCls = getStatusClassNames(`${this.prefixCls}-group-wrapper`, this.isAddOn ? status : "", this.isAddOn ? hasFeedback : false);
+    this.affixStatusCls = getStatusClassNames(
+      `${this.prefixCls}-affix-wrapper`,
+      this.isAddOn ? '' : status,
+      this.isAddOn ? false : hasFeedback,
+    );
+    this.groupStatusCls = getStatusClassNames(
+      `${this.prefixCls}-group-wrapper`,
+      this.isAddOn ? status : '',
+      this.isAddOn ? hasFeedback : false,
+    );
     const statusCls = __spreadValues(__spreadValues({}, this.affixStatusCls), this.groupStatusCls);
     Object.keys(statusCls).forEach((status2) => {
       if (statusCls[status2]) {
@@ -3412,49 +4107,129 @@ var NzInputGroupComponent = class _NzInputGroupComponent {
   };
   static ɵcmp = ɵɵdefineComponent({
     type: _NzInputGroupComponent,
-    selectors: [["nz-input-group"]],
+    selectors: [['nz-input-group']],
     contentQueries: function NzInputGroupComponent_ContentQueries(rf, ctx, dirIndex) {
       if (rf & 1) {
         ɵɵcontentQuery(dirIndex, NzInputDirective, 4);
       }
       if (rf & 2) {
         let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.listOfNzInputDirective = _t);
+        ɵɵqueryRefresh((_t = ɵɵloadQuery())) && (ctx.listOfNzInputDirective = _t);
       }
     },
     hostVars: 38,
     hostBindings: function NzInputGroupComponent_HostBindings(rf, ctx) {
       if (rf & 2) {
-        ɵɵclassProp("ant-input-search-enter-button", ctx.nzSearch)("ant-input-search", ctx.nzSearch)("ant-input-search-rtl", ctx.dir === "rtl")("ant-input-search-sm", ctx.nzSearch && ctx.isSmall)("ant-input-search-large", ctx.nzSearch && ctx.isLarge)("ant-input-group-wrapper", ctx.isAddOn)("ant-input-group-wrapper-rtl", ctx.dir === "rtl")("ant-input-group-wrapper-lg", ctx.isAddOn && ctx.isLarge)("ant-input-group-wrapper-sm", ctx.isAddOn && ctx.isSmall)("ant-input-affix-wrapper", ctx.isAffix && !ctx.isAddOn)("ant-input-affix-wrapper-rtl", ctx.dir === "rtl")("ant-input-affix-wrapper-focused", ctx.isAffix && ctx.focused)("ant-input-affix-wrapper-disabled", ctx.isAffix && ctx.disabled)("ant-input-affix-wrapper-lg", ctx.isAffix && !ctx.isAddOn && ctx.isLarge)("ant-input-affix-wrapper-sm", ctx.isAffix && !ctx.isAddOn && ctx.isSmall)("ant-input-group", !ctx.isAffix && !ctx.isAddOn)("ant-input-group-rtl", ctx.dir === "rtl")("ant-input-group-lg", !ctx.isAffix && !ctx.isAddOn && ctx.isLarge)("ant-input-group-sm", !ctx.isAffix && !ctx.isAddOn && ctx.isSmall);
+        ɵɵclassProp('ant-input-search-enter-button', ctx.nzSearch)(
+          'ant-input-search',
+          ctx.nzSearch,
+        )('ant-input-search-rtl', ctx.dir === 'rtl')(
+          'ant-input-search-sm',
+          ctx.nzSearch && ctx.isSmall,
+        )('ant-input-search-large', ctx.nzSearch && ctx.isLarge)(
+          'ant-input-group-wrapper',
+          ctx.isAddOn,
+        )('ant-input-group-wrapper-rtl', ctx.dir === 'rtl')(
+          'ant-input-group-wrapper-lg',
+          ctx.isAddOn && ctx.isLarge,
+        )('ant-input-group-wrapper-sm', ctx.isAddOn && ctx.isSmall)(
+          'ant-input-affix-wrapper',
+          ctx.isAffix && !ctx.isAddOn,
+        )('ant-input-affix-wrapper-rtl', ctx.dir === 'rtl')(
+          'ant-input-affix-wrapper-focused',
+          ctx.isAffix && ctx.focused,
+        )('ant-input-affix-wrapper-disabled', ctx.isAffix && ctx.disabled)(
+          'ant-input-affix-wrapper-lg',
+          ctx.isAffix && !ctx.isAddOn && ctx.isLarge,
+        )('ant-input-affix-wrapper-sm', ctx.isAffix && !ctx.isAddOn && ctx.isSmall)(
+          'ant-input-group',
+          !ctx.isAffix && !ctx.isAddOn,
+        )('ant-input-group-rtl', ctx.dir === 'rtl')(
+          'ant-input-group-lg',
+          !ctx.isAffix && !ctx.isAddOn && ctx.isLarge,
+        )('ant-input-group-sm', !ctx.isAffix && !ctx.isAddOn && ctx.isSmall);
       }
     },
     inputs: {
-      nzAddOnBeforeIcon: "nzAddOnBeforeIcon",
-      nzAddOnAfterIcon: "nzAddOnAfterIcon",
-      nzPrefixIcon: "nzPrefixIcon",
-      nzSuffixIcon: "nzSuffixIcon",
-      nzAddOnBefore: "nzAddOnBefore",
-      nzAddOnAfter: "nzAddOnAfter",
-      nzPrefix: "nzPrefix",
-      nzStatus: "nzStatus",
-      nzSuffix: "nzSuffix",
-      nzSize: "nzSize",
-      nzSearch: [2, "nzSearch", "nzSearch", booleanAttribute]
+      nzAddOnBeforeIcon: 'nzAddOnBeforeIcon',
+      nzAddOnAfterIcon: 'nzAddOnAfterIcon',
+      nzPrefixIcon: 'nzPrefixIcon',
+      nzSuffixIcon: 'nzSuffixIcon',
+      nzAddOnBefore: 'nzAddOnBefore',
+      nzAddOnAfter: 'nzAddOnAfter',
+      nzPrefix: 'nzPrefix',
+      nzStatus: 'nzStatus',
+      nzSuffix: 'nzSuffix',
+      nzSize: 'nzSize',
+      nzSearch: [2, 'nzSearch', 'nzSearch', booleanAttribute],
     },
-    exportAs: ["nzInputGroup"],
-    features: [ɵɵProvidersFeature([NzFormNoStatusService, {
-      provide: NZ_SPACE_COMPACT_ITEM_TYPE,
-      useValue: "input"
-    }]), ɵɵHostDirectivesFeature([NzSpaceCompactItemDirective]), ɵɵNgOnChangesFeature],
+    exportAs: ['nzInputGroup'],
+    features: [
+      ɵɵProvidersFeature([
+        NzFormNoStatusService,
+        {
+          provide: NZ_SPACE_COMPACT_ITEM_TYPE,
+          useValue: 'input',
+        },
+      ]),
+      ɵɵHostDirectivesFeature([NzSpaceCompactItemDirective]),
+      ɵɵNgOnChangesFeature,
+    ],
     ngContentSelectors: _c1,
     decls: 6,
     vars: 1,
-    consts: [["affixTemplate", ""], ["contentTemplate", ""], [1, "ant-input-wrapper", "ant-input-group"], ["nz-input-group-slot", "", "type", "addon", 3, "icon", "template"], [1, "ant-input-affix-wrapper", 3, "ant-input-affix-wrapper-disabled", "ant-input-affix-wrapper-sm", "ant-input-affix-wrapper-lg", "ant-input-affix-wrapper-focused", "class"], [3, "ngTemplateOutlet"], [1, "ant-input-affix-wrapper"], ["nz-input-group-slot", "", "type", "prefix", 3, "icon", "template"], ["nz-input-group-slot", "", "type", "suffix", 3, "icon", "template"], [3, "status"], ["nz-input-group-slot", "", "type", "suffix"]],
+    consts: [
+      ['affixTemplate', ''],
+      ['contentTemplate', ''],
+      [1, 'ant-input-wrapper', 'ant-input-group'],
+      ['nz-input-group-slot', '', 'type', 'addon', 3, 'icon', 'template'],
+      [
+        1,
+        'ant-input-affix-wrapper',
+        3,
+        'ant-input-affix-wrapper-disabled',
+        'ant-input-affix-wrapper-sm',
+        'ant-input-affix-wrapper-lg',
+        'ant-input-affix-wrapper-focused',
+        'class',
+      ],
+      [3, 'ngTemplateOutlet'],
+      [1, 'ant-input-affix-wrapper'],
+      ['nz-input-group-slot', '', 'type', 'prefix', 3, 'icon', 'template'],
+      ['nz-input-group-slot', '', 'type', 'suffix', 3, 'icon', 'template'],
+      [3, 'status'],
+      ['nz-input-group-slot', '', 'type', 'suffix'],
+    ],
     template: function NzInputGroupComponent_Template(rf, ctx) {
       if (rf & 1) {
         ɵɵprojectionDef();
-        ɵɵconditionalCreate(0, NzInputGroupComponent_Conditional_0_Template, 5, 3, "span", 2)(1, NzInputGroupComponent_Conditional_1_Template, 2, 1);
-        ɵɵtemplate(2, NzInputGroupComponent_ng_template_2_Template, 3, 3, "ng-template", null, 0, ɵɵtemplateRefExtractor)(4, NzInputGroupComponent_ng_template_4_Template, 2, 1, "ng-template", null, 1, ɵɵtemplateRefExtractor);
+        ɵɵconditionalCreate(
+          0,
+          NzInputGroupComponent_Conditional_0_Template,
+          5,
+          3,
+          'span',
+          2,
+        )(1, NzInputGroupComponent_Conditional_1_Template, 2, 1);
+        ɵɵtemplate(
+          2,
+          NzInputGroupComponent_ng_template_2_Template,
+          3,
+          3,
+          'ng-template',
+          null,
+          0,
+          ɵɵtemplateRefExtractor,
+        )(
+          4,
+          NzInputGroupComponent_ng_template_4_Template,
+          2,
+          1,
+          'ng-template',
+          null,
+          1,
+          ɵɵtemplateRefExtractor,
+        );
       }
       if (rf & 2) {
         ɵɵconditional(ctx.isAddOn ? 0 : 1);
@@ -3462,22 +4237,34 @@ var NzInputGroupComponent = class _NzInputGroupComponent {
     },
     dependencies: [NzInputGroupSlotComponent, NgTemplateOutlet, NzFormItemFeedbackIconComponent],
     encapsulation: 2,
-    changeDetection: 0
+    changeDetection: 0,
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputGroupComponent, [{
-    type: Component,
-    args: [{
-      selector: "nz-input-group",
-      exportAs: "nzInputGroup",
-      imports: [NzInputGroupSlotComponent, NgTemplateOutlet, NzFormItemFeedbackIconComponent],
-      encapsulation: ViewEncapsulation.None,
-      providers: [NzFormNoStatusService, {
-        provide: NZ_SPACE_COMPACT_ITEM_TYPE,
-        useValue: "input"
-      }],
-      template: `
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputGroupComponent,
+      [
+        {
+          type: Component,
+          args: [
+            {
+              selector: 'nz-input-group',
+              exportAs: 'nzInputGroup',
+              imports: [
+                NzInputGroupSlotComponent,
+                NgTemplateOutlet,
+                NzFormItemFeedbackIconComponent,
+              ],
+              encapsulation: ViewEncapsulation.None,
+              providers: [
+                NzFormNoStatusService,
+                {
+                  provide: NZ_SPACE_COMPACT_ITEM_TYPE,
+                  useValue: 'input',
+                },
+              ],
+              template: `
     @if (isAddOn) {
       <span class="ant-input-wrapper ant-input-group">
         @if (nzAddOnBefore || nzAddOnBeforeIcon) {
@@ -3535,96 +4322,126 @@ var NzInputGroupComponent = class _NzInputGroupComponent {
       }
     </ng-template>
   `,
-      host: {
-        "[class.ant-input-search-enter-button]": `nzSearch`,
-        "[class.ant-input-search]": `nzSearch`,
-        "[class.ant-input-search-rtl]": `dir === 'rtl'`,
-        "[class.ant-input-search-sm]": `nzSearch && isSmall`,
-        "[class.ant-input-search-large]": `nzSearch && isLarge`,
-        "[class.ant-input-group-wrapper]": `isAddOn`,
-        "[class.ant-input-group-wrapper-rtl]": `dir === 'rtl'`,
-        "[class.ant-input-group-wrapper-lg]": `isAddOn && isLarge`,
-        "[class.ant-input-group-wrapper-sm]": `isAddOn && isSmall`,
-        "[class.ant-input-affix-wrapper]": `isAffix && !isAddOn`,
-        "[class.ant-input-affix-wrapper-rtl]": `dir === 'rtl'`,
-        "[class.ant-input-affix-wrapper-focused]": `isAffix && focused`,
-        "[class.ant-input-affix-wrapper-disabled]": `isAffix && disabled`,
-        "[class.ant-input-affix-wrapper-lg]": `isAffix && !isAddOn && isLarge`,
-        "[class.ant-input-affix-wrapper-sm]": `isAffix && !isAddOn && isSmall`,
-        "[class.ant-input-group]": `!isAffix && !isAddOn`,
-        "[class.ant-input-group-rtl]": `dir === 'rtl'`,
-        "[class.ant-input-group-lg]": `!isAffix && !isAddOn && isLarge`,
-        "[class.ant-input-group-sm]": `!isAffix && !isAddOn && isSmall`
+              host: {
+                '[class.ant-input-search-enter-button]': `nzSearch`,
+                '[class.ant-input-search]': `nzSearch`,
+                '[class.ant-input-search-rtl]': `dir === 'rtl'`,
+                '[class.ant-input-search-sm]': `nzSearch && isSmall`,
+                '[class.ant-input-search-large]': `nzSearch && isLarge`,
+                '[class.ant-input-group-wrapper]': `isAddOn`,
+                '[class.ant-input-group-wrapper-rtl]': `dir === 'rtl'`,
+                '[class.ant-input-group-wrapper-lg]': `isAddOn && isLarge`,
+                '[class.ant-input-group-wrapper-sm]': `isAddOn && isSmall`,
+                '[class.ant-input-affix-wrapper]': `isAffix && !isAddOn`,
+                '[class.ant-input-affix-wrapper-rtl]': `dir === 'rtl'`,
+                '[class.ant-input-affix-wrapper-focused]': `isAffix && focused`,
+                '[class.ant-input-affix-wrapper-disabled]': `isAffix && disabled`,
+                '[class.ant-input-affix-wrapper-lg]': `isAffix && !isAddOn && isLarge`,
+                '[class.ant-input-affix-wrapper-sm]': `isAffix && !isAddOn && isSmall`,
+                '[class.ant-input-group]': `!isAffix && !isAddOn`,
+                '[class.ant-input-group-rtl]': `dir === 'rtl'`,
+                '[class.ant-input-group-lg]': `!isAffix && !isAddOn && isLarge`,
+                '[class.ant-input-group-sm]': `!isAffix && !isAddOn && isSmall`,
+              },
+              hostDirectives: [NzSpaceCompactItemDirective],
+              changeDetection: ChangeDetectionStrategy.OnPush,
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        listOfNzInputDirective: [
+          {
+            type: ContentChildren,
+            args: [NzInputDirective],
+          },
+        ],
+        nzAddOnBeforeIcon: [
+          {
+            type: Input,
+          },
+        ],
+        nzAddOnAfterIcon: [
+          {
+            type: Input,
+          },
+        ],
+        nzPrefixIcon: [
+          {
+            type: Input,
+          },
+        ],
+        nzSuffixIcon: [
+          {
+            type: Input,
+          },
+        ],
+        nzAddOnBefore: [
+          {
+            type: Input,
+          },
+        ],
+        nzAddOnAfter: [
+          {
+            type: Input,
+          },
+        ],
+        nzPrefix: [
+          {
+            type: Input,
+          },
+        ],
+        nzStatus: [
+          {
+            type: Input,
+          },
+        ],
+        nzSuffix: [
+          {
+            type: Input,
+          },
+        ],
+        nzSize: [
+          {
+            type: Input,
+          },
+        ],
+        nzSearch: [
+          {
+            type: Input,
+            args: [
+              {
+                transform: booleanAttribute,
+              },
+            ],
+          },
+        ],
       },
-      hostDirectives: [NzSpaceCompactItemDirective],
-      changeDetection: ChangeDetectionStrategy.OnPush
-    }]
-  }], () => [], {
-    listOfNzInputDirective: [{
-      type: ContentChildren,
-      args: [NzInputDirective]
-    }],
-    nzAddOnBeforeIcon: [{
-      type: Input
-    }],
-    nzAddOnAfterIcon: [{
-      type: Input
-    }],
-    nzPrefixIcon: [{
-      type: Input
-    }],
-    nzSuffixIcon: [{
-      type: Input
-    }],
-    nzAddOnBefore: [{
-      type: Input
-    }],
-    nzAddOnAfter: [{
-      type: Input
-    }],
-    nzPrefix: [{
-      type: Input
-    }],
-    nzStatus: [{
-      type: Input
-    }],
-    nzSuffix: [{
-      type: Input
-    }],
-    nzSize: [{
-      type: Input
-    }],
-    nzSearch: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }]
-  });
+    );
 })();
 var NzInputOtpComponent = class _NzInputOtpComponent {
   formBuilder = inject(FormBuilder);
   destroyRef = inject(DestroyRef);
   otpInputs;
   nzLength = 6;
-  nzSize = "default";
+  nzSize = 'default';
   disabled = false;
-  nzStatus = "";
+  nzStatus = '';
   nzFormatter = (value) => value;
   nzMask = null;
   otpArray;
   internalValue = [];
   onChangeCallback;
-  onTouched = () => {
-  };
+  onTouched = () => {};
   constructor() {
     this.createFormArray();
   }
   ngOnChanges(changes) {
-    if (changes["nzLength"]?.currentValue) {
+    if (changes['nzLength']?.currentValue) {
       this.createFormArray();
     }
-    if (changes["disabled"]) {
+    if (changes['disabled']) {
       this.setDisabledState(this.disabled);
     }
   }
@@ -3645,9 +4462,9 @@ var NzInputOtpComponent = class _NzInputOtpComponent {
     const previousInput = this.otpInputs.toArray()[index - 1];
     if (event.keyCode === BACKSPACE) {
       event.preventDefault();
-      this.internalValue[index] = "";
-      this.otpArray.at(index).setValue("", {
-        emitEvent: false
+      this.internalValue[index] = '';
+      this.otpArray.at(index).setValue('', {
+        emitEvent: false,
       });
       if (previousInput) {
         this.selectInputBox(index - 1);
@@ -3666,13 +4483,13 @@ var NzInputOtpComponent = class _NzInputOtpComponent {
       this.otpArray.reset();
       return;
     }
-    const controlValues = value.split("");
+    const controlValues = value.split('');
     this.internalValue = controlValues;
     controlValues.forEach((val, i) => {
       const formattedValue = this.nzFormatter(val);
       const value2 = this.nzMask ? this.nzMask : formattedValue;
       this.otpArray.at(i).setValue(value2, {
-        emitEvent: false
+        emitEvent: false,
       });
     });
   }
@@ -3690,16 +4507,16 @@ var NzInputOtpComponent = class _NzInputOtpComponent {
     }
   }
   onPaste(index, event) {
-    const pastedText = event.clipboardData?.getData("text") || "";
+    const pastedText = event.clipboardData?.getData('text') || '';
     if (!pastedText) return;
     let currentIndex = index;
-    for (const char of pastedText.split("")) {
+    for (const char of pastedText.split('')) {
       if (currentIndex < this.nzLength) {
         const formattedChar = this.nzFormatter(char);
         this.internalValue[currentIndex] = char;
         const maskedValue = this.nzMask ? this.nzMask : formattedChar;
         this.otpArray.at(currentIndex).setValue(maskedValue, {
-          emitEvent: false
+          emitEvent: false,
         });
         currentIndex++;
       } else {
@@ -3712,22 +4529,27 @@ var NzInputOtpComponent = class _NzInputOtpComponent {
   }
   createFormArray() {
     this.otpArray = this.formBuilder.array([]);
-    this.internalValue = new Array(this.nzLength).fill("");
+    this.internalValue = new Array(this.nzLength).fill('');
     for (let i = 0; i < this.nzLength; i++) {
-      const control = this.formBuilder.nonNullable.control("", [Validators.required]);
-      control.valueChanges.pipe(tap((value) => {
-        const unmaskedValue = this.nzFormatter(value);
-        this.internalValue[i] = unmaskedValue;
-        control.setValue(this.nzMask ?? unmaskedValue, {
-          emitEvent: false
-        });
-        this.emitValue();
-      }), takeUntilDestroyed(this.destroyRef)).subscribe();
+      const control = this.formBuilder.nonNullable.control('', [Validators.required]);
+      control.valueChanges
+        .pipe(
+          tap((value) => {
+            const unmaskedValue = this.nzFormatter(value);
+            this.internalValue[i] = unmaskedValue;
+            control.setValue(this.nzMask ?? unmaskedValue, {
+              emitEvent: false,
+            });
+            this.emitValue();
+          }),
+          takeUntilDestroyed(this.destroyRef),
+        )
+        .subscribe();
       this.otpArray.push(control);
     }
   }
   emitValue() {
-    const result = this.internalValue.join("");
+    const result = this.internalValue.join('');
     if (this.onChangeCallback) {
       this.onChangeCallback(result);
     }
@@ -3743,56 +4565,119 @@ var NzInputOtpComponent = class _NzInputOtpComponent {
   };
   static ɵcmp = ɵɵdefineComponent({
     type: _NzInputOtpComponent,
-    selectors: [["nz-input-otp"]],
+    selectors: [['nz-input-otp']],
     viewQuery: function NzInputOtpComponent_Query(rf, ctx) {
       if (rf & 1) {
         ɵɵviewQuery(_c2, 5);
       }
       if (rf & 2) {
         let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.otpInputs = _t);
+        ɵɵqueryRefresh((_t = ɵɵloadQuery())) && (ctx.otpInputs = _t);
       }
     },
-    hostAttrs: [1, "ant-otp"],
+    hostAttrs: [1, 'ant-otp'],
     inputs: {
-      nzLength: [2, "nzLength", "nzLength", numberAttribute],
-      nzSize: "nzSize",
-      disabled: [2, "disabled", "disabled", booleanAttribute],
-      nzStatus: "nzStatus",
-      nzFormatter: "nzFormatter",
-      nzMask: "nzMask"
+      nzLength: [2, 'nzLength', 'nzLength', numberAttribute],
+      nzSize: 'nzSize',
+      disabled: [2, 'disabled', 'disabled', booleanAttribute],
+      nzStatus: 'nzStatus',
+      nzFormatter: 'nzFormatter',
+      nzMask: 'nzMask',
     },
-    exportAs: ["nzInputOtp"],
-    features: [ɵɵProvidersFeature([{
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => _NzInputOtpComponent),
-      multi: true
-    }]), ɵɵNgOnChangesFeature],
+    exportAs: ['nzInputOtp'],
+    features: [
+      ɵɵProvidersFeature([
+        {
+          provide: NG_VALUE_ACCESSOR,
+          useExisting: forwardRef(() => _NzInputOtpComponent),
+          multi: true,
+        },
+      ]),
+      ɵɵNgOnChangesFeature,
+    ],
     decls: 2,
     vars: 0,
-    consts: [["otpInput", ""], ["nz-input", "", "type", "text", "maxlength", "1", "size", "1", 1, "ant-otp-input", 3, "nzSize", "formControl", "nzStatus"], ["nz-input", "", "type", "text", "maxlength", "1", "size", "1", 1, "ant-otp-input", 3, "input", "focus", "keydown", "paste", "nzSize", "formControl", "nzStatus"]],
+    consts: [
+      ['otpInput', ''],
+      [
+        'nz-input',
+        '',
+        'type',
+        'text',
+        'maxlength',
+        '1',
+        'size',
+        '1',
+        1,
+        'ant-otp-input',
+        3,
+        'nzSize',
+        'formControl',
+        'nzStatus',
+      ],
+      [
+        'nz-input',
+        '',
+        'type',
+        'text',
+        'maxlength',
+        '1',
+        'size',
+        '1',
+        1,
+        'ant-otp-input',
+        3,
+        'input',
+        'focus',
+        'keydown',
+        'paste',
+        'nzSize',
+        'formControl',
+        'nzStatus',
+      ],
+    ],
     template: function NzInputOtpComponent_Template(rf, ctx) {
       if (rf & 1) {
-        ɵɵrepeaterCreate(0, NzInputOtpComponent_For_1_Template, 2, 3, "input", 1, ɵɵrepeaterTrackByIndex);
+        ɵɵrepeaterCreate(
+          0,
+          NzInputOtpComponent_For_1_Template,
+          2,
+          3,
+          'input',
+          1,
+          ɵɵrepeaterTrackByIndex,
+        );
       }
       if (rf & 2) {
         ɵɵrepeater(ctx.otpArray.controls);
       }
     },
-    dependencies: [NzInputDirective, ReactiveFormsModule, DefaultValueAccessor, NgControlStatus, MaxLengthValidator, FormControlDirective],
+    dependencies: [
+      NzInputDirective,
+      ReactiveFormsModule,
+      DefaultValueAccessor,
+      NgControlStatus,
+      MaxLengthValidator,
+      FormControlDirective,
+    ],
     encapsulation: 2,
-    changeDetection: 0
+    changeDetection: 0,
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputOtpComponent, [{
-    type: Component,
-    args: [{
-      selector: "nz-input-otp",
-      exportAs: "nzInputOtp",
-      encapsulation: ViewEncapsulation.None,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      template: `
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputOtpComponent,
+      [
+        {
+          type: Component,
+          args: [
+            {
+              selector: 'nz-input-otp',
+              exportAs: 'nzInputOtp',
+              encapsulation: ViewEncapsulation.None,
+              changeDetection: ChangeDetectionStrategy.OnPush,
+              template: `
     @for (item of otpArray.controls; track $index) {
       <input
         nz-input
@@ -3811,46 +4696,71 @@ var NzInputOtpComponent = class _NzInputOtpComponent {
       />
     }
   `,
-      host: {
-        class: "ant-otp"
+              host: {
+                class: 'ant-otp',
+              },
+              providers: [
+                {
+                  provide: NG_VALUE_ACCESSOR,
+                  useExisting: forwardRef(() => NzInputOtpComponent),
+                  multi: true,
+                },
+              ],
+              imports: [NzInputDirective, ReactiveFormsModule],
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        otpInputs: [
+          {
+            type: ViewChildren,
+            args: ['otpInput'],
+          },
+        ],
+        nzLength: [
+          {
+            type: Input,
+            args: [
+              {
+                transform: numberAttribute,
+              },
+            ],
+          },
+        ],
+        nzSize: [
+          {
+            type: Input,
+          },
+        ],
+        disabled: [
+          {
+            type: Input,
+            args: [
+              {
+                transform: booleanAttribute,
+              },
+            ],
+          },
+        ],
+        nzStatus: [
+          {
+            type: Input,
+          },
+        ],
+        nzFormatter: [
+          {
+            type: Input,
+          },
+        ],
+        nzMask: [
+          {
+            type: Input,
+          },
+        ],
       },
-      providers: [{
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => NzInputOtpComponent),
-        multi: true
-      }],
-      imports: [NzInputDirective, ReactiveFormsModule]
-    }]
-  }], () => [], {
-    otpInputs: [{
-      type: ViewChildren,
-      args: ["otpInput"]
-    }],
-    nzLength: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    nzSize: [{
-      type: Input
-    }],
-    disabled: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    nzStatus: [{
-      type: Input
-    }],
-    nzFormatter: [{
-      type: Input
-    }],
-    nzMask: [{
-      type: Input
-    }]
-  });
+    );
 })();
 var NzTextareaCountComponent = class _NzTextareaCountComponent {
   renderer = inject(Renderer2);
@@ -3862,41 +4772,47 @@ var NzTextareaCountComponent = class _NzTextareaCountComponent {
   nzFormatter = (c, m) => `${c}${m > 0 ? `/${m}` : ``}`;
   ngAfterContentInit() {
     if (!this.nzInputDirective && isDevMode()) {
-      throw new Error("[nz-textarea-count]: Could not find matching textarea[nz-input] child.");
+      throw new Error('[nz-textarea-count]: Could not find matching textarea[nz-input] child.');
     }
     if (this.nzInputDirective.ngControl) {
       const valueChanges = this.nzInputDirective.ngControl.valueChanges || EMPTY;
-      valueChanges.pipe(takeUntilDestroyed(this.destroyRef), map(() => this.nzInputDirective.ngControl.value), startWith(this.nzInputDirective.ngControl.value)).subscribe((value) => {
-        this.setDataCount(value);
-      });
+      valueChanges
+        .pipe(
+          takeUntilDestroyed(this.destroyRef),
+          map(() => this.nzInputDirective.ngControl.value),
+          startWith(this.nzInputDirective.ngControl.value),
+        )
+        .subscribe((value) => {
+          this.setDataCount(value);
+        });
     }
   }
   setDataCount(value) {
-    const inputValue = isNotNil(value) ? String(value) : "";
+    const inputValue = isNotNil(value) ? String(value) : '';
     const currentCount = this.nzComputeCharacterCount(inputValue);
     const dataCount = this.nzFormatter(currentCount, this.nzMaxCharacterCount);
-    this.renderer.setAttribute(this.elementRef.nativeElement, "data-count", dataCount);
+    this.renderer.setAttribute(this.elementRef.nativeElement, 'data-count', dataCount);
   }
   static ɵfac = function NzTextareaCountComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _NzTextareaCountComponent)();
   };
   static ɵcmp = ɵɵdefineComponent({
     type: _NzTextareaCountComponent,
-    selectors: [["nz-textarea-count"]],
+    selectors: [['nz-textarea-count']],
     contentQueries: function NzTextareaCountComponent_ContentQueries(rf, ctx, dirIndex) {
       if (rf & 1) {
         ɵɵcontentQuery(dirIndex, NzInputDirective, 7);
       }
       if (rf & 2) {
         let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.nzInputDirective = _t.first);
+        ɵɵqueryRefresh((_t = ɵɵloadQuery())) && (ctx.nzInputDirective = _t.first);
       }
     },
-    hostAttrs: [1, "ant-input-textarea-show-count"],
+    hostAttrs: [1, 'ant-input-textarea-show-count'],
     inputs: {
-      nzMaxCharacterCount: [2, "nzMaxCharacterCount", "nzMaxCharacterCount", numberAttribute],
-      nzComputeCharacterCount: "nzComputeCharacterCount",
-      nzFormatter: "nzFormatter"
+      nzMaxCharacterCount: [2, 'nzMaxCharacterCount', 'nzMaxCharacterCount', numberAttribute],
+      nzComputeCharacterCount: 'nzComputeCharacterCount',
+      nzFormatter: 'nzFormatter',
     },
     ngContentSelectors: _c4,
     decls: 1,
@@ -3908,40 +4824,63 @@ var NzTextareaCountComponent = class _NzTextareaCountComponent {
       }
     },
     encapsulation: 2,
-    changeDetection: 0
+    changeDetection: 0,
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzTextareaCountComponent, [{
-    type: Component,
-    args: [{
-      selector: "nz-textarea-count",
-      template: `<ng-content select="textarea[nz-input]"></ng-content>`,
-      host: {
-        class: "ant-input-textarea-show-count"
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzTextareaCountComponent,
+      [
+        {
+          type: Component,
+          args: [
+            {
+              selector: 'nz-textarea-count',
+              template: `<ng-content select="textarea[nz-input]"></ng-content>`,
+              host: {
+                class: 'ant-input-textarea-show-count',
+              },
+              changeDetection: ChangeDetectionStrategy.OnPush,
+            },
+          ],
+        },
+      ],
+      null,
+      {
+        nzInputDirective: [
+          {
+            type: ContentChild,
+            args: [
+              NzInputDirective,
+              {
+                static: true,
+              },
+            ],
+          },
+        ],
+        nzMaxCharacterCount: [
+          {
+            type: Input,
+            args: [
+              {
+                transform: numberAttribute,
+              },
+            ],
+          },
+        ],
+        nzComputeCharacterCount: [
+          {
+            type: Input,
+          },
+        ],
+        nzFormatter: [
+          {
+            type: Input,
+          },
+        ],
       },
-      changeDetection: ChangeDetectionStrategy.OnPush
-    }]
-  }], null, {
-    nzInputDirective: [{
-      type: ContentChild,
-      args: [NzInputDirective, {
-        static: true
-      }]
-    }],
-    nzMaxCharacterCount: [{
-      type: Input,
-      args: [{
-        transform: numberAttribute
-      }]
-    }],
-    nzComputeCharacterCount: [{
-      type: Input
-    }],
-    nzFormatter: [{
-      type: Input
-    }]
-  });
+    );
 })();
 var NzInputModule = class _NzInputModule {
   static ɵfac = function NzInputModule_Factory(__ngFactoryType__) {
@@ -3949,21 +4888,61 @@ var NzInputModule = class _NzInputModule {
   };
   static ɵmod = ɵɵdefineNgModule({
     type: _NzInputModule,
-    imports: [NzTextareaCountComponent, NzInputDirective, NzInputGroupComponent, NzAutosizeDirective, NzInputGroupSlotComponent, NzInputGroupWhitSuffixOrPrefixDirective, NzInputOtpComponent],
-    exports: [NzTextareaCountComponent, NzInputDirective, NzInputGroupComponent, NzAutosizeDirective, NzInputGroupWhitSuffixOrPrefixDirective, NzInputOtpComponent]
+    imports: [
+      NzTextareaCountComponent,
+      NzInputDirective,
+      NzInputGroupComponent,
+      NzAutosizeDirective,
+      NzInputGroupSlotComponent,
+      NzInputGroupWhitSuffixOrPrefixDirective,
+      NzInputOtpComponent,
+    ],
+    exports: [
+      NzTextareaCountComponent,
+      NzInputDirective,
+      NzInputGroupComponent,
+      NzAutosizeDirective,
+      NzInputGroupWhitSuffixOrPrefixDirective,
+      NzInputOtpComponent,
+    ],
   });
   static ɵinj = ɵɵdefineInjector({
-    imports: [NzInputGroupComponent, NzInputGroupSlotComponent, NzInputOtpComponent]
+    imports: [NzInputGroupComponent, NzInputGroupSlotComponent, NzInputOtpComponent],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzInputModule, [{
-    type: NgModule,
-    args: [{
-      imports: [NzTextareaCountComponent, NzInputDirective, NzInputGroupComponent, NzAutosizeDirective, NzInputGroupSlotComponent, NzInputGroupWhitSuffixOrPrefixDirective, NzInputOtpComponent],
-      exports: [NzTextareaCountComponent, NzInputDirective, NzInputGroupComponent, NzAutosizeDirective, NzInputGroupWhitSuffixOrPrefixDirective, NzInputOtpComponent]
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzInputModule,
+      [
+        {
+          type: NgModule,
+          args: [
+            {
+              imports: [
+                NzTextareaCountComponent,
+                NzInputDirective,
+                NzInputGroupComponent,
+                NzAutosizeDirective,
+                NzInputGroupSlotComponent,
+                NzInputGroupWhitSuffixOrPrefixDirective,
+                NzInputOtpComponent,
+              ],
+              exports: [
+                NzTextareaCountComponent,
+                NzInputDirective,
+                NzInputGroupComponent,
+                NzAutosizeDirective,
+                NzInputGroupWhitSuffixOrPrefixDirective,
+                NzInputOtpComponent,
+              ],
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 export {
   NzAutosizeDirective,
@@ -3977,6 +4956,6 @@ export {
   NzInputOtpComponent,
   NzInputPrefixDirective,
   NzInputSuffixDirective,
-  NzTextareaCountComponent
+  NzTextareaCountComponent,
 };
 //# sourceMappingURL=ng-zorro-antd_input.js.map

@@ -829,9 +829,9 @@ import {
   ZhihuOutline,
   ZhihuSquareFill,
   ZoomInOutline,
-  ZoomOutOutline
-} from "./chunk-D3I5WW37.js";
-import "./chunk-VC57AUI7.js";
+  ZoomOutOutline,
+} from './chunk-D3I5WW37.js';
+import './chunk-VC57AUI7.js';
 export {
   AccountBookFill,
   AccountBookOutline,
@@ -1663,5 +1663,5 @@ export {
   ZhihuOutline,
   ZhihuSquareFill,
   ZoomInOutline,
-  ZoomOutOutline
+  ZoomOutOutline,
 };

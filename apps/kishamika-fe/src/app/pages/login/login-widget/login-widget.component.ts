@@ -1,7 +1,8 @@
 import { Component, computed, inject } from '@angular/core';
-import { UserService } from '../../../services/user/user.service';
-import { HeaderMenuComponent } from '../../../components/header-menu/header-menu.component';
 import { NzButtonComponent } from 'ng-zorro-antd/button';
+
+import { HeaderMenuComponent } from '../../../components/header-menu/header-menu.component';
+import { UserService } from '../../../services/user/user.service';
 
 @Component({
   selector: 'app-login-widget',

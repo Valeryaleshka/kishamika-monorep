@@ -1,8 +1,9 @@
 import { Component, computed, inject } from '@angular/core';
+
 import { LoginWidgetComponent } from '../../pages/login/login-widget/login-widget.component';
-import { HeaderMenuComponent } from '../header-menu/header-menu.component';
 import { UserService } from '../../services/user/user.service';
 import { insertIf } from '../../shared/utils/utils';
+import { HeaderMenuComponent } from '../header-menu/header-menu.component';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,10 @@ export class HeaderComponent {
   menuItems = computed(() => {
     return [
       { title: 'Home', link: '/home' },
-      ...insertIf(this.userService.getUser(), { title: 'Users', link: '/users' }),
+      ...insertIf(this.userService.getUser(), {
+        title: 'Users',
+        link: '/users',
+      }),
     ];
   });
 }

@@ -1,4 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
+
 import { setTheme, toggleTheme } from './app.actions';
 
 export interface ThemeState {
@@ -14,8 +15,6 @@ export const appReducer = createReducer(
   on(setTheme, (state, { theme }) => ({ ...state, theme })),
   on(toggleTheme, (state) => ({
     ...state,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-expect-error
-    theme: state.theme === 'light' ? 'dark' : 'light'
-  }))
+    theme: state.theme === 'light' ? 'dark' : 'light',
+  })),
 );

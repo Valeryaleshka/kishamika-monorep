@@ -1,16 +1,21 @@
+import { DecimalPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import imageCompression, { Options } from 'browser-image-compression';
+import { NzButtonComponent } from 'ng-zorro-antd/button';
+import { NzWaveDirective } from 'ng-zorro-antd/core/wave';
+import {
+  NzFormControlComponent,
+  NzFormItemComponent,
+  NzFormLabelComponent,
+} from 'ng-zorro-antd/form';
+import { NzColDirective, NzRowDirective } from 'ng-zorro-antd/grid';
+import { NzInputDirective } from 'ng-zorro-antd/input';
+import { NzMessageService } from 'ng-zorro-antd/message';
+
 import { ContentWrapperComponent } from '../../components/content-wrapper/content-wrapper.component';
 import { CenterDirective } from '../../derectives/center-content.directive';
-import { NzButtonComponent } from 'ng-zorro-antd/button';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { DecimalPipe } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NzColDirective, NzRowDirective } from 'ng-zorro-antd/grid';
-import { NzFormControlComponent, NzFormItemComponent, NzFormLabelComponent } from 'ng-zorro-antd/form';
-import { NzInputDirective } from 'ng-zorro-antd/input';
-import { NzWaveDirective } from 'ng-zorro-antd/core/wave';
-import imageCompression, { Options } from 'browser-image-compression';
-import {DropareaDirective} from '../../derectives/droparea.directive';
+import { DropareaDirective } from '../../derectives/droparea.directive';
 
 @Component({
   selector: 'app-home',
@@ -54,19 +59,13 @@ export class HomeComponent {
 
     if (input.files && input.files.length > 0) {
       this.currentFile = input.files[0];
-      console.log(this.currentFile.size);
 
       this.preview = URL.createObjectURL(this.currentFile);
       this.originalSize = this.currentFile.size / 1024 / 1024;
     }
   }
 
-  consolelogim(progress: number) {
-    console.log(progress);
-  }
-
   async compressFile() {
-    console.log('compress file');
     if (this.currentFile && this.preview && this.availableForCompress) {
       this.availableForCompress = false;
 
@@ -74,7 +73,7 @@ export class HomeComponent {
         initialQuality: this.compressorQuality / 100,
         alwaysKeepResolution: false,
         useWebWorker: true,
-        onProgress: this.consolelogim,
+        // onProgress: this.consolelogim,
         maxSizeMB: this.maxSize,
       };
 
@@ -82,10 +81,12 @@ export class HomeComponent {
         .then((compressedImage: any) => {
           this.compressedFile = compressedImage;
           this.compressedSize = this.compressedFile.size / 1024 / 1024;
-          this.imageCompress.getDataUrlFromFile(this.compressedFile).then((url) => {
-            this.compressed = url;
-            this.messageService.success('Successfully compressed');
-          });
+          this.imageCompress
+            .getDataUrlFromFile(this.compressedFile)
+            .then((url) => {
+              this.compressed = url;
+              this.messageService.success('Successfully compressed');
+            });
         })
         .finally(() => {
           this.availableForCompress = true;

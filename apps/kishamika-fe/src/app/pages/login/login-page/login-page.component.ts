@@ -1,4 +1,5 @@
 import { Component, DestroyRef, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
   FormControl,
   FormGroup,
@@ -6,21 +7,19 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ApiService } from '../../../services/api/api.service';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputDirective, NzInputModule } from 'ng-zorro-antd/input';
+import { take } from 'rxjs';
+
+import { User } from '../../../../../../kishamika-be/src/auth/services/users.service';
+import { BorderedCardComponent } from '../../../components/bordered-card/bordered-card.component';
 import { ContentWrapperComponent } from '../../../components/content-wrapper/content-wrapper.component';
 import { CenterDirective } from '../../../derectives/center-content.directive';
-import { BorderedCardComponent } from '../../../components/bordered-card/bordered-card.component';
-import { take } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ApiService } from '../../../services/api/api.service';
 import { UserService } from '../../../services/user/user.service';
-import { Router } from '@angular/router';
-import { NzInputDirective, NzInputModule } from 'ng-zorro-antd/input';
-import { NzButtonModule } from 'ng-zorro-antd/button';
 import { matchValidator } from '../../../shared/common/helpers/form.helper';
-import { NzFormModule } from 'ng-zorro-antd/form';
-import { User } from '../../users/users.types';
-
 
 @Component({
   selector: 'app-login-page',
@@ -63,14 +62,19 @@ export class LoginPageComponent {
 
   constructor() {
     this.isRegisterForm = this.route.snapshot.data['register'];
-    if(this.isRegisterForm){
+    if (this.isRegisterForm) {
       this.form.addControl('name', new FormControl('', [Validators.required]));
-      this.form.addControl('confirmPassword', new FormControl('', [Validators.required, matchValidator('password')]));
-      this.form.get('password')?.addValidators([
-        Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(25),
-      ])
+      this.form.addControl(
+        'confirmPassword',
+        new FormControl('', [Validators.required, matchValidator('password')]),
+      );
+      this.form
+        .get('password')
+        ?.addValidators([
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(25),
+        ]);
     }
   }
 
@@ -80,7 +84,7 @@ export class LoginPageComponent {
         .post('auth/register', this.form.value)
         .pipe(take(1))
         .pipe(takeUntilDestroyed(this.destroyRef))
-        .subscribe(_ => {
+        .subscribe((_) => {
           this.router.navigate(['/login']).then();
         });
     } else {

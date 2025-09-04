@@ -18,9 +18,9 @@ import {
   withHttpTransferCacheOptions,
   withI18nSupport,
   withIncrementalHydration,
-  withNoHttpTransferCache
-} from "./chunk-C2FPMNIE.js";
-import "./chunk-U6SD5W2O.js";
+  withNoHttpTransferCache,
+} from './chunk-C2FPMNIE.js';
+import './chunk-U6SD5W2O.js';
 import {
   BrowserDomAdapter,
   BrowserGetTestability,
@@ -36,18 +36,16 @@ import {
   bootstrapApplication,
   createApplication,
   platformBrowser,
-  provideProtractorTestingSupport
-} from "./chunk-WDFH655Z.js";
-import {
-  getDOM
-} from "./chunk-P7TSWPBR.js";
-import "./chunk-OROLZX2Q.js";
-import "./chunk-NDW6FAMK.js";
-import "./chunk-USC2B2WM.js";
-import "./chunk-HUZPAJME.js";
-import "./chunk-NFRTRQTS.js";
-import "./chunk-PVVX4OOT.js";
-import "./chunk-VC57AUI7.js";
+  provideProtractorTestingSupport,
+} from './chunk-WDFH655Z.js';
+import { getDOM } from './chunk-P7TSWPBR.js';
+import './chunk-OROLZX2Q.js';
+import './chunk-NDW6FAMK.js';
+import './chunk-USC2B2WM.js';
+import './chunk-NFRTRQTS.js';
+import './chunk-HUZPAJME.js';
+import './chunk-PVVX4OOT.js';
+import './chunk-VC57AUI7.js';
 export {
   BrowserModule,
   By,
@@ -84,5 +82,5 @@ export {
   HammerGesturesPlugin as ɵHammerGesturesPlugin,
   KeyEventsPlugin as ɵKeyEventsPlugin,
   SharedStylesHost as ɵSharedStylesHost,
-  getDOM as ɵgetDOM
+  getDOM as ɵgetDOM,
 };

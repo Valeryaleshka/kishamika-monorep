@@ -45,15 +45,15 @@ import {
   resultMemoize,
   select,
   setNgrxMockEnvironment,
-  union
-} from "./chunk-HRDWNVIR.js";
-import "./chunk-FBBY4FQW.js";
-import "./chunk-NDW6FAMK.js";
-import "./chunk-USC2B2WM.js";
-import "./chunk-HUZPAJME.js";
-import "./chunk-NFRTRQTS.js";
-import "./chunk-PVVX4OOT.js";
-import "./chunk-VC57AUI7.js";
+  union,
+} from './chunk-HRDWNVIR.js';
+import './chunk-FBBY4FQW.js';
+import './chunk-NDW6FAMK.js';
+import './chunk-USC2B2WM.js';
+import './chunk-NFRTRQTS.js';
+import './chunk-HUZPAJME.js';
+import './chunk-PVVX4OOT.js';
+import './chunk-VC57AUI7.js';
 export {
   ACTIVE_RUNTIME_CHECKS,
   ActionsSubject,
@@ -101,5 +101,5 @@ export {
   resultMemoize,
   select,
   setNgrxMockEnvironment,
-  union
+  union,
 };

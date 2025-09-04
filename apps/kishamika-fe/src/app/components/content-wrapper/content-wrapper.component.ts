@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-content-wrapper',
   imports: [],
   templateUrl: './content-wrapper.component.html',
-  styleUrl: './content-wrapper.component.css'
+  styleUrl: './content-wrapper.component.css',
 })
-export class ContentWrapperComponent {
-
-}
+export class ContentWrapperComponent {}

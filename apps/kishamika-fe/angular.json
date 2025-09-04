@@ -52,8 +52,8 @@
             "development": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
+                  "replace": "environments/environment.ts",
+                  "with": "environments/environment.development.ts"
                 }
               ],
               "optimization": false,
@@ -95,7 +95,7 @@
             "styles": [
               "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/styles.css"
-              ],
+            ],
             "scripts": [],
             "webWorkerTsConfig": "tsconfig.worker.json"
           }

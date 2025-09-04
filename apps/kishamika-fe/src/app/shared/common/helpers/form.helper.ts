@@ -1,6 +1,14 @@
-import { AbstractControl, ValidationErrors, ValidatorFn, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+} from '@angular/forms';
 
-export function matchValidator(matchTo: string, reverse?: boolean): ValidatorFn {
+export function matchValidator(
+  matchTo: string,
+  reverse?: boolean,
+): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const parent = control.parent as FormGroup | null;
 

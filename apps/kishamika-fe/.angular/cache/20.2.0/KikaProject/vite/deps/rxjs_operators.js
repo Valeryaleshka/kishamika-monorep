@@ -1,7 +1,4 @@
-import {
-  partition,
-  race
-} from "./chunk-NFRTRQTS.js";
+import { partition, race } from './chunk-NFRTRQTS.js';
 import {
   audit,
   auditTime,
@@ -113,9 +110,9 @@ import {
   withLatestFrom,
   zip2 as zip,
   zipAll,
-  zipWith
-} from "./chunk-PVVX4OOT.js";
-import "./chunk-VC57AUI7.js";
+  zipWith,
+} from './chunk-PVVX4OOT.js';
+import './chunk-VC57AUI7.js';
 export {
   audit,
   auditTime,
@@ -229,5 +226,5 @@ export {
   withLatestFrom,
   zip,
   zipAll,
-  zipWith
+  zipWith,
 };

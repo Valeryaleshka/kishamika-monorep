@@ -1,21 +1,21 @@
 // ../../node_modules/@angular/animations/fesm2022/private_export.mjs
 var AnimationMetadataType;
-(function(AnimationMetadataType2) {
-  AnimationMetadataType2[AnimationMetadataType2["State"] = 0] = "State";
-  AnimationMetadataType2[AnimationMetadataType2["Transition"] = 1] = "Transition";
-  AnimationMetadataType2[AnimationMetadataType2["Sequence"] = 2] = "Sequence";
-  AnimationMetadataType2[AnimationMetadataType2["Group"] = 3] = "Group";
-  AnimationMetadataType2[AnimationMetadataType2["Animate"] = 4] = "Animate";
-  AnimationMetadataType2[AnimationMetadataType2["Keyframes"] = 5] = "Keyframes";
-  AnimationMetadataType2[AnimationMetadataType2["Style"] = 6] = "Style";
-  AnimationMetadataType2[AnimationMetadataType2["Trigger"] = 7] = "Trigger";
-  AnimationMetadataType2[AnimationMetadataType2["Reference"] = 8] = "Reference";
-  AnimationMetadataType2[AnimationMetadataType2["AnimateChild"] = 9] = "AnimateChild";
-  AnimationMetadataType2[AnimationMetadataType2["AnimateRef"] = 10] = "AnimateRef";
-  AnimationMetadataType2[AnimationMetadataType2["Query"] = 11] = "Query";
-  AnimationMetadataType2[AnimationMetadataType2["Stagger"] = 12] = "Stagger";
+(function (AnimationMetadataType2) {
+  AnimationMetadataType2[(AnimationMetadataType2['State'] = 0)] = 'State';
+  AnimationMetadataType2[(AnimationMetadataType2['Transition'] = 1)] = 'Transition';
+  AnimationMetadataType2[(AnimationMetadataType2['Sequence'] = 2)] = 'Sequence';
+  AnimationMetadataType2[(AnimationMetadataType2['Group'] = 3)] = 'Group';
+  AnimationMetadataType2[(AnimationMetadataType2['Animate'] = 4)] = 'Animate';
+  AnimationMetadataType2[(AnimationMetadataType2['Keyframes'] = 5)] = 'Keyframes';
+  AnimationMetadataType2[(AnimationMetadataType2['Style'] = 6)] = 'Style';
+  AnimationMetadataType2[(AnimationMetadataType2['Trigger'] = 7)] = 'Trigger';
+  AnimationMetadataType2[(AnimationMetadataType2['Reference'] = 8)] = 'Reference';
+  AnimationMetadataType2[(AnimationMetadataType2['AnimateChild'] = 9)] = 'AnimateChild';
+  AnimationMetadataType2[(AnimationMetadataType2['AnimateRef'] = 10)] = 'AnimateRef';
+  AnimationMetadataType2[(AnimationMetadataType2['Query'] = 11)] = 'Query';
+  AnimationMetadataType2[(AnimationMetadataType2['Stagger'] = 12)] = 'Stagger';
 })(AnimationMetadataType || (AnimationMetadataType = {}));
-var AUTO_STYLE = "*";
+var AUTO_STYLE = '*';
 function trigger(name, definitions) {
   return { type: AnimationMetadataType.Trigger, name, definitions, options: {} };
 }
@@ -32,7 +32,12 @@ function state(name, styles, options) {
   return { type: AnimationMetadataType.State, name, styles, options };
 }
 function transition(stateChangeExpr, steps, options = null) {
-  return { type: AnimationMetadataType.Transition, expr: stateChangeExpr, animation: steps, options };
+  return {
+    type: AnimationMetadataType.Transition,
+    expr: stateChangeExpr,
+    animation: steps,
+    options,
+  };
 }
 function query(selector, animation, options = null) {
   return { type: AnimationMetadataType.Query, selector, animation, options };
@@ -76,8 +81,7 @@ var NoopAnimationPlayer = class {
   hasStarted() {
     return this._started;
   }
-  init() {
-  }
+  init() {}
   play() {
     if (!this.hasStarted()) {
       this._onStart();
@@ -93,10 +97,8 @@ var NoopAnimationPlayer = class {
     this._onStartFns.forEach((fn) => fn());
     this._onStartFns = [];
   }
-  pause() {
-  }
-  restart() {
-  }
+  pause() {}
+  restart() {}
   finish() {
     this._onFinish();
   }
@@ -125,7 +127,7 @@ var NoopAnimationPlayer = class {
   }
   /** @internal */
   triggerCallback(phaseName) {
-    const methods = phaseName == "start" ? this._onStartFns : this._onDoneFns;
+    const methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
     methods.forEach((fn) => fn());
     methods.length = 0;
   }
@@ -256,12 +258,12 @@ var AnimationGroupPlayer = class {
   }
   /** @internal */
   triggerCallback(phaseName) {
-    const methods = phaseName == "start" ? this._onStartFns : this._onDoneFns;
+    const methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
     methods.forEach((fn) => fn());
     methods.length = 0;
   }
 };
-var ɵPRE_STYLE = "!";
+var ɵPRE_STYLE = '!';
 
 export {
   AnimationMetadataType,
@@ -276,7 +278,7 @@ export {
   stagger,
   NoopAnimationPlayer,
   AnimationGroupPlayer,
-  ɵPRE_STYLE
+  ɵPRE_STYLE,
 };
 /*! Bundled license information:
 

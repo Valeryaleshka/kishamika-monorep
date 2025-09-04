@@ -2,9 +2,10 @@ import { inject, Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError, switchMap, take } from 'rxjs/operators';
+
+import { User } from '../../../../../kishamika-be/src/auth/services/users.service';
 import { ApiService } from '../../services/api/api.service';
 import { UserService } from '../../services/user/user.service';
-import { User } from '../../pages/users/users.types';
 
 @Injectable({ providedIn: 'root' })
 export class UserResolver implements Resolve<boolean> {

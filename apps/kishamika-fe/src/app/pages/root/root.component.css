@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #90E0EF;
+  background-color: #90e0ef;
 
   .root-content-wrapper {
     background-color: white;

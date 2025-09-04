@@ -90,22 +90,15 @@ import {
   provideImgixLoader,
   provideNetlifyLoader,
   registerLocaleData,
-  setRootDomAdapter
-} from "./chunk-P7TSWPBR.js";
-import {
-  XhrFactory,
-  parseCookieValue
-} from "./chunk-OROLZX2Q.js";
-import {
-  IMAGE_CONFIG
-} from "./chunk-NDW6FAMK.js";
-import {
-  DOCUMENT
-} from "./chunk-USC2B2WM.js";
-import "./chunk-HUZPAJME.js";
-import "./chunk-NFRTRQTS.js";
-import "./chunk-PVVX4OOT.js";
-import "./chunk-VC57AUI7.js";
+  setRootDomAdapter,
+} from './chunk-P7TSWPBR.js';
+import { XhrFactory, parseCookieValue } from './chunk-OROLZX2Q.js';
+import { IMAGE_CONFIG } from './chunk-NDW6FAMK.js';
+import { DOCUMENT } from './chunk-USC2B2WM.js';
+import './chunk-NFRTRQTS.js';
+import './chunk-HUZPAJME.js';
+import './chunk-PVVX4OOT.js';
+import './chunk-VC57AUI7.js';
 export {
   APP_BASE_HREF,
   AsyncPipe,
@@ -203,5 +196,5 @@ export {
   getDOM as ɵgetDOM,
   normalizeQueryParams as ɵnormalizeQueryParams,
   parseCookieValue as ɵparseCookieValue,
-  setRootDomAdapter as ɵsetRootDomAdapter
+  setRootDomAdapter as ɵsetRootDomAdapter,
 };

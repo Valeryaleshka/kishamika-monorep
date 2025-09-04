@@ -37,15 +37,15 @@ import {
   withJsonpSupport,
   withNoXsrfProtection,
   withRequestsMadeViaParent,
-  withXsrfConfiguration
-} from "./chunk-U6SD5W2O.js";
-import "./chunk-OROLZX2Q.js";
-import "./chunk-NDW6FAMK.js";
-import "./chunk-USC2B2WM.js";
-import "./chunk-HUZPAJME.js";
-import "./chunk-NFRTRQTS.js";
-import "./chunk-PVVX4OOT.js";
-import "./chunk-VC57AUI7.js";
+  withXsrfConfiguration,
+} from './chunk-U6SD5W2O.js';
+import './chunk-OROLZX2Q.js';
+import './chunk-NDW6FAMK.js';
+import './chunk-USC2B2WM.js';
+import './chunk-NFRTRQTS.js';
+import './chunk-HUZPAJME.js';
+import './chunk-PVVX4OOT.js';
+import './chunk-VC57AUI7.js';
 export {
   FetchBackend,
   HTTP_INTERCEPTORS,
@@ -86,5 +86,5 @@ export {
   HttpInterceptorHandler as ɵHttpInterceptingHandler,
   HttpInterceptorHandler as ɵHttpInterceptorHandler,
   REQUESTS_CONTRIBUTE_TO_STABILITY as ɵREQUESTS_CONTRIBUTE_TO_STABILITY,
-  withHttpTransferCache as ɵwithHttpTransferCache
+  withHttpTransferCache as ɵwithHttpTransferCache,
 };

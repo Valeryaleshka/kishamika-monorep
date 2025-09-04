@@ -11,7 +11,7 @@ import {
 import { AuthService } from './auth.service';
 import * as authTypes from './auth.types';
 import express from 'express';
-import * as usersService from '../users/users.service';
+import * as usersService from './services/users.service';
 
 @Controller('auth')
 export class AuthController {

@@ -1,7 +1,7 @@
 import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
-  selector: '[centerContent]'
+  selector: '[centerContent]',
 })
 export class CenterDirective {
   @HostBinding('style.display') display = 'flex';

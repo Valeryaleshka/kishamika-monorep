@@ -7,12 +7,9 @@ import {
   setClassMetadata,
   ɵɵNgOnChangesFeature,
   ɵɵdefineDirective,
-  ɵɵdefineNgModule
-} from "./chunk-NDW6FAMK.js";
-import {
-  inject,
-  ɵɵdefineInjector
-} from "./chunk-USC2B2WM.js";
+  ɵɵdefineNgModule,
+} from './chunk-NDW6FAMK.js';
+import { inject, ɵɵdefineInjector } from './chunk-USC2B2WM.js';
 
 // ../../node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-core-transition-patch.mjs
 var NzTransitionPatchDirective = class _NzTransitionPatchDirective {
@@ -21,17 +18,17 @@ var NzTransitionPatchDirective = class _NzTransitionPatchDirective {
   hidden = null;
   setHiddenAttribute() {
     if (this.hidden) {
-      if (typeof this.hidden === "string") {
-        this.renderer.setAttribute(this.elementRef.nativeElement, "hidden", this.hidden);
+      if (typeof this.hidden === 'string') {
+        this.renderer.setAttribute(this.elementRef.nativeElement, 'hidden', this.hidden);
       } else {
-        this.renderer.setAttribute(this.elementRef.nativeElement, "hidden", "");
+        this.renderer.setAttribute(this.elementRef.nativeElement, 'hidden', '');
       }
     } else {
-      this.renderer.removeAttribute(this.elementRef.nativeElement, "hidden");
+      this.renderer.removeAttribute(this.elementRef.nativeElement, 'hidden');
     }
   }
   constructor() {
-    this.renderer.setAttribute(this.elementRef.nativeElement, "hidden", "");
+    this.renderer.setAttribute(this.elementRef.nativeElement, 'hidden', '');
   }
   ngOnChanges() {
     this.setHiddenAttribute();
@@ -44,24 +41,46 @@ var NzTransitionPatchDirective = class _NzTransitionPatchDirective {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _NzTransitionPatchDirective,
-    selectors: [["", "nz-button", ""], ["", "nz-icon", ""], ["nz-icon"], ["", "nz-menu-item", ""], ["", "nz-submenu", ""], ["nz-select-top-control"], ["nz-select-placeholder"], ["nz-input-group"]],
+    selectors: [
+      ['', 'nz-button', ''],
+      ['', 'nz-icon', ''],
+      ['nz-icon'],
+      ['', 'nz-menu-item', ''],
+      ['', 'nz-submenu', ''],
+      ['nz-select-top-control'],
+      ['nz-select-placeholder'],
+      ['nz-input-group'],
+    ],
     inputs: {
-      hidden: "hidden"
+      hidden: 'hidden',
     },
-    features: [ɵɵNgOnChangesFeature]
+    features: [ɵɵNgOnChangesFeature],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzTransitionPatchDirective, [{
-    type: Directive,
-    args: [{
-      selector: "[nz-button], [nz-icon], nz-icon, [nz-menu-item], [nz-submenu], nz-select-top-control, nz-select-placeholder, nz-input-group"
-    }]
-  }], () => [], {
-    hidden: [{
-      type: Input
-    }]
-  });
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzTransitionPatchDirective,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector:
+                '[nz-button], [nz-icon], nz-icon, [nz-menu-item], [nz-submenu], nz-select-top-control, nz-select-placeholder, nz-input-group',
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        hidden: [
+          {
+            type: Input,
+          },
+        ],
+      },
+    );
 })();
 var NzTransitionPatchModule = class _NzTransitionPatchModule {
   static ɵfac = function NzTransitionPatchModule_Factory(__ngFactoryType__) {
@@ -70,22 +89,29 @@ var NzTransitionPatchModule = class _NzTransitionPatchModule {
   static ɵmod = ɵɵdefineNgModule({
     type: _NzTransitionPatchModule,
     imports: [NzTransitionPatchDirective],
-    exports: [NzTransitionPatchDirective]
+    exports: [NzTransitionPatchDirective],
   });
   static ɵinj = ɵɵdefineInjector({});
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzTransitionPatchModule, [{
-    type: NgModule,
-    args: [{
-      imports: [NzTransitionPatchDirective],
-      exports: [NzTransitionPatchDirective]
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzTransitionPatchModule,
+      [
+        {
+          type: NgModule,
+          args: [
+            {
+              imports: [NzTransitionPatchDirective],
+              exports: [NzTransitionPatchDirective],
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
-export {
-  NzTransitionPatchDirective,
-  NzTransitionPatchModule
-};
+export { NzTransitionPatchDirective, NzTransitionPatchModule };
 //# sourceMappingURL=chunk-QRR2VSXT.js.map

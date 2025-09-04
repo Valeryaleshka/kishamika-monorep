@@ -1,15 +1,6 @@
-import {
-  coerceArray,
-  environment,
-  getEventPosition,
-  isTouchEvent
-} from "./chunk-U7XIMOED.js";
-import {
-  Platform
-} from "./chunk-GHVILJXS.js";
-import {
-  takeUntilDestroyed
-} from "./chunk-FBBY4FQW.js";
+import { coerceArray, environment, getEventPosition, isTouchEvent } from './chunk-U7XIMOED.js';
+import { Platform } from './chunk-GHVILJXS.js';
+import { takeUntilDestroyed } from './chunk-FBBY4FQW.js';
 import {
   CSP_NONCE,
   Injectable,
@@ -18,15 +9,15 @@ import {
   RendererFactory2,
   setClassMetadata,
   ɵɵdefineNgModule,
-  ɵɵgetInheritedFactory
-} from "./chunk-NDW6FAMK.js";
+  ɵɵgetInheritedFactory,
+} from './chunk-NDW6FAMK.js';
 import {
   DOCUMENT,
   DestroyRef,
   inject,
   ɵɵdefineInjectable,
-  ɵɵdefineInjector
-} from "./chunk-USC2B2WM.js";
+  ɵɵdefineInjector,
+} from './chunk-USC2B2WM.js';
 import {
   Observable,
   Subject,
@@ -41,8 +32,8 @@ import {
   skip,
   startWith,
   take,
-  takeUntil
-} from "./chunk-PVVX4OOT.js";
+  takeUntil,
+} from './chunk-PVVX4OOT.js';
 
 // ../../node_modules/@angular/cdk/fesm2022/breakpoints-observer.mjs
 var mediaQueriesForWebkitCompatibility = /* @__PURE__ */ new Set();
@@ -50,16 +41,17 @@ var mediaQueryStyleNode;
 var MediaMatcher = class _MediaMatcher {
   _platform = inject(Platform);
   _nonce = inject(CSP_NONCE, {
-    optional: true
+    optional: true,
   });
   /** The internal matchMedia method to return back a MediaQueryList like object. */
   _matchMedia;
   constructor() {
-    this._matchMedia = this._platform.isBrowser && window.matchMedia ? (
-      // matchMedia is bound to the window scope intentionally as it is an illegal invocation to
-      // call it from a different scope.
-      window.matchMedia.bind(window)
-    ) : noopMatchMedia;
+    this._matchMedia =
+      this._platform.isBrowser && window.matchMedia
+        ? // matchMedia is bound to the window scope intentionally as it is an illegal invocation to
+          // call it from a different scope.
+          window.matchMedia.bind(window)
+        : noopMatchMedia;
   }
   /**
    * Evaluates the given media query and returns the native MediaQueryList from which results
@@ -79,16 +71,26 @@ var MediaMatcher = class _MediaMatcher {
   static ɵprov = ɵɵdefineInjectable({
     token: _MediaMatcher,
     factory: _MediaMatcher.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MediaMatcher, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      MediaMatcher,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 function createEmptyStyleRule(query, nonce) {
   if (mediaQueriesForWebkitCompatibility.has(query)) {
@@ -96,11 +98,11 @@ function createEmptyStyleRule(query, nonce) {
   }
   try {
     if (!mediaQueryStyleNode) {
-      mediaQueryStyleNode = document.createElement("style");
+      mediaQueryStyleNode = document.createElement('style');
       if (nonce) {
-        mediaQueryStyleNode.setAttribute("nonce", nonce);
+        mediaQueryStyleNode.setAttribute('nonce', nonce);
       }
-      mediaQueryStyleNode.setAttribute("type", "text/css");
+      mediaQueryStyleNode.setAttribute('type', 'text/css');
       document.head.appendChild(mediaQueryStyleNode);
     }
     if (mediaQueryStyleNode.sheet) {
@@ -113,12 +115,10 @@ function createEmptyStyleRule(query, nonce) {
 }
 function noopMatchMedia(query) {
   return {
-    matches: query === "all" || query === "",
+    matches: query === 'all' || query === '',
     media: query,
-    addListener: () => {
-    },
-    removeListener: () => {
-    }
+    addListener: () => {},
+    removeListener: () => {},
   };
 }
 var BreakpointObserver = class _BreakpointObserver {
@@ -128,8 +128,7 @@ var BreakpointObserver = class _BreakpointObserver {
   _queries = /* @__PURE__ */ new Map();
   /** A subject for all other observables to takeUntil based on. */
   _destroySubject = new Subject();
-  constructor() {
-  }
+  constructor() {}
   /** Completes the active subject, signalling to all other observables to complete. */
   ngOnDestroy() {
     this._destroySubject.next();
@@ -154,21 +153,23 @@ var BreakpointObserver = class _BreakpointObserver {
     const queries = splitQueries(coerceArray(value));
     const observables = queries.map((query) => this._registerQuery(query).observable);
     let stateObservable = combineLatest(observables);
-    stateObservable = concat(stateObservable.pipe(take(1)), stateObservable.pipe(skip(1), debounceTime(0)));
-    return stateObservable.pipe(map((breakpointStates) => {
-      const response = {
-        matches: false,
-        breakpoints: {}
-      };
-      breakpointStates.forEach(({
-        matches,
-        query
-      }) => {
-        response.matches = response.matches || matches;
-        response.breakpoints[query] = matches;
-      });
-      return response;
-    }));
+    stateObservable = concat(
+      stateObservable.pipe(take(1)),
+      stateObservable.pipe(skip(1), debounceTime(0)),
+    );
+    return stateObservable.pipe(
+      map((breakpointStates) => {
+        const response = {
+          matches: false,
+          breakpoints: {},
+        };
+        breakpointStates.forEach(({ matches, query }) => {
+          response.matches = response.matches || matches;
+          response.breakpoints[query] = matches;
+        });
+        return response;
+      }),
+    );
   }
   /** Registers a specific query to be listened for. */
   _registerQuery(query) {
@@ -182,15 +183,17 @@ var BreakpointObserver = class _BreakpointObserver {
       return () => {
         mql.removeListener(handler);
       };
-    }).pipe(startWith(mql), map(({
-      matches
-    }) => ({
-      query,
-      matches
-    })), takeUntil(this._destroySubject));
+    }).pipe(
+      startWith(mql),
+      map(({ matches }) => ({
+        query,
+        matches,
+      })),
+      takeUntil(this._destroySubject),
+    );
     const output = {
       observable: queryObservable,
-      mql
+      mql,
     };
     this._queries.set(query, output);
     return output;
@@ -201,19 +204,32 @@ var BreakpointObserver = class _BreakpointObserver {
   static ɵprov = ɵɵdefineInjectable({
     token: _BreakpointObserver,
     factory: _BreakpointObserver.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BreakpointObserver, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      BreakpointObserver,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 function splitQueries(queries) {
-  return queries.map((query) => query.split(",")).reduce((a1, a2) => a1.concat(a2)).map((query) => query.trim());
+  return queries
+    .map((query) => query.split(','))
+    .reduce((a1, a2) => a1.concat(a2))
+    .map((query) => query.trim());
 }
 
 // ../../node_modules/@angular/cdk/fesm2022/layout.mjs
@@ -222,24 +238,37 @@ var LayoutModule = class _LayoutModule {
     return new (__ngFactoryType__ || _LayoutModule)();
   };
   static ɵmod = ɵɵdefineNgModule({
-    type: _LayoutModule
+    type: _LayoutModule,
   });
   static ɵinj = ɵɵdefineInjector({});
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LayoutModule, [{
-    type: NgModule,
-    args: [{}]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      LayoutModule,
+      [
+        {
+          type: NgModule,
+          args: [{}],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
 // ../../node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-core-polyfill.mjs
-var requestAnimationFrame = typeof globalThis.requestAnimationFrame === "function" ? globalThis.requestAnimationFrame : globalThis.setTimeout;
-var cancelAnimationFrame = typeof globalThis.requestAnimationFrame === "function" ? globalThis.cancelAnimationFrame : globalThis.clearTimeout;
+var requestAnimationFrame =
+  typeof globalThis.requestAnimationFrame === 'function'
+    ? globalThis.requestAnimationFrame
+    : globalThis.setTimeout;
+var cancelAnimationFrame =
+  typeof globalThis.requestAnimationFrame === 'function'
+    ? globalThis.cancelAnimationFrame
+    : globalThis.clearTimeout;
 
 // ../../node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-core-services.mjs
-var NOOP = () => {
-};
+var NOOP = () => {};
 var NzResizeService = class _NzResizeService {
   ngZone = inject(NgZone);
   destroyRef = inject(DestroyRef);
@@ -259,7 +288,10 @@ var NzResizeService = class _NzResizeService {
   }
   connect() {
     this.registerListener();
-    return this.resizeSource$.pipe(auditTime(16), finalize(() => this.unregisterListener()));
+    return this.resizeSource$.pipe(
+      auditTime(16),
+      finalize(() => this.unregisterListener()),
+    );
   }
   disconnet() {
     this.unregisterListener();
@@ -267,7 +299,7 @@ var NzResizeService = class _NzResizeService {
   registerListener() {
     if (this.listeners === 0) {
       this.ngZone.runOutsideAngular(() => {
-        this.disposeHandle = this.renderer.listen("window", "resize", this.handler);
+        this.disposeHandle = this.renderer.listen('window', 'resize', this.handler);
       });
     }
     this.listeners += 1;
@@ -285,16 +317,26 @@ var NzResizeService = class _NzResizeService {
   static ɵprov = ɵɵdefineInjectable({
     token: _NzResizeService,
     factory: _NzResizeService.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzResizeService, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzResizeService,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 var testSingleRegistry = /* @__PURE__ */ new Map();
 var NzSingletonService = class _NzSingletonService {
@@ -325,7 +367,7 @@ var NzSingletonService = class _NzSingletonService {
   }
   withNewTarget(target) {
     return {
-      target
+      target,
     };
   }
   static ɵfac = function NzSingletonService_Factory(__ngFactoryType__) {
@@ -334,22 +376,32 @@ var NzSingletonService = class _NzSingletonService {
   static ɵprov = ɵɵdefineInjectable({
     token: _NzSingletonService,
     factory: _NzSingletonService.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzSingletonService, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzSingletonService,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 function getPagePosition(event) {
   const e = getEventPosition(event);
   return {
     x: e.pageX,
-    y: e.pageY
+    y: e.pageY,
   };
 }
 var NzDragService = class _NzDragService {
@@ -367,41 +419,47 @@ var NzDragService = class _NzDragService {
     }
     this.currentStartingPoint = getPagePosition(event);
     this.currentDraggingSequence = new Subject();
-    return this.currentDraggingSequence.pipe(map((e) => ({
-      x: e.pageX - this.currentStartingPoint.x,
-      y: e.pageY - this.currentStartingPoint.y
-    })), filter((e) => Math.abs(e.x) > this.draggingThreshold || Math.abs(e.y) > this.draggingThreshold), finalize(() => this.teardownDraggingSequence()));
+    return this.currentDraggingSequence.pipe(
+      map((e) => ({
+        x: e.pageX - this.currentStartingPoint.x,
+        y: e.pageY - this.currentStartingPoint.y,
+      })),
+      filter(
+        (e) => Math.abs(e.x) > this.draggingThreshold || Math.abs(e.y) > this.draggingThreshold,
+      ),
+      finalize(() => this.teardownDraggingSequence()),
+    );
   }
   registerDraggingHandler(isTouch) {
     if (isTouch) {
       this.handleRegistry.add({
-        teardown: this.renderer.listen("document", "touchmove", (e) => {
+        teardown: this.renderer.listen('document', 'touchmove', (e) => {
           if (this.currentDraggingSequence) {
             this.currentDraggingSequence.next(e.touches[0] || e.changedTouches[0]);
           }
-        })
+        }),
       });
       this.handleRegistry.add({
-        teardown: this.renderer.listen("document", "touchend", () => {
+        teardown: this.renderer.listen('document', 'touchend', () => {
           if (this.currentDraggingSequence) {
             this.currentDraggingSequence.complete();
           }
-        })
+        }),
       });
     } else {
       this.handleRegistry.add({
-        teardown: this.renderer.listen("document", "mousemove", (e) => {
+        teardown: this.renderer.listen('document', 'mousemove', (e) => {
           if (this.currentDraggingSequence) {
             this.currentDraggingSequence.next(e);
           }
-        })
+        }),
       });
       this.handleRegistry.add({
-        teardown: this.renderer.listen("document", "mouseup", () => {
+        teardown: this.renderer.listen('document', 'mouseup', () => {
           if (this.currentDraggingSequence) {
             this.currentDraggingSequence.complete();
           }
-        })
+        }),
       });
     }
   }
@@ -414,24 +472,34 @@ var NzDragService = class _NzDragService {
   static ɵprov = ɵɵdefineInjectable({
     token: _NzDragService,
     factory: _NzDragService.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzDragService, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzDragService,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 function easeInOutCubic(t, b, c, d) {
   const cc = c - b;
   let tt = t / (d / 2);
   if (tt < 1) {
-    return cc / 2 * tt * tt * tt + b;
+    return (cc / 2) * tt * tt * tt + b;
   } else {
-    return cc / 2 * ((tt -= 2) * tt * tt + 2) + b;
+    return (cc / 2) * ((tt -= 2) * tt * tt + 2) + b;
   }
 }
 var NzScrollService = class _NzScrollService {
@@ -450,7 +518,7 @@ var NzScrollService = class _NzScrollService {
   getOffset(el) {
     const ret = {
       top: 0,
-      left: 0
+      left: 0,
     };
     if (!el || !el.getClientRects().length) {
       return ret;
@@ -469,19 +537,19 @@ var NzScrollService = class _NzScrollService {
   /** Get the position of the scoll bar of `el`. */
   // TODO: remove '| Window' as the fallback already happens here
   getScroll(target, top = true) {
-    if (typeof window === "undefined") {
+    if (typeof window === 'undefined') {
       return 0;
     }
-    const method = top ? "scrollTop" : "scrollLeft";
+    const method = top ? 'scrollTop' : 'scrollLeft';
     let result = 0;
     if (this.isWindow(target)) {
-      result = target[top ? "pageYOffset" : "pageXOffset"];
+      result = target[top ? 'pageYOffset' : 'pageXOffset'];
     } else if (target instanceof Document) {
       result = target.documentElement[method];
     } else if (target) {
       result = target[method];
     }
-    if (target && !this.isWindow(target) && typeof result !== "number") {
+    if (target && !this.isWindow(target) && typeof result !== 'number') {
       result = (target.ownerDocument || target).documentElement[method];
     }
     return result;
@@ -500,25 +568,26 @@ var NzScrollService = class _NzScrollService {
     const target = containerEl ? containerEl : window;
     const scrollTop = this.getScroll(target);
     const startTime = Date.now();
-    const {
-      easing,
-      callback,
-      duration = 450
-    } = options;
+    const { easing, callback, duration = 450 } = options;
     const frameFunc = () => {
       const timestamp = Date.now();
       const time = timestamp - startTime;
-      const nextScrollTop = (easing || easeInOutCubic)(time > duration ? duration : time, scrollTop, y, duration);
+      const nextScrollTop = (easing || easeInOutCubic)(
+        time > duration ? duration : time,
+        scrollTop,
+        y,
+        duration,
+      );
       if (this.isWindow(target)) {
         target.scrollTo(window.pageXOffset, nextScrollTop);
-      } else if (target instanceof HTMLDocument || target.constructor.name === "HTMLDocument") {
+      } else if (target instanceof HTMLDocument || target.constructor.name === 'HTMLDocument') {
         target.documentElement.scrollTop = nextScrollTop;
       } else {
         target.scrollTop = nextScrollTop;
       }
       if (time < duration) {
         requestAnimationFrame(frameFunc);
-      } else if (typeof callback === "function") {
+      } else if (typeof callback === 'function') {
         this.ngZone.run(callback);
       }
     };
@@ -530,45 +599,62 @@ var NzScrollService = class _NzScrollService {
   static ɵprov = ɵɵdefineInjectable({
     token: _NzScrollService,
     factory: _NzScrollService.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzScrollService, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzScrollService,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var NzBreakpointEnum;
-(function(NzBreakpointEnum2) {
-  NzBreakpointEnum2["xxl"] = "xxl";
-  NzBreakpointEnum2["xl"] = "xl";
-  NzBreakpointEnum2["lg"] = "lg";
-  NzBreakpointEnum2["md"] = "md";
-  NzBreakpointEnum2["sm"] = "sm";
-  NzBreakpointEnum2["xs"] = "xs";
+(function (NzBreakpointEnum2) {
+  NzBreakpointEnum2['xxl'] = 'xxl';
+  NzBreakpointEnum2['xl'] = 'xl';
+  NzBreakpointEnum2['lg'] = 'lg';
+  NzBreakpointEnum2['md'] = 'md';
+  NzBreakpointEnum2['sm'] = 'sm';
+  NzBreakpointEnum2['xs'] = 'xs';
 })(NzBreakpointEnum || (NzBreakpointEnum = {}));
 var gridResponsiveMap = {
-  xs: "(max-width: 575px)",
-  sm: "(min-width: 576px)",
-  md: "(min-width: 768px)",
-  lg: "(min-width: 992px)",
-  xl: "(min-width: 1200px)",
-  xxl: "(min-width: 1600px)"
+  xs: '(max-width: 575px)',
+  sm: '(min-width: 576px)',
+  md: '(min-width: 768px)',
+  lg: '(min-width: 992px)',
+  xl: '(min-width: 1200px)',
+  xxl: '(min-width: 1600px)',
 };
 var NzBreakpointService = class _NzBreakpointService {
   resizeService = inject(NzResizeService);
   mediaMatcher = inject(MediaMatcher);
   constructor() {
-    this.resizeService.connect().pipe(takeUntilDestroyed()).subscribe(() => {
-    });
+    this.resizeService
+      .connect()
+      .pipe(takeUntilDestroyed())
+      .subscribe(() => {});
   }
   subscribe(breakpointMap, fullMap) {
     if (fullMap) {
       const get = () => this.matchMedia(breakpointMap, true);
-      return this.resizeService.connect().pipe(map(get), startWith(get()), distinctUntilChanged((x, y) => x[0] === y[0]), map((x) => x[1]));
+      return this.resizeService.connect().pipe(
+        map(get),
+        startWith(get()),
+        distinctUntilChanged((x, y) => x[0] === y[0]),
+        map((x) => x[1]),
+      );
     } else {
       const get = () => this.matchMedia(breakpointMap);
       return this.resizeService.connect().pipe(map(get), startWith(get()), distinctUntilChanged());
@@ -597,16 +683,26 @@ var NzBreakpointService = class _NzBreakpointService {
   static ɵprov = ɵɵdefineInjectable({
     token: _NzBreakpointService,
     factory: _NzBreakpointService.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzBreakpointService, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzBreakpointService,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 var NzDestroyService = class _NzDestroyService extends Subject {
   ngOnDestroy() {
@@ -616,18 +712,29 @@ var NzDestroyService = class _NzDestroyService extends Subject {
   static ɵfac = /* @__PURE__ */ (() => {
     let ɵNzDestroyService_BaseFactory;
     return function NzDestroyService_Factory(__ngFactoryType__) {
-      return (ɵNzDestroyService_BaseFactory || (ɵNzDestroyService_BaseFactory = ɵɵgetInheritedFactory(_NzDestroyService)))(__ngFactoryType__ || _NzDestroyService);
+      return (
+        ɵNzDestroyService_BaseFactory ||
+        (ɵNzDestroyService_BaseFactory = ɵɵgetInheritedFactory(_NzDestroyService))
+      )(__ngFactoryType__ || _NzDestroyService);
     };
   })();
   static ɵprov = ɵɵdefineInjectable({
     token: _NzDestroyService,
-    factory: _NzDestroyService.ɵfac
+    factory: _NzDestroyService.ɵfac,
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzDestroyService, [{
-    type: Injectable
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzDestroyService,
+      [
+        {
+          type: Injectable,
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var ImagePreloadService = class _ImagePreloadService {
   counter = /* @__PURE__ */ new Map();
@@ -662,12 +769,12 @@ var ImagePreloadService = class _ImagePreloadService {
     };
   }
   appendPreloadLink(option) {
-    const linkNode = this.document.createElement("link");
-    linkNode.setAttribute("rel", "preload");
-    linkNode.setAttribute("as", "image");
-    linkNode.setAttribute("href", option.src);
+    const linkNode = this.document.createElement('link');
+    linkNode.setAttribute('rel', 'preload');
+    linkNode.setAttribute('as', 'image');
+    linkNode.setAttribute('href', option.src);
     if (option.srcset) {
-      linkNode.setAttribute("imagesrcset", option.srcset);
+      linkNode.setAttribute('imagesrcset', option.srcset);
     }
     this.document.head.appendChild(linkNode);
     return linkNode;
@@ -683,16 +790,26 @@ var ImagePreloadService = class _ImagePreloadService {
   static ɵprov = ɵɵdefineInjectable({
     token: _ImagePreloadService,
     factory: _ImagePreloadService.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ImagePreloadService, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      ImagePreloadService,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
 export {
@@ -701,6 +818,6 @@ export {
   NzResizeService,
   NzSingletonService,
   gridResponsiveMap,
-  NzBreakpointService
+  NzBreakpointService,
 };
 //# sourceMappingURL=chunk-JQFDHKHC.js.map

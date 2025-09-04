@@ -3,14 +3,9 @@ import {
   ApplicationRef,
   Injectable,
   createComponent,
-  setClassMetadata
-} from "./chunk-NDW6FAMK.js";
-import {
-  EnvironmentInjector,
-  Injector,
-  inject,
-  ɵɵdefineInjectable
-} from "./chunk-USC2B2WM.js";
+  setClassMetadata,
+} from './chunk-NDW6FAMK.js';
+import { EnvironmentInjector, Injector, inject, ɵɵdefineInjectable } from './chunk-USC2B2WM.js';
 
 // ../../node_modules/@angular/cdk/fesm2022/keycodes2.mjs
 var BACKSPACE = 8;
@@ -46,12 +41,12 @@ var _CdkPrivateStyleLoader = class __CdkPrivateStyleLoader {
    * @param loader Component which will be instantiated to load the styles.
    */
   load(loader) {
-    const appRef = this._appRef = this._appRef || this._injector.get(ApplicationRef);
+    const appRef = (this._appRef = this._appRef || this._injector.get(ApplicationRef));
     let data = appsWithLoaders.get(appRef);
     if (!data) {
       data = {
         loaders: /* @__PURE__ */ new Set(),
-        refs: []
+        refs: [],
       };
       appsWithLoaders.set(appRef, data);
       appRef.onDestroy(() => {
@@ -61,9 +56,11 @@ var _CdkPrivateStyleLoader = class __CdkPrivateStyleLoader {
     }
     if (!data.loaders.has(loader)) {
       data.loaders.add(loader);
-      data.refs.push(createComponent(loader, {
-        environmentInjector: this._environmentInjector
-      }));
+      data.refs.push(
+        createComponent(loader, {
+          environmentInjector: this._environmentInjector,
+        }),
+      );
     }
   }
   static ɵfac = function _CdkPrivateStyleLoader_Factory(__ngFactoryType__) {
@@ -72,16 +69,26 @@ var _CdkPrivateStyleLoader = class __CdkPrivateStyleLoader {
   static ɵprov = ɵɵdefineInjectable({
     token: __CdkPrivateStyleLoader,
     factory: __CdkPrivateStyleLoader.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_CdkPrivateStyleLoader, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      _CdkPrivateStyleLoader,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
 // ../../node_modules/@angular/cdk/fesm2022/id-generator.mjs
@@ -93,7 +100,7 @@ var _IdGenerator = class __IdGenerator {
    * @param prefix Prefix to add to the ID.
    */
   getId(prefix) {
-    if (this._appId !== "ng") {
+    if (this._appId !== 'ng') {
       prefix += this._appId;
     }
     if (!counters.hasOwnProperty(prefix)) {
@@ -107,16 +114,26 @@ var _IdGenerator = class __IdGenerator {
   static ɵprov = ɵɵdefineInjectable({
     token: __IdGenerator,
     factory: __IdGenerator.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_IdGenerator, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      _IdGenerator,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
 export {
@@ -135,6 +152,6 @@ export {
   Z,
   META,
   MAC_META,
-  hasModifierKey
+  hasModifierKey,
 };
 //# sourceMappingURL=chunk-MWSVZF2D.js.map

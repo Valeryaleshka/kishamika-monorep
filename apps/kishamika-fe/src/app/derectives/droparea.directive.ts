@@ -1,7 +1,14 @@
-import { Directive, HostListener, Output, EventEmitter, inject, ElementRef } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Output,
+  inject,
+} from '@angular/core';
 
 @Directive({
-  selector: "[droparea]"
+  selector: '[droparea]',
 })
 export class DropareaDirective {
   private el = inject(ElementRef);
@@ -9,21 +16,21 @@ export class DropareaDirective {
   @Output() dropped = new EventEmitter<FileList>();
   @Output() hovered = new EventEmitter<boolean>();
 
-  @HostListener("drop", ["$event"])
+  @HostListener('drop', ['$event'])
   onDrop($event: DragEvent) {
     $event.preventDefault();
     this.dropped.emit($event.dataTransfer?.files);
     this.hovered.emit(false);
   }
 
-  @HostListener("dragover", ["$event"])
+  @HostListener('dragover', ['$event'])
   onDragOver($event: DragEvent) {
     $event.preventDefault();
     console.log($event);
     this.hovered.emit(true);
   }
 
-  @HostListener("dragleave", ["$event"])
+  @HostListener('dragleave', ['$event'])
   onDragLeave($event: DragEvent) {
     $event.preventDefault();
     this.hovered.emit(false);

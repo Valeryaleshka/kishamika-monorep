@@ -5,12 +5,9 @@ import {
   NoopAnimationPlayer,
   sequence,
   style,
-  ɵPRE_STYLE
-} from "./chunk-UXLLEP6Q.js";
-import {
-  BrowserModule,
-  DomRendererFactory2
-} from "./chunk-WDFH655Z.js";
+  ɵPRE_STYLE,
+} from './chunk-UXLLEP6Q.js';
+import { BrowserModule, DomRendererFactory2 } from './chunk-WDFH655Z.js';
 import {
   ANIMATION_MODULE_TYPE,
   Inject,
@@ -20,321 +17,422 @@ import {
   RendererFactory2,
   performanceMarkFeature,
   setClassMetadata,
-  ɵɵdefineNgModule
-} from "./chunk-NDW6FAMK.js";
+  ɵɵdefineNgModule,
+} from './chunk-NDW6FAMK.js';
 import {
   DOCUMENT,
   RuntimeError,
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
-  ɵɵinject
-} from "./chunk-USC2B2WM.js";
-import {
-  __objRest,
-  __spreadValues
-} from "./chunk-VC57AUI7.js";
+  ɵɵinject,
+} from './chunk-USC2B2WM.js';
+import { __objRest, __spreadValues } from './chunk-VC57AUI7.js';
 
 // ../../node_modules/@angular/animations/fesm2022/util.mjs
-var LINE_START = "\n - ";
+var LINE_START = '\n - ';
 function invalidTimingValue(exp) {
   return new RuntimeError(3e3, ngDevMode && `The provided timing value "${exp}" is invalid.`);
 }
 function negativeStepValue() {
-  return new RuntimeError(3100, ngDevMode && "Duration values below 0 are not allowed for this animation step.");
+  return new RuntimeError(
+    3100,
+    ngDevMode && 'Duration values below 0 are not allowed for this animation step.',
+  );
 }
 function negativeDelayValue() {
-  return new RuntimeError(3101, ngDevMode && "Delay values below 0 are not allowed for this animation step.");
+  return new RuntimeError(
+    3101,
+    ngDevMode && 'Delay values below 0 are not allowed for this animation step.',
+  );
 }
 function invalidStyleParams(varName) {
-  return new RuntimeError(3001, ngDevMode && `Unable to resolve the local animation param ${varName} in the given list of values`);
+  return new RuntimeError(
+    3001,
+    ngDevMode &&
+      `Unable to resolve the local animation param ${varName} in the given list of values`,
+  );
 }
 function invalidParamValue(varName) {
-  return new RuntimeError(3003, ngDevMode && `Please provide a value for the animation param ${varName}`);
+  return new RuntimeError(
+    3003,
+    ngDevMode && `Please provide a value for the animation param ${varName}`,
+  );
 }
 function invalidNodeType(nodeType) {
-  return new RuntimeError(3004, ngDevMode && `Unable to resolve animation metadata node #${nodeType}`);
+  return new RuntimeError(
+    3004,
+    ngDevMode && `Unable to resolve animation metadata node #${nodeType}`,
+  );
 }
 function invalidCssUnitValue(userProvidedProperty, value) {
-  return new RuntimeError(3005, ngDevMode && `Please provide a CSS unit value for ${userProvidedProperty}:${value}`);
+  return new RuntimeError(
+    3005,
+    ngDevMode && `Please provide a CSS unit value for ${userProvidedProperty}:${value}`,
+  );
 }
 function invalidTrigger() {
-  return new RuntimeError(3006, ngDevMode && "animation triggers cannot be prefixed with an `@` sign (e.g. trigger('@foo', [...]))");
+  return new RuntimeError(
+    3006,
+    ngDevMode &&
+      "animation triggers cannot be prefixed with an `@` sign (e.g. trigger('@foo', [...]))",
+  );
 }
 function invalidDefinition() {
-  return new RuntimeError(3007, ngDevMode && "only state() and transition() definitions can sit inside of a trigger()");
+  return new RuntimeError(
+    3007,
+    ngDevMode && 'only state() and transition() definitions can sit inside of a trigger()',
+  );
 }
 function invalidState(metadataName, missingSubs) {
-  return new RuntimeError(3008, ngDevMode && `state("${metadataName}", ...) must define default values for all the following style substitutions: ${missingSubs.join(", ")}`);
+  return new RuntimeError(
+    3008,
+    ngDevMode &&
+      `state("${metadataName}", ...) must define default values for all the following style substitutions: ${missingSubs.join(', ')}`,
+  );
 }
 function invalidStyleValue(value) {
-  return new RuntimeError(3002, ngDevMode && `The provided style string value ${value} is not allowed.`);
+  return new RuntimeError(
+    3002,
+    ngDevMode && `The provided style string value ${value} is not allowed.`,
+  );
 }
 function invalidParallelAnimation(prop, firstStart, firstEnd, secondStart, secondEnd) {
-  return new RuntimeError(3010, ngDevMode && `The CSS property "${prop}" that exists between the times of "${firstStart}ms" and "${firstEnd}ms" is also being animated in a parallel animation between the times of "${secondStart}ms" and "${secondEnd}ms"`);
+  return new RuntimeError(
+    3010,
+    ngDevMode &&
+      `The CSS property "${prop}" that exists between the times of "${firstStart}ms" and "${firstEnd}ms" is also being animated in a parallel animation between the times of "${secondStart}ms" and "${secondEnd}ms"`,
+  );
 }
 function invalidKeyframes() {
-  return new RuntimeError(3011, ngDevMode && `keyframes() must be placed inside of a call to animate()`);
+  return new RuntimeError(
+    3011,
+    ngDevMode && `keyframes() must be placed inside of a call to animate()`,
+  );
 }
 function invalidOffset() {
-  return new RuntimeError(3012, ngDevMode && `Please ensure that all keyframe offsets are between 0 and 1`);
+  return new RuntimeError(
+    3012,
+    ngDevMode && `Please ensure that all keyframe offsets are between 0 and 1`,
+  );
 }
 function keyframeOffsetsOutOfOrder() {
-  return new RuntimeError(3200, ngDevMode && `Please ensure that all keyframe offsets are in order`);
+  return new RuntimeError(
+    3200,
+    ngDevMode && `Please ensure that all keyframe offsets are in order`,
+  );
 }
 function keyframesMissingOffsets() {
-  return new RuntimeError(3202, ngDevMode && `Not all style() steps within the declared keyframes() contain offsets`);
+  return new RuntimeError(
+    3202,
+    ngDevMode && `Not all style() steps within the declared keyframes() contain offsets`,
+  );
 }
 function invalidStagger() {
   return new RuntimeError(3013, ngDevMode && `stagger() can only be used inside of query()`);
 }
 function invalidQuery(selector) {
-  return new RuntimeError(3014, ngDevMode && `\`query("${selector}")\` returned zero elements. (Use \`query("${selector}", { optional: true })\` if you wish to allow this.)`);
+  return new RuntimeError(
+    3014,
+    ngDevMode &&
+      `\`query("${selector}")\` returned zero elements. (Use \`query("${selector}", { optional: true })\` if you wish to allow this.)`,
+  );
 }
 function invalidExpression(expr) {
-  return new RuntimeError(3015, ngDevMode && `The provided transition expression "${expr}" is not supported`);
+  return new RuntimeError(
+    3015,
+    ngDevMode && `The provided transition expression "${expr}" is not supported`,
+  );
 }
 function invalidTransitionAlias(alias) {
-  return new RuntimeError(3016, ngDevMode && `The transition alias value "${alias}" is not supported`);
+  return new RuntimeError(
+    3016,
+    ngDevMode && `The transition alias value "${alias}" is not supported`,
+  );
 }
 function triggerBuildFailed(name, errors) {
-  return new RuntimeError(3404, ngDevMode && `The animation trigger "${name}" has failed to build due to the following errors:
- - ${errors.map((err) => err.message).join("\n - ")}`);
+  return new RuntimeError(
+    3404,
+    ngDevMode &&
+      `The animation trigger "${name}" has failed to build due to the following errors:
+ - ${errors.map((err) => err.message).join('\n - ')}`,
+  );
 }
 function animationFailed(errors) {
-  return new RuntimeError(3502, ngDevMode && `Unable to animate due to the following errors:${LINE_START}${errors.map((err) => err.message).join(LINE_START)}`);
+  return new RuntimeError(
+    3502,
+    ngDevMode &&
+      `Unable to animate due to the following errors:${LINE_START}${errors.map((err) => err.message).join(LINE_START)}`,
+  );
 }
 function registerFailed(errors) {
-  return new RuntimeError(3503, ngDevMode && `Unable to build the animation due to the following errors: ${errors.map((err) => err.message).join("\n")}`);
+  return new RuntimeError(
+    3503,
+    ngDevMode &&
+      `Unable to build the animation due to the following errors: ${errors.map((err) => err.message).join('\n')}`,
+  );
 }
 function missingOrDestroyedAnimation() {
-  return new RuntimeError(3300, ngDevMode && "The requested animation doesn't exist or has already been destroyed");
+  return new RuntimeError(
+    3300,
+    ngDevMode && "The requested animation doesn't exist or has already been destroyed",
+  );
 }
 function createAnimationFailed(errors) {
-  return new RuntimeError(3504, ngDevMode && `Unable to create the animation due to the following errors:${errors.map((err) => err.message).join("\n")}`);
+  return new RuntimeError(
+    3504,
+    ngDevMode &&
+      `Unable to create the animation due to the following errors:${errors.map((err) => err.message).join('\n')}`,
+  );
 }
 function missingPlayer(id) {
-  return new RuntimeError(3301, ngDevMode && `Unable to find the timeline player referenced by ${id}`);
+  return new RuntimeError(
+    3301,
+    ngDevMode && `Unable to find the timeline player referenced by ${id}`,
+  );
 }
 function missingTrigger(phase, name) {
-  return new RuntimeError(3302, ngDevMode && `Unable to listen on the animation trigger event "${phase}" because the animation trigger "${name}" doesn't exist!`);
+  return new RuntimeError(
+    3302,
+    ngDevMode &&
+      `Unable to listen on the animation trigger event "${phase}" because the animation trigger "${name}" doesn't exist!`,
+  );
 }
 function missingEvent(name) {
-  return new RuntimeError(3303, ngDevMode && `Unable to listen on the animation trigger "${name}" because the provided event is undefined!`);
+  return new RuntimeError(
+    3303,
+    ngDevMode &&
+      `Unable to listen on the animation trigger "${name}" because the provided event is undefined!`,
+  );
 }
 function unsupportedTriggerEvent(phase, name) {
-  return new RuntimeError(3400, ngDevMode && `The provided animation trigger event "${phase}" for the animation trigger "${name}" is not supported!`);
+  return new RuntimeError(
+    3400,
+    ngDevMode &&
+      `The provided animation trigger event "${phase}" for the animation trigger "${name}" is not supported!`,
+  );
 }
 function unregisteredTrigger(name) {
-  return new RuntimeError(3401, ngDevMode && `The provided animation trigger "${name}" has not been registered!`);
+  return new RuntimeError(
+    3401,
+    ngDevMode && `The provided animation trigger "${name}" has not been registered!`,
+  );
 }
 function triggerTransitionsFailed(errors) {
-  return new RuntimeError(3402, ngDevMode && `Unable to process animations due to the following failed trigger transitions
- ${errors.map((err) => err.message).join("\n")}`);
+  return new RuntimeError(
+    3402,
+    ngDevMode &&
+      `Unable to process animations due to the following failed trigger transitions
+ ${errors.map((err) => err.message).join('\n')}`,
+  );
 }
 function transitionFailed(name, errors) {
-  return new RuntimeError(3505, ngDevMode && `@${name} has failed due to:
- ${errors.map((err) => err.message).join("\n- ")}`);
+  return new RuntimeError(
+    3505,
+    ngDevMode &&
+      `@${name} has failed due to:
+ ${errors.map((err) => err.message).join('\n- ')}`,
+  );
 }
 var ANIMATABLE_PROP_SET = /* @__PURE__ */ new Set([
-  "-moz-outline-radius",
-  "-moz-outline-radius-bottomleft",
-  "-moz-outline-radius-bottomright",
-  "-moz-outline-radius-topleft",
-  "-moz-outline-radius-topright",
-  "-ms-grid-columns",
-  "-ms-grid-rows",
-  "-webkit-line-clamp",
-  "-webkit-text-fill-color",
-  "-webkit-text-stroke",
-  "-webkit-text-stroke-color",
-  "accent-color",
-  "all",
-  "backdrop-filter",
-  "background",
-  "background-color",
-  "background-position",
-  "background-size",
-  "block-size",
-  "border",
-  "border-block-end",
-  "border-block-end-color",
-  "border-block-end-width",
-  "border-block-start",
-  "border-block-start-color",
-  "border-block-start-width",
-  "border-bottom",
-  "border-bottom-color",
-  "border-bottom-left-radius",
-  "border-bottom-right-radius",
-  "border-bottom-width",
-  "border-color",
-  "border-end-end-radius",
-  "border-end-start-radius",
-  "border-image-outset",
-  "border-image-slice",
-  "border-image-width",
-  "border-inline-end",
-  "border-inline-end-color",
-  "border-inline-end-width",
-  "border-inline-start",
-  "border-inline-start-color",
-  "border-inline-start-width",
-  "border-left",
-  "border-left-color",
-  "border-left-width",
-  "border-radius",
-  "border-right",
-  "border-right-color",
-  "border-right-width",
-  "border-start-end-radius",
-  "border-start-start-radius",
-  "border-top",
-  "border-top-color",
-  "border-top-left-radius",
-  "border-top-right-radius",
-  "border-top-width",
-  "border-width",
-  "bottom",
-  "box-shadow",
-  "caret-color",
-  "clip",
-  "clip-path",
-  "color",
-  "column-count",
-  "column-gap",
-  "column-rule",
-  "column-rule-color",
-  "column-rule-width",
-  "column-width",
-  "columns",
-  "filter",
-  "flex",
-  "flex-basis",
-  "flex-grow",
-  "flex-shrink",
-  "font",
-  "font-size",
-  "font-size-adjust",
-  "font-stretch",
-  "font-variation-settings",
-  "font-weight",
-  "gap",
-  "grid-column-gap",
-  "grid-gap",
-  "grid-row-gap",
-  "grid-template-columns",
-  "grid-template-rows",
-  "height",
-  "inline-size",
-  "input-security",
-  "inset",
-  "inset-block",
-  "inset-block-end",
-  "inset-block-start",
-  "inset-inline",
-  "inset-inline-end",
-  "inset-inline-start",
-  "left",
-  "letter-spacing",
-  "line-clamp",
-  "line-height",
-  "margin",
-  "margin-block-end",
-  "margin-block-start",
-  "margin-bottom",
-  "margin-inline-end",
-  "margin-inline-start",
-  "margin-left",
-  "margin-right",
-  "margin-top",
-  "mask",
-  "mask-border",
-  "mask-position",
-  "mask-size",
-  "max-block-size",
-  "max-height",
-  "max-inline-size",
-  "max-lines",
-  "max-width",
-  "min-block-size",
-  "min-height",
-  "min-inline-size",
-  "min-width",
-  "object-position",
-  "offset",
-  "offset-anchor",
-  "offset-distance",
-  "offset-path",
-  "offset-position",
-  "offset-rotate",
-  "opacity",
-  "order",
-  "outline",
-  "outline-color",
-  "outline-offset",
-  "outline-width",
-  "padding",
-  "padding-block-end",
-  "padding-block-start",
-  "padding-bottom",
-  "padding-inline-end",
-  "padding-inline-start",
-  "padding-left",
-  "padding-right",
-  "padding-top",
-  "perspective",
-  "perspective-origin",
-  "right",
-  "rotate",
-  "row-gap",
-  "scale",
-  "scroll-margin",
-  "scroll-margin-block",
-  "scroll-margin-block-end",
-  "scroll-margin-block-start",
-  "scroll-margin-bottom",
-  "scroll-margin-inline",
-  "scroll-margin-inline-end",
-  "scroll-margin-inline-start",
-  "scroll-margin-left",
-  "scroll-margin-right",
-  "scroll-margin-top",
-  "scroll-padding",
-  "scroll-padding-block",
-  "scroll-padding-block-end",
-  "scroll-padding-block-start",
-  "scroll-padding-bottom",
-  "scroll-padding-inline",
-  "scroll-padding-inline-end",
-  "scroll-padding-inline-start",
-  "scroll-padding-left",
-  "scroll-padding-right",
-  "scroll-padding-top",
-  "scroll-snap-coordinate",
-  "scroll-snap-destination",
-  "scrollbar-color",
-  "shape-image-threshold",
-  "shape-margin",
-  "shape-outside",
-  "tab-size",
-  "text-decoration",
-  "text-decoration-color",
-  "text-decoration-thickness",
-  "text-emphasis",
-  "text-emphasis-color",
-  "text-indent",
-  "text-shadow",
-  "text-underline-offset",
-  "top",
-  "transform",
-  "transform-origin",
-  "translate",
-  "vertical-align",
-  "visibility",
-  "width",
-  "word-spacing",
-  "z-index",
-  "zoom"
+  '-moz-outline-radius',
+  '-moz-outline-radius-bottomleft',
+  '-moz-outline-radius-bottomright',
+  '-moz-outline-radius-topleft',
+  '-moz-outline-radius-topright',
+  '-ms-grid-columns',
+  '-ms-grid-rows',
+  '-webkit-line-clamp',
+  '-webkit-text-fill-color',
+  '-webkit-text-stroke',
+  '-webkit-text-stroke-color',
+  'accent-color',
+  'all',
+  'backdrop-filter',
+  'background',
+  'background-color',
+  'background-position',
+  'background-size',
+  'block-size',
+  'border',
+  'border-block-end',
+  'border-block-end-color',
+  'border-block-end-width',
+  'border-block-start',
+  'border-block-start-color',
+  'border-block-start-width',
+  'border-bottom',
+  'border-bottom-color',
+  'border-bottom-left-radius',
+  'border-bottom-right-radius',
+  'border-bottom-width',
+  'border-color',
+  'border-end-end-radius',
+  'border-end-start-radius',
+  'border-image-outset',
+  'border-image-slice',
+  'border-image-width',
+  'border-inline-end',
+  'border-inline-end-color',
+  'border-inline-end-width',
+  'border-inline-start',
+  'border-inline-start-color',
+  'border-inline-start-width',
+  'border-left',
+  'border-left-color',
+  'border-left-width',
+  'border-radius',
+  'border-right',
+  'border-right-color',
+  'border-right-width',
+  'border-start-end-radius',
+  'border-start-start-radius',
+  'border-top',
+  'border-top-color',
+  'border-top-left-radius',
+  'border-top-right-radius',
+  'border-top-width',
+  'border-width',
+  'bottom',
+  'box-shadow',
+  'caret-color',
+  'clip',
+  'clip-path',
+  'color',
+  'column-count',
+  'column-gap',
+  'column-rule',
+  'column-rule-color',
+  'column-rule-width',
+  'column-width',
+  'columns',
+  'filter',
+  'flex',
+  'flex-basis',
+  'flex-grow',
+  'flex-shrink',
+  'font',
+  'font-size',
+  'font-size-adjust',
+  'font-stretch',
+  'font-variation-settings',
+  'font-weight',
+  'gap',
+  'grid-column-gap',
+  'grid-gap',
+  'grid-row-gap',
+  'grid-template-columns',
+  'grid-template-rows',
+  'height',
+  'inline-size',
+  'input-security',
+  'inset',
+  'inset-block',
+  'inset-block-end',
+  'inset-block-start',
+  'inset-inline',
+  'inset-inline-end',
+  'inset-inline-start',
+  'left',
+  'letter-spacing',
+  'line-clamp',
+  'line-height',
+  'margin',
+  'margin-block-end',
+  'margin-block-start',
+  'margin-bottom',
+  'margin-inline-end',
+  'margin-inline-start',
+  'margin-left',
+  'margin-right',
+  'margin-top',
+  'mask',
+  'mask-border',
+  'mask-position',
+  'mask-size',
+  'max-block-size',
+  'max-height',
+  'max-inline-size',
+  'max-lines',
+  'max-width',
+  'min-block-size',
+  'min-height',
+  'min-inline-size',
+  'min-width',
+  'object-position',
+  'offset',
+  'offset-anchor',
+  'offset-distance',
+  'offset-path',
+  'offset-position',
+  'offset-rotate',
+  'opacity',
+  'order',
+  'outline',
+  'outline-color',
+  'outline-offset',
+  'outline-width',
+  'padding',
+  'padding-block-end',
+  'padding-block-start',
+  'padding-bottom',
+  'padding-inline-end',
+  'padding-inline-start',
+  'padding-left',
+  'padding-right',
+  'padding-top',
+  'perspective',
+  'perspective-origin',
+  'right',
+  'rotate',
+  'row-gap',
+  'scale',
+  'scroll-margin',
+  'scroll-margin-block',
+  'scroll-margin-block-end',
+  'scroll-margin-block-start',
+  'scroll-margin-bottom',
+  'scroll-margin-inline',
+  'scroll-margin-inline-end',
+  'scroll-margin-inline-start',
+  'scroll-margin-left',
+  'scroll-margin-right',
+  'scroll-margin-top',
+  'scroll-padding',
+  'scroll-padding-block',
+  'scroll-padding-block-end',
+  'scroll-padding-block-start',
+  'scroll-padding-bottom',
+  'scroll-padding-inline',
+  'scroll-padding-inline-end',
+  'scroll-padding-inline-start',
+  'scroll-padding-left',
+  'scroll-padding-right',
+  'scroll-padding-top',
+  'scroll-snap-coordinate',
+  'scroll-snap-destination',
+  'scrollbar-color',
+  'shape-image-threshold',
+  'shape-margin',
+  'shape-outside',
+  'tab-size',
+  'text-decoration',
+  'text-decoration-color',
+  'text-decoration-thickness',
+  'text-emphasis',
+  'text-emphasis-color',
+  'text-indent',
+  'text-shadow',
+  'text-underline-offset',
+  'top',
+  'transform',
+  'transform-origin',
+  'translate',
+  'vertical-align',
+  'visibility',
+  'width',
+  'word-spacing',
+  'z-index',
+  'zoom',
 ]);
 function optimizeGroupPlayer(players) {
   switch (players.length) {
@@ -346,19 +444,24 @@ function optimizeGroupPlayer(players) {
       return new AnimationGroupPlayer(players);
   }
 }
-function normalizeKeyframes$1(normalizer, keyframes, preStyles = /* @__PURE__ */ new Map(), postStyles = /* @__PURE__ */ new Map()) {
+function normalizeKeyframes$1(
+  normalizer,
+  keyframes,
+  preStyles = /* @__PURE__ */ new Map(),
+  postStyles = /* @__PURE__ */ new Map(),
+) {
   const errors = [];
   const normalizedKeyframes = [];
   let previousOffset = -1;
   let previousKeyframe = null;
   keyframes.forEach((kf) => {
-    const offset = kf.get("offset");
+    const offset = kf.get('offset');
     const isSameOffset = offset == previousOffset;
-    const normalizedKeyframe = isSameOffset && previousKeyframe || /* @__PURE__ */ new Map();
+    const normalizedKeyframe = (isSameOffset && previousKeyframe) || /* @__PURE__ */ new Map();
     kf.forEach((val, prop) => {
       let normalizedProp = prop;
       let normalizedValue = val;
-      if (prop !== "offset") {
+      if (prop !== 'offset') {
         normalizedProp = normalizer.normalizePropertyName(normalizedProp, errors);
         switch (normalizedValue) {
           case ɵPRE_STYLE:
@@ -368,7 +471,12 @@ function normalizeKeyframes$1(normalizer, keyframes, preStyles = /* @__PURE__ */
             normalizedValue = postStyles.get(prop);
             break;
           default:
-            normalizedValue = normalizer.normalizeStyleValue(prop, normalizedProp, normalizedValue, errors);
+            normalizedValue = normalizer.normalizeStyleValue(
+              prop,
+              normalizedProp,
+              normalizedValue,
+              errors,
+            );
             break;
         }
       }
@@ -387,44 +495,60 @@ function normalizeKeyframes$1(normalizer, keyframes, preStyles = /* @__PURE__ */
 }
 function listenOnPlayer(player, eventName, event, callback) {
   switch (eventName) {
-    case "start":
-      player.onStart(() => callback(event && copyAnimationEvent(event, "start", player)));
+    case 'start':
+      player.onStart(() => callback(event && copyAnimationEvent(event, 'start', player)));
       break;
-    case "done":
-      player.onDone(() => callback(event && copyAnimationEvent(event, "done", player)));
+    case 'done':
+      player.onDone(() => callback(event && copyAnimationEvent(event, 'done', player)));
       break;
-    case "destroy":
-      player.onDestroy(() => callback(event && copyAnimationEvent(event, "destroy", player)));
+    case 'destroy':
+      player.onDestroy(() => callback(event && copyAnimationEvent(event, 'destroy', player)));
       break;
   }
 }
 function copyAnimationEvent(e, phaseName, player) {
   const totalTime = player.totalTime;
   const disabled = player.disabled ? true : false;
-  const event = makeAnimationEvent(e.element, e.triggerName, e.fromState, e.toState, phaseName || e.phaseName, totalTime == void 0 ? e.totalTime : totalTime, disabled);
-  const data = e["_data"];
+  const event = makeAnimationEvent(
+    e.element,
+    e.triggerName,
+    e.fromState,
+    e.toState,
+    phaseName || e.phaseName,
+    totalTime == void 0 ? e.totalTime : totalTime,
+    disabled,
+  );
+  const data = e['_data'];
   if (data != null) {
-    event["_data"] = data;
+    event['_data'] = data;
   }
   return event;
 }
-function makeAnimationEvent(element, triggerName, fromState, toState, phaseName = "", totalTime = 0, disabled) {
+function makeAnimationEvent(
+  element,
+  triggerName,
+  fromState,
+  toState,
+  phaseName = '',
+  totalTime = 0,
+  disabled,
+) {
   return { element, triggerName, fromState, toState, phaseName, totalTime, disabled: !!disabled };
 }
 function getOrSetDefaultValue(map, key, defaultValue) {
   let value = map.get(key);
   if (!value) {
-    map.set(key, value = defaultValue);
+    map.set(key, (value = defaultValue));
   }
   return value;
 }
 function parseTimelineCommand(command) {
-  const separatorPos = command.indexOf(":");
+  const separatorPos = command.indexOf(':');
   const id = command.substring(1, separatorPos);
   const action = command.slice(separatorPos + 1);
   return [id, action];
 }
-var documentElement = (() => typeof document === "undefined" ? null : document.documentElement)();
+var documentElement = (() => (typeof document === 'undefined' ? null : document.documentElement))();
 function getParentElement(element) {
   const parent = element.parentNode || element.host || null;
   if (parent === documentElement) {
@@ -433,20 +557,20 @@ function getParentElement(element) {
   return parent;
 }
 function containsVendorPrefix(prop) {
-  return prop.substring(1, 6) == "ebkit";
+  return prop.substring(1, 6) == 'ebkit';
 }
 var _CACHED_BODY = null;
 var _IS_WEBKIT = false;
 function validateStyleProperty(prop) {
   if (!_CACHED_BODY) {
     _CACHED_BODY = getBodyNode() || {};
-    _IS_WEBKIT = _CACHED_BODY.style ? "WebkitAppearance" in _CACHED_BODY.style : false;
+    _IS_WEBKIT = _CACHED_BODY.style ? 'WebkitAppearance' in _CACHED_BODY.style : false;
   }
   let result = true;
   if (_CACHED_BODY.style && !containsVendorPrefix(prop)) {
     result = prop in _CACHED_BODY.style;
     if (!result && _IS_WEBKIT) {
-      const camelProp = "Webkit" + prop.charAt(0).toUpperCase() + prop.slice(1);
+      const camelProp = 'Webkit' + prop.charAt(0).toUpperCase() + prop.slice(1);
       result = camelProp in _CACHED_BODY.style;
     }
   }
@@ -456,7 +580,7 @@ function validateWebAnimatableStyleProperty(prop) {
   return ANIMATABLE_PROP_SET.has(prop);
 }
 function getBodyNode() {
-  if (typeof document != "undefined") {
+  if (typeof document != 'undefined') {
     return document.body;
   }
   return null;
@@ -478,43 +602,44 @@ function invokeQuery(element, selector, multi) {
   return elem ? [elem] : [];
 }
 var ONE_SECOND = 1e3;
-var SUBSTITUTION_EXPR_START = "{{";
-var SUBSTITUTION_EXPR_END = "}}";
-var ENTER_CLASSNAME = "ng-enter";
-var LEAVE_CLASSNAME = "ng-leave";
-var NG_TRIGGER_CLASSNAME = "ng-trigger";
-var NG_TRIGGER_SELECTOR = ".ng-trigger";
-var NG_ANIMATING_CLASSNAME = "ng-animating";
-var NG_ANIMATING_SELECTOR = ".ng-animating";
+var SUBSTITUTION_EXPR_START = '{{';
+var SUBSTITUTION_EXPR_END = '}}';
+var ENTER_CLASSNAME = 'ng-enter';
+var LEAVE_CLASSNAME = 'ng-leave';
+var NG_TRIGGER_CLASSNAME = 'ng-trigger';
+var NG_TRIGGER_SELECTOR = '.ng-trigger';
+var NG_ANIMATING_CLASSNAME = 'ng-animating';
+var NG_ANIMATING_SELECTOR = '.ng-animating';
 function resolveTimingValue(value) {
-  if (typeof value == "number")
-    return value;
+  if (typeof value == 'number') return value;
   const matches = value.match(/^(-?[\.\d]+)(m?s)/);
-  if (!matches || matches.length < 2)
-    return 0;
+  if (!matches || matches.length < 2) return 0;
   return _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
 }
 function _convertTimeValueToMS(value, unit) {
   switch (unit) {
-    case "s":
+    case 's':
       return value * ONE_SECOND;
     default:
       return value;
   }
 }
 function resolveTiming(timings, errors, allowNegativeValues) {
-  return timings.hasOwnProperty("duration") ? timings : parseTimeExpression(timings, errors, allowNegativeValues);
+  return timings.hasOwnProperty('duration')
+    ? timings
+    : parseTimeExpression(timings, errors, allowNegativeValues);
 }
-var PARSE_TIME_EXPRESSION_REGEX = /^(-?[\.\d]+)(m?s)(?:\s+(-?[\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i;
+var PARSE_TIME_EXPRESSION_REGEX =
+  /^(-?[\.\d]+)(m?s)(?:\s+(-?[\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i;
 function parseTimeExpression(exp, errors, allowNegativeValues) {
   let duration;
   let delay = 0;
-  let easing = "";
-  if (typeof exp === "string") {
+  let easing = '';
+  if (typeof exp === 'string') {
     const matches = exp.match(PARSE_TIME_EXPRESSION_REGEX);
     if (matches === null) {
       errors.push(invalidTimingValue(exp));
-      return { duration: 0, delay: 0, easing: "" };
+      return { duration: 0, delay: 0, easing: '' };
     }
     duration = _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
     const delayMatch = matches[3];
@@ -566,13 +691,12 @@ function setStyles(element, styles, formerStyles) {
 function eraseStyles(element, styles) {
   styles.forEach((_, prop) => {
     const camelProp = dashCaseToCamelCase(prop);
-    element.style[camelProp] = "";
+    element.style[camelProp] = '';
   });
 }
 function normalizeAnimationEntry(steps) {
   if (Array.isArray(steps)) {
-    if (steps.length == 1)
-      return steps[0];
+    if (steps.length == 1) return steps[0];
     return sequence(steps);
   }
   return steps;
@@ -588,12 +712,15 @@ function validateStyleParams(value, options, errors) {
     });
   }
 }
-var PARAM_REGEX = new RegExp(`${SUBSTITUTION_EXPR_START}\\s*(.+?)\\s*${SUBSTITUTION_EXPR_END}`, "g");
+var PARAM_REGEX = new RegExp(
+  `${SUBSTITUTION_EXPR_START}\\s*(.+?)\\s*${SUBSTITUTION_EXPR_END}`,
+  'g',
+);
 function extractStyleParams(value) {
   let params = [];
-  if (typeof value === "string") {
+  if (typeof value === 'string') {
     let match;
-    while (match = PARAM_REGEX.exec(value)) {
+    while ((match = PARAM_REGEX.exec(value))) {
       params.push(match[1]);
     }
     PARAM_REGEX.lastIndex = 0;
@@ -606,7 +733,7 @@ function interpolateParams(value, params, errors) {
     let localVal = params[varName];
     if (localVal == null) {
       errors.push(invalidParamValue(varName));
-      localVal = "";
+      localVal = '';
     }
     return localVal.toString();
   });
@@ -617,7 +744,7 @@ function dashCaseToCamelCase(input) {
   return input.replace(DASH_CASE_REGEXP, (...m) => m[1].toUpperCase());
 }
 function camelCaseToDashCase(input) {
-  return input.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+  return input.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 }
 function allowPreviousPlayerStylesMerge(duration, delay) {
   return duration === 0 || delay === 0;
@@ -709,12 +836,20 @@ var NoopAnimationDriver = class _NoopAnimationDriver {
    * @returns The `defaultValue` or empty string
    */
   computeStyle(element, prop, defaultValue) {
-    return defaultValue || "";
+    return defaultValue || '';
   }
   /**
    * @returns An `NoopAnimationPlayer`
    */
-  animate(element, keyframes, duration, delay, easing, previousPlayers = [], scrubberAccessRequested) {
+  animate(
+    element,
+    keyframes,
+    duration,
+    delay,
+    easing,
+    previousPlayers = [],
+    scrubberAccessRequested,
+  ) {
     return new NoopAnimationPlayer(duration, delay);
   }
   static ɵfac = function NoopAnimationDriver_Factory(__ngFactoryType__) {
@@ -722,13 +857,21 @@ var NoopAnimationDriver = class _NoopAnimationDriver {
   };
   static ɵprov = ɵɵdefineInjectable({
     token: _NoopAnimationDriver,
-    factory: _NoopAnimationDriver.ɵfac
+    factory: _NoopAnimationDriver.ɵfac,
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NoopAnimationDriver, [{
-    type: Injectable
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NoopAnimationDriver,
+      [
+        {
+          type: Injectable,
+        },
+      ],
+      null,
+      null,
+    );
 })();
 var AnimationDriver = class {
   /**
@@ -736,19 +879,48 @@ var AnimationDriver = class {
    */
   static NOOP = new NoopAnimationDriver();
 };
-var AnimationStyleNormalizer = class {
-};
-var DIMENSIONAL_PROP_SET = /* @__PURE__ */ new Set(["width", "height", "minWidth", "minHeight", "maxWidth", "maxHeight", "left", "top", "bottom", "right", "fontSize", "outlineWidth", "outlineOffset", "paddingTop", "paddingLeft", "paddingBottom", "paddingRight", "marginTop", "marginLeft", "marginBottom", "marginRight", "borderRadius", "borderWidth", "borderTopWidth", "borderLeftWidth", "borderRightWidth", "borderBottomWidth", "textIndent", "perspective"]);
+var AnimationStyleNormalizer = class {};
+var DIMENSIONAL_PROP_SET = /* @__PURE__ */ new Set([
+  'width',
+  'height',
+  'minWidth',
+  'minHeight',
+  'maxWidth',
+  'maxHeight',
+  'left',
+  'top',
+  'bottom',
+  'right',
+  'fontSize',
+  'outlineWidth',
+  'outlineOffset',
+  'paddingTop',
+  'paddingLeft',
+  'paddingBottom',
+  'paddingRight',
+  'marginTop',
+  'marginLeft',
+  'marginBottom',
+  'marginRight',
+  'borderRadius',
+  'borderWidth',
+  'borderTopWidth',
+  'borderLeftWidth',
+  'borderRightWidth',
+  'borderBottomWidth',
+  'textIndent',
+  'perspective',
+]);
 var WebAnimationsStyleNormalizer = class extends AnimationStyleNormalizer {
   normalizePropertyName(propertyName, errors) {
     return dashCaseToCamelCase(propertyName);
   }
   normalizeStyleValue(userProvidedProperty, normalizedProperty, value, errors) {
-    let unit = "";
+    let unit = '';
     const strVal = value.toString().trim();
-    if (DIMENSIONAL_PROP_SET.has(normalizedProperty) && value !== 0 && value !== "0") {
-      if (typeof value === "number") {
-        unit = "px";
+    if (DIMENSIONAL_PROP_SET.has(normalizedProperty) && value !== 0 && value !== '0') {
+      if (typeof value === 'number') {
+        unit = 'px';
       } else {
         const valAndSuffixMatch = value.match(/^[+-]?[\d\.]+([a-z]*)$/);
         if (valAndSuffixMatch && valAndSuffixMatch[1].length == 0) {
@@ -760,34 +932,41 @@ var WebAnimationsStyleNormalizer = class extends AnimationStyleNormalizer {
   }
 };
 function createListOfWarnings(warnings) {
-  const LINE_START2 = "\n - ";
-  return `${LINE_START2}${warnings.filter(Boolean).map((warning) => warning).join(LINE_START2)}`;
+  const LINE_START2 = '\n - ';
+  return `${LINE_START2}${warnings
+    .filter(Boolean)
+    .map((warning) => warning)
+    .join(LINE_START2)}`;
 }
 function warnTriggerBuild(name, warnings) {
-  console.warn(`The animation trigger "${name}" has built with the following warnings:${createListOfWarnings(warnings)}`);
+  console.warn(
+    `The animation trigger "${name}" has built with the following warnings:${createListOfWarnings(warnings)}`,
+  );
 }
 function warnRegister(warnings) {
   console.warn(`Animation built with the following warnings:${createListOfWarnings(warnings)}`);
 }
 function pushUnrecognizedPropertiesWarning(warnings, props) {
   if (props.length) {
-    warnings.push(`The following provided properties are not recognized: ${props.join(", ")}`);
+    warnings.push(`The following provided properties are not recognized: ${props.join(', ')}`);
   }
 }
-var ANY_STATE = "*";
+var ANY_STATE = '*';
 function parseTransitionExpr(transitionValue, errors) {
   const expressions = [];
-  if (typeof transitionValue == "string") {
-    transitionValue.split(/\s*,\s*/).forEach((str) => parseInnerTransitionStr(str, expressions, errors));
+  if (typeof transitionValue == 'string') {
+    transitionValue
+      .split(/\s*,\s*/)
+      .forEach((str) => parseInnerTransitionStr(str, expressions, errors));
   } else {
     expressions.push(transitionValue);
   }
   return expressions;
 }
 function parseInnerTransitionStr(eventStr, expressions, errors) {
-  if (eventStr[0] == ":") {
+  if (eventStr[0] == ':') {
     const result = parseAnimationAlias(eventStr, errors);
-    if (typeof result == "function") {
+    if (typeof result == 'function') {
       expressions.push(result);
       return;
     }
@@ -803,49 +982,49 @@ function parseInnerTransitionStr(eventStr, expressions, errors) {
   const toState = match[3];
   expressions.push(makeLambdaFromStates(fromState, toState));
   const isFullAnyStateExpr = fromState == ANY_STATE && toState == ANY_STATE;
-  if (separator[0] == "<" && !isFullAnyStateExpr) {
+  if (separator[0] == '<' && !isFullAnyStateExpr) {
     expressions.push(makeLambdaFromStates(toState, fromState));
   }
   return;
 }
 function parseAnimationAlias(alias, errors) {
   switch (alias) {
-    case ":enter":
-      return "void => *";
-    case ":leave":
-      return "* => void";
-    case ":increment":
+    case ':enter':
+      return 'void => *';
+    case ':leave':
+      return '* => void';
+    case ':increment':
       return (fromState, toState) => parseFloat(toState) > parseFloat(fromState);
-    case ":decrement":
+    case ':decrement':
       return (fromState, toState) => parseFloat(toState) < parseFloat(fromState);
     default:
       errors.push(invalidTransitionAlias(alias));
-      return "* => *";
+      return '* => *';
   }
 }
-var TRUE_BOOLEAN_VALUES = /* @__PURE__ */ new Set(["true", "1"]);
-var FALSE_BOOLEAN_VALUES = /* @__PURE__ */ new Set(["false", "0"]);
+var TRUE_BOOLEAN_VALUES = /* @__PURE__ */ new Set(['true', '1']);
+var FALSE_BOOLEAN_VALUES = /* @__PURE__ */ new Set(['false', '0']);
 function makeLambdaFromStates(lhs, rhs) {
   const LHS_MATCH_BOOLEAN = TRUE_BOOLEAN_VALUES.has(lhs) || FALSE_BOOLEAN_VALUES.has(lhs);
   const RHS_MATCH_BOOLEAN = TRUE_BOOLEAN_VALUES.has(rhs) || FALSE_BOOLEAN_VALUES.has(rhs);
   return (fromState, toState) => {
     let lhsMatch = lhs == ANY_STATE || lhs == fromState;
     let rhsMatch = rhs == ANY_STATE || rhs == toState;
-    if (!lhsMatch && LHS_MATCH_BOOLEAN && typeof fromState === "boolean") {
+    if (!lhsMatch && LHS_MATCH_BOOLEAN && typeof fromState === 'boolean') {
       lhsMatch = fromState ? TRUE_BOOLEAN_VALUES.has(lhs) : FALSE_BOOLEAN_VALUES.has(lhs);
     }
-    if (!rhsMatch && RHS_MATCH_BOOLEAN && typeof toState === "boolean") {
+    if (!rhsMatch && RHS_MATCH_BOOLEAN && typeof toState === 'boolean') {
       rhsMatch = toState ? TRUE_BOOLEAN_VALUES.has(rhs) : FALSE_BOOLEAN_VALUES.has(rhs);
     }
     return lhsMatch && rhsMatch;
   };
 }
-var SELF_TOKEN = ":self";
-var SELF_TOKEN_REGEX = new RegExp(`s*${SELF_TOKEN}s*,?`, "g");
+var SELF_TOKEN = ':self';
+var SELF_TOKEN_REGEX = new RegExp(`s*${SELF_TOKEN}s*,?`, 'g');
 function buildAnimationAst(driver, metadata, errors, warnings) {
   return new AnimationAstBuilderVisitor(driver).build(metadata, errors, warnings);
 }
-var ROOT_SELECTOR = "";
+var ROOT_SELECTOR = '';
 var AnimationAstBuilderVisitor = class {
   _driver;
   constructor(_driver) {
@@ -855,9 +1034,11 @@ var AnimationAstBuilderVisitor = class {
     const context = new AnimationAstBuilderContext(errors);
     this._resetContextStyleTimingState(context);
     const ast = visitDslNode(this, normalizeAnimationEntry(metadata), context);
-    if (typeof ngDevMode === "undefined" || ngDevMode) {
+    if (typeof ngDevMode === 'undefined' || ngDevMode) {
       if (context.unsupportedCSSPropertiesFound.size) {
-        pushUnrecognizedPropertiesWarning(warnings, [...context.unsupportedCSSPropertiesFound.keys()]);
+        pushUnrecognizedPropertiesWarning(warnings, [
+          ...context.unsupportedCSSPropertiesFound.keys(),
+        ]);
       }
     }
     return ast;
@@ -869,11 +1050,11 @@ var AnimationAstBuilderVisitor = class {
     context.currentTime = 0;
   }
   visitTrigger(metadata, context) {
-    let queryCount = context.queryCount = 0;
-    let depCount = context.depCount = 0;
+    let queryCount = (context.queryCount = 0);
+    let depCount = (context.depCount = 0);
     const states = [];
     const transitions = [];
-    if (metadata.name.charAt(0) == "@") {
+    if (metadata.name.charAt(0) == '@') {
       context.errors.push(invalidTrigger());
     }
     metadata.definitions.forEach((def) => {
@@ -881,10 +1062,13 @@ var AnimationAstBuilderVisitor = class {
       if (def.type == AnimationMetadataType.State) {
         const stateDef = def;
         const name = stateDef.name;
-        name.toString().split(/\s*,\s*/).forEach((n) => {
-          stateDef.name = n;
-          states.push(this.visitState(stateDef, context));
-        });
+        name
+          .toString()
+          .split(/\s*,\s*/)
+          .forEach((n) => {
+            stateDef.name = n;
+            states.push(this.visitState(stateDef, context));
+          });
         stateDef.name = name;
       } else if (def.type == AnimationMetadataType.Transition) {
         const transition = this.visitTransition(def, context);
@@ -902,12 +1086,12 @@ var AnimationAstBuilderVisitor = class {
       transitions,
       queryCount,
       depCount,
-      options: null
+      options: null,
     };
   }
   visitState(metadata, context) {
     const styleAst = this.visitStyle(metadata.styles, context);
-    const astParams = metadata.options && metadata.options.params || null;
+    const astParams = (metadata.options && metadata.options.params) || null;
     if (styleAst.containsDynamicStyles) {
       const missingSubs = /* @__PURE__ */ new Set();
       const params = astParams || {};
@@ -930,9 +1114,11 @@ var AnimationAstBuilderVisitor = class {
       type: AnimationMetadataType.State,
       name: metadata.name,
       style: styleAst,
-      options: astParams ? {
-        params: astParams
-      } : null
+      options: astParams
+        ? {
+            params: astParams,
+          }
+        : null,
     };
   }
   visitTransition(metadata, context) {
@@ -946,14 +1132,14 @@ var AnimationAstBuilderVisitor = class {
       animation,
       queryCount: context.queryCount,
       depCount: context.depCount,
-      options: normalizeAnimationOptions(metadata.options)
+      options: normalizeAnimationOptions(metadata.options),
     };
   }
   visitSequence(metadata, context) {
     return {
       type: AnimationMetadataType.Sequence,
       steps: metadata.steps.map((s) => visitDslNode(this, s, context)),
-      options: normalizeAnimationOptions(metadata.options)
+      options: normalizeAnimationOptions(metadata.options),
     };
   }
   visitGroup(metadata, context) {
@@ -969,7 +1155,7 @@ var AnimationAstBuilderVisitor = class {
     return {
       type: AnimationMetadataType.Group,
       steps,
-      options: normalizeAnimationOptions(metadata.options)
+      options: normalizeAnimationOptions(metadata.options),
     };
   }
   visitAnimate(metadata, context) {
@@ -986,7 +1172,7 @@ var AnimationAstBuilderVisitor = class {
         isEmpty = true;
         const newStyleData = {};
         if (timingAst.easing) {
-          newStyleData["easing"] = timingAst.easing;
+          newStyleData['easing'] = timingAst.easing;
         }
         styleMetadata2 = style(newStyleData);
       }
@@ -1000,7 +1186,7 @@ var AnimationAstBuilderVisitor = class {
       type: AnimationMetadataType.Animate,
       timings: timingAst,
       style: styleAst,
-      options: null
+      options: null,
     };
   }
   visitStyle(metadata, context) {
@@ -1012,7 +1198,7 @@ var AnimationAstBuilderVisitor = class {
     const styles = [];
     const metadataStyles = Array.isArray(metadata.styles) ? metadata.styles : [metadata.styles];
     for (let styleTuple of metadataStyles) {
-      if (typeof styleTuple === "string") {
+      if (typeof styleTuple === 'string') {
         if (styleTuple === AUTO_STYLE) {
           styles.push(styleTuple);
         } else {
@@ -1026,9 +1212,9 @@ var AnimationAstBuilderVisitor = class {
     let collectedEasing = null;
     styles.forEach((styleData) => {
       if (styleData instanceof Map) {
-        if (styleData.has("easing")) {
-          collectedEasing = styleData.get("easing");
-          styleData.delete("easing");
+        if (styleData.has('easing')) {
+          collectedEasing = styleData.get('easing');
+          styleData.delete('easing');
         }
         if (!containsDynamicStyles) {
           for (let value of styleData.values()) {
@@ -1046,7 +1232,7 @@ var AnimationAstBuilderVisitor = class {
       easing: collectedEasing,
       offset: metadata.offset,
       containsDynamicStyles,
-      options: null
+      options: null,
     };
   }
   _validateStyleAst(ast, context) {
@@ -1057,9 +1243,9 @@ var AnimationAstBuilderVisitor = class {
       startTime -= timings.duration + timings.delay;
     }
     ast.styles.forEach((tuple) => {
-      if (typeof tuple === "string") return;
+      if (typeof tuple === 'string') return;
       tuple.forEach((value, prop) => {
-        if (typeof ngDevMode === "undefined" || ngDevMode) {
+        if (typeof ngDevMode === 'undefined' || ngDevMode) {
           if (!this._driver.validateStyleProperty(prop)) {
             tuple.delete(prop);
             context.unsupportedCSSPropertiesFound.add(prop);
@@ -1070,8 +1256,20 @@ var AnimationAstBuilderVisitor = class {
         const collectedEntry = collectedStyles.get(prop);
         let updateCollectedStyle = true;
         if (collectedEntry) {
-          if (startTime != endTime && startTime >= collectedEntry.startTime && endTime <= collectedEntry.endTime) {
-            context.errors.push(invalidParallelAnimation(prop, collectedEntry.startTime, collectedEntry.endTime, startTime, endTime));
+          if (
+            startTime != endTime &&
+            startTime >= collectedEntry.startTime &&
+            endTime <= collectedEntry.endTime
+          ) {
+            context.errors.push(
+              invalidParallelAnimation(
+                prop,
+                collectedEntry.startTime,
+                collectedEntry.endTime,
+                startTime,
+                endTime,
+              ),
+            );
             updateCollectedStyle = false;
           }
           startTime = collectedEntry.startTime;
@@ -1079,7 +1277,7 @@ var AnimationAstBuilderVisitor = class {
         if (updateCollectedStyle) {
           collectedStyles.set(prop, {
             startTime,
-            endTime
+            endTime,
           });
         }
         if (context.options) {
@@ -1092,7 +1290,7 @@ var AnimationAstBuilderVisitor = class {
     const ast = {
       type: AnimationMetadataType.Keyframes,
       styles: [],
-      options: null
+      options: null,
     };
     if (!context.currentAnimateTimings) {
       context.errors.push(invalidKeyframes());
@@ -1136,7 +1334,7 @@ var AnimationAstBuilderVisitor = class {
     const currentAnimateTimings = context.currentAnimateTimings;
     const animateDuration = currentAnimateTimings.duration;
     keyframes.forEach((kf, i) => {
-      const offset = generatedOffset > 0 ? i == limit ? 1 : generatedOffset * i : offsets[i];
+      const offset = generatedOffset > 0 ? (i == limit ? 1 : generatedOffset * i) : offsets[i];
       const durationUpToThisFrame = offset * animateDuration;
       context.currentTime = currentTime + currentAnimateTimings.delay + durationUpToThisFrame;
       currentAnimateTimings.duration = durationUpToThisFrame;
@@ -1150,21 +1348,21 @@ var AnimationAstBuilderVisitor = class {
     return {
       type: AnimationMetadataType.Reference,
       animation: visitDslNode(this, normalizeAnimationEntry(metadata.animation), context),
-      options: normalizeAnimationOptions(metadata.options)
+      options: normalizeAnimationOptions(metadata.options),
     };
   }
   visitAnimateChild(metadata, context) {
     context.depCount++;
     return {
       type: AnimationMetadataType.AnimateChild,
-      options: normalizeAnimationOptions(metadata.options)
+      options: normalizeAnimationOptions(metadata.options),
     };
   }
   visitAnimateRef(metadata, context) {
     return {
       type: AnimationMetadataType.AnimateRef,
       animation: this.visitReference(metadata.animation, context),
-      options: normalizeAnimationOptions(metadata.options)
+      options: normalizeAnimationOptions(metadata.options),
     };
   }
   visitQuery(metadata, context) {
@@ -1173,8 +1371,14 @@ var AnimationAstBuilderVisitor = class {
     context.queryCount++;
     context.currentQuery = metadata;
     const [selector, includeSelf] = normalizeSelector(metadata.selector);
-    context.currentQuerySelector = parentSelector.length ? parentSelector + " " + selector : selector;
-    getOrSetDefaultValue(context.collectedStyles, context.currentQuerySelector, /* @__PURE__ */ new Map());
+    context.currentQuerySelector = parentSelector.length
+      ? parentSelector + ' ' + selector
+      : selector;
+    getOrSetDefaultValue(
+      context.collectedStyles,
+      context.currentQuerySelector,
+      /* @__PURE__ */ new Map(),
+    );
     const animation = visitDslNode(this, normalizeAnimationEntry(metadata.animation), context);
     context.currentQuery = null;
     context.currentQuerySelector = parentSelector;
@@ -1186,32 +1390,40 @@ var AnimationAstBuilderVisitor = class {
       includeSelf,
       animation,
       originalSelector: metadata.selector,
-      options: normalizeAnimationOptions(metadata.options)
+      options: normalizeAnimationOptions(metadata.options),
     };
   }
   visitStagger(metadata, context) {
     if (!context.currentQuery) {
       context.errors.push(invalidStagger());
     }
-    const timings = metadata.timings === "full" ? {
-      duration: 0,
-      delay: 0,
-      easing: "full"
-    } : resolveTiming(metadata.timings, context.errors, true);
+    const timings =
+      metadata.timings === 'full'
+        ? {
+            duration: 0,
+            delay: 0,
+            easing: 'full',
+          }
+        : resolveTiming(metadata.timings, context.errors, true);
     return {
       type: AnimationMetadataType.Stagger,
       animation: visitDslNode(this, normalizeAnimationEntry(metadata.animation), context),
       timings,
-      options: null
+      options: null,
     };
   }
 };
 function normalizeSelector(selector) {
-  const hasAmpersand = selector.split(/\s*,\s*/).find((token) => token == SELF_TOKEN) ? true : false;
+  const hasAmpersand = selector.split(/\s*,\s*/).find((token) => token == SELF_TOKEN)
+    ? true
+    : false;
   if (hasAmpersand) {
-    selector = selector.replace(SELF_TOKEN_REGEX, "");
+    selector = selector.replace(SELF_TOKEN_REGEX, '');
   }
-  selector = selector.replace(/@\*/g, NG_TRIGGER_SELECTOR).replace(/@\w+/g, (match) => NG_TRIGGER_SELECTOR + "-" + match.slice(1)).replace(/:animating/g, NG_ANIMATING_SELECTOR);
+  selector = selector
+    .replace(/@\*/g, NG_TRIGGER_SELECTOR)
+    .replace(/@\w+/g, (match) => NG_TRIGGER_SELECTOR + '-' + match.slice(1))
+    .replace(/:animating/g, NG_ANIMATING_SELECTOR);
   return [selector, hasAmpersand];
 }
 function normalizeParams(obj) {
@@ -1234,35 +1446,35 @@ var AnimationAstBuilderContext = class {
   }
 };
 function consumeOffset(styles) {
-  if (typeof styles == "string") return null;
+  if (typeof styles == 'string') return null;
   let offset = null;
   if (Array.isArray(styles)) {
     styles.forEach((styleTuple) => {
-      if (styleTuple instanceof Map && styleTuple.has("offset")) {
+      if (styleTuple instanceof Map && styleTuple.has('offset')) {
         const obj = styleTuple;
-        offset = parseFloat(obj.get("offset"));
-        obj.delete("offset");
+        offset = parseFloat(obj.get('offset'));
+        obj.delete('offset');
       }
     });
-  } else if (styles instanceof Map && styles.has("offset")) {
+  } else if (styles instanceof Map && styles.has('offset')) {
     const obj = styles;
-    offset = parseFloat(obj.get("offset"));
-    obj.delete("offset");
+    offset = parseFloat(obj.get('offset'));
+    obj.delete('offset');
   }
   return offset;
 }
 function constructTimingAst(value, errors) {
-  if (value.hasOwnProperty("duration")) {
+  if (value.hasOwnProperty('duration')) {
     return value;
   }
-  if (typeof value == "number") {
+  if (typeof value == 'number') {
     const duration = resolveTiming(value, errors).duration;
-    return makeTimingAst(duration, 0, "");
+    return makeTimingAst(duration, 0, '');
   }
   const strValue = value;
-  const isDynamic = strValue.split(/\s+/).some((v) => v.charAt(0) == "{" && v.charAt(1) == "{");
+  const isDynamic = strValue.split(/\s+/).some((v) => v.charAt(0) == '{' && v.charAt(1) == '{');
   if (isDynamic) {
-    const ast = makeTimingAst(0, 0, "");
+    const ast = makeTimingAst(0, 0, '');
     ast.dynamic = true;
     ast.strValue = strValue;
     return ast;
@@ -1273,8 +1485,8 @@ function constructTimingAst(value, errors) {
 function normalizeAnimationOptions(options) {
   if (options) {
     options = __spreadValues({}, options);
-    if (options["params"]) {
-      options["params"] = normalizeParams(options["params"]);
+    if (options['params']) {
+      options['params'] = normalizeParams(options['params']);
     }
   } else {
     options = {};
@@ -1285,10 +1497,19 @@ function makeTimingAst(duration, delay, easing) {
   return {
     duration,
     delay,
-    easing
+    easing,
   };
 }
-function createTimelineInstruction(element, keyframes, preStyleProps, postStyleProps, duration, delay, easing = null, subTimeline = false) {
+function createTimelineInstruction(
+  element,
+  keyframes,
+  preStyleProps,
+  postStyleProps,
+  duration,
+  delay,
+  easing = null,
+  subTimeline = false,
+) {
   return {
     type: 1,
     element,
@@ -1299,7 +1520,7 @@ function createTimelineInstruction(element, keyframes, preStyleProps, postStyleP
     delay,
     totalTime: duration + delay,
     easing,
-    subTimeline
+    subTimeline,
   };
 }
 var ElementInstructionMap = class {
@@ -1310,7 +1531,7 @@ var ElementInstructionMap = class {
   append(element, instructions) {
     let existingInstructions = this._map.get(element);
     if (!existingInstructions) {
-      this._map.set(element, existingInstructions = []);
+      this._map.set(element, (existingInstructions = []));
     }
     existingInstructions.push(...instructions);
   }
@@ -1322,17 +1543,58 @@ var ElementInstructionMap = class {
   }
 };
 var ONE_FRAME_IN_MILLISECONDS = 1;
-var ENTER_TOKEN = ":enter";
-var ENTER_TOKEN_REGEX = new RegExp(ENTER_TOKEN, "g");
-var LEAVE_TOKEN = ":leave";
-var LEAVE_TOKEN_REGEX = new RegExp(LEAVE_TOKEN, "g");
-function buildAnimationTimelines(driver, rootElement, ast, enterClassName, leaveClassName, startingStyles = /* @__PURE__ */ new Map(), finalStyles = /* @__PURE__ */ new Map(), options, subInstructions, errors = []) {
-  return new AnimationTimelineBuilderVisitor().buildKeyframes(driver, rootElement, ast, enterClassName, leaveClassName, startingStyles, finalStyles, options, subInstructions, errors);
+var ENTER_TOKEN = ':enter';
+var ENTER_TOKEN_REGEX = new RegExp(ENTER_TOKEN, 'g');
+var LEAVE_TOKEN = ':leave';
+var LEAVE_TOKEN_REGEX = new RegExp(LEAVE_TOKEN, 'g');
+function buildAnimationTimelines(
+  driver,
+  rootElement,
+  ast,
+  enterClassName,
+  leaveClassName,
+  startingStyles = /* @__PURE__ */ new Map(),
+  finalStyles = /* @__PURE__ */ new Map(),
+  options,
+  subInstructions,
+  errors = [],
+) {
+  return new AnimationTimelineBuilderVisitor().buildKeyframes(
+    driver,
+    rootElement,
+    ast,
+    enterClassName,
+    leaveClassName,
+    startingStyles,
+    finalStyles,
+    options,
+    subInstructions,
+    errors,
+  );
 }
 var AnimationTimelineBuilderVisitor = class {
-  buildKeyframes(driver, rootElement, ast, enterClassName, leaveClassName, startingStyles, finalStyles, options, subInstructions, errors = []) {
+  buildKeyframes(
+    driver,
+    rootElement,
+    ast,
+    enterClassName,
+    leaveClassName,
+    startingStyles,
+    finalStyles,
+    options,
+    subInstructions,
+    errors = [],
+  ) {
     subInstructions = subInstructions || new ElementInstructionMap();
-    const context = new AnimationTimelineContext(driver, rootElement, subInstructions, enterClassName, leaveClassName, errors, []);
+    const context = new AnimationTimelineContext(
+      driver,
+      rootElement,
+      subInstructions,
+      enterClassName,
+      leaveClassName,
+      errors,
+      [],
+    );
     context.options = options;
     const delay = options.delay ? resolveTimingValue(options.delay) : 0;
     context.currentTimeline.delayNextStep(delay);
@@ -1352,20 +1614,23 @@ var AnimationTimelineBuilderVisitor = class {
         lastRootTimeline.setStyles([finalStyles], null, context.errors, options);
       }
     }
-    return timelines.length ? timelines.map((timeline) => timeline.buildKeyframes()) : [createTimelineInstruction(rootElement, [], [], [], 0, delay, "", false)];
+    return timelines.length
+      ? timelines.map((timeline) => timeline.buildKeyframes())
+      : [createTimelineInstruction(rootElement, [], [], [], 0, delay, '', false)];
   }
-  visitTrigger(ast, context) {
-  }
-  visitState(ast, context) {
-  }
-  visitTransition(ast, context) {
-  }
+  visitTrigger(ast, context) {}
+  visitState(ast, context) {}
+  visitTransition(ast, context) {}
   visitAnimateChild(ast, context) {
     const elementInstructions = context.subInstructions.get(context.element);
     if (elementInstructions) {
       const innerContext = context.createSubContext(ast.options);
       const startTime = context.currentTimeline.currentTime;
-      const endTime = this._visitSubInstructions(elementInstructions, innerContext, innerContext.options);
+      const endTime = this._visitSubInstructions(
+        elementInstructions,
+        innerContext,
+        innerContext.options,
+      );
       if (startTime != endTime) {
         context.transformIntoNewTimeline(endTime);
       }
@@ -1384,7 +1649,16 @@ var AnimationTimelineBuilderVisitor = class {
     for (const animationRefOptions of animationsRefsOptions) {
       const animationDelay = animationRefOptions?.delay;
       if (animationDelay) {
-        const animationDelayValue = typeof animationDelay === "number" ? animationDelay : resolveTimingValue(interpolateParams(animationDelay, animationRefOptions?.params ?? {}, context.errors));
+        const animationDelayValue =
+          typeof animationDelay === 'number'
+            ? animationDelay
+            : resolveTimingValue(
+                interpolateParams(
+                  animationDelay,
+                  animationRefOptions?.params ?? {},
+                  context.errors,
+                ),
+              );
         innerContext.delayNextStep(animationDelayValue);
       }
     }
@@ -1396,8 +1670,15 @@ var AnimationTimelineBuilderVisitor = class {
     const delay = options.delay != null ? resolveTimingValue(options.delay) : null;
     if (duration !== 0) {
       instructions.forEach((instruction) => {
-        const instructionTimings = context.appendInstructionToTimeline(instruction, duration, delay);
-        furthestTime = Math.max(furthestTime, instructionTimings.duration + instructionTimings.delay);
+        const instructionTimings = context.appendInstructionToTimeline(
+          instruction,
+          duration,
+          delay,
+        );
+        furthestTime = Math.max(
+          furthestTime,
+          instructionTimings.duration + instructionTimings.delay,
+        );
       });
     }
     return furthestTime;
@@ -1445,25 +1726,29 @@ var AnimationTimelineBuilderVisitor = class {
       furthestTime = Math.max(furthestTime, innerContext.currentTimeline.currentTime);
       innerTimelines.push(innerContext.currentTimeline);
     });
-    innerTimelines.forEach((timeline) => context.currentTimeline.mergeTimelineCollectedStyles(timeline));
+    innerTimelines.forEach((timeline) =>
+      context.currentTimeline.mergeTimelineCollectedStyles(timeline),
+    );
     context.transformIntoNewTimeline(furthestTime);
     context.previousNode = ast;
   }
   _visitTiming(ast, context) {
     if (ast.dynamic) {
       const strValue = ast.strValue;
-      const timingValue = context.params ? interpolateParams(strValue, context.params, context.errors) : strValue;
+      const timingValue = context.params
+        ? interpolateParams(strValue, context.params, context.errors)
+        : strValue;
       return resolveTiming(timingValue, context.errors);
     } else {
       return {
         duration: ast.duration,
         delay: ast.delay,
-        easing: ast.easing
+        easing: ast.easing,
       };
     }
   }
   visitAnimate(ast, context) {
-    const timings = context.currentAnimateTimings = this._visitTiming(ast.timings, context);
+    const timings = (context.currentAnimateTimings = this._visitTiming(ast.timings, context));
     const timeline = context.currentTimeline;
     if (timings.delay) {
       context.incrementTime(timings.delay);
@@ -1486,7 +1771,7 @@ var AnimationTimelineBuilderVisitor = class {
     if (!timings && timeline.hasCurrentStyleProperties()) {
       timeline.forwardFrame();
     }
-    const easing = timings && timings.easing || ast.easing;
+    const easing = (timings && timings.easing) || ast.easing;
     if (ast.isEmptyStep) {
       timeline.applyEmptyStep(easing);
     } else {
@@ -1515,12 +1800,23 @@ var AnimationTimelineBuilderVisitor = class {
     const startTime = context.currentTimeline.currentTime;
     const options = ast.options || {};
     const delay = options.delay ? resolveTimingValue(options.delay) : 0;
-    if (delay && (context.previousNode.type === AnimationMetadataType.Style || startTime == 0 && context.currentTimeline.hasCurrentStyleProperties())) {
+    if (
+      delay &&
+      (context.previousNode.type === AnimationMetadataType.Style ||
+        (startTime == 0 && context.currentTimeline.hasCurrentStyleProperties()))
+    ) {
       context.currentTimeline.snapshotCurrentStyles();
       context.previousNode = DEFAULT_NOOP_PREVIOUS_NODE;
     }
     let furthestTime = startTime;
-    const elms = context.invokeQuery(ast.selector, ast.originalSelector, ast.limit, ast.includeSelf, options.optional ? true : false, context.errors);
+    const elms = context.invokeQuery(
+      ast.selector,
+      ast.originalSelector,
+      ast.limit,
+      ast.includeSelf,
+      options.optional ? true : false,
+      context.errors,
+    );
     context.currentQueryTotal = elms.length;
     let sameElementTimeline = null;
     elms.forEach((element, i) => {
@@ -1553,12 +1849,12 @@ var AnimationTimelineBuilderVisitor = class {
     const duration = Math.abs(timings.duration);
     const maxTime = duration * (context.currentQueryTotal - 1);
     let delay = duration * context.currentQueryIndex;
-    let staggerTransformer = timings.duration < 0 ? "reverse" : timings.easing;
+    let staggerTransformer = timings.duration < 0 ? 'reverse' : timings.easing;
     switch (staggerTransformer) {
-      case "reverse":
+      case 'reverse':
         delay = maxTime - delay;
         break;
-      case "full":
+      case 'full':
         delay = parentContext.currentStaggerTime;
         break;
     }
@@ -1569,7 +1865,8 @@ var AnimationTimelineBuilderVisitor = class {
     const startingTime = timeline.currentTime;
     visitDslNode(this, ast.animation, context);
     context.previousNode = ast;
-    parentContext.currentStaggerTime = tl.currentTime - startingTime + (tl.startTime - parentContext.currentTimeline.startTime);
+    parentContext.currentStaggerTime =
+      tl.currentTime - startingTime + (tl.startTime - parentContext.currentTimeline.startTime);
   }
 };
 var DEFAULT_NOOP_PREVIOUS_NODE = {};
@@ -1590,7 +1887,16 @@ var AnimationTimelineContext = class _AnimationTimelineContext {
   currentQueryIndex = 0;
   currentQueryTotal = 0;
   currentStaggerTime = 0;
-  constructor(_driver, element, subInstructions, _enterClassName, _leaveClassName, errors, timelines, initialTimeline) {
+  constructor(
+    _driver,
+    element,
+    subInstructions,
+    _enterClassName,
+    _leaveClassName,
+    errors,
+    timelines,
+    initialTimeline,
+  ) {
     this._driver = _driver;
     this.element = element;
     this.subInstructions = subInstructions;
@@ -1632,7 +1938,7 @@ var AnimationTimelineContext = class _AnimationTimelineContext {
     if (this.options) {
       const oldParams = this.options.params;
       if (oldParams) {
-        const params = options["params"] = {};
+        const params = (options['params'] = {});
         Object.keys(oldParams).forEach((name) => {
           params[name] = oldParams[name];
         });
@@ -1642,7 +1948,16 @@ var AnimationTimelineContext = class _AnimationTimelineContext {
   }
   createSubContext(options = null, element, newTime) {
     const target = element || this.element;
-    const context = new _AnimationTimelineContext(this._driver, target, this.subInstructions, this._enterClassName, this._leaveClassName, this.errors, this.timelines, this.currentTimeline.fork(target, newTime || 0));
+    const context = new _AnimationTimelineContext(
+      this._driver,
+      target,
+      this.subInstructions,
+      this._enterClassName,
+      this._leaveClassName,
+      this.errors,
+      this.timelines,
+      this.currentTimeline.fork(target, newTime || 0),
+    );
     context.previousNode = this.previousNode;
     context.currentAnimateTimings = this.currentAnimateTimings;
     context.options = this._copyOptions();
@@ -1663,9 +1978,17 @@ var AnimationTimelineContext = class _AnimationTimelineContext {
     const updatedTimings = {
       duration: duration != null ? duration : instruction.duration,
       delay: this.currentTimeline.currentTime + (delay != null ? delay : 0) + instruction.delay,
-      easing: ""
+      easing: '',
     };
-    const builder = new SubTimelineBuilder(this._driver, instruction.element, instruction.keyframes, instruction.preStyleProps, instruction.postStyleProps, updatedTimings, instruction.stretchStartingKeyframe);
+    const builder = new SubTimelineBuilder(
+      this._driver,
+      instruction.element,
+      instruction.keyframes,
+      instruction.preStyleProps,
+      instruction.postStyleProps,
+      updatedTimings,
+      instruction.stretchStartingKeyframe,
+    );
     this.timelines.push(builder);
     return updatedTimings;
   }
@@ -1683,12 +2006,15 @@ var AnimationTimelineContext = class _AnimationTimelineContext {
       results.push(this.element);
     }
     if (selector.length > 0) {
-      selector = selector.replace(ENTER_TOKEN_REGEX, "." + this._enterClassName);
-      selector = selector.replace(LEAVE_TOKEN_REGEX, "." + this._leaveClassName);
+      selector = selector.replace(ENTER_TOKEN_REGEX, '.' + this._enterClassName);
+      selector = selector.replace(LEAVE_TOKEN_REGEX, '.' + this._leaveClassName);
       const multi = limit != 1;
       let elements = this._driver.query(this.element, selector, multi);
       if (limit !== 0) {
-        elements = limit < 0 ? elements.slice(elements.length + limit, elements.length) : elements.slice(0, limit);
+        elements =
+          limit < 0
+            ? elements.slice(elements.length + limit, elements.length)
+            : elements.slice(0, limit);
       }
       results.push(...elements);
     }
@@ -1758,7 +2084,12 @@ var TimelineBuilder = class _TimelineBuilder {
   }
   fork(element, currentTime) {
     this.applyStylesToKeyframe();
-    return new _TimelineBuilder(this._driver, element, currentTime || this.currentTime, this._elementTimelineStylesLookup);
+    return new _TimelineBuilder(
+      this._driver,
+      element,
+      currentTime || this.currentTime,
+      this._elementTimelineStylesLookup,
+    );
   }
   _loadKeyframe() {
     if (this._currentKeyframe) {
@@ -1784,7 +2115,7 @@ var TimelineBuilder = class _TimelineBuilder {
     this._globalTimelineStyles.set(prop, value);
     this._styleSummary.set(prop, {
       time: this.currentTime,
-      value
+      value,
     });
   }
   allowOnlyTimelineStyles() {
@@ -1792,7 +2123,7 @@ var TimelineBuilder = class _TimelineBuilder {
   }
   applyEmptyStep(easing) {
     if (easing) {
-      this._previousKeyframe.set("easing", easing);
+      this._previousKeyframe.set('easing', easing);
     }
     for (let [prop, value] of this._globalTimelineStyles) {
       this._backFill.set(prop, value || AUTO_STYLE);
@@ -1802,9 +2133,9 @@ var TimelineBuilder = class _TimelineBuilder {
   }
   setStyles(input, easing, errors, options) {
     if (easing) {
-      this._previousKeyframe.set("easing", easing);
+      this._previousKeyframe.set('easing', easing);
     }
-    const params = options && options.params || {};
+    const params = (options && options.params) || {};
     const styles = flattenStyles(input, this._globalTimelineStyles);
     for (let [prop, value] of styles) {
       const val = interpolateParams(value, params, errors);
@@ -1867,7 +2198,7 @@ var TimelineBuilder = class _TimelineBuilder {
         }
       });
       if (!isEmpty) {
-        finalKeyframe.set("offset", time / this.duration);
+        finalKeyframe.set('offset', time / this.duration);
       }
       finalKeyframes.push(finalKeyframe);
     });
@@ -1876,11 +2207,20 @@ var TimelineBuilder = class _TimelineBuilder {
     if (isEmpty) {
       const kf0 = finalKeyframes[0];
       const kf1 = new Map(kf0);
-      kf0.set("offset", 0);
-      kf1.set("offset", 1);
+      kf0.set('offset', 0);
+      kf1.set('offset', 1);
       finalKeyframes = [kf0, kf1];
     }
-    return createTimelineInstruction(this.element, finalKeyframes, preProps, postProps, this.duration, this.startTime, this.easing, false);
+    return createTimelineInstruction(
+      this.element,
+      finalKeyframes,
+      preProps,
+      postProps,
+      this.duration,
+      this.startTime,
+      this.easing,
+      false,
+    );
   }
 };
 var SubTimelineBuilder = class extends TimelineBuilder {
@@ -1889,7 +2229,15 @@ var SubTimelineBuilder = class extends TimelineBuilder {
   postStyleProps;
   _stretchStartingKeyframe;
   timings;
-  constructor(driver, element, keyframes, preStyleProps, postStyleProps, timings, _stretchStartingKeyframe = false) {
+  constructor(
+    driver,
+    element,
+    keyframes,
+    preStyleProps,
+    postStyleProps,
+    timings,
+    _stretchStartingKeyframe = false,
+  ) {
     super(driver, element, timings.delay);
     this.keyframes = keyframes;
     this.preStyleProps = preStyleProps;
@@ -1898,7 +2246,7 @@ var SubTimelineBuilder = class extends TimelineBuilder {
     this.timings = {
       duration: timings.duration,
       delay: timings.delay,
-      easing: timings.easing
+      easing: timings.easing,
     };
   }
   containsAnimation() {
@@ -1906,35 +2254,40 @@ var SubTimelineBuilder = class extends TimelineBuilder {
   }
   buildKeyframes() {
     let keyframes = this.keyframes;
-    let {
-      delay,
-      duration,
-      easing
-    } = this.timings;
+    let { delay, duration, easing } = this.timings;
     if (this._stretchStartingKeyframe && delay) {
       const newKeyframes = [];
       const totalTime = duration + delay;
       const startingGap = delay / totalTime;
       const newFirstKeyframe = new Map(keyframes[0]);
-      newFirstKeyframe.set("offset", 0);
+      newFirstKeyframe.set('offset', 0);
       newKeyframes.push(newFirstKeyframe);
       const oldFirstKeyframe = new Map(keyframes[0]);
-      oldFirstKeyframe.set("offset", roundOffset(startingGap));
+      oldFirstKeyframe.set('offset', roundOffset(startingGap));
       newKeyframes.push(oldFirstKeyframe);
       const limit = keyframes.length - 1;
       for (let i = 1; i <= limit; i++) {
         let kf = new Map(keyframes[i]);
-        const oldOffset = kf.get("offset");
+        const oldOffset = kf.get('offset');
         const timeAtKeyframe = delay + oldOffset * duration;
-        kf.set("offset", roundOffset(timeAtKeyframe / totalTime));
+        kf.set('offset', roundOffset(timeAtKeyframe / totalTime));
         newKeyframes.push(kf);
       }
       duration = totalTime;
       delay = 0;
-      easing = "";
+      easing = '';
       keyframes = newKeyframes;
     }
-    return createTimelineInstruction(this.element, keyframes, this.preStyleProps, this.postStyleProps, duration, delay, easing, true);
+    return createTimelineInstruction(
+      this.element,
+      keyframes,
+      this.preStyleProps,
+      this.postStyleProps,
+      duration,
+      delay,
+      easing,
+      true,
+    );
   }
 };
 function roundOffset(offset, decimalPoints = 3) {
@@ -1945,7 +2298,7 @@ function flattenStyles(input, allStyles) {
   const styles = /* @__PURE__ */ new Map();
   let allProperties;
   input.forEach((token) => {
-    if (token === "*") {
+    if (token === '*') {
       allProperties ??= allStyles.keys();
       for (let prop of allProperties) {
         styles.set(prop, AUTO_STYLE);
@@ -1958,7 +2311,21 @@ function flattenStyles(input, allStyles) {
   });
   return styles;
 }
-function createTransitionInstruction(element, triggerName, fromState, toState, isRemovalTransition, fromStyles, toStyles, timelines, queriedElements, preStyleProps, postStyleProps, totalTime, errors) {
+function createTransitionInstruction(
+  element,
+  triggerName,
+  fromState,
+  toState,
+  isRemovalTransition,
+  fromStyles,
+  toStyles,
+  timelines,
+  queriedElements,
+  preStyleProps,
+  postStyleProps,
+  totalTime,
+  errors,
+) {
   return {
     type: 0,
     element,
@@ -1973,7 +2340,7 @@ function createTransitionInstruction(element, triggerName, fromState, toState, i
     preStyleProps,
     postStyleProps,
     totalTime,
-    errors
+    errors,
   };
 }
 var EMPTY_OBJECT = {};
@@ -1990,34 +2357,72 @@ var AnimationTransitionFactory = class {
     return oneOrMoreTransitionsMatch(this.ast.matchers, currentState, nextState, element, params);
   }
   buildStyles(stateName, params, errors) {
-    let styler = this._stateStyles.get("*");
+    let styler = this._stateStyles.get('*');
     if (stateName !== void 0) {
       styler = this._stateStyles.get(stateName?.toString()) || styler;
     }
     return styler ? styler.buildStyles(params, errors) : /* @__PURE__ */ new Map();
   }
-  build(driver, element, currentState, nextState, enterClassName, leaveClassName, currentOptions, nextOptions, subInstructions, skipAstBuild) {
+  build(
+    driver,
+    element,
+    currentState,
+    nextState,
+    enterClassName,
+    leaveClassName,
+    currentOptions,
+    nextOptions,
+    subInstructions,
+    skipAstBuild,
+  ) {
     const errors = [];
-    const transitionAnimationParams = this.ast.options && this.ast.options.params || EMPTY_OBJECT;
-    const currentAnimationParams = currentOptions && currentOptions.params || EMPTY_OBJECT;
+    const transitionAnimationParams = (this.ast.options && this.ast.options.params) || EMPTY_OBJECT;
+    const currentAnimationParams = (currentOptions && currentOptions.params) || EMPTY_OBJECT;
     const currentStateStyles = this.buildStyles(currentState, currentAnimationParams, errors);
-    const nextAnimationParams = nextOptions && nextOptions.params || EMPTY_OBJECT;
+    const nextAnimationParams = (nextOptions && nextOptions.params) || EMPTY_OBJECT;
     const nextStateStyles = this.buildStyles(nextState, nextAnimationParams, errors);
     const queriedElements = /* @__PURE__ */ new Set();
     const preStyleMap = /* @__PURE__ */ new Map();
     const postStyleMap = /* @__PURE__ */ new Map();
-    const isRemoval = nextState === "void";
+    const isRemoval = nextState === 'void';
     const animationOptions = {
       params: applyParamDefaults(nextAnimationParams, transitionAnimationParams),
-      delay: this.ast.options?.delay
+      delay: this.ast.options?.delay,
     };
-    const timelines = skipAstBuild ? [] : buildAnimationTimelines(driver, element, this.ast.animation, enterClassName, leaveClassName, currentStateStyles, nextStateStyles, animationOptions, subInstructions, errors);
+    const timelines = skipAstBuild
+      ? []
+      : buildAnimationTimelines(
+          driver,
+          element,
+          this.ast.animation,
+          enterClassName,
+          leaveClassName,
+          currentStateStyles,
+          nextStateStyles,
+          animationOptions,
+          subInstructions,
+          errors,
+        );
     let totalTime = 0;
     timelines.forEach((tl) => {
       totalTime = Math.max(tl.duration + tl.delay, totalTime);
     });
     if (errors.length) {
-      return createTransitionInstruction(element, this._triggerName, currentState, nextState, isRemoval, currentStateStyles, nextStateStyles, [], [], preStyleMap, postStyleMap, totalTime, errors);
+      return createTransitionInstruction(
+        element,
+        this._triggerName,
+        currentState,
+        nextState,
+        isRemoval,
+        currentStateStyles,
+        nextStateStyles,
+        [],
+        [],
+        preStyleMap,
+        postStyleMap,
+        totalTime,
+        errors,
+      );
     }
     timelines.forEach((tl) => {
       const elm = tl.element;
@@ -2029,10 +2434,23 @@ var AnimationTransitionFactory = class {
         queriedElements.add(elm);
       }
     });
-    if (typeof ngDevMode === "undefined" || ngDevMode) {
+    if (typeof ngDevMode === 'undefined' || ngDevMode) {
       checkNonAnimatableInTimelines(timelines, this._triggerName, driver);
     }
-    return createTransitionInstruction(element, this._triggerName, currentState, nextState, isRemoval, currentStateStyles, nextStateStyles, timelines, [...queriedElements.values()], preStyleMap, postStyleMap, totalTime);
+    return createTransitionInstruction(
+      element,
+      this._triggerName,
+      currentState,
+      nextState,
+      isRemoval,
+      currentStateStyles,
+      nextStateStyles,
+      timelines,
+      [...queriedElements.values()],
+      preStyleMap,
+      postStyleMap,
+      totalTime,
+    );
   }
 };
 function checkNonAnimatableInTimelines(timelines, triggerName, driver) {
@@ -2044,15 +2462,15 @@ function checkNonAnimatableInTimelines(timelines, triggerName, driver) {
     // easing functions, it represents a property of the animation
     // which is not animatable but different values can be used
     // in different steps
-    "easing"
+    'easing',
   ]);
   const invalidNonAnimatableProps = /* @__PURE__ */ new Set();
-  timelines.forEach(({
-    keyframes
-  }) => {
+  timelines.forEach(({ keyframes }) => {
     const nonAnimatablePropsInitialValues = /* @__PURE__ */ new Map();
     keyframes.forEach((keyframe) => {
-      const entriesToCheck = Array.from(keyframe.entries()).filter(([prop]) => !allowedNonAnimatableProps.has(prop));
+      const entriesToCheck = Array.from(keyframe.entries()).filter(
+        ([prop]) => !allowedNonAnimatableProps.has(prop),
+      );
       for (const [prop, value] of entriesToCheck) {
         if (!driver.validateAnimatableStyleProperty(prop)) {
           if (nonAnimatablePropsInitialValues.has(prop) && !invalidNonAnimatableProps.has(prop)) {
@@ -2068,7 +2486,11 @@ function checkNonAnimatableInTimelines(timelines, triggerName, driver) {
     });
   });
   if (invalidNonAnimatableProps.size > 0) {
-    console.warn(`Warning: The animation trigger "${triggerName}" is attempting to animate the following not animatable properties: ` + Array.from(invalidNonAnimatableProps).join(", ") + "\n(to check the list of all animatable properties visit https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)");
+    console.warn(
+      `Warning: The animation trigger "${triggerName}" is attempting to animate the following not animatable properties: ` +
+        Array.from(invalidNonAnimatableProps).join(', ') +
+        '\n(to check the list of all animatable properties visit https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)',
+    );
   }
 }
 function oneOrMoreTransitionsMatch(matchFns, currentState, nextState, element, params) {
@@ -2096,7 +2518,7 @@ var AnimationStateStyles = class {
     const finalStyles = /* @__PURE__ */ new Map();
     const combinedParams = applyParamDefaults(params, this.defaultParams);
     this.styles.styles.forEach((value) => {
-      if (typeof value !== "string") {
+      if (typeof value !== 'string') {
         value.forEach((val, prop) => {
           if (val) {
             val = interpolateParams(val, combinedParams, errors);
@@ -2125,11 +2547,11 @@ var AnimationTrigger = class {
     this.ast = ast;
     this._normalizer = _normalizer;
     ast.states.forEach((ast2) => {
-      const defaultParams = ast2.options && ast2.options.params || {};
+      const defaultParams = (ast2.options && ast2.options.params) || {};
       this.states.set(ast2.name, new AnimationStateStyles(ast2.style, defaultParams, _normalizer));
     });
-    balanceProperties(this.states, "true", "1");
-    balanceProperties(this.states, "false", "0");
+    balanceProperties(this.states, 'true', '1');
+    balanceProperties(this.states, 'false', '0');
     ast.transitions.forEach((ast2) => {
       this.transitionFactories.push(new AnimationTransitionFactory(name, ast2, this.states));
     });
@@ -2139,7 +2561,9 @@ var AnimationTrigger = class {
     return this.ast.queryCount > 0;
   }
   matchTransition(currentState, nextState, element, params) {
-    const entry = this.transitionFactories.find((f) => f.match(currentState, nextState, element, params));
+    const entry = this.transitionFactories.find((f) =>
+      f.match(currentState, nextState, element, params),
+    );
     return entry || null;
   }
   matchStyles(currentState, params, errors) {
@@ -2151,7 +2575,7 @@ function createFallbackTransition(triggerName, states, normalizer) {
   const animation = {
     type: AnimationMetadataType.Sequence,
     steps: [],
-    options: null
+    options: null,
   };
   const transition = {
     type: AnimationMetadataType.Transition,
@@ -2159,7 +2583,7 @@ function createFallbackTransition(triggerName, states, normalizer) {
     matchers,
     options: null,
     queryCount: 0,
-    depCount: 0
+    depCount: 0,
   };
   return new AnimationTransitionFactory(triggerName, transition, states);
 }
@@ -2192,7 +2616,7 @@ var TimelineAnimationEngine = class {
     if (errors.length) {
       throw registerFailed(errors);
     } else {
-      if (typeof ngDevMode === "undefined" || ngDevMode) {
+      if (typeof ngDevMode === 'undefined' || ngDevMode) {
         if (warnings.length) {
           warnRegister(warnings);
         }
@@ -2211,7 +2635,18 @@ var TimelineAnimationEngine = class {
     let instructions;
     const autoStylesMap = /* @__PURE__ */ new Map();
     if (ast) {
-      instructions = buildAnimationTimelines(this._driver, element, ast, ENTER_CLASSNAME, LEAVE_CLASSNAME, /* @__PURE__ */ new Map(), /* @__PURE__ */ new Map(), options, EMPTY_INSTRUCTION_MAP, errors);
+      instructions = buildAnimationTimelines(
+        this._driver,
+        element,
+        ast,
+        ENTER_CLASSNAME,
+        LEAVE_CLASSNAME,
+        /* @__PURE__ */ new Map(),
+        /* @__PURE__ */ new Map(),
+        options,
+        EMPTY_INSTRUCTION_MAP,
+        errors,
+      );
       instructions.forEach((inst) => {
         const styles = getOrSetDefaultValue(autoStylesMap, inst.element, /* @__PURE__ */ new Map());
         inst.postStyleProps.forEach((prop) => styles.set(prop, null));
@@ -2255,72 +2690,71 @@ var TimelineAnimationEngine = class {
     return player;
   }
   listen(id, element, eventName, callback) {
-    const baseEvent = makeAnimationEvent(element, "", "", "");
+    const baseEvent = makeAnimationEvent(element, '', '', '');
     listenOnPlayer(this._getPlayer(id), eventName, baseEvent, callback);
-    return () => {
-    };
+    return () => {};
   }
   command(id, element, command, args) {
-    if (command == "register") {
+    if (command == 'register') {
       this.register(id, args[0]);
       return;
     }
-    if (command == "create") {
+    if (command == 'create') {
       const options = args[0] || {};
       this.create(id, element, options);
       return;
     }
     const player = this._getPlayer(id);
     switch (command) {
-      case "play":
+      case 'play':
         player.play();
         break;
-      case "pause":
+      case 'pause':
         player.pause();
         break;
-      case "reset":
+      case 'reset':
         player.reset();
         break;
-      case "restart":
+      case 'restart':
         player.restart();
         break;
-      case "finish":
+      case 'finish':
         player.finish();
         break;
-      case "init":
+      case 'init':
         player.init();
         break;
-      case "setPosition":
+      case 'setPosition':
         player.setPosition(parseFloat(args[0]));
         break;
-      case "destroy":
+      case 'destroy':
         this.destroy(id);
         break;
     }
   }
 };
-var QUEUED_CLASSNAME = "ng-animate-queued";
-var QUEUED_SELECTOR = ".ng-animate-queued";
-var DISABLED_CLASSNAME = "ng-animate-disabled";
-var DISABLED_SELECTOR = ".ng-animate-disabled";
-var STAR_CLASSNAME = "ng-star-inserted";
-var STAR_SELECTOR = ".ng-star-inserted";
+var QUEUED_CLASSNAME = 'ng-animate-queued';
+var QUEUED_SELECTOR = '.ng-animate-queued';
+var DISABLED_CLASSNAME = 'ng-animate-disabled';
+var DISABLED_SELECTOR = '.ng-animate-disabled';
+var STAR_CLASSNAME = 'ng-star-inserted';
+var STAR_SELECTOR = '.ng-star-inserted';
 var EMPTY_PLAYER_ARRAY = [];
 var NULL_REMOVAL_STATE = {
-  namespaceId: "",
+  namespaceId: '',
   setForRemoval: false,
   setForMove: false,
   hasAnimation: false,
-  removedBeforeQueried: false
+  removedBeforeQueried: false,
 };
 var NULL_REMOVED_QUERIED_STATE = {
-  namespaceId: "",
+  namespaceId: '',
   setForMove: false,
   setForRemoval: false,
   hasAnimation: false,
-  removedBeforeQueried: true
+  removedBeforeQueried: true,
 };
-var REMOVAL_FLAG = "__ng_removed";
+var REMOVAL_FLAG = '__ng_removed';
 var StateValue = class {
   namespaceId;
   value;
@@ -2328,17 +2762,15 @@ var StateValue = class {
   get params() {
     return this.options.params;
   }
-  constructor(input, namespaceId = "") {
+  constructor(input, namespaceId = '') {
     this.namespaceId = namespaceId;
-    const isObj = input && input.hasOwnProperty("value");
-    const value = isObj ? input["value"] : input;
+    const isObj = input && input.hasOwnProperty('value');
+    const value = isObj ? input['value'] : input;
     this.value = normalizeTriggerValue(value);
     if (isObj) {
-      const _a = input, {
-        value: value2
-      } = _a, options = __objRest(_a, [
-        "value"
-      ]);
+      const _a = input,
+        { value: value2 } = _a,
+        options = __objRest(_a, ['value']);
       this.options = options;
     } else {
       this.options = {};
@@ -2359,7 +2791,7 @@ var StateValue = class {
     }
   }
 };
-var VOID_VALUE = "void";
+var VOID_VALUE = 'void';
 var DEFAULT_STATE_VALUE = new StateValue(VOID_VALUE);
 var AnimationTransitionNamespace = class {
   id;
@@ -2374,7 +2806,7 @@ var AnimationTransitionNamespace = class {
     this.id = id;
     this.hostElement = hostElement;
     this._engine = _engine;
-    this._hostClassName = "ng-tns-" + id;
+    this._hostClassName = 'ng-tns-' + id;
     addClass(hostElement, this._hostClassName);
   }
   listen(element, name, phase, callback) {
@@ -2391,13 +2823,17 @@ var AnimationTransitionNamespace = class {
     const data = {
       name,
       phase,
-      callback
+      callback,
     };
     listeners.push(data);
-    const triggersWithStates = getOrSetDefaultValue(this._engine.statesByElement, element, /* @__PURE__ */ new Map());
+    const triggersWithStates = getOrSetDefaultValue(
+      this._engine.statesByElement,
+      element,
+      /* @__PURE__ */ new Map(),
+    );
     if (!triggersWithStates.has(name)) {
       addClass(element, NG_TRIGGER_CLASSNAME);
-      addClass(element, NG_TRIGGER_CLASSNAME + "-" + name);
+      addClass(element, NG_TRIGGER_CLASSNAME + '-' + name);
       triggersWithStates.set(name, DEFAULT_STATE_VALUE);
     }
     return () => {
@@ -2433,12 +2869,12 @@ var AnimationTransitionNamespace = class {
     let triggersWithStates = this._engine.statesByElement.get(element);
     if (!triggersWithStates) {
       addClass(element, NG_TRIGGER_CLASSNAME);
-      addClass(element, NG_TRIGGER_CLASSNAME + "-" + triggerName);
-      this._engine.statesByElement.set(element, triggersWithStates = /* @__PURE__ */ new Map());
+      addClass(element, NG_TRIGGER_CLASSNAME + '-' + triggerName);
+      this._engine.statesByElement.set(element, (triggersWithStates = /* @__PURE__ */ new Map()));
     }
     let fromState = triggersWithStates.get(triggerName);
     const toState = new StateValue(value, this.id);
-    const isObj = value && value.hasOwnProperty("value");
+    const isObj = value && value.hasOwnProperty('value');
     if (!isObj && fromState) {
       toState.absorbOptions(fromState.options);
     }
@@ -2469,7 +2905,12 @@ var AnimationTransitionNamespace = class {
         player2.destroy();
       }
     });
-    let transition = trigger.matchTransition(fromState.value, toState.value, element, toState.params);
+    let transition = trigger.matchTransition(
+      fromState.value,
+      toState.value,
+      element,
+      toState.params,
+    );
     let isFallbackTransition = false;
     if (!transition) {
       if (!defaultToFallback) return;
@@ -2484,7 +2925,7 @@ var AnimationTransitionNamespace = class {
       fromState,
       toState,
       player,
-      isFallbackTransition
+      isFallbackTransition,
     });
     if (!isFallbackTransition) {
       addClass(element, QUEUED_CLASSNAME);
@@ -2513,9 +2954,12 @@ var AnimationTransitionNamespace = class {
     this._triggers.delete(name);
     this._engine.statesByElement.forEach((stateMap) => stateMap.delete(name));
     this._elementListeners.forEach((listeners, element) => {
-      this._elementListeners.set(element, listeners.filter((entry) => {
-        return entry.name != name;
-      }));
+      this._elementListeners.set(
+        element,
+        listeners.filter((entry) => {
+          return entry.name != name;
+        }),
+      );
     });
   }
   clearElementCache(element) {
@@ -2538,7 +2982,9 @@ var AnimationTransitionNamespace = class {
         this.clearElementCache(elm);
       }
     });
-    this._engine.afterFlushAnimationsDone(() => elements.forEach((elm) => this.clearElementCache(elm)));
+    this._engine.afterFlushAnimationsDone(() =>
+      elements.forEach((elm) => this.clearElementCache(elm)),
+    );
   }
   triggerLeaveAnimation(element, context, destroyAfterComplete, defaultToFallback) {
     const triggerStates = this._engine.statesByElement.get(element);
@@ -2586,7 +3032,7 @@ var AnimationTransitionNamespace = class {
           fromState,
           toState,
           player,
-          isFallbackTransition: true
+          isFallbackTransition: true,
         });
       });
     }
@@ -2599,12 +3045,14 @@ var AnimationTransitionNamespace = class {
     if (this.triggerLeaveAnimation(element, context, true)) return;
     let containsPotentialParentTransition = false;
     if (engine.totalAnimations) {
-      const currentPlayers = engine.players.length ? engine.playersByQueriedElement.get(element) : [];
+      const currentPlayers = engine.players.length
+        ? engine.playersByQueriedElement.get(element)
+        : [];
       if (currentPlayers && currentPlayers.length) {
         containsPotentialParentTransition = true;
       } else {
         let parent = element;
-        while (parent = parent.parentNode) {
+        while ((parent = parent.parentNode)) {
           const triggers = engine.statesByElement.get(parent);
           if (triggers) {
             containsPotentialParentTransition = true;
@@ -2638,8 +3086,13 @@ var AnimationTransitionNamespace = class {
       if (listeners) {
         listeners.forEach((listener) => {
           if (listener.name == entry.triggerName) {
-            const baseEvent = makeAnimationEvent(element, entry.triggerName, entry.fromState.value, entry.toState.value);
-            baseEvent["_data"] = microtaskId;
+            const baseEvent = makeAnimationEvent(
+              element,
+              entry.triggerName,
+              entry.fromState.value,
+              entry.toState.value,
+            );
+            baseEvent['_data'] = microtaskId;
             listenOnPlayer(entry.player, listener.phase, baseEvent, listener.callback);
           }
         });
@@ -2687,8 +3140,7 @@ var TransitionAnimationEngine = class {
   collectedEnterElements = [];
   collectedLeaveElements = [];
   // this method is designed to be overridden by the code that uses this engine
-  onRemovalComplete = (element, context) => {
-  };
+  onRemovalComplete = (element, context) => {};
   /** @internal */
   _onRemovalComplete(element, context) {
     this.onRemovalComplete(element, context);
@@ -2717,7 +3169,7 @@ var TransitionAnimationEngine = class {
       this.newHostElements.set(hostElement, ns);
       this.collectEnterElement(hostElement);
     }
-    return this._namespaceLookup[namespaceId] = ns;
+    return (this._namespaceLookup[namespaceId] = ns);
   }
   _balanceNamespaceList(ns, hostElement) {
     const namespaceList = this._namespaceList;
@@ -2760,8 +3212,7 @@ var TransitionAnimationEngine = class {
   }
   destroy(namespaceId, context) {
     if (!namespaceId) return;
-    this.afterFlush(() => {
-    });
+    this.afterFlush(() => {});
     this.afterFlushAnimationsDone(() => {
       const ns = this._fetchNamespace(namespaceId);
       this.namespacesByHostElement.delete(ns.hostElement);
@@ -2859,18 +3310,28 @@ var TransitionAnimationEngine = class {
       setForRemoval: context,
       hasAnimation,
       removedBeforeQueried: false,
-      previousTriggersValues
+      previousTriggersValues,
     };
   }
   listen(namespaceId, element, name, phase, callback) {
     if (isElementNode(element)) {
       return this._fetchNamespace(namespaceId).listen(element, name, phase, callback);
     }
-    return () => {
-    };
+    return () => {};
   }
   _buildInstruction(entry, subTimelines, enterClassName, leaveClassName, skipBuildAst) {
-    return entry.transition.build(this.driver, entry.element, entry.fromState.value, entry.toState.value, enterClassName, leaveClassName, entry.fromState.options, entry.toState.options, subTimelines, skipBuildAst);
+    return entry.transition.build(
+      this.driver,
+      entry.element,
+      entry.fromState.value,
+      entry.toState.value,
+      enterClassName,
+      leaveClassName,
+      entry.fromState.options,
+      entry.toState.options,
+      subTimelines,
+      skipBuildAst,
+    );
   }
   destroyInnerAnimations(containerElement) {
     let elements = this.driver.query(containerElement, NG_TRIGGER_SELECTOR, true);
@@ -2938,7 +3399,10 @@ var TransitionAnimationEngine = class {
         addClass(elm, STAR_CLASSNAME);
       }
     }
-    if (this._namespaceList.length && (this.totalQueuedPlayers || this.collectedLeaveElements.length)) {
+    if (
+      this._namespaceList.length &&
+      (this.totalQueuedPlayers || this.collectedLeaveElements.length)
+    ) {
       const cleanupFns = [];
       try {
         players = this._flushAnimations(cleanupFns, microtaskId);
@@ -3009,7 +3473,9 @@ var TransitionAnimationEngine = class {
         allLeaveNodes.push(element);
         mergedLeaveNodes.add(element);
         if (details.hasAnimation) {
-          this.driver.query(element, STAR_SELECTOR, true).forEach((elm) => mergedLeaveNodes.add(elm));
+          this.driver
+            .query(element, STAR_SELECTOR, true)
+            .forEach((elm) => mergedLeaveNodes.add(elm));
         } else {
           leaveNodesWithoutAnimations.add(element);
         }
@@ -3046,7 +3512,10 @@ var TransitionAnimationEngine = class {
         if (this.collectedEnterElements.length) {
           const details = element[REMOVAL_FLAG];
           if (details && details.setForMove) {
-            if (details.previousTriggersValues && details.previousTriggersValues.has(entry.triggerName)) {
+            if (
+              details.previousTriggersValues &&
+              details.previousTriggersValues.has(entry.triggerName)
+            ) {
               const previousValue = details.previousTriggersValues.get(entry.triggerName);
               const triggersWithStates = this.statesByElement.get(entry.element);
               if (triggersWithStates && triggersWithStates.has(entry.triggerName)) {
@@ -3062,7 +3531,13 @@ var TransitionAnimationEngine = class {
         const nodeIsOrphaned = !bodyNode || !this.driver.containsElement(bodyNode, element);
         const leaveClassName = leaveNodeMapIds.get(element);
         const enterClassName = enterNodeMapIds.get(element);
-        const instruction = this._buildInstruction(entry, subTimelines, enterClassName, leaveClassName, nodeIsOrphaned);
+        const instruction = this._buildInstruction(
+          entry,
+          subTimelines,
+          enterClassName,
+          leaveClassName,
+          nodeIsOrphaned,
+        );
         if (instruction.errors && instruction.errors.length) {
           erroneousTransitions.push(instruction);
           return;
@@ -3091,15 +3566,17 @@ var TransitionAnimationEngine = class {
         const tuple = {
           instruction,
           player,
-          element
+          element,
         };
         queuedInstructions.push(tuple);
-        instruction.queriedElements.forEach((element2) => getOrSetDefaultValue(queriedElements, element2, []).push(player));
+        instruction.queriedElements.forEach((element2) =>
+          getOrSetDefaultValue(queriedElements, element2, []).push(player),
+        );
         instruction.preStyleProps.forEach((stringMap, element2) => {
           if (stringMap.size) {
             let setVal = allPreStyleElements.get(element2);
             if (!setVal) {
-              allPreStyleElements.set(element2, setVal = /* @__PURE__ */ new Set());
+              allPreStyleElements.set(element2, (setVal = /* @__PURE__ */ new Set()));
             }
             stringMap.forEach((_, prop) => setVal.add(prop));
           }
@@ -3107,7 +3584,7 @@ var TransitionAnimationEngine = class {
         instruction.postStyleProps.forEach((stringMap, element2) => {
           let setVal = allPostStyleElements.get(element2);
           if (!setVal) {
-            allPostStyleElements.set(element2, setVal = /* @__PURE__ */ new Set());
+            allPostStyleElements.set(element2, (setVal = /* @__PURE__ */ new Set()));
           }
           stringMap.forEach((_, prop) => setVal.add(prop));
         });
@@ -3127,12 +3604,22 @@ var TransitionAnimationEngine = class {
       const element = entry.element;
       if (subTimelines.has(element)) {
         animationElementMap.set(element, element);
-        this._beforeAnimationBuild(entry.player.namespaceId, entry.instruction, allPreviousPlayersMap);
+        this._beforeAnimationBuild(
+          entry.player.namespaceId,
+          entry.instruction,
+          allPreviousPlayersMap,
+        );
       }
     });
     skippedPlayers.forEach((player) => {
       const element = player.element;
-      const previousPlayers = this._getPreviousPlayers(element, false, player.namespaceId, player.triggerName, null);
+      const previousPlayers = this._getPreviousPlayers(
+        element,
+        false,
+        player.namespaceId,
+        player.triggerName,
+        null,
+      );
       previousPlayers.forEach((prevPlayer) => {
         getOrSetDefaultValue(allPreviousPlayersMap, element, []).push(prevPlayer);
         prevPlayer.destroy();
@@ -3142,7 +3629,13 @@ var TransitionAnimationEngine = class {
       return replacePostStylesAsPre(node, allPreStyleElements, allPostStyleElements);
     });
     const postStylesMap = /* @__PURE__ */ new Map();
-    const allLeaveQueriedNodes = cloakAndComputeStyles(postStylesMap, this.driver, leaveNodesWithoutAnimations, allPostStyleElements, AUTO_STYLE);
+    const allLeaveQueriedNodes = cloakAndComputeStyles(
+      postStylesMap,
+      this.driver,
+      leaveNodesWithoutAnimations,
+      allPostStyleElements,
+      AUTO_STYLE,
+    );
     allLeaveQueriedNodes.forEach((node) => {
       if (replacePostStylesAsPre(node, allPreStyleElements, allPostStyleElements)) {
         replaceNodes.push(node);
@@ -3150,22 +3643,24 @@ var TransitionAnimationEngine = class {
     });
     const preStylesMap = /* @__PURE__ */ new Map();
     enterNodeMap.forEach((nodes, root) => {
-      cloakAndComputeStyles(preStylesMap, this.driver, new Set(nodes), allPreStyleElements, ɵPRE_STYLE);
+      cloakAndComputeStyles(
+        preStylesMap,
+        this.driver,
+        new Set(nodes),
+        allPreStyleElements,
+        ɵPRE_STYLE,
+      );
     });
     replaceNodes.forEach((node) => {
       const post = postStylesMap.get(node);
       const pre = preStylesMap.get(node);
-      postStylesMap.set(node, new Map([...post?.entries() ?? [], ...pre?.entries() ?? []]));
+      postStylesMap.set(node, new Map([...(post?.entries() ?? []), ...(pre?.entries() ?? [])]));
     });
     const rootPlayers = [];
     const subPlayers = [];
     const NO_PARENT_ANIMATION_ELEMENT_DETECTED = {};
     queuedInstructions.forEach((entry) => {
-      const {
-        element,
-        player,
-        instruction
-      } = entry;
+      const { element, player, instruction } = entry;
       if (subTimelines.has(element)) {
         if (disabledElementsSet.has(element)) {
           player.onDestroy(() => setStyles(element, instruction.toStyles));
@@ -3178,7 +3673,7 @@ var TransitionAnimationEngine = class {
         if (animationElementMap.size > 1) {
           let elm = element;
           const parentsToAdd = [];
-          while (elm = elm.parentNode) {
+          while ((elm = elm.parentNode)) {
             const detectedParent = animationElementMap.get(elm);
             if (detectedParent) {
               parentWithAnimation = detectedParent;
@@ -3188,7 +3683,14 @@ var TransitionAnimationEngine = class {
           }
           parentsToAdd.forEach((parent) => animationElementMap.set(parent, parentWithAnimation));
         }
-        const innerPlayer = this._buildAnimation(player.namespaceId, instruction, allPreviousPlayersMap, skippedPlayersMap, preStylesMap, postStylesMap);
+        const innerPlayer = this._buildAnimation(
+          player.namespaceId,
+          instruction,
+          allPreviousPlayersMap,
+          skippedPlayersMap,
+          preStylesMap,
+          postStylesMap,
+        );
         player.setRealPlayer(innerPlayer);
         if (parentWithAnimation === NO_PARENT_ANIMATION_ELEMENT_DETECTED) {
           rootPlayers.push(player);
@@ -3302,7 +3804,13 @@ var TransitionAnimationEngine = class {
       const element = timelineInstruction.element;
       const isQueriedElement = element !== rootElement;
       const players = getOrSetDefaultValue(allPreviousPlayersMap, element, []);
-      const previousPlayers = this._getPreviousPlayers(element, isQueriedElement, targetNameSpaceId, targetTriggerName, instruction.toState);
+      const previousPlayers = this._getPreviousPlayers(
+        element,
+        isQueriedElement,
+        targetNameSpaceId,
+        targetTriggerName,
+        instruction.toState,
+      );
       previousPlayers.forEach((player) => {
         const realPlayer = player.getRealPlayer();
         if (realPlayer.beforeDestroy) {
@@ -3314,7 +3822,14 @@ var TransitionAnimationEngine = class {
     }
     eraseStyles(rootElement, instruction.fromStyles);
   }
-  _buildAnimation(namespaceId, instruction, allPreviousPlayersMap, skippedPlayersMap, preStylesMap, postStylesMap) {
+  _buildAnimation(
+    namespaceId,
+    instruction,
+    allPreviousPlayersMap,
+    skippedPlayersMap,
+    preStylesMap,
+    postStylesMap,
+  ) {
     const triggerName = instruction.triggerName;
     const rootElement = instruction.element;
     const allQueriedPlayers = [];
@@ -3324,15 +3839,23 @@ var TransitionAnimationEngine = class {
       const element = timelineInstruction.element;
       allConsumedElements.add(element);
       const details = element[REMOVAL_FLAG];
-      if (details && details.removedBeforeQueried) return new NoopAnimationPlayer(timelineInstruction.duration, timelineInstruction.delay);
+      if (details && details.removedBeforeQueried)
+        return new NoopAnimationPlayer(timelineInstruction.duration, timelineInstruction.delay);
       const isQueriedElement = element !== rootElement;
-      const previousPlayers = flattenGroupPlayers((allPreviousPlayersMap.get(element) || EMPTY_PLAYER_ARRAY).map((p) => p.getRealPlayer())).filter((p) => {
+      const previousPlayers = flattenGroupPlayers(
+        (allPreviousPlayersMap.get(element) || EMPTY_PLAYER_ARRAY).map((p) => p.getRealPlayer()),
+      ).filter((p) => {
         const pp = p;
         return pp.element ? pp.element === element : false;
       });
       const preStyles = preStylesMap.get(element);
       const postStyles = postStylesMap.get(element);
-      const keyframes = normalizeKeyframes$1(this._normalizer, timelineInstruction.keyframes, preStyles, postStyles);
+      const keyframes = normalizeKeyframes$1(
+        this._normalizer,
+        timelineInstruction.keyframes,
+        preStyles,
+        postStyles,
+      );
       const player2 = this._buildPlayer(timelineInstruction, keyframes, previousPlayers);
       if (timelineInstruction.subTimeline && skippedPlayersMap) {
         allSubElements.add(element);
@@ -3346,7 +3869,9 @@ var TransitionAnimationEngine = class {
     });
     allQueriedPlayers.forEach((player2) => {
       getOrSetDefaultValue(this.playersByQueriedElement, player2.element, []).push(player2);
-      player2.onDone(() => deleteOrUnsetInMap(this.playersByQueriedElement, player2.element, player2));
+      player2.onDone(() =>
+        deleteOrUnsetInMap(this.playersByQueriedElement, player2.element, player2),
+      );
     });
     allConsumedElements.forEach((element) => addClass(element, NG_ANIMATING_CLASSNAME));
     const player = optimizeGroupPlayer(allNewPlayers);
@@ -3361,7 +3886,14 @@ var TransitionAnimationEngine = class {
   }
   _buildPlayer(instruction, keyframes, previousPlayers) {
     if (keyframes.length > 0) {
-      return this.driver.animate(instruction.element, keyframes, instruction.duration, instruction.delay, instruction.easing, previousPlayers);
+      return this.driver.animate(
+        instruction.element,
+        keyframes,
+        instruction.duration,
+        instruction.delay,
+        instruction.easing,
+        previousPlayers,
+      );
     }
     return new NoopAnimationPlayer(instruction.duration, instruction.delay);
   }
@@ -3404,7 +3936,7 @@ var TransitionAnimationPlayer = class {
   syncPlayerEvents(player) {
     const p = this._player;
     if (p.triggerCallback) {
-      player.onStart(() => p.triggerCallback("start"));
+      player.onStart(() => p.triggerCallback('start'));
     }
     player.onDone(() => this.finish());
     player.onDestroy(() => this.destroy());
@@ -3414,19 +3946,19 @@ var TransitionAnimationPlayer = class {
   }
   onDone(fn) {
     if (this.queued) {
-      this._queueEvent("done", fn);
+      this._queueEvent('done', fn);
     }
     this._player.onDone(fn);
   }
   onStart(fn) {
     if (this.queued) {
-      this._queueEvent("start", fn);
+      this._queueEvent('start', fn);
     }
     this._player.onStart(fn);
   }
   onDestroy(fn) {
     if (this.queued) {
-      this._queueEvent("destroy", fn);
+      this._queueEvent('destroy', fn);
     }
     this._player.onDestroy(fn);
   }
@@ -3488,14 +4020,14 @@ function normalizeTriggerValue(value) {
   return value != null ? value : null;
 }
 function isElementNode(node) {
-  return node && node["nodeType"] === 1;
+  return node && node['nodeType'] === 1;
 }
 function isTriggerEventValid(eventName) {
-  return eventName == "start" || eventName == "done";
+  return eventName == 'start' || eventName == 'done';
 }
 function cloakElement(element, value) {
   const oldValue = element.style.display;
-  element.style.display = value != null ? value : "none";
+  element.style.display = value != null ? value : 'none';
   return oldValue;
 }
 function cloakAndComputeStyles(valuesMap, driver, elements, elementPropsMap, defaultStyle) {
@@ -3601,17 +4133,17 @@ var AnimationEngine = class {
   _timelineEngine;
   _triggerCache = {};
   // this method is designed to be overridden by the code that uses this engine
-  onRemovalComplete = (element, context) => {
-  };
+  onRemovalComplete = (element, context) => {};
   constructor(doc, _driver, _normalizer) {
     this._driver = _driver;
     this._normalizer = _normalizer;
     this._transitionEngine = new TransitionAnimationEngine(doc.body, _driver, _normalizer);
     this._timelineEngine = new TimelineAnimationEngine(doc.body, _driver, _normalizer);
-    this._transitionEngine.onRemovalComplete = (element, context) => this.onRemovalComplete(element, context);
+    this._transitionEngine.onRemovalComplete = (element, context) =>
+      this.onRemovalComplete(element, context);
   }
   registerTrigger(componentId, namespaceId, hostElement, name, metadata) {
-    const cacheKey = componentId + "-" + name;
+    const cacheKey = componentId + '-' + name;
     let trigger = this._triggerCache[cacheKey];
     if (!trigger) {
       const errors = [];
@@ -3620,7 +4152,7 @@ var AnimationEngine = class {
       if (errors.length) {
         throw triggerBuildFailed(name, errors);
       }
-      if (typeof ngDevMode === "undefined" || ngDevMode) {
+      if (typeof ngDevMode === 'undefined' || ngDevMode) {
         if (warnings.length) {
           warnTriggerBuild(name, warnings);
         }
@@ -3646,7 +4178,7 @@ var AnimationEngine = class {
     this._transitionEngine.markElementAsDisabled(element, disable);
   }
   process(namespaceId, element, property, value) {
-    if (property.charAt(0) == "@") {
+    if (property.charAt(0) == '@') {
       const [id, action] = parseTimelineCommand(property);
       const args = value;
       this._timelineEngine.command(id, element, action, args);
@@ -3655,7 +4187,7 @@ var AnimationEngine = class {
     }
   }
   listen(namespaceId, element, eventName, eventPhase, callback) {
-    if (eventName.charAt(0) == "@") {
+    if (eventName.charAt(0) == '@') {
       const [id, action] = parseTimelineCommand(eventName);
       return this._timelineEngine.listen(id, element, action, callback);
     }
@@ -3700,7 +4232,10 @@ var SpecialCasedStyles = class _SpecialCasedStyles {
     this._endStyles = _endStyles;
     let initialStyles = _SpecialCasedStyles.initialStylesByElement.get(_element);
     if (!initialStyles) {
-      _SpecialCasedStyles.initialStylesByElement.set(_element, initialStyles = /* @__PURE__ */ new Map());
+      _SpecialCasedStyles.initialStylesByElement.set(
+        _element,
+        (initialStyles = /* @__PURE__ */ new Map()),
+      );
     }
     this._initialStyles = initialStyles;
   }
@@ -3751,7 +4286,7 @@ function filterNonAnimatableStyles(styles) {
   return result;
 }
 function isNonAnimatableStyle(prop) {
-  return prop === "display" || prop === "position";
+  return prop === 'display' || prop === 'position';
 }
 var WebAnimationsPlayer = class {
   element;
@@ -3783,8 +4318,8 @@ var WebAnimationsPlayer = class {
     this.keyframes = keyframes;
     this.options = options;
     this._specialStyles = _specialStyles;
-    this._duration = options["duration"];
-    this._delay = options["delay"] || 0;
+    this._duration = options['duration'];
+    this._delay = options['delay'] || 0;
     this.time = this._duration + this._delay;
   }
   _onFinish() {
@@ -3803,11 +4338,13 @@ var WebAnimationsPlayer = class {
     this._initialized = true;
     const keyframes = this.keyframes;
     this.domPlayer = this._triggerWebAnimation(this.element, keyframes, this.options);
-    this._finalKeyframe = keyframes.length ? keyframes[keyframes.length - 1] : /* @__PURE__ */ new Map();
+    this._finalKeyframe = keyframes.length
+      ? keyframes[keyframes.length - 1]
+      : /* @__PURE__ */ new Map();
     const onFinish = () => this._onFinish();
-    this.domPlayer.addEventListener("finish", onFinish);
+    this.domPlayer.addEventListener('finish', onFinish);
     this.onDestroy(() => {
-      this.domPlayer.removeEventListener("finish", onFinish);
+      this.domPlayer.removeEventListener('finish', onFinish);
     });
   }
   _preparePlayerBeforeStart() {
@@ -3912,7 +4449,7 @@ var WebAnimationsPlayer = class {
     if (this.hasStarted()) {
       const finalKeyframe = this._finalKeyframe;
       finalKeyframe.forEach((val, prop) => {
-        if (prop !== "offset") {
+        if (prop !== 'offset') {
           styles.set(prop, this._finished ? val : computeStyle(this.element, prop));
         }
       });
@@ -3921,20 +4458,20 @@ var WebAnimationsPlayer = class {
   }
   /** @internal */
   triggerCallback(phaseName) {
-    const methods = phaseName === "start" ? this._onStartFns : this._onDoneFns;
+    const methods = phaseName === 'start' ? this._onStartFns : this._onDoneFns;
     methods.forEach((fn) => fn());
     methods.length = 0;
   }
 };
 var WebAnimationsDriver = class {
   validateStyleProperty(prop) {
-    if (typeof ngDevMode === "undefined" || ngDevMode) {
+    if (typeof ngDevMode === 'undefined' || ngDevMode) {
       return validateStyleProperty(prop);
     }
     return true;
   }
   validateAnimatableStyleProperty(prop) {
-    if (typeof ngDevMode === "undefined" || ngDevMode) {
+    if (typeof ngDevMode === 'undefined' || ngDevMode) {
       const cssProp = camelCaseToDashCase(prop);
       return validateWebAnimatableStyleProperty(cssProp);
     }
@@ -3953,17 +4490,19 @@ var WebAnimationsDriver = class {
     return computeStyle(element, prop);
   }
   animate(element, keyframes, duration, delay, easing, previousPlayers = []) {
-    const fill = delay == 0 ? "both" : "forwards";
+    const fill = delay == 0 ? 'both' : 'forwards';
     const playerOptions = {
       duration,
       delay,
-      fill
+      fill,
     };
     if (easing) {
-      playerOptions["easing"] = easing;
+      playerOptions['easing'] = easing;
     }
     const previousStyles = /* @__PURE__ */ new Map();
-    const previousWebAnimationPlayers = previousPlayers.filter((player) => player instanceof WebAnimationsPlayer);
+    const previousWebAnimationPlayers = previousPlayers.filter(
+      (player) => player instanceof WebAnimationsPlayer,
+    );
     if (allowPreviousPlayerStylesMerge(duration, delay)) {
       previousWebAnimationPlayers.forEach((player) => {
         player.currentSnapshot.forEach((val, prop) => previousStyles.set(prop, val));
@@ -3975,8 +4514,8 @@ var WebAnimationsDriver = class {
     return new WebAnimationsPlayer(element, _keyframes, playerOptions, specialStyles);
   }
 };
-var ANIMATION_PREFIX = "@";
-var DISABLE_ANIMATIONS_FLAG = "@.disabled";
+var ANIMATION_PREFIX = '@';
+var DISABLE_ANIMATIONS_FLAG = '@.disabled';
 var BaseAnimationRenderer = class {
   namespaceId;
   delegate;
@@ -4081,7 +4620,7 @@ var AnimationRenderer = class extends BaseAnimationRenderer {
   }
   setProperty(el, name, value) {
     if (name.charAt(0) == ANIMATION_PREFIX) {
-      if (name.charAt(1) == "." && name == DISABLE_ANIMATIONS_FLAG) {
+      if (name.charAt(1) == '.' && name == DISABLE_ANIMATIONS_FLAG) {
         value = value === void 0 ? true : !!value;
         this.disableAnimations(el, value);
       } else {
@@ -4095,12 +4634,12 @@ var AnimationRenderer = class extends BaseAnimationRenderer {
     if (eventName.charAt(0) == ANIMATION_PREFIX) {
       const element = resolveElementFromTarget(target);
       let name = eventName.slice(1);
-      let phase = "";
+      let phase = '';
       if (name.charAt(0) != ANIMATION_PREFIX) {
         [name, phase] = parseTriggerCallbackName(name);
       }
       return this.engine.listen(this.namespaceId, element, name, phase, (event) => {
-        const countId = event["_data"] || -1;
+        const countId = event['_data'] || -1;
         this.factory.scheduleListenerCallback(countId, callback, event);
       });
     }
@@ -4109,18 +4648,18 @@ var AnimationRenderer = class extends BaseAnimationRenderer {
 };
 function resolveElementFromTarget(target) {
   switch (target) {
-    case "body":
+    case 'body':
       return document.body;
-    case "document":
+    case 'document':
       return document;
-    case "window":
+    case 'window':
       return window;
     default:
       return target;
   }
 }
 function parseTriggerCallbackName(triggerName) {
-  const dotIndex = triggerName.indexOf(".");
+  const dotIndex = triggerName.indexOf('.');
   const trigger = triggerName.substring(0, dotIndex);
   const phase = triggerName.slice(dotIndex + 1);
   return [trigger, phase];
@@ -4143,20 +4682,25 @@ var AnimationRendererFactory = class {
     };
   }
   createRenderer(hostElement, type) {
-    const EMPTY_NAMESPACE_ID = "";
+    const EMPTY_NAMESPACE_ID = '';
     const delegate = this.delegate.createRenderer(hostElement, type);
-    if (!hostElement || !type?.data?.["animation"]) {
+    if (!hostElement || !type?.data?.['animation']) {
       const cache = this._rendererCache;
       let renderer = cache.get(delegate);
       if (!renderer) {
         const onRendererDestroy = () => cache.delete(delegate);
-        renderer = new BaseAnimationRenderer(EMPTY_NAMESPACE_ID, delegate, this.engine, onRendererDestroy);
+        renderer = new BaseAnimationRenderer(
+          EMPTY_NAMESPACE_ID,
+          delegate,
+          this.engine,
+          onRendererDestroy,
+        );
         cache.set(delegate, renderer);
       }
       return renderer;
     }
     const componentId = type.id;
-    const namespaceId = type.id + "-" + this._currentId;
+    const namespaceId = type.id + '-' + this._currentId;
     this._currentId++;
     this.engine.register(namespaceId, hostElement);
     const registerTrigger = (trigger) => {
@@ -4166,7 +4710,7 @@ var AnimationRendererFactory = class {
         this.engine.registerTrigger(componentId, namespaceId, hostElement, trigger.name, trigger);
       }
     };
-    const animationTriggers = type.data["animation"];
+    const animationTriggers = type.data['animation'];
     animationTriggers.forEach(registerTrigger);
     return new AnimationRenderer(this, namespaceId, delegate, this.engine);
   }
@@ -4238,27 +4782,45 @@ var InjectableAnimationEngine = class _InjectableAnimationEngine extends Animati
     this.flush();
   }
   static ɵfac = function InjectableAnimationEngine_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _InjectableAnimationEngine)(ɵɵinject(DOCUMENT), ɵɵinject(AnimationDriver), ɵɵinject(AnimationStyleNormalizer));
+    return new (__ngFactoryType__ || _InjectableAnimationEngine)(
+      ɵɵinject(DOCUMENT),
+      ɵɵinject(AnimationDriver),
+      ɵɵinject(AnimationStyleNormalizer),
+    );
   };
   static ɵprov = ɵɵdefineInjectable({
     token: _InjectableAnimationEngine,
-    factory: _InjectableAnimationEngine.ɵfac
+    factory: _InjectableAnimationEngine.ɵfac,
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InjectableAnimationEngine, [{
-    type: Injectable
-  }], () => [{
-    type: Document,
-    decorators: [{
-      type: Inject,
-      args: [DOCUMENT]
-    }]
-  }, {
-    type: AnimationDriver
-  }, {
-    type: AnimationStyleNormalizer
-  }], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      InjectableAnimationEngine,
+      [
+        {
+          type: Injectable,
+        },
+      ],
+      () => [
+        {
+          type: Document,
+          decorators: [
+            {
+              type: Inject,
+              args: [DOCUMENT],
+            },
+          ],
+        },
+        {
+          type: AnimationDriver,
+        },
+        {
+          type: AnimationStyleNormalizer,
+        },
+      ],
+      null,
+    );
 })();
 function instantiateDefaultStyleNormalizer() {
   return new WebAnimationsStyleNormalizer();
@@ -4266,35 +4828,43 @@ function instantiateDefaultStyleNormalizer() {
 function instantiateRendererFactory(renderer, engine, zone) {
   return new AnimationRendererFactory(renderer, engine, zone);
 }
-var SHARED_ANIMATION_PROVIDERS = [{
-  provide: AnimationStyleNormalizer,
-  useFactory: instantiateDefaultStyleNormalizer
-}, {
-  provide: AnimationEngine,
-  useClass: InjectableAnimationEngine
-}, {
-  provide: RendererFactory2,
-  useFactory: instantiateRendererFactory,
-  deps: [DomRendererFactory2, AnimationEngine, NgZone]
-}];
-var BROWSER_NOOP_ANIMATIONS_PROVIDERS = [{
-  provide: AnimationDriver,
-  useClass: NoopAnimationDriver
-}, {
-  provide: ANIMATION_MODULE_TYPE,
-  useValue: "NoopAnimations"
-}, ...SHARED_ANIMATION_PROVIDERS];
+var SHARED_ANIMATION_PROVIDERS = [
+  {
+    provide: AnimationStyleNormalizer,
+    useFactory: instantiateDefaultStyleNormalizer,
+  },
+  {
+    provide: AnimationEngine,
+    useClass: InjectableAnimationEngine,
+  },
+  {
+    provide: RendererFactory2,
+    useFactory: instantiateRendererFactory,
+    deps: [DomRendererFactory2, AnimationEngine, NgZone],
+  },
+];
+var BROWSER_NOOP_ANIMATIONS_PROVIDERS = [
+  {
+    provide: AnimationDriver,
+    useClass: NoopAnimationDriver,
+  },
+  {
+    provide: ANIMATION_MODULE_TYPE,
+    useValue: 'NoopAnimations',
+  },
+  ...SHARED_ANIMATION_PROVIDERS,
+];
 var BROWSER_ANIMATIONS_PROVIDERS = [
   // Note: the `ngServerMode` happen inside factories to give the variable time to initialize.
   {
     provide: AnimationDriver,
-    useFactory: () => false ? new NoopAnimationDriver() : new WebAnimationsDriver()
+    useFactory: () => (false ? new NoopAnimationDriver() : new WebAnimationsDriver()),
   },
   {
     provide: ANIMATION_MODULE_TYPE,
-    useFactory: () => false ? "NoopAnimations" : "BrowserAnimations"
+    useFactory: () => (false ? 'NoopAnimations' : 'BrowserAnimations'),
   },
-  ...SHARED_ANIMATION_PROVIDERS
+  ...SHARED_ANIMATION_PROVIDERS,
 ];
 var BrowserAnimationsModule = class _BrowserAnimationsModule {
   /**
@@ -4316,7 +4886,9 @@ var BrowserAnimationsModule = class _BrowserAnimationsModule {
   static withConfig(config) {
     return {
       ngModule: _BrowserAnimationsModule,
-      providers: config.disableAnimations ? BROWSER_NOOP_ANIMATIONS_PROVIDERS : BROWSER_ANIMATIONS_PROVIDERS
+      providers: config.disableAnimations
+        ? BROWSER_NOOP_ANIMATIONS_PROVIDERS
+        : BROWSER_ANIMATIONS_PROVIDERS,
     };
   }
   static ɵfac = function BrowserAnimationsModule_Factory(__ngFactoryType__) {
@@ -4324,24 +4896,34 @@ var BrowserAnimationsModule = class _BrowserAnimationsModule {
   };
   static ɵmod = ɵɵdefineNgModule({
     type: _BrowserAnimationsModule,
-    exports: [BrowserModule]
+    exports: [BrowserModule],
   });
   static ɵinj = ɵɵdefineInjector({
     providers: BROWSER_ANIMATIONS_PROVIDERS,
-    imports: [BrowserModule]
+    imports: [BrowserModule],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BrowserAnimationsModule, [{
-    type: NgModule,
-    args: [{
-      exports: [BrowserModule],
-      providers: BROWSER_ANIMATIONS_PROVIDERS
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      BrowserAnimationsModule,
+      [
+        {
+          type: NgModule,
+          args: [
+            {
+              exports: [BrowserModule],
+              providers: BROWSER_ANIMATIONS_PROVIDERS,
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 function provideAnimations() {
-  performanceMarkFeature("NgEagerAnimations");
+  performanceMarkFeature('NgEagerAnimations');
   return [...BROWSER_ANIMATIONS_PROVIDERS];
 }
 var NoopAnimationsModule = class _NoopAnimationsModule {
@@ -4350,21 +4932,31 @@ var NoopAnimationsModule = class _NoopAnimationsModule {
   };
   static ɵmod = ɵɵdefineNgModule({
     type: _NoopAnimationsModule,
-    exports: [BrowserModule]
+    exports: [BrowserModule],
   });
   static ɵinj = ɵɵdefineInjector({
     providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
-    imports: [BrowserModule]
+    imports: [BrowserModule],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NoopAnimationsModule, [{
-    type: NgModule,
-    args: [{
-      exports: [BrowserModule],
-      providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NoopAnimationsModule,
+      [
+        {
+          type: NgModule,
+          args: [
+            {
+              exports: [BrowserModule],
+              providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 function provideNoopAnimations() {
   return [...BROWSER_NOOP_ANIMATIONS_PROVIDERS];
@@ -4375,7 +4967,7 @@ export {
   BrowserAnimationsModule,
   provideAnimations,
   NoopAnimationsModule,
-  provideNoopAnimations
+  provideNoopAnimations,
 };
 /*! Bundled license information:
 

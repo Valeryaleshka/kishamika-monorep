@@ -12,41 +12,35 @@ import {
   ɵɵProvidersFeature,
   ɵɵattribute,
   ɵɵdefineDirective,
-  ɵɵdefineNgModule
-} from "./chunk-NDW6FAMK.js";
+  ɵɵdefineNgModule,
+} from './chunk-NDW6FAMK.js';
 import {
   DOCUMENT,
   InjectionToken,
   inject,
   signal,
   ɵɵdefineInjectable,
-  ɵɵdefineInjector
-} from "./chunk-USC2B2WM.js";
-import {
-  fromEvent,
-  isObservable
-} from "./chunk-HUZPAJME.js";
-import {
-  EMPTY,
-  Observable,
-  of
-} from "./chunk-PVVX4OOT.js";
+  ɵɵdefineInjector,
+} from './chunk-USC2B2WM.js';
+import { fromEvent, isObservable } from './chunk-HUZPAJME.js';
+import { EMPTY, Observable, of } from './chunk-PVVX4OOT.js';
 
 // ../../node_modules/@angular/cdk/fesm2022/directionality.mjs
-var DIR_DOCUMENT = new InjectionToken("cdk-dir-doc", {
-  providedIn: "root",
-  factory: DIR_DOCUMENT_FACTORY
+var DIR_DOCUMENT = new InjectionToken('cdk-dir-doc', {
+  providedIn: 'root',
+  factory: DIR_DOCUMENT_FACTORY,
 });
 function DIR_DOCUMENT_FACTORY() {
   return inject(DOCUMENT);
 }
-var RTL_LOCALE_PATTERN = /^(ar|ckb|dv|he|iw|fa|nqo|ps|sd|ug|ur|yi|.*[-_](Adlm|Arab|Hebr|Nkoo|Rohg|Thaa))(?!.*[-_](Latn|Cyrl)($|-|_))($|-|_)/i;
+var RTL_LOCALE_PATTERN =
+  /^(ar|ckb|dv|he|iw|fa|nqo|ps|sd|ug|ur|yi|.*[-_](Adlm|Arab|Hebr|Nkoo|Rohg|Thaa))(?!.*[-_](Latn|Cyrl)($|-|_))($|-|_)/i;
 function _resolveDirectionality(rawValue) {
-  const value = rawValue?.toLowerCase() || "";
-  if (value === "auto" && typeof navigator !== "undefined" && navigator?.language) {
-    return RTL_LOCALE_PATTERN.test(navigator.language) ? "rtl" : "ltr";
+  const value = rawValue?.toLowerCase() || '';
+  if (value === 'auto' && typeof navigator !== 'undefined' && navigator?.language) {
+    return RTL_LOCALE_PATTERN.test(navigator.language) ? 'rtl' : 'ltr';
   }
-  return value === "rtl" ? "rtl" : "ltr";
+  return value === 'rtl' ? 'rtl' : 'ltr';
 }
 var Directionality = class _Directionality {
   /** The current 'ltr' or 'rtl' value. */
@@ -56,19 +50,26 @@ var Directionality = class _Directionality {
   /**
    * The current 'ltr' or 'rtl' value.
    */
-  valueSignal = signal("ltr", ...ngDevMode ? [{
-    debugName: "valueSignal"
-  }] : []);
+  valueSignal = signal(
+    'ltr',
+    ...(ngDevMode
+      ? [
+          {
+            debugName: 'valueSignal',
+          },
+        ]
+      : []),
+  );
   /** Stream that emits whenever the 'ltr' / 'rtl' state changes. */
   change = new EventEmitter();
   constructor() {
     const _document = inject(DIR_DOCUMENT, {
-      optional: true
+      optional: true,
     });
     if (_document) {
       const bodyDir = _document.body ? _document.body.dir : null;
       const htmlDir = _document.documentElement ? _document.documentElement.dir : null;
-      this.valueSignal.set(_resolveDirectionality(bodyDir || htmlDir || "ltr"));
+      this.valueSignal.set(_resolveDirectionality(bodyDir || htmlDir || 'ltr'));
     }
   }
   ngOnDestroy() {
@@ -80,16 +81,26 @@ var Directionality = class _Directionality {
   static ɵprov = ɵɵdefineInjectable({
     token: _Directionality,
     factory: _Directionality.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Directionality, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      Directionality,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 
 // ../../node_modules/@angular/cdk/fesm2022/bidi.mjs
@@ -116,9 +127,16 @@ var Dir = class _Dir {
   get value() {
     return this.dir;
   }
-  valueSignal = signal("ltr", ...ngDevMode ? [{
-    debugName: "valueSignal"
-  }] : []);
+  valueSignal = signal(
+    'ltr',
+    ...(ngDevMode
+      ? [
+          {
+            debugName: 'valueSignal',
+          },
+        ]
+      : []),
+  );
   /** Initialize once default value has been set. */
   ngAfterContentInit() {
     this._isInitialized = true;
@@ -131,49 +149,69 @@ var Dir = class _Dir {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _Dir,
-    selectors: [["", "dir", ""]],
+    selectors: [['', 'dir', '']],
     hostVars: 1,
     hostBindings: function Dir_HostBindings(rf, ctx) {
       if (rf & 2) {
-        ɵɵattribute("dir", ctx._rawDir);
+        ɵɵattribute('dir', ctx._rawDir);
       }
     },
     inputs: {
-      dir: "dir"
+      dir: 'dir',
     },
     outputs: {
-      change: "dirChange"
+      change: 'dirChange',
     },
-    exportAs: ["dir"],
-    features: [ɵɵProvidersFeature([{
-      provide: Directionality,
-      useExisting: _Dir
-    }])]
+    exportAs: ['dir'],
+    features: [
+      ɵɵProvidersFeature([
+        {
+          provide: Directionality,
+          useExisting: _Dir,
+        },
+      ]),
+    ],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Dir, [{
-    type: Directive,
-    args: [{
-      selector: "[dir]",
-      providers: [{
-        provide: Directionality,
-        useExisting: Dir
-      }],
-      host: {
-        "[attr.dir]": "_rawDir"
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      Dir,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[dir]',
+              providers: [
+                {
+                  provide: Directionality,
+                  useExisting: Dir,
+                },
+              ],
+              host: {
+                '[attr.dir]': '_rawDir',
+              },
+              exportAs: 'dir',
+            },
+          ],
+        },
+      ],
+      null,
+      {
+        change: [
+          {
+            type: Output,
+            args: ['dirChange'],
+          },
+        ],
+        dir: [
+          {
+            type: Input,
+          },
+        ],
       },
-      exportAs: "dir"
-    }]
-  }], null, {
-    change: [{
-      type: Output,
-      args: ["dirChange"]
-    }],
-    dir: [{
-      type: Input
-    }]
-  });
+    );
 })();
 var BidiModule = class _BidiModule {
   static ɵfac = function BidiModule_Factory(__ngFactoryType__) {
@@ -182,18 +220,28 @@ var BidiModule = class _BidiModule {
   static ɵmod = ɵɵdefineNgModule({
     type: _BidiModule,
     imports: [Dir],
-    exports: [Dir]
+    exports: [Dir],
   });
   static ɵinj = ɵɵdefineInjector({});
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BidiModule, [{
-    type: NgModule,
-    args: [{
-      imports: [Dir],
-      exports: [Dir]
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      BidiModule,
+      [
+        {
+          type: NgModule,
+          args: [
+            {
+              imports: [Dir],
+              exports: [Dir],
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
 // ../../node_modules/@angular/cdk/fesm2022/element.mjs
@@ -218,26 +266,26 @@ function coerceArray(value) {
 // ../../node_modules/@angular/cdk/fesm2022/css-pixel-value.mjs
 function coerceCssPixelValue(value) {
   if (value == null) {
-    return "";
+    return '';
   }
-  return typeof value === "string" ? value : `${value}px`;
+  return typeof value === 'string' ? value : `${value}px`;
 }
 
 // ../../node_modules/@angular/cdk/fesm2022/coercion.mjs
 function coerceBooleanProperty(value) {
-  return value != null && `${value}` !== "false";
+  return value != null && `${value}` !== 'false';
 }
 
 // ../../node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-core-environments.mjs
 var environment = {
-  isTestMode: false
+  isTestMode: false,
 };
 
 // ../../node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-core-logger.mjs
 var record = {};
-var PREFIX = "[NG-ZORRO]:";
+var PREFIX = '[NG-ZORRO]:';
 function notRecorded(...args) {
-  const asRecord = args.reduce((acc, c) => acc + c.toString(), "");
+  const asRecord = args.reduce((acc, c) => acc + c.toString(), '');
   if (record[asRecord]) {
     return false;
   } else {
@@ -246,7 +294,7 @@ function notRecorded(...args) {
   }
 }
 function consoleCommonBehavior(consoleFunc, ...args) {
-  if (environment.isTestMode || isDevMode() && notRecorded(...args)) {
+  if (environment.isTestMode || (isDevMode() && notRecorded(...args))) {
     consoleFunc(...args);
   }
 }
@@ -254,7 +302,7 @@ var warn = (...args) => consoleCommonBehavior((...arg) => console.warn(PREFIX, .
 
 // ../../node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-core-util.mjs
 function isNotNil(value) {
-  return typeof value !== "undefined" && value !== null;
+  return typeof value !== 'undefined' && value !== null;
 }
 function isTemplateRef(value) {
   return value instanceof TemplateRef;
@@ -266,15 +314,15 @@ function toCssPixel(value) {
   return coerceCssPixelValue(value);
 }
 function isTouchEvent(event) {
-  return event.type.startsWith("touch");
+  return event.type.startsWith('touch');
 }
 function getEventPosition(event) {
   return isTouchEvent(event) ? event.touches[0] || event.changedTouches[0] : event;
 }
 function isPromise(obj) {
-  return !!obj && typeof obj.then === "function" && typeof obj.catch === "function";
+  return !!obj && typeof obj.then === 'function' && typeof obj.catch === 'function';
 }
-var isBrowser = typeof window !== "undefined";
+var isBrowser = typeof window !== 'undefined';
 var isFirefox = isBrowser && window.mozInnerScreenX != null;
 function wrapIntoObservable(value) {
   if (isObservable(value)) {
@@ -282,21 +330,23 @@ function wrapIntoObservable(value) {
   }
   if (isPromise(value)) {
     return new Observable((subscriber) => {
-      Promise.resolve(value).then((result) => {
-        subscriber.next(result);
-        subscriber.complete();
-      }).catch((error) => subscriber.error(error));
+      Promise.resolve(value)
+        .then((result) => {
+          subscriber.next(result);
+          subscriber.complete();
+        })
+        .catch((error) => subscriber.error(error));
     });
   }
   return of(value);
 }
 function canUseDom() {
-  return !!(typeof window !== "undefined" && window.document && window.document.createElement);
+  return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 }
 var MARK_KEY = `rc-util-key`;
 function getMark({ mark } = {}) {
   if (mark) {
-    return mark.startsWith("data-") ? mark : `data-${mark}`;
+    return mark.startsWith('data-') ? mark : `data-${mark}`;
   }
   return MARK_KEY;
 }
@@ -304,14 +354,14 @@ function getContainer(option) {
   if (option.attachTo) {
     return option.attachTo;
   }
-  const head = document.querySelector("head");
+  const head = document.querySelector('head');
   return head || document.body;
 }
 function injectCSS(css, options = {}) {
   if (!canUseDom()) {
     return null;
   }
-  const styleNode = document.createElement("style");
+  const styleNode = document.createElement('style');
   if (options.cspNonce) {
     styleNode.nonce = options.cspNonce;
   }
@@ -330,12 +380,14 @@ function injectCSS(css, options = {}) {
 var containerCache = /* @__PURE__ */ new Map();
 function findExistNode(key, option = {}) {
   const container = getContainer(option);
-  return Array.from(containerCache.get(container)?.children || []).find((node) => node.tagName === "STYLE" && node.getAttribute(getMark(option)) === key);
+  return Array.from(containerCache.get(container)?.children || []).find(
+    (node) => node.tagName === 'STYLE' && node.getAttribute(getMark(option)) === key,
+  );
 }
 function updateCSS(css, key, options = {}) {
   const container = getContainer(options);
   if (!containerCache.has(container)) {
-    const placeholderStyle = injectCSS("", options);
+    const placeholderStyle = injectCSS('', options);
     const { parentNode } = placeholderStyle;
     containerCache.set(container, parentNode);
     parentNode.removeChild(placeholderStyle);
@@ -356,25 +408,25 @@ function updateCSS(css, key, options = {}) {
 }
 function getStatusClassNames(prefixCls, status, hasFeedback) {
   return {
-    [`${prefixCls}-status-success`]: status === "success",
-    [`${prefixCls}-status-warning`]: status === "warning",
-    [`${prefixCls}-status-error`]: status === "error",
-    [`${prefixCls}-status-validating`]: status === "validating",
-    [`${prefixCls}-has-feedback`]: hasFeedback
+    [`${prefixCls}-status-success`]: status === 'success',
+    [`${prefixCls}-status-warning`]: status === 'warning',
+    [`${prefixCls}-status-error`]: status === 'error',
+    [`${prefixCls}-status-validating`]: status === 'validating',
+    [`${prefixCls}-has-feedback`]: hasFeedback,
   };
 }
 function runOutsideAngular(fn) {
-  return typeof Zone !== "undefined" ? Zone.root.run(fn) : fn();
+  return typeof Zone !== 'undefined' ? Zone.root.run(fn) : fn();
 }
 function fromEventOutsideAngular(target, name, options) {
   if (!target) {
     return EMPTY;
   }
   return new Observable((subscriber) => {
-    return runOutsideAngular(() => (
+    return runOutsideAngular(() =>
       // Casting because the inferred overload is incorrect :(
-      fromEvent(target, name, options).subscribe(subscriber)
-    ));
+      fromEvent(target, name, options).subscribe(subscriber),
+    );
   });
 }
 
@@ -397,6 +449,6 @@ export {
   canUseDom,
   updateCSS,
   getStatusClassNames,
-  fromEventOutsideAngular
+  fromEventOutsideAngular,
 };
 //# sourceMappingURL=chunk-U7XIMOED.js.map

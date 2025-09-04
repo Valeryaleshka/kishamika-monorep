@@ -1,23 +1,17 @@
-import {
-  isPlatformBrowser
-} from "./chunk-P7TSWPBR.js";
+import { isPlatformBrowser } from './chunk-P7TSWPBR.js';
 import {
   Injectable,
   NgModule,
   PLATFORM_ID,
   setClassMetadata,
-  ɵɵdefineNgModule
-} from "./chunk-NDW6FAMK.js";
-import {
-  inject,
-  ɵɵdefineInjectable,
-  ɵɵdefineInjector
-} from "./chunk-USC2B2WM.js";
+  ɵɵdefineNgModule,
+} from './chunk-NDW6FAMK.js';
+import { inject, ɵɵdefineInjectable, ɵɵdefineInjector } from './chunk-USC2B2WM.js';
 
 // ../../node_modules/@angular/cdk/fesm2022/platform2.mjs
 var hasV8BreakIterator;
 try {
-  hasV8BreakIterator = typeof Intl !== "undefined" && Intl.v8BreakIterator;
+  hasV8BreakIterator = typeof Intl !== 'undefined' && Intl.v8BreakIterator;
 } catch {
   hasV8BreakIterator = false;
 }
@@ -27,20 +21,32 @@ var Platform = class _Platform {
   // without the navigator, the following checks will fail. This is preferred because
   // sometimes the Document may be shimmed without the user's knowledge or intention
   /** Whether the Angular application is being rendered in the browser. */
-  isBrowser = this._platformId ? isPlatformBrowser(this._platformId) : typeof document === "object" && !!document;
+  isBrowser = this._platformId
+    ? isPlatformBrowser(this._platformId)
+    : typeof document === 'object' && !!document;
   /** Whether the current browser is Microsoft Edge. */
   EDGE = this.isBrowser && /(edge)/i.test(navigator.userAgent);
   /** Whether the current rendering engine is Microsoft Trident. */
   TRIDENT = this.isBrowser && /(msie|trident)/i.test(navigator.userAgent);
   // EdgeHTML and Trident mock Blink specific things and need to be excluded from this check.
   /** Whether the current rendering engine is Blink. */
-  BLINK = this.isBrowser && !!(window.chrome || hasV8BreakIterator) && typeof CSS !== "undefined" && !this.EDGE && !this.TRIDENT;
+  BLINK =
+    this.isBrowser &&
+    !!(window.chrome || hasV8BreakIterator) &&
+    typeof CSS !== 'undefined' &&
+    !this.EDGE &&
+    !this.TRIDENT;
   // Webkit is part of the userAgent in EdgeHTML, Blink and Trident. Therefore we need to
   // ensure that Webkit runs standalone and is not used as another engine's base.
   /** Whether the current rendering engine is WebKit. */
-  WEBKIT = this.isBrowser && /AppleWebKit/i.test(navigator.userAgent) && !this.BLINK && !this.EDGE && !this.TRIDENT;
+  WEBKIT =
+    this.isBrowser &&
+    /AppleWebKit/i.test(navigator.userAgent) &&
+    !this.BLINK &&
+    !this.EDGE &&
+    !this.TRIDENT;
   /** Whether the current platform is Apple iOS. */
-  IOS = this.isBrowser && /iPad|iPhone|iPod/.test(navigator.userAgent) && !("MSStream" in window);
+  IOS = this.isBrowser && /iPad|iPhone|iPod/.test(navigator.userAgent) && !('MSStream' in window);
   // It's difficult to detect the plain Gecko engine, because most of the browsers identify
   // them self as Gecko-like browsers and modify the userAgent's according to that.
   // Since we only cover one explicit Firefox case, we can simply check for Firefox
@@ -55,34 +61,47 @@ var Platform = class _Platform {
   // Safari browser should also use Webkit as its layout engine.
   /** Whether the current browser is Safari. */
   SAFARI = this.isBrowser && /safari/i.test(navigator.userAgent) && this.WEBKIT;
-  constructor() {
-  }
+  constructor() {}
   static ɵfac = function Platform_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _Platform)();
   };
   static ɵprov = ɵɵdefineInjectable({
     token: _Platform,
     factory: _Platform.ɵfac,
-    providedIn: "root"
+    providedIn: 'root',
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Platform, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      Platform,
+      [
+        {
+          type: Injectable,
+          args: [
+            {
+              providedIn: 'root',
+            },
+          ],
+        },
+      ],
+      () => [],
+      null,
+    );
 })();
 
 // ../../node_modules/@angular/cdk/fesm2022/passive-listeners.mjs
 var supportsPassiveEvents;
 function supportsPassiveEventListeners() {
-  if (supportsPassiveEvents == null && typeof window !== "undefined") {
+  if (supportsPassiveEvents == null && typeof window !== 'undefined') {
     try {
-      window.addEventListener("test", null, Object.defineProperty({}, "passive", {
-        get: () => supportsPassiveEvents = true
-      }));
+      window.addEventListener(
+        'test',
+        null,
+        Object.defineProperty({}, 'passive', {
+          get: () => (supportsPassiveEvents = true),
+        }),
+      );
     } finally {
       supportsPassiveEvents = supportsPassiveEvents || false;
     }
@@ -95,20 +114,20 @@ function normalizePassiveListenerOptions(options) {
 
 // ../../node_modules/@angular/cdk/fesm2022/scrolling2.mjs
 var RtlScrollAxisType;
-(function(RtlScrollAxisType2) {
-  RtlScrollAxisType2[RtlScrollAxisType2["NORMAL"] = 0] = "NORMAL";
-  RtlScrollAxisType2[RtlScrollAxisType2["NEGATED"] = 1] = "NEGATED";
-  RtlScrollAxisType2[RtlScrollAxisType2["INVERTED"] = 2] = "INVERTED";
+(function (RtlScrollAxisType2) {
+  RtlScrollAxisType2[(RtlScrollAxisType2['NORMAL'] = 0)] = 'NORMAL';
+  RtlScrollAxisType2[(RtlScrollAxisType2['NEGATED'] = 1)] = 'NEGATED';
+  RtlScrollAxisType2[(RtlScrollAxisType2['INVERTED'] = 2)] = 'INVERTED';
 })(RtlScrollAxisType || (RtlScrollAxisType = {}));
 var rtlScrollAxisType;
 var scrollBehaviorSupported;
 function supportsScrollBehavior() {
   if (scrollBehaviorSupported == null) {
-    if (typeof document !== "object" || !document || typeof Element !== "function" || !Element) {
+    if (typeof document !== 'object' || !document || typeof Element !== 'function' || !Element) {
       scrollBehaviorSupported = false;
       return scrollBehaviorSupported;
     }
-    if ("scrollBehavior" in document.documentElement.style) {
+    if ('scrollBehavior' in document.documentElement.style) {
       scrollBehaviorSupported = true;
     } else {
       const scrollToFunction = Element.prototype.scrollTo;
@@ -122,28 +141,29 @@ function supportsScrollBehavior() {
   return scrollBehaviorSupported;
 }
 function getRtlScrollAxisType() {
-  if (typeof document !== "object" || !document) {
+  if (typeof document !== 'object' || !document) {
     return RtlScrollAxisType.NORMAL;
   }
   if (rtlScrollAxisType == null) {
-    const scrollContainer = document.createElement("div");
+    const scrollContainer = document.createElement('div');
     const containerStyle = scrollContainer.style;
-    scrollContainer.dir = "rtl";
-    containerStyle.width = "1px";
-    containerStyle.overflow = "auto";
-    containerStyle.visibility = "hidden";
-    containerStyle.pointerEvents = "none";
-    containerStyle.position = "absolute";
-    const content = document.createElement("div");
+    scrollContainer.dir = 'rtl';
+    containerStyle.width = '1px';
+    containerStyle.overflow = 'auto';
+    containerStyle.visibility = 'hidden';
+    containerStyle.pointerEvents = 'none';
+    containerStyle.position = 'absolute';
+    const content = document.createElement('div');
     const contentStyle = content.style;
-    contentStyle.width = "2px";
-    contentStyle.height = "1px";
+    contentStyle.width = '2px';
+    contentStyle.height = '1px';
     scrollContainer.appendChild(content);
     document.body.appendChild(scrollContainer);
     rtlScrollAxisType = RtlScrollAxisType.NORMAL;
     if (scrollContainer.scrollLeft === 0) {
       scrollContainer.scrollLeft = 1;
-      rtlScrollAxisType = scrollContainer.scrollLeft === 0 ? RtlScrollAxisType.NEGATED : RtlScrollAxisType.INVERTED;
+      rtlScrollAxisType =
+        scrollContainer.scrollLeft === 0 ? RtlScrollAxisType.NEGATED : RtlScrollAxisType.INVERTED;
     }
     scrollContainer.remove();
   }
@@ -154,7 +174,7 @@ function getRtlScrollAxisType() {
 var shadowDomIsSupported;
 function _supportsShadowDom() {
   if (shadowDomIsSupported == null) {
-    const head = typeof document !== "undefined" ? document.head : null;
+    const head = typeof document !== 'undefined' ? document.head : null;
     shadowDomIsSupported = !!(head && (head.createShadowRoot || head.attachShadow));
   }
   return shadowDomIsSupported;
@@ -162,14 +182,14 @@ function _supportsShadowDom() {
 function _getShadowRoot(element) {
   if (_supportsShadowDom()) {
     const rootNode = element.getRootNode ? element.getRootNode() : null;
-    if (typeof ShadowRoot !== "undefined" && ShadowRoot && rootNode instanceof ShadowRoot) {
+    if (typeof ShadowRoot !== 'undefined' && ShadowRoot && rootNode instanceof ShadowRoot) {
       return rootNode;
     }
   }
   return null;
 }
 function _getFocusedElementPierceShadowDom() {
-  let activeElement = typeof document !== "undefined" && document ? document.activeElement : null;
+  let activeElement = typeof document !== 'undefined' && document ? document.activeElement : null;
   while (activeElement && activeElement.shadowRoot) {
     const newActiveElement = activeElement.shadowRoot.activeElement;
     if (newActiveElement === activeElement) {
@@ -188,10 +208,10 @@ function _getEventTarget(event) {
 function _isTestEnvironment() {
   return (
     // @ts-ignore
-    typeof __karma__ !== "undefined" && !!__karma__ || // @ts-ignore
-    typeof jasmine !== "undefined" && !!jasmine || // @ts-ignore
-    typeof jest !== "undefined" && !!jest || // @ts-ignore
-    typeof Mocha !== "undefined" && !!Mocha
+    (typeof __karma__ !== 'undefined' && !!__karma__) || // @ts-ignore
+    (typeof jasmine !== 'undefined' && !!jasmine) || // @ts-ignore
+    (typeof jest !== 'undefined' && !!jest) || // @ts-ignore
+    (typeof Mocha !== 'undefined' && !!Mocha)
   );
 }
 
@@ -201,15 +221,23 @@ var PlatformModule = class _PlatformModule {
     return new (__ngFactoryType__ || _PlatformModule)();
   };
   static ɵmod = ɵɵdefineNgModule({
-    type: _PlatformModule
+    type: _PlatformModule,
   });
   static ɵinj = ɵɵdefineInjector({});
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PlatformModule, [{
-    type: NgModule,
-    args: [{}]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      PlatformModule,
+      [
+        {
+          type: NgModule,
+          args: [{}],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
 export {
@@ -221,6 +249,6 @@ export {
   _getShadowRoot,
   _getFocusedElementPierceShadowDom,
   _getEventTarget,
-  _isTestEnvironment
+  _isTestEnvironment,
 };
 //# sourceMappingURL=chunk-GHVILJXS.js.map

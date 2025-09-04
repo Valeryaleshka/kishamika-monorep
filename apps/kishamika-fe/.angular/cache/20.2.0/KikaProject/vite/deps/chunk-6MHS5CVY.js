@@ -1,6 +1,4 @@
-import {
-  Platform
-} from "./chunk-GHVILJXS.js";
+import { Platform } from './chunk-GHVILJXS.js';
 import {
   ANIMATION_MODULE_TYPE,
   CSP_NONCE,
@@ -11,14 +9,14 @@ import {
   NgZone,
   setClassMetadata,
   ɵɵdefineDirective,
-  ɵɵdefineNgModule
-} from "./chunk-NDW6FAMK.js";
+  ɵɵdefineNgModule,
+} from './chunk-NDW6FAMK.js';
 import {
   InjectionToken,
   inject,
   makeEnvironmentProviders,
-  ɵɵdefineInjector
-} from "./chunk-USC2B2WM.js";
+  ɵɵdefineInjector,
+} from './chunk-USC2B2WM.js';
 
 // ../../node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-core-wave.mjs
 var NzWaveRenderer = class {
@@ -33,7 +31,7 @@ var NzWaveRenderer = class {
   lastTime = 0;
   clickHandler;
   get waveAttributeName() {
-    return this.insertExtraNode ? "ant-click-animating" : "ant-click-animating-without-extra-node";
+    return this.insertExtraNode ? 'ant-click-animating' : 'ant-click-animating-without-extra-node';
   }
   constructor(triggerElement, ngZone, insertExtraNode, platform, cspNonce) {
     this.triggerElement = triggerElement;
@@ -45,7 +43,13 @@ var NzWaveRenderer = class {
     this.bindTriggerEvent();
   }
   onClick = (event) => {
-    if (!this.triggerElement || !this.triggerElement.getAttribute || this.triggerElement.getAttribute("disabled") || event.target.tagName === "INPUT" || this.triggerElement.className.indexOf("disabled") >= 0) {
+    if (
+      !this.triggerElement ||
+      !this.triggerElement.getAttribute ||
+      this.triggerElement.getAttribute('disabled') ||
+      event.target.tagName === 'INPUT' ||
+      this.triggerElement.className.indexOf('disabled') >= 0
+    ) {
       return;
     }
     this.fadeOutWave();
@@ -55,14 +59,14 @@ var NzWaveRenderer = class {
       this.ngZone.runOutsideAngular(() => {
         this.removeTriggerEvent();
         if (this.triggerElement) {
-          this.triggerElement.addEventListener("click", this.clickHandler, true);
+          this.triggerElement.addEventListener('click', this.clickHandler, true);
         }
       });
     }
   }
   removeTriggerEvent() {
     if (this.triggerElement) {
-      this.triggerElement.removeEventListener("click", this.clickHandler, true);
+      this.triggerElement.removeEventListener('click', this.clickHandler, true);
     }
   }
   removeStyleAndExtraNode() {
@@ -81,13 +85,13 @@ var NzWaveRenderer = class {
   fadeOutWave() {
     const node = this.triggerElement;
     const waveColor = this.getWaveColor(node);
-    node.setAttribute(this.waveAttributeName, "true");
+    node.setAttribute(this.waveAttributeName, 'true');
     if (Date.now() < this.lastTime + this.waveTransitionDuration) {
       return;
     }
     if (this.isValidColor(waveColor)) {
       if (!this.styleForPseudo) {
-        this.styleForPseudo = document.createElement("style");
+        this.styleForPseudo = document.createElement('style');
         if (this.cspNonce) {
           this.styleForPseudo.nonce = this.cspNonce;
         }
@@ -100,9 +104,9 @@ var NzWaveRenderer = class {
     }
     if (this.insertExtraNode) {
       if (!this.extraNode) {
-        this.extraNode = document.createElement("div");
+        this.extraNode = document.createElement('div');
       }
-      this.extraNode.className = "ant-click-animating-node";
+      this.extraNode.className = 'ant-click-animating-node';
       node.appendChild(this.extraNode);
     }
     this.lastTime = Date.now();
@@ -112,7 +116,14 @@ var NzWaveRenderer = class {
     }, this.waveTransitionDuration);
   }
   isValidColor(color) {
-    return !!color && color !== "#ffffff" && color !== "rgb(255, 255, 255)" && this.isNotGrey(color) && !/rgba\(\d*, \d*, \d*, 0\)/.test(color) && color !== "transparent";
+    return (
+      !!color &&
+      color !== '#ffffff' &&
+      color !== 'rgb(255, 255, 255)' &&
+      this.isNotGrey(color) &&
+      !/rgba\(\d*, \d*, \d*, 0\)/.test(color) &&
+      color !== 'transparent'
+    );
   }
   isNotGrey(color) {
     const match = color.match(/rgba?\((\d*), (\d*), (\d*)(, [.\d]*)?\)/);
@@ -123,22 +134,27 @@ var NzWaveRenderer = class {
   }
   getWaveColor(node) {
     const nodeStyle = getComputedStyle(node);
-    return nodeStyle.getPropertyValue("border-top-color") || // Firefox Compatible
-    nodeStyle.getPropertyValue("border-color") || nodeStyle.getPropertyValue("background-color");
+    return (
+      nodeStyle.getPropertyValue('border-top-color') || // Firefox Compatible
+      nodeStyle.getPropertyValue('border-color') ||
+      nodeStyle.getPropertyValue('background-color')
+    );
   }
   runTimeoutOutsideZone(fn, delay) {
     this.ngZone.runOutsideAngular(() => setTimeout(fn, delay));
   }
 };
 var NZ_WAVE_GLOBAL_DEFAULT_CONFIG = {
-  disabled: false
+  disabled: false,
 };
-var NZ_WAVE_GLOBAL_CONFIG = new InjectionToken("nz-wave-global-options");
+var NZ_WAVE_GLOBAL_CONFIG = new InjectionToken('nz-wave-global-options');
 function provideNzWave(config) {
-  return makeEnvironmentProviders([{
-    provide: NZ_WAVE_GLOBAL_CONFIG,
-    useValue: config
-  }]);
+  return makeEnvironmentProviders([
+    {
+      provide: NZ_WAVE_GLOBAL_CONFIG,
+      useValue: config,
+    },
+  ]);
 }
 var NzWaveDirective = class _NzWaveDirective {
   nzWaveExtraNode = false;
@@ -151,14 +167,14 @@ var NzWaveDirective = class _NzWaveDirective {
     return this.waveRenderer;
   }
   cspNonce = inject(CSP_NONCE, {
-    optional: true
+    optional: true,
   });
   platform = inject(Platform);
   config = inject(NZ_WAVE_GLOBAL_CONFIG, {
-    optional: true
+    optional: true,
   });
   animationType = inject(ANIMATION_MODULE_TYPE, {
-    optional: true
+    optional: true,
   });
   ngZone = inject(NgZone);
   elementRef = inject(ElementRef);
@@ -167,10 +183,10 @@ var NzWaveDirective = class _NzWaveDirective {
   }
   isConfigDisabled() {
     let disabled = false;
-    if (this.config && typeof this.config.disabled === "boolean") {
+    if (this.config && typeof this.config.disabled === 'boolean') {
       disabled = this.config.disabled;
     }
-    if (this.animationType === "NoopAnimations") {
+    if (this.animationType === 'NoopAnimations') {
       disabled = true;
     }
     return disabled;
@@ -185,7 +201,13 @@ var NzWaveDirective = class _NzWaveDirective {
   }
   renderWaveIfEnabled() {
     if (!this.waveDisabled && this.elementRef.nativeElement) {
-      this.waveRenderer = new NzWaveRenderer(this.elementRef.nativeElement, this.ngZone, this.nzWaveExtraNode, this.platform, this.cspNonce);
+      this.waveRenderer = new NzWaveRenderer(
+        this.elementRef.nativeElement,
+        this.ngZone,
+        this.nzWaveExtraNode,
+        this.platform,
+        this.cspNonce,
+      );
     }
   }
   disable() {
@@ -206,25 +228,40 @@ var NzWaveDirective = class _NzWaveDirective {
   };
   static ɵdir = ɵɵdefineDirective({
     type: _NzWaveDirective,
-    selectors: [["", "nz-wave", ""], ["button", "nz-button", "", 3, "nzType", "link", 3, "nzType", "text"]],
+    selectors: [
+      ['', 'nz-wave', ''],
+      ['button', 'nz-button', '', 3, 'nzType', 'link', 3, 'nzType', 'text'],
+    ],
     inputs: {
-      nzWaveExtraNode: "nzWaveExtraNode"
+      nzWaveExtraNode: 'nzWaveExtraNode',
     },
-    exportAs: ["nzWave"]
+    exportAs: ['nzWave'],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzWaveDirective, [{
-    type: Directive,
-    args: [{
-      selector: '[nz-wave],button[nz-button]:not([nzType="link"]):not([nzType="text"])',
-      exportAs: "nzWave"
-    }]
-  }], () => [], {
-    nzWaveExtraNode: [{
-      type: Input
-    }]
-  });
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzWaveDirective,
+      [
+        {
+          type: Directive,
+          args: [
+            {
+              selector: '[nz-wave],button[nz-button]:not([nzType="link"]):not([nzType="text"])',
+              exportAs: 'nzWave',
+            },
+          ],
+        },
+      ],
+      () => [],
+      {
+        nzWaveExtraNode: [
+          {
+            type: Input,
+          },
+        ],
+      },
+    );
 })();
 var NzWaveModule = class _NzWaveModule {
   static ɵfac = function NzWaveModule_Factory(__ngFactoryType__) {
@@ -233,21 +270,31 @@ var NzWaveModule = class _NzWaveModule {
   static ɵmod = ɵɵdefineNgModule({
     type: _NzWaveModule,
     imports: [NzWaveDirective],
-    exports: [NzWaveDirective]
+    exports: [NzWaveDirective],
   });
   static ɵinj = ɵɵdefineInjector({
-    providers: [provideNzWave(NZ_WAVE_GLOBAL_DEFAULT_CONFIG)]
+    providers: [provideNzWave(NZ_WAVE_GLOBAL_DEFAULT_CONFIG)],
   });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NzWaveModule, [{
-    type: NgModule,
-    args: [{
-      imports: [NzWaveDirective],
-      exports: [NzWaveDirective],
-      providers: [provideNzWave(NZ_WAVE_GLOBAL_DEFAULT_CONFIG)]
-    }]
-  }], null, null);
+  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+    setClassMetadata(
+      NzWaveModule,
+      [
+        {
+          type: NgModule,
+          args: [
+            {
+              imports: [NzWaveDirective],
+              exports: [NzWaveDirective],
+              providers: [provideNzWave(NZ_WAVE_GLOBAL_DEFAULT_CONFIG)],
+            },
+          ],
+        },
+      ],
+      null,
+      null,
+    );
 })();
 
 export {
@@ -256,6 +303,6 @@ export {
   NZ_WAVE_GLOBAL_CONFIG,
   provideNzWave,
   NzWaveDirective,
-  NzWaveModule
+  NzWaveModule,
 };
 //# sourceMappingURL=chunk-6MHS5CVY.js.map

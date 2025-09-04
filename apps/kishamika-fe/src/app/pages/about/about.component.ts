@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { CenterDirective } from '../../derectives/center-content.directive';
+
 import { ContentWrapperComponent } from '../../components/content-wrapper/content-wrapper.component';
+import { CenterDirective } from '../../derectives/center-content.directive';
 
 @Component({
   selector: 'app-about',

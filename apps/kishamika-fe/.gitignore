@@ -9,7 +9,6 @@ build/
 # IDE files
 .vscode/
 .anguar/
-.idea/
 *.swp
 *.swo
 
