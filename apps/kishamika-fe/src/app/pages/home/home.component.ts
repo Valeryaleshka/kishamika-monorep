@@ -22,8 +22,7 @@ import { DropareaDirective } from '../../derectives/droparea.directive';
   imports: [
     ContentWrapperComponent,
     CenterDirective,
-    NzButtonComponent,
-    DecimalPipe,
+
     FormsModule,
     NzColDirective,
     NzFormControlComponent,
@@ -31,6 +30,8 @@ import { DropareaDirective } from '../../derectives/droparea.directive';
     NzFormLabelComponent,
     NzInputDirective,
     NzRowDirective,
+    NzButtonComponent,
+    DecimalPipe,
     NzWaveDirective,
     ReactiveFormsModule,
     DropareaDirective,

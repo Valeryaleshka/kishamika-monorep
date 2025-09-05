@@ -9,6 +9,9 @@ apps/*/dist/
 apps/*/build/
 apps/*/.angular
 
+# Prisma generated files
+apps/kishamika-be/generated/
+
 # Node modules
 node_modules/
 apps/*/node_modules/
