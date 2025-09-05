@@ -3,6 +3,7 @@ dist/
 build/
 *.tgz
 *.tar.gz
+.idea
 
 # App-specific build directories
 apps/*/dist/
